@@ -93,9 +93,12 @@
 		}
 
 		//print result
+		NSString * strOutPut = @"";
 		for(NSString *key in [dictionary allKeys]) {
-				NSLog(@ "Symbol '%@' is used '%@' times", key, [dictionary valueForKey:key]);
+				strOutPut = [strOutPut stringByAppendingFormat: @"%@'%@'(%@)" ,([strOutPut length] > 0 ? @", ": @" "), key, [dictionary valueForKey:key]];
 		}
+		NSLog(@ "Symbol calc result (format is: ''symbol' (occurs times)'): \n %@", strOutPut);
+
 }
 
 @end
