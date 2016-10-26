@@ -12,14 +12,17 @@
 
 //- (NSNumber *)multiplyA:(NSNumber *)a withB:(NSNumber *)b;
 //1
-- (void) testSomeLine;
+- (void) CalculateTheMinimumAndMaximumNumberOfCharactersPerLine;
+- (void) CalculateHowManyDifferentSymbolsOccursOnLine;
+
 @end
 
 @implementation SampleLineClass
 
 //MARK: - Lines
 //MARK: #1
-- (void) testSomeLine {
+- (void) CalculateTheMinimumAndMaximumNumberOfCharactersPerLine {
+		NSLog(@ "#1 - CalculateTheMinimumAndMaximumNumberOfCharactersPerLine");
 
 		NSString *lineForTest = @"Дана строка, содержащая текст. Найти длину самого короткого слова и самого длинного слова.";
 
@@ -62,6 +65,38 @@
 		NSLog(@"max. length = '%d'; min. length = '%d'.", maxCount, minCount);
 }
 
+//MARK: #2
+
+
+
+-(void) CalculateHowManyDifferentSymbolsOccursOnLine {
+		NSLog(@ "#2 - CalculateHowManyDifferentSymbolsOccursOnLine");
+
+		NSString *lineForTest = @"ДДана строка. Подсчитать, сколько различных символов встречается в ней. Вывести их на экран";
+
+		NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
+
+		for (int i=0; i<[lineForTest length];i++) {
+				NSString *chr = [lineForTest substringWithRange:NSMakeRange(i,1)];
+
+				NSNumber *elementValue = [dictionary valueForKey:chr];
+
+				NSNumber *count;
+				if (elementValue != NULL) {
+						int value = [elementValue intValue];
+						count = [NSNumber numberWithInt: value+1];
+				} else {
+						count = @1;
+				}
+
+				[dictionary setValue:count forKey:chr];
+		}
+
+		//print result
+		for(NSString *key in [dictionary allKeys]) {
+				NSLog(@ "Symbol '%@' is used '%@' times", key, [dictionary valueForKey:key]);
+		}
+}
 
 @end
 
@@ -71,7 +106,11 @@ int main(int argc, const char * argv[]) {
 			SampleLineClass *sampleClass = [SampleLineClass new];
 
 			//#1
-			[sampleClass testSomeLine];
+			[sampleClass CalculateTheMinimumAndMaximumNumberOfCharactersPerLine];
+
+			//#2
+			[sampleClass CalculateHowManyDifferentSymbolsOccursOnLine];
+
 	}
 
     return 0;
