@@ -16,6 +16,7 @@
 - (void) CalculateHowManyDifferentSymbolsOccursOnLine;
 - (void) FindTheWordThatBeginsAndEndsWithTheSameLetter;
 - (void) FindTheAmountOfAvailableNumbersInTheText;
+- (void) CheckWhetherItIsPossibleToReadTheSameWordInTwoDirections;
 
 + (NSString *) RemoveSpecialSymbolsInTheLine: (NSString *)line;
 @end
@@ -39,7 +40,7 @@
 
 //MARK: #1
 - (void) CalculateTheMinimumAndMaximumNumberOfCharactersPerLine {
-		NSLog(@ "#1 - CalculateTheMinimumAndMaximumNumberOfCharactersPerLine");
+		NSLog(@ "\n #1 - CalculateTheMinimumAndMaximumNumberOfCharactersPerLine");
 
 		NSString *lineForTest = @"Дана строка, содержащая текст. Найти длину самого короткого слова и самого длинного слова.";
 
@@ -79,7 +80,7 @@
 //MARK: #2
 
 -(void) CalculateHowManyDifferentSymbolsOccursOnLine {
-		NSLog(@ "#2 - CalculateHowManyDifferentSymbolsOccursOnLine");
+		NSLog(@ "\n #2 - CalculateHowManyDifferentSymbolsOccursOnLine");
 
 		NSString *lineForTest = @"Дана строка. Подсчитать, сколько различных символов встречается в ней. Вывести их на экран";
 
@@ -113,7 +114,7 @@
 //MARK: #3
 
 - (void) FindTheWordThatBeginsAndEndsWithTheSameLetter {
-		NSLog(@ "#3 - FindTheWordThatBeginsAndEndsWithTheSameLetter");
+		NSLog(@ "\n #3 - FindTheWordThatBeginsAndEndsWithTheSameLetter");
 
 		NSString *lineForTest = @"Дана строкас. Найти в ней те слова, которые начинаются и оканчиваются одной и той же буквой.";
 
@@ -167,9 +168,9 @@
 //MARK: #4
 
 - (void) FindTheAmountOfAvailableNumbersInTheText {
-		NSLog(@ "#4 - FindTheAmountOfAvailableNumbersInTheText");
+		NSLog(@ "\n #4 - FindTheAmountOfAvailableNumbersInTheText");
 
-		NSString *lineForTest = @"Дан1 текст23. 32 Найти сумму имею456щихся в0 нем ц5ифр.";
+		NSString *lineForTest = @"Дан1 текст23. 32 Найти сумму имею456щихся в0.34 нем ц5ифр.";
 		NSString *dotSymbol = @".";
 
 		NSMutableString *strippedString = [NSMutableString new];
@@ -225,6 +226,27 @@
 
 }
 
+//MARK: #5
+
+- (void) CheckWhetherItIsPossibleToReadTheSameWordInTwoDirections {
+		NSLog(@ "\n #5 - CheckWhetherItIsPossibleToReadTheSameWordInTwoDirections");
+		//Проверьте, является ли слово палиндромом (одинаково читается во всех направлениях)
+
+		NSString *lineForTest = @"Доввод";
+
+		//reverse string
+		NSString *reverString = @"";
+		for (int i = (int)[lineForTest length]; i > 0; i--) {
+				unichar c = [lineForTest characterAtIndex: i-1];
+				reverString = [reverString stringByAppendingFormat:@"%C", c];
+		}
+
+		BOOL stringIsEqualToReverse = [[lineForTest lowercaseString] isEqualToString: [reverString lowercaseString]];
+
+		//Output the results of calculations
+		NSLog(@ "Resulst of expresssion '%@' %@ a palindrome", lineForTest, stringIsEqualToReverse ? @"is" : @"isn't");
+}
+
 
 @end
 
@@ -248,6 +270,9 @@ int main(int argc, const char * argv[]) {
 				
 				//#4
 				[sampleClass FindTheAmountOfAvailableNumbersInTheText];
+
+				//#5
+				[sampleClass CheckWhetherItIsPossibleToReadTheSameWordInTwoDirections];
 		}
 		
 		return 0;
