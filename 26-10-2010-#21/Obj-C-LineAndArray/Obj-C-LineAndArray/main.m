@@ -14,25 +14,36 @@
 //1
 - (void) CalculateTheMinimumAndMaximumNumberOfCharactersPerLine;
 - (void) CalculateHowManyDifferentSymbolsOccursOnLine;
+- (void) FindTheWordThatBeginsAndEndsWithTheSameLetter;
 
++ (NSString *) RemoveSpecialSymbolsInTheLine: (NSString *)line;
 @end
 
 @implementation SampleLineClass
 
 //MARK: - Lines
+
++ (NSString *) RemoveSpecialSymbolsInTheLine: (NSString *)line {
+		//remove special symbols
+		NSArray *specSymb = [NSArray arrayWithObjects:@".", @";", @":", @",", nil];
+		int idx = 0;
+		while (idx < [specSymb count]) {
+				line = [line stringByReplacingOccurrencesOfString: specSymb[idx] withString:@""];
+				idx++;
+		}
+
+		return line;
+}
+
+
 //MARK: #1
 - (void) CalculateTheMinimumAndMaximumNumberOfCharactersPerLine {
 		NSLog(@ "#1 - CalculateTheMinimumAndMaximumNumberOfCharactersPerLine");
 
 		NSString *lineForTest = @"Дана строка, содержащая текст. Найти длину самого короткого слова и самого длинного слова.";
 
-		//remove special symbols
-		NSArray *specSymb = [NSArray arrayWithObjects:@".", @";", @":", @",", nil];
-		int idx = 0;
-		while (idx < [specSymb count]) {
-				lineForTest = [lineForTest stringByReplacingOccurrencesOfString: specSymb[idx] withString:@""];
-				idx++;
-		}
+
+		lineForTest = [SampleLineClass RemoveSpecialSymbolsInTheLine: lineForTest];
 
 		//1 Break the line by words
 		NSMutableArray *parts = [NSMutableArray arrayWithArray:
@@ -67,12 +78,10 @@
 
 //MARK: #2
 
-
-
 -(void) CalculateHowManyDifferentSymbolsOccursOnLine {
 		NSLog(@ "#2 - CalculateHowManyDifferentSymbolsOccursOnLine");
 
-		NSString *lineForTest = @"ДДана строка. Подсчитать, сколько различных символов встречается в ней. Вывести их на экран";
+		NSString *lineForTest = @"Дана строка. Подсчитать, сколько различных символов встречается в ней. Вывести их на экран";
 
 		NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
 
@@ -101,6 +110,61 @@
 
 }
 
+//MARK: #3
+
+- (void) FindTheWordThatBeginsAndEndsWithTheSameLetter {
+		NSLog(@ "#3 - FindTheWordThatBeginsAndEndsWithTheSameLetter");
+
+		NSString *lineForTest = @"Дана строкас. Найти в ней те слова, которые начинаются и оканчиваются одной и той же буквой.";
+
+		lineForTest = [SampleLineClass RemoveSpecialSymbolsInTheLine: lineForTest];
+
+		//1 Break the line by words
+		NSMutableArray *parts = [NSMutableArray arrayWithArray:
+														 [lineForTest componentsSeparatedByCharactersInSet:
+															[NSCharacterSet  whitespaceCharacterSet]]];
+
+		[parts removeObjectIdenticalTo:@""];
+
+		int ind = 0;
+		NSString *res;
+		NSString *firstLetter;
+		NSString *lastLetter;
+
+		NSMutableArray* theSameLetterWords = [NSMutableArray new];
+
+		for (ind; ind < parts.count; ind++) {
+				res = [parts objectAtIndex: ind];
+
+				int countRes = (int)[res length];
+				if (countRes > 0) {
+						firstLetter = [res substringToIndex: 1];
+						lastLetter = [res substringFromIndex: countRes-1];
+
+						if ([firstLetter caseInsensitiveCompare:lastLetter] == NSOrderedSame) {
+								//strings are same
+								NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[cd] %@", res];
+								NSArray *results = [theSameLetterWords filteredArrayUsingPredicate:predicate];
+
+								if ([results count] == 0) {
+										[theSameLetterWords addObject:res];
+								}
+						}
+				}
+		}
+
+		//Output the results of calculations
+
+		NSString * strOutPut = @"";
+		for(id element in theSameLetterWords) {
+				strOutPut = [strOutPut stringByAppendingFormat: @"%@'%@'" ,
+										 ([strOutPut length] > 0 ? @", ": @" "),
+										 [element description]];
+		}
+		NSLog(@ "Words that begins and ends with the same letter:  %@", strOutPut);
+
+}
+
 @end
 
 int main(int argc, const char * argv[]) {
@@ -113,6 +177,9 @@ int main(int argc, const char * argv[]) {
 
 			//#2
 			[sampleClass CalculateHowManyDifferentSymbolsOccursOnLine];
+
+			//#3
+			[sampleClass FindTheWordThatBeginsAndEndsWithTheSameLetter];
 
 	}
 
