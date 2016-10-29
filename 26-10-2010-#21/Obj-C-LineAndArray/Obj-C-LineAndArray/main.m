@@ -10,7 +10,6 @@
 
 @interface SampleLineClass: NSObject
 
-//- (NSNumber *)multiplyA:(NSNumber *)a withB:(NSNumber *)b;
 //1 - Lines
 - (void) calculateTheMinimumAndMaximumNumberOfCharactersPerLine;
 - (void) calculateHowManyDifferentSymbolsOccursOnLine;
@@ -20,29 +19,18 @@
 
 //2 Arrays
 - (void) countTheNumberOfPositiveNegativeZeroElementsInTheArray;
-+ (NSArray*) getFilteredArrayWithPredicate: (NSString*)strPredicate arrayForWork:(NSArray*)arrayWork;
-+ (NSString*) formatingStr: (NSString*)str arrayForWork:(NSArray*)arrayWork;
+- (void) swapTheLargestAndSmallestElementsInTheArray;
 
 // helper
 + (NSString *) removeSpecialSymbolsInTheLine: (NSString *)line;
++ (NSArray*) getFilteredArrayWithPredicate: (NSString*)strPredicate arrayForWork:(NSArray*)arrayWork;
++ (NSString*) formatingStr: (NSString*)str arrayForWork:(NSArray*)arrayWork;
 @end
+
 
 @implementation SampleLineClass
 
 //MARK: - Lines
-
-+ (NSString *) removeSpecialSymbolsInTheLine: (NSString *)line {
-		//remove special symbols
-		NSArray *specSymb = [NSArray arrayWithObjects:@".", @";", @":", @",", nil];
-		int idx = 0;
-		while (idx < [specSymb count]) {
-				line = [line stringByReplacingOccurrencesOfString: specSymb[idx] withString:@""];
-				idx++;
-		}
-
-		return line;
-}
-
 
 //MARK: #1 - lines
 - (void) calculateTheMinimumAndMaximumNumberOfCharactersPerLine {
@@ -283,9 +271,56 @@
 		NSLog(@ "Resulst of expresssion. Current array has: '%@'", strCalcValue);
 }
 
+//MARK: #2 - arrays
+
+- (void) swapTheLargestAndSmallestElementsInTheArray {
+		NSLog(@ "\n #2 - arrays - SwapTheLargestAndSmallestElementsInTheArray");
+		//		Даны действительные числа а1, а2,..., аn.
+		//		Поменять местами наибольший и наименьший элементы.
+
+		NSString *strOutput = @"";
+		NSMutableArray *arrayOfNumbers = [NSMutableArray arrayWithObjects: @1, @2, @33, @-2, @-5, @0, nil];
+
+		if ([arrayOfNumbers count] >= 2) {
+				NSArray *arraySorted = [arrayOfNumbers sortedArrayUsingSelector: @selector(compare:)];
+
+				NSNumber *maxValueInArray = arraySorted[[arraySorted count]-1];
+				NSNumber *minValueInArray = arraySorted[0];
+
+				int indMax = (int)[arrayOfNumbers indexOfObject: maxValueInArray];
+				int indMin = (int)[arrayOfNumbers indexOfObject: minValueInArray];
+
+				//swapping...
+				arrayOfNumbers[indMax] = minValueInArray;
+				arrayOfNumbers[indMin] = maxValueInArray;
+
+				strOutput = [strOutput stringByAppendingFormat: @"Swapping the largest and smallest elements were successful! \n Elements '%@'(ind. = '%d') & '%@'(ind. = '%d') were swapped", minValueInArray, indMin, maxValueInArray, indMax];
+
+		} else {
+				strOutput = [strOutput stringByAppendingString: @"Input array must have more then two elements for swapping!"];
+		}
+
+		//Output the results of calculations
+		NSLog(@ "%@", strOutput);
+}
+
+
+//MARK: - helper
+
++ (NSString *) removeSpecialSymbolsInTheLine: (NSString *)line {
+		//remove special symbols
+		NSArray *specSymb = [NSArray arrayWithObjects:@".", @";", @":", @",", nil];
+		int idx = 0;
+		while (idx < [specSymb count]) {
+				line = [line stringByReplacingOccurrencesOfString: specSymb[idx] withString:@""];
+				idx++;
+		}
+
+		return line;
+}
 
 + (NSArray*) getFilteredArrayWithPredicate: (NSString*)strPredicate
-													arrayForWork:(NSArray*)arrayWork {
+															arrayForWork:(NSArray*)arrayWork {
 
 		static NSArray *arrayForReturn;
 
@@ -306,8 +341,8 @@
 		return strCalcValue;
 }
 
-@end
 
+@end
 
 
 //MARK: - init
@@ -317,6 +352,7 @@ int main(int argc, const char * argv[]) {
 				// insert code here...
 				SampleLineClass *sampleClass = [SampleLineClass new];
 
+				//#
 				//#1 - lines
 				[sampleClass calculateTheMinimumAndMaximumNumberOfCharactersPerLine];
 
@@ -328,14 +364,17 @@ int main(int argc, const char * argv[]) {
 
 				//#4 - lines
 				[sampleClass findTheAmountOfAvailableNumbersInTheText];
-				
+
 				//#5 - lines
 				[sampleClass checkWhetherItIsPossibleToReadTheSameWordInTwoDirections];
 
-
-
+				//#
 				//#1 - arrays
 				[sampleClass countTheNumberOfPositiveNegativeZeroElementsInTheArray];
+				
+				//#2
+				[sampleClass swapTheLargestAndSmallestElementsInTheArray];
+				
 		}
 		
 		return 0;
