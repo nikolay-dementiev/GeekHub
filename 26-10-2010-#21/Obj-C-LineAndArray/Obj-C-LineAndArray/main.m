@@ -11,21 +11,27 @@
 @interface SampleLineClass: NSObject
 
 //- (NSNumber *)multiplyA:(NSNumber *)a withB:(NSNumber *)b;
-//1
-- (void) CalculateTheMinimumAndMaximumNumberOfCharactersPerLine;
-- (void) CalculateHowManyDifferentSymbolsOccursOnLine;
-- (void) FindTheWordThatBeginsAndEndsWithTheSameLetter;
-- (void) FindTheAmountOfAvailableNumbersInTheText;
-- (void) CheckWhetherItIsPossibleToReadTheSameWordInTwoDirections;
+//1 - Lines
+- (void) calculateTheMinimumAndMaximumNumberOfCharactersPerLine;
+- (void) calculateHowManyDifferentSymbolsOccursOnLine;
+- (void) findTheWordThatBeginsAndEndsWithTheSameLetter;
+- (void) findTheAmountOfAvailableNumbersInTheText;
+- (void) checkWhetherItIsPossibleToReadTheSameWordInTwoDirections;
 
-+ (NSString *) RemoveSpecialSymbolsInTheLine: (NSString *)line;
+//2 Arrays
+- (void) countTheNumberOfPositiveNegativeZeroElementsInTheArray;
++ (NSArray*) getFilteredArrayWithPredicate: (NSString*)strPredicate arrayForWork:(NSArray*)arrayWork;
++ (NSString*) formatingStr: (NSString*)str arrayForWork:(NSArray*)arrayWork;
+
+// helper
++ (NSString *) removeSpecialSymbolsInTheLine: (NSString *)line;
 @end
 
 @implementation SampleLineClass
 
 //MARK: - Lines
 
-+ (NSString *) RemoveSpecialSymbolsInTheLine: (NSString *)line {
++ (NSString *) removeSpecialSymbolsInTheLine: (NSString *)line {
 		//remove special symbols
 		NSArray *specSymb = [NSArray arrayWithObjects:@".", @";", @":", @",", nil];
 		int idx = 0;
@@ -38,14 +44,14 @@
 }
 
 
-//MARK: #1
-- (void) CalculateTheMinimumAndMaximumNumberOfCharactersPerLine {
-		NSLog(@ "\n #1 - CalculateTheMinimumAndMaximumNumberOfCharactersPerLine");
+//MARK: #1 - lines
+- (void) calculateTheMinimumAndMaximumNumberOfCharactersPerLine {
+		NSLog(@ "\n #1 - lines - CalculateTheMinimumAndMaximumNumberOfCharactersPerLine");
 
 		NSString *lineForTest = @"Дана строка, содержащая текст. Найти длину самого короткого слова и самого длинного слова.";
 
 
-		lineForTest = [SampleLineClass RemoveSpecialSymbolsInTheLine: lineForTest];
+		lineForTest = [SampleLineClass removeSpecialSymbolsInTheLine: lineForTest];
 
 		//1 Break the line by words
 		NSMutableArray *parts = [NSMutableArray arrayWithArray:
@@ -77,10 +83,10 @@
 		NSLog(@"max. length = '%d'; min. length = '%d'.", maxCount, minCount);
 }
 
-//MARK: #2
+//MARK: #2 - lines
 
--(void) CalculateHowManyDifferentSymbolsOccursOnLine {
-		NSLog(@ "\n #2 - CalculateHowManyDifferentSymbolsOccursOnLine");
+-(void) calculateHowManyDifferentSymbolsOccursOnLine {
+		NSLog(@ "\n #2 - lines - CalculateHowManyDifferentSymbolsOccursOnLine");
 
 		NSString *lineForTest = @"Дана строка. Подсчитать, сколько различных символов встречается в ней. Вывести их на экран";
 
@@ -111,14 +117,14 @@
 
 }
 
-//MARK: #3
+//MARK: #3 - lines
 
-- (void) FindTheWordThatBeginsAndEndsWithTheSameLetter {
-		NSLog(@ "\n #3 - FindTheWordThatBeginsAndEndsWithTheSameLetter");
+- (void) findTheWordThatBeginsAndEndsWithTheSameLetter {
+		NSLog(@ "\n #3 - lines - FindTheWordThatBeginsAndEndsWithTheSameLetter");
 
 		NSString *lineForTest = @"Дана строкас. Найти в ней те слова, которые начинаются и оканчиваются одной и той же буквой.";
 
-		lineForTest = [SampleLineClass RemoveSpecialSymbolsInTheLine: lineForTest];
+		lineForTest = [SampleLineClass removeSpecialSymbolsInTheLine: lineForTest];
 
 		//1 Break the line by words
 		NSMutableArray *parts = [NSMutableArray arrayWithArray:
@@ -165,10 +171,10 @@
 		NSLog(@ "Words that begins and ends with the same letter:  %@", strOutPut);
 }
 
-//MARK: #4
+//MARK: #4 - lines
 
-- (void) FindTheAmountOfAvailableNumbersInTheText {
-		NSLog(@ "\n #4 - FindTheAmountOfAvailableNumbersInTheText");
+- (void) findTheAmountOfAvailableNumbersInTheText {
+		NSLog(@ "\n #4 - lines - FindTheAmountOfAvailableNumbersInTheText");
 
 		NSString *lineForTest = @"Дан1 текст23. 32 Найти сумму имею456щихся в0.34 нем ц5ифр.";
 		NSString *dotSymbol = @".";
@@ -226,10 +232,10 @@
 
 }
 
-//MARK: #5
+//MARK: #5 - lines
 
-- (void) CheckWhetherItIsPossibleToReadTheSameWordInTwoDirections {
-		NSLog(@ "\n #5 - CheckWhetherItIsPossibleToReadTheSameWordInTwoDirections");
+- (void) checkWhetherItIsPossibleToReadTheSameWordInTwoDirections {
+		NSLog(@ "\n #5 - lines - CheckWhetherItIsPossibleToReadTheSameWordInTwoDirections");
 		//Проверьте, является ли слово палиндромом (одинаково читается во всех направлениях)
 
 		NSString *lineForTest = @"Доввод";
@@ -248,6 +254,58 @@
 }
 
 
+//MARK: - Arrays
+
+//MARK: #1 - arrays
+
+- (void) countTheNumberOfPositiveNegativeZeroElementsInTheArray {
+		NSLog(@ "\n #1 - arrays - CountTheNumberOfPositiveNegativeZeroElementsInTheArray");
+		//Дан массив действительных чисел, размерность которого N.
+		//Подсчитать, сколько в нем отрицательных, положительных и нулевых элементов.
+
+		NSArray *arrayOfNumbers = @[@1, @2, @33, @-2, @-5, @0];
+		NSArray *arrayOfNumbersTemp;
+		NSString *strCalcValue = @"";
+
+		//1 - arrayOfLessThenZero
+		arrayOfNumbersTemp = [SampleLineClass getFilteredArrayWithPredicate:@"SELF < %f" arrayForWork:arrayOfNumbers];
+		strCalcValue = [strCalcValue stringByAppendingString: [SampleLineClass formatingStr:@"Less Then Zero '%@' elment/s." arrayForWork:arrayOfNumbersTemp]];
+
+		//2 - arrayOfMoreThenZero
+		arrayOfNumbersTemp = [SampleLineClass getFilteredArrayWithPredicate:@"SELF > %f" arrayForWork:arrayOfNumbers];
+		strCalcValue = [strCalcValue stringByAppendingString: [SampleLineClass formatingStr:@"; More Then Zero '%@' elm." arrayForWork:arrayOfNumbersTemp]];
+
+		//3 - arrayOfEquelToZero
+		arrayOfNumbersTemp = [SampleLineClass getFilteredArrayWithPredicate:@"SELF = %f" arrayForWork:arrayOfNumbers];
+		strCalcValue = [strCalcValue stringByAppendingString: [SampleLineClass formatingStr:@"; Equel To Zero '%@' elm." arrayForWork:arrayOfNumbersTemp]];
+
+		//Output the results of calculations
+		NSLog(@ "Resulst of expresssion. Current array has: '%@'", strCalcValue);
+}
+
+
++ (NSArray*) getFilteredArrayWithPredicate: (NSString*)strPredicate
+													arrayForWork:(NSArray*)arrayWork {
+
+		static NSArray *arrayForReturn;
+
+		NSPredicate *predicate = [NSPredicate predicateWithFormat:strPredicate, 0];
+		NSArray* filteredarr = [NSMutableArray arrayWithArray:[arrayWork filteredArrayUsingPredicate:predicate]];
+
+		arrayForReturn = filteredarr;
+
+		return arrayForReturn;
+}
+
++ (NSString*) formatingStr: (NSString*)str
+							arrayForWork:(NSArray*)arrayWork {
+
+		NSString *countOfElements = [NSString stringWithFormat:@"%lu",(unsigned long)[arrayWork count]];
+		NSString *strCalcValue = [NSString stringWithFormat: str, countOfElements];
+
+		return strCalcValue;
+}
+
 @end
 
 
@@ -259,20 +317,25 @@ int main(int argc, const char * argv[]) {
 				// insert code here...
 				SampleLineClass *sampleClass = [SampleLineClass new];
 
-				//#1
-				[sampleClass CalculateTheMinimumAndMaximumNumberOfCharactersPerLine];
+				//#1 - lines
+				[sampleClass calculateTheMinimumAndMaximumNumberOfCharactersPerLine];
 
-				//#2
-				[sampleClass CalculateHowManyDifferentSymbolsOccursOnLine];
+				//#2 - lines
+				[sampleClass calculateHowManyDifferentSymbolsOccursOnLine];
 
-				//#3
-				[sampleClass FindTheWordThatBeginsAndEndsWithTheSameLetter];
+				//#3 - lines
+				[sampleClass findTheWordThatBeginsAndEndsWithTheSameLetter];
+
+				//#4 - lines
+				[sampleClass findTheAmountOfAvailableNumbersInTheText];
 				
-				//#4
-				[sampleClass FindTheAmountOfAvailableNumbersInTheText];
+				//#5 - lines
+				[sampleClass checkWhetherItIsPossibleToReadTheSameWordInTwoDirections];
 
-				//#5
-				[sampleClass CheckWhetherItIsPossibleToReadTheSameWordInTwoDirections];
+
+
+				//#1 - arrays
+				[sampleClass countTheNumberOfPositiveNegativeZeroElementsInTheArray];
 		}
 		
 		return 0;
