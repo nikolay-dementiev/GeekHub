@@ -16,6 +16,7 @@
 - (void) findTheWordThatBeginsAndEndsWithTheSameLetter;
 - (void) findTheAmountOfAvailableNumbersInTheText;
 - (void) checkWhetherItIsPossibleToReadTheSameWordInTwoDirections;
+- (void) implementTheCodeSandwich;
 
 //2 Arrays
 - (void) countTheNumberOfPositiveNegativeZeroElementsInTheArray;
@@ -242,6 +243,30 @@
 		NSLog(@ "Resulst of expresssion '%@' %@ a palindrome", lineForTest, stringIsEqualToReverse ? @"is" : @"isn't");
 }
 
+//MARK: #6 - lines
+
+- (void) implementTheCodeSandwich {
+
+		NSLog(@ "\n #6 - lines - ImplementTheCodeSandwich");
+		/*Шифр "Сэндвич".  Дан текст. Осуществить шифрование и дешифрование
+		следующим образом: текст разбивается на две одинаковых по количеству
+		символов части и результатом шифрования является строка, в которой
+		символы из первой части чередуются символами из второй части.*/
+
+		
+}
+
++ (NSString* ) codeSandwichEncodeAString: (NSString*)inputString {
+		NSString *strintForReturn;
+
+		return strintForReturn;
+}
+
++ (NSString* ) codeSandwichDecodeAString: (NSString*)inputString keyForEncode:(NSString*)key {
+		NSString *strintForReturn;
+
+		return strintForReturn;
+}
 
 //MARK: - Arrays
 
@@ -318,7 +343,7 @@
 		NSArray *sortedArray = [SampleLineClass longestIncreasingSubsequenceArray:arrayOfNumbers];
 
 		//Output the results of calculations
-		NSString * strOutPut = @"";
+		NSString *strOutPut = @"";
 		for(int indx = 0; indx < [sortedArray count]; indx++) {
 				strOutPut = [strOutPut stringByAppendingFormat: @"%@'%d'" ,
 										 ([strOutPut length] > 0 ? @", ": @" "), [sortedArray[indx] intValue]];
@@ -359,7 +384,7 @@
 
 				} else {
 
-				int indx = [SampleLineClass ceilIndex: tailTable l:-1 r:len-1 key:(int)A[i]];
+						int indx = [SampleLineClass ceilIndex: tailTable l:-1 r:len-1 key:(int)A[i]];
 						tailTable [indx] = A[i];
 				}
 		}
@@ -387,8 +412,7 @@
 		static NSArray *arrayForReturn;
 
 		NSPredicate *predicate = [NSPredicate predicateWithFormat:strPredicate, 0];
-		NSArray* filteredarr = [NSMutableArray arrayWithArray:[arrayWork filteredArrayUsingPredicate:predicate]];
-
+		NSArray *filteredarr = [NSMutableArray arrayWithArray:[arrayWork filteredArrayUsingPredicate:predicate]];
 		arrayForReturn = filteredarr;
 
 		return arrayForReturn;
@@ -430,14 +454,17 @@ int main(int argc, const char * argv[]) {
 				//#5 - lines
 				[sampleClass checkWhetherItIsPossibleToReadTheSameWordInTwoDirections];
 
+				//#6 - lines
+				[sampleClass implementTheCodeSandwich];
+
 				//#arrays
 				//#1 - arrays
 				[sampleClass countTheNumberOfPositiveNegativeZeroElementsInTheArray];
 				
 				//#2 - arrays
 				[sampleClass swapTheLargestAndSmallestElementsInTheArray];
-
-				//#3 - array
+				
+				//#3 - arrays
 				[sampleClass increasingSequenceOfMaximalLengthInArray];
 				
 		}
