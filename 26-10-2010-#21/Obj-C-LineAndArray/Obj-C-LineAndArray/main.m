@@ -20,6 +20,7 @@
 //2 Arrays
 - (void) countTheNumberOfPositiveNegativeZeroElementsInTheArray;
 - (void) swapTheLargestAndSmallestElementsInTheArray;
+- (void) increasingSequenceOfMaximalLengthInArray;
 
 // helper
 + (NSString *) removeSpecialSymbolsInTheLine: (NSString *)line;
@@ -304,6 +305,67 @@
 		NSLog(@ "%@", strOutput);
 }
 
+//MARK: #3 - arrays
+
+- (void) increasingSequenceOfMaximalLengthInArray {
+		NSLog(@ "\n #3 - arrays - IncreasingSequenceOfMaximalLengthInArray");
+		//Удалить в заданном массиве элементы так,
+		//чтобы оставшиеся образовывали возрастающую последовательность наибольшей длины
+
+		NSArray *arrayOfNumbers = [NSArray arrayWithObjects: @11, @2, @32, @33, @-5, @-3, @-1, @0, @10, nil];
+
+		//used this: https://en.wikipedia.org/wiki/Longest_increasing_subsequence#Efficient_algorithms
+		NSArray *sortedArray = [SampleLineClass longestIncreasingSubsequenceArray:arrayOfNumbers];
+
+		//Output the results of calculations
+		NSString * strOutPut = @"";
+		for(int indx = 0; indx < [sortedArray count]; indx++) {
+				strOutPut = [strOutPut stringByAppendingFormat: @"%@'%d'" ,
+										 ([strOutPut length] > 0 ? @", ": @" "), [sortedArray[indx] intValue]];
+		}
+
+		NSLog(@ "Maximal length of array's sequence has %d elements: %@", (int)[sortedArray count], strOutPut);
+}
+
++ (int) ceilIndex: (NSMutableArray*)A l:(int)l r:(int)r key:(int)key {
+		while (r - l > 1) {
+				int m = l + (r - l)/2;
+				if ((int)A[m]>=key)
+						r = m;
+				else
+						l = m;
+		}
+		return r;
+}
+
++ (NSArray*) longestIncreasingSubsequenceArray: (NSArray*)A {
+		// Add boundary case, when array size is one
+
+		int size = (int)[A count];
+		NSMutableArray *tailTable = [NSMutableArray new];
+		int len; // always points empty slot
+
+		tailTable[0] = A[0];
+		len = 1;
+		for (int i = 1; i < size; i++)
+		{
+				if ((int)A[i] < (int)tailTable[0]) {
+						// new smallest value
+						tailTable[0] = A[i];
+
+				} else if ((int)A[i] > (int)tailTable[len-1]) {
+						// A[i] wants to extend largest subsequence
+						tailTable[len++] = A[i];
+
+				} else {
+
+				int indx = [SampleLineClass ceilIndex: tailTable l:-1 r:len-1 key:(int)A[i]];
+						tailTable [indx] = A[i];
+				}
+		}
+
+		return tailTable;
+}
 
 //MARK: - helper
 
@@ -352,7 +414,7 @@ int main(int argc, const char * argv[]) {
 				// insert code here...
 				SampleLineClass *sampleClass = [SampleLineClass new];
 
-				//#
+				//#lines
 				//#1 - lines
 				[sampleClass calculateTheMinimumAndMaximumNumberOfCharactersPerLine];
 
@@ -368,12 +430,15 @@ int main(int argc, const char * argv[]) {
 				//#5 - lines
 				[sampleClass checkWhetherItIsPossibleToReadTheSameWordInTwoDirections];
 
-				//#
+				//#arrays
 				//#1 - arrays
 				[sampleClass countTheNumberOfPositiveNegativeZeroElementsInTheArray];
 				
-				//#2
+				//#2 - arrays
 				[sampleClass swapTheLargestAndSmallestElementsInTheArray];
+
+				//#3 - array
+				[sampleClass increasingSequenceOfMaximalLengthInArray];
 				
 		}
 		
