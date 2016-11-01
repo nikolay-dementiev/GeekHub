@@ -249,23 +249,86 @@
 
 		NSLog(@ "\n #6 - lines - ImplementTheCodeSandwich");
 		/*Шифр "Сэндвич".  Дан текст. Осуществить шифрование и дешифрование
-		следующим образом: текст разбивается на две одинаковых по количеству
-		символов части и результатом шифрования является строка, в которой
-		символы из первой части чередуются символами из второй части.*/
+		 следующим образом: текст разбивается на две одинаковых по количеству
+		 символов части и результатом шифрования является строка, в которой
+		 символы из первой части чередуются символами из второй части.*/
 
-		
+		NSString* stringForWork = @"следующим образом: текст разбивается на две одинаковых по количеству символов части и результатом шифрования является строка, в которой";
+
+		NSString *encodeStr = [SampleLineClass codeSandwichEncodeAString: &stringForWork];
+		NSString *decodedStr = [SampleLineClass codeSandwichDecodeAString: encodeStr];
+
+		//Output the results of calculations
+		NSLog(@ "Resulst: \n 1. original line = '%@'\n 2. encoded line = '%@'\n 3. decoded line = '%@' \n4. 'orig. line' is equel to 'decoded line' = %@"
+					, stringForWork
+					, encodeStr
+					, decodedStr
+					, ([stringForWork isEqualToString: decodedStr] ? @"YES, all work fine" : @"NO, there is some mistake"));
+
 }
 
-+ (NSString* ) codeSandwichEncodeAString: (NSString*)inputString {
-		NSString *strintForReturn;
 
-		return strintForReturn;
+
++ (NSString* ) codeSandwichEncodeAString: (NSString**)inputString {
+
+		NSUInteger breakPoint = [*inputString length]/2;
+
+		NSString *firstStr = [*inputString substringToIndex: breakPoint];
+		NSString *secondStr = [*inputString substringFromIndex: breakPoint];
+
+		NSMutableString *sandwichStr = [NSMutableString new];
+
+		int minLenth = (int)MIN((int)[firstStr length], (int)[secondStr length]);
+
+		for (int i=0; i< minLenth; i++) {
+				NSString *symbolstr1 = [NSString stringWithFormat: @"%C", [firstStr characterAtIndex: i]];
+				NSString *symbolStr2 = [NSString stringWithFormat: @"%C", [secondStr characterAtIndex: i]];
+
+				[sandwichStr appendFormat:@"%@%@",symbolstr1,symbolStr2];
+		}
+
+		if (([*inputString length]%(breakPoint*2)) != 0) {
+
+				[sandwichStr appendFormat:@"%@",[SampleLineClass getSpecialSymbol]];
+
+				//second string must have one more symbol then first
+				NSString *symbolStr2 = [NSString stringWithFormat: @"%C", [secondStr characterAtIndex: ([secondStr length]-1)]];
+				[sandwichStr appendFormat:@"%@",symbolStr2];
+		}
+
+		return sandwichStr;
 }
 
-+ (NSString* ) codeSandwichDecodeAString: (NSString*)inputString keyForEncode:(NSString*)key {
-		NSString *strintForReturn;
++ (NSString* ) getSpecialSymbol {
+		return @"$";
+}
 
-		return strintForReturn;
++ (NSString* ) codeSandwichDecodeAString: (NSString*)encodeStr {
+		NSString *stringForReturn;
+
+		NSMutableString *firstStr = [NSMutableString new];
+		NSMutableString *secondStr = [NSMutableString new];
+
+		NSString *specSymbol = [SampleLineClass getSpecialSymbol];
+		NSString *symbolstr;
+		for (int i=0; i < [encodeStr length]; i++) {
+
+				symbolstr = [encodeStr substringWithRange:NSMakeRange(i, 1)];
+
+				if (([symbolstr isEqualToString: specSymbol]) && (i == (((int)[encodeStr length])-2))) {
+						continue;
+				}
+
+				if (i%2 == 0) {
+						[firstStr appendFormat:@"%@", symbolstr];
+				} else {
+						[secondStr appendFormat:@"%@",symbolstr];
+				}
+		}
+
+		stringForReturn = [NSString stringWithFormat:@"%@%@", firstStr, secondStr];
+
+		return stringForReturn;
 }
 
 //MARK: - Arrays
