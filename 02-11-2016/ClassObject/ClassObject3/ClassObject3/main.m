@@ -7,22 +7,29 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Airplane.h"
+#import "Bomber.h"
 
-@interface Airplaine : NSObject
 
-{
-		NSString *mark;
-		NSString *model;
-		float maxSpeed;
-		float maxHeight;
+//MARK: - input point of programm
+@interface InputPoint : NSObject
+
+- (void) makeSomeWork;
+
+@end
+
+@implementation InputPoint
+
+- (void) makeSomeWork {
+		Airplane *airplane = [Airplane init];
+		[airplane cost];
+		[airplane information];
 }
 
-- (float)cost;
-- (NSString*)information;
 @end
 
 
-
+//MARK: - main
 int main(int argc, const char * argv[]) {
 	@autoreleasepool {
 	    // insert code here...
