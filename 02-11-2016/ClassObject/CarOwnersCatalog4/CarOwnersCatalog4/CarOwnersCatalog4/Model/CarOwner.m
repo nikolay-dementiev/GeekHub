@@ -1,5 +1,5 @@
 //
-//  Catalog.m
+//  CarOwner.m
 //  CarOwnersCatalog4
 //
 //  Created by Nikolay Dementiev on 04.11.16.
@@ -7,10 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Catalog.h"
+#import "CarOwner.h"
 
-@implementation Catalog
+@implementation CarOwner
 
+- (id) initWithData: (NSString*)tName {
 
+		name = tName;
+		return self;
+
+};
 
 @end

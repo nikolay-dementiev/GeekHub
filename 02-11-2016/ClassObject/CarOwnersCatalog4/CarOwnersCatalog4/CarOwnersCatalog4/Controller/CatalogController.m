@@ -1,5 +1,5 @@
 //
-//  OutputInformation.m
+//  CatalogController.m
 //  CarOwnersCatalog4
 //
 //  Created by Nikolay Dementiev on 04.11.16.
@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "OutputInformation.h"
+#import "CatalogController.h"
 
-@implementation OutputInformation
+@implementation CatalogController
 
-- (void) printInformation {
-
+- (void) testSomeDataInCatalog {
+		
 }
 
 @end

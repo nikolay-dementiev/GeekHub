@@ -13,6 +13,10 @@
 		NSString *number;
 }
 
+//@property(nonatomic, readwrite) NSString *number;
+
+- (id) initWithData: (NSString*)tNumber;
+
 @end
 
 

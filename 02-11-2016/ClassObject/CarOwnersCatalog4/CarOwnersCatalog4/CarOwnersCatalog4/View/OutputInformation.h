@@ -9,10 +9,10 @@
 #ifndef OutputInformation_h
 #define OutputInformation_h
 
-//MARK: - input point of programm
+//MARK: -
 @interface OutputInformation : NSObject
 
-- (void) printInformation;
+- (void) makePrintTestInformation;
 
 @end
 

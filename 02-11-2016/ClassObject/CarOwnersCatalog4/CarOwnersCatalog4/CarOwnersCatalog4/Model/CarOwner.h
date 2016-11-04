@@ -13,6 +13,11 @@
 		NSString *name;
 }
 
+//@property(nonatomic, readwrite) NSString *name;
+
+- (id) initWithData: (NSString*)tName;
+
+
 @end
 
 #endif /* CarOwner_h */

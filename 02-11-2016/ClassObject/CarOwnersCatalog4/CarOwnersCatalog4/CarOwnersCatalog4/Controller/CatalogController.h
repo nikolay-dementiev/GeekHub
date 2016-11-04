@@ -9,5 +9,11 @@
 #ifndef CatalogController_h
 #define CatalogController_h
 
+@interface CatalogController : NSObject
+
+- (void) testSomeDataInCatalog;
+
+@end
+
 
 #endif /* CatalogController_h */

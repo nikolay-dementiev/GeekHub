@@ -7,11 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "OutputInformation.h"
+
 
 int main(int argc, const char * argv[]) {
 	@autoreleasepool {
-	    // insert code here...
-	    NSLog(@"Hello, World!");
+
+			OutputInformation *instanseOutputTest = [OutputInformation new];
+			[instanseOutputTest makePrintTestInformation];
+
 	}
     return 0;
 }

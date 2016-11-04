@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		E7B9E79E1DCCAD3B008D4C58 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B9E79D1DCCAD3B008D4C58 /* main.m */; };
-		E7B9E7AB1DCCB045008D4C58 /* OutputInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B9E7AA1DCCB045008D4C58 /* OutputInformation.m */; };
-		E7B9E7AE1DCCB17B008D4C58 /* Catalog.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B9E7AD1DCCB17B008D4C58 /* Catalog.m */; };
-		E7B9E7B11DCCB1EF008D4C58 /* CatalogController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B9E7B01DCCB1EF008D4C58 /* CatalogController.m */; };
+		E7B9E7BE1DCCCBEE008D4C58 /* OutputInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B9E7B41DCCCBEE008D4C58 /* OutputInformation.m */; };
+		E7B9E7BF1DCCCBEE008D4C58 /* CatalogController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B9E7B71DCCCBEE008D4C58 /* CatalogController.m */; };
+		E7B9E7C01DCCCBEE008D4C58 /* CatalogList.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B9E7BC1DCCCBEE008D4C58 /* CatalogList.m */; };
+		E7B9E7C21DCCD1C8008D4C58 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B9E7C11DCCD1C8008D4C58 /* Car.m */; };
+		E7B9E7C41DCCD2AF008D4C58 /* CarOwner.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B9E7C31DCCD2AF008D4C58 /* CarOwner.m */; };
+		E7B9E7C81DCCE969008D4C58 /* CatalogRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B9E7C71DCCE969008D4C58 /* CatalogRecord.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,14 +31,19 @@
 /* Begin PBXFileReference section */
 		E7B9E79A1DCCAD3B008D4C58 /* CarOwnersCatalog4 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CarOwnersCatalog4; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7B9E79D1DCCAD3B008D4C58 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E7B9E7A51DCCAD9F008D4C58 /* Car.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
-		E7B9E7A61DCCAE4C008D4C58 /* CarOwner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarOwner.h; sourceTree = "<group>"; };
-		E7B9E7A91DCCAFE5008D4C58 /* OutputInformation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OutputInformation.h; sourceTree = "<group>"; };
-		E7B9E7AA1DCCB045008D4C58 /* OutputInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputInformation.m; sourceTree = "<group>"; };
-		E7B9E7AC1DCCB09E008D4C58 /* Catalog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Catalog.h; sourceTree = "<group>"; };
-		E7B9E7AD1DCCB17B008D4C58 /* Catalog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Catalog.m; sourceTree = "<group>"; };
-		E7B9E7AF1DCCB1E4008D4C58 /* CatalogController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatalogController.h; sourceTree = "<group>"; };
-		E7B9E7B01DCCB1EF008D4C58 /* CatalogController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatalogController.m; sourceTree = "<group>"; };
+		E7B9E7B31DCCCBEE008D4C58 /* OutputInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputInformation.h; sourceTree = "<group>"; };
+		E7B9E7B41DCCCBEE008D4C58 /* OutputInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputInformation.m; sourceTree = "<group>"; };
+		E7B9E7B61DCCCBEE008D4C58 /* CatalogController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatalogController.h; sourceTree = "<group>"; };
+		E7B9E7B71DCCCBEE008D4C58 /* CatalogController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatalogController.m; sourceTree = "<group>"; };
+		E7B9E7B91DCCCBEE008D4C58 /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
+		E7B9E7BA1DCCCBEE008D4C58 /* CarOwner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarOwner.h; sourceTree = "<group>"; };
+		E7B9E7BB1DCCCBEE008D4C58 /* CatalogList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatalogList.h; sourceTree = "<group>"; };
+		E7B9E7BC1DCCCBEE008D4C58 /* CatalogList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatalogList.m; sourceTree = "<group>"; };
+		E7B9E7C11DCCD1C8008D4C58 /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
+		E7B9E7C31DCCD2AF008D4C58 /* CarOwner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarOwner.m; sourceTree = "<group>"; };
+		E7B9E7C51DCCD3EE008D4C58 /* CatalogRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatalogRecord.h; sourceTree = "<group>"; };
+		E7B9E7C61DCCDF2A008D4C58 /* CatalogRecordHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatalogRecordHelper.h; sourceTree = "<group>"; };
+		E7B9E7C71DCCE969008D4C58 /* CatalogRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatalogRecord.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,41 +76,54 @@
 		E7B9E79C1DCCAD3B008D4C58 /* CarOwnersCatalog4 */ = {
 			isa = PBXGroup;
 			children = (
-				E7B9E7A41DCCAD7C008D4C58 /* Model */,
-				E7B9E7A81DCCAFA7008D4C58 /* View */,
-				E7B9E7A71DCCAF97008D4C58 /* Controller */,
 				E7B9E79D1DCCAD3B008D4C58 /* main.m */,
+				E7B9E7B81DCCCBEE008D4C58 /* Model */,
+				E7B9E7B21DCCCBEE008D4C58 /* View */,
+				E7B9E7B51DCCCBEE008D4C58 /* Controller */,
+				E7B9E7BD1DCCCBEE008D4C58 /* Helper */,
 			);
 			path = CarOwnersCatalog4;
 			sourceTree = "<group>";
 		};
-		E7B9E7A41DCCAD7C008D4C58 /* Model */ = {
+		E7B9E7B21DCCCBEE008D4C58 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E7B9E7A51DCCAD9F008D4C58 /* Car.h */,
-				E7B9E7A61DCCAE4C008D4C58 /* CarOwner.h */,
-				E7B9E7AC1DCCB09E008D4C58 /* Catalog.h */,
-				E7B9E7AD1DCCB17B008D4C58 /* Catalog.m */,
+				E7B9E7B31DCCCBEE008D4C58 /* OutputInformation.h */,
+				E7B9E7B41DCCCBEE008D4C58 /* OutputInformation.m */,
 			);
-			name = Model;
+			path = View;
 			sourceTree = "<group>";
 		};
-		E7B9E7A71DCCAF97008D4C58 /* Controller */ = {
+		E7B9E7B51DCCCBEE008D4C58 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E7B9E7AF1DCCB1E4008D4C58 /* CatalogController.h */,
-				E7B9E7B01DCCB1EF008D4C58 /* CatalogController.m */,
+				E7B9E7B61DCCCBEE008D4C58 /* CatalogController.h */,
+				E7B9E7B71DCCCBEE008D4C58 /* CatalogController.m */,
 			);
-			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
-		E7B9E7A81DCCAFA7008D4C58 /* View */ = {
+		E7B9E7B81DCCCBEE008D4C58 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E7B9E7A91DCCAFE5008D4C58 /* OutputInformation.h */,
-				E7B9E7AA1DCCB045008D4C58 /* OutputInformation.m */,
+				E7B9E7B91DCCCBEE008D4C58 /* Car.h */,
+				E7B9E7C11DCCD1C8008D4C58 /* Car.m */,
+				E7B9E7BA1DCCCBEE008D4C58 /* CarOwner.h */,
+				E7B9E7C31DCCD2AF008D4C58 /* CarOwner.m */,
+				E7B9E7BB1DCCCBEE008D4C58 /* CatalogList.h */,
+				E7B9E7BC1DCCCBEE008D4C58 /* CatalogList.m */,
+				E7B9E7C51DCCD3EE008D4C58 /* CatalogRecord.h */,
+				E7B9E7C71DCCE969008D4C58 /* CatalogRecord.m */,
 			);
-			name = View;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E7B9E7BD1DCCCBEE008D4C58 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				E7B9E7C61DCCDF2A008D4C58 /* CatalogRecordHelper.h */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,10 +183,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7B9E7C41DCCD2AF008D4C58 /* CarOwner.m in Sources */,
+				E7B9E7C21DCCD1C8008D4C58 /* Car.m in Sources */,
+				E7B9E7BF1DCCCBEE008D4C58 /* CatalogController.m in Sources */,
 				E7B9E79E1DCCAD3B008D4C58 /* main.m in Sources */,
-				E7B9E7B11DCCB1EF008D4C58 /* CatalogController.m in Sources */,
-				E7B9E7AB1DCCB045008D4C58 /* OutputInformation.m in Sources */,
-				E7B9E7AE1DCCB17B008D4C58 /* Catalog.m in Sources */,
+				E7B9E7BE1DCCCBEE008D4C58 /* OutputInformation.m in Sources */,
+				E7B9E7C01DCCCBEE008D4C58 /* CatalogList.m in Sources */,
+				E7B9E7C81DCCE969008D4C58 /* CatalogRecord.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

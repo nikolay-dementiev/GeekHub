@@ -1,5 +1,5 @@
 //
-//  CatalogController.m
+//  Car.m
 //  CarOwnersCatalog4
 //
 //  Created by Nikolay Dementiev on 04.11.16.
@@ -7,3 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Car.h"
+
+@implementation Car
+
+- (id) initWithData: (NSString*)tNumber {
+
+		number = tNumber;
+
+		return self;
+};
+
+@end
