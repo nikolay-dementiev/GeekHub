@@ -8,10 +8,10 @@
 
 #ifndef Bomber_h
 #define Bomber_h
+#import "Airplane.h"
 
-@interface Bomber : Airplane
+@interface Bomber : Airplane {
 
-{
 }
 
 - (float)cost;

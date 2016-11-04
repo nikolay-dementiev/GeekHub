@@ -9,17 +9,27 @@
 #ifndef Airplaine_h
 #define Airplaine_h
 
-@interface Airplane : NSObject
+@protocol AirplaneProtocolDelegate
+@required
+// list of required methods
+- (float)cost;
+@optional
+// list of optional methods
+@end
 
-{
+
+@interface Airplane : NSObject <AirplaneProtocolDelegate> {
 		NSString *mark;
 		NSString *model;
 		float maxSpeed;
 		float maxHeight;
 }
 
-- (float)cost;
-- (NSString*)information;
+- (NSString*) information;
+- (id) initWithData: (NSString*)tMark
+					withModel:(NSString*)tModel
+			 withMaxSpeed:(float)tMaxSpeed
+			withMaxHeight:(float)tMaxHeight;
 
 @end
 

@@ -1,15 +1,16 @@
 //
-//  Bomber.m
+//  Fighter.m
 //  ClassObject3
 //
-//  Created by Nikolay Dementiev on 02.11.16.
+//  Created by Nikolay Dementiev on 04.11.16.
 //  Copyright © 2016 mc373. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "Bomber.h"
+#import "Fighter.h"
 
-@implementation Bomber
+
+@implementation Fighter
 
 - (float) cost {
 

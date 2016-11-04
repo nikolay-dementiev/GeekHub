@@ -12,15 +12,34 @@
 
 @implementation Airplane
 
-- (float)cost {
+- (float) cost {
 
-		return 0.00;
+		//по формуле Максимальная скорость * 1000 + Максимальная высота * 100
+		return maxSpeed * 1000 + maxHeight * 100;
 }
 
-- (NSString*)information {
+- (NSString*) information {
 
-		return @"";
+		return [NSString stringWithFormat: @"Airplane mark = '%@', model = '%@', maxSpeed = '%0.2f', maxHeight = '%0.2f'", mark, model, maxSpeed, maxHeight];
 
+}
+
+- (id) init {
+
+		return self;
+}
+
+- (id) initWithData: (NSString*)tMark
+					withModel:(NSString*)tModel
+			 withMaxSpeed:(float)tMaxSpeed
+			withMaxHeight:(float)tMaxHeight {
+
+		mark = tMark;
+		model = tModel;
+		maxSpeed = tMaxSpeed;
+		maxHeight = tMaxHeight;
+
+		return self;
 }
 
 

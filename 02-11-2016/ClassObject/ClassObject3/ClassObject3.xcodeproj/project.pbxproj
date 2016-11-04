@@ -10,6 +10,7 @@
 		E743F0201DCA57E700AEE73E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E743F01F1DCA57E700AEE73E /* main.m */; };
 		E743F0291DCA5AA200AEE73E /* Airplane.m in Sources */ = {isa = PBXBuildFile; fileRef = E743F0281DCA5AA200AEE73E /* Airplane.m */; };
 		E743F02B1DCA5B4B00AEE73E /* Bomber.m in Sources */ = {isa = PBXBuildFile; fileRef = E743F02A1DCA5B4B00AEE73E /* Bomber.m */; };
+		E7B9E7901DCC992F008D4C58 /* Fighter.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B9E78F1DCC992F008D4C58 /* Fighter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		E743F0271DCA59B300AEE73E /* Bomber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bomber.h; sourceTree = "<group>"; };
 		E743F0281DCA5AA200AEE73E /* Airplane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Airplane.m; sourceTree = "<group>"; };
 		E743F02A1DCA5B4B00AEE73E /* Bomber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bomber.m; sourceTree = "<group>"; };
+		E7B9E78E1DCC9905008D4C58 /* Fighter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Fighter.h; sourceTree = "<group>"; };
+		E7B9E78F1DCC992F008D4C58 /* Fighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fighter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,8 @@
 				E743F0281DCA5AA200AEE73E /* Airplane.m */,
 				E743F0271DCA59B300AEE73E /* Bomber.h */,
 				E743F02A1DCA5B4B00AEE73E /* Bomber.m */,
+				E7B9E78E1DCC9905008D4C58 /* Fighter.h */,
+				E7B9E78F1DCC992F008D4C58 /* Fighter.m */,
 			);
 			path = ClassObject3;
 			sourceTree = "<group>";
@@ -130,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E743F0201DCA57E700AEE73E /* main.m in Sources */,
+				E7B9E7901DCC992F008D4C58 /* Fighter.m in Sources */,
 				E743F02B1DCA5B4B00AEE73E /* Bomber.m in Sources */,
 				E743F0291DCA5AA200AEE73E /* Airplane.m in Sources */,
 			);
@@ -258,6 +264,7 @@
 				E743F0251DCA57E700AEE73E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
