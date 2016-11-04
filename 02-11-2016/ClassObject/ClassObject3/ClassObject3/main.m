@@ -47,7 +47,7 @@
 		//output information
 		NSLog(@"Info: \n 1.'%@'; cost: '%0.2f'$", airplaneInformation, airplaneCost);
 		NSLog(@"Info: \n 2.'%@'; cost: '%0.2f'$", bomberInformation, bomberCost);
-		NSLog(@"Info: \n 3.'%@'; cost: '%0.2f'$", fighterInformation, fighterCost);
+		NSLog(@"Info: \n 3.'%@'; cost: '%0.2f'", fighterInformation, fighterCost);
 
 }
 
