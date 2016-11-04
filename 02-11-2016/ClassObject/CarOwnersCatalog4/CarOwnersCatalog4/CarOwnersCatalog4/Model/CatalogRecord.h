@@ -18,8 +18,6 @@
 }
 
 
-//@property(nonatomic, readwrite) struct CatalogData catalogData;
-
 - (CatalogRecord*) initWithData: (NSString*)carNumber
 							 withCarOwnerName:(NSString*)carOwnerName;
 

@@ -20,8 +20,8 @@
 + (id)sharedManager;
 
 - (void) addRecord: (CatalogRecord*)record withError:(NSError **)errorPtr;
-- (void) deteleRecord: (NSError **)errorPtr;
-- (void) editRecord: (NSError **)errorPtr;
+- (void) deteleRecord: (int)rowIndex withError:(NSError **)errorPtr;
+- (void) editRecord: (CatalogRecord*)record withError:(NSError **)errorPtr ;
 - (CarOwner*) findCarOwner: (NSString*)carNumber withError:(NSError **)errorPtr;
 - (void) printSortedCatalog:(NSError **)errorPtr;
 
