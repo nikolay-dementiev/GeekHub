@@ -18,4 +18,13 @@
 		return self;
 };
 
+- (NSString*) getCarNumber {
+
+		return number;
+};
+
+- (void) setCarNumber: (NSString*)newNumber {
+		number = newNumber;
+};
+
 @end

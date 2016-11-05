@@ -21,9 +21,16 @@
 
 - (void) addRecord: (CatalogRecord*)record withError:(NSError **)errorPtr;
 - (void) deteleRecord: (int)rowIndex withError:(NSError **)errorPtr;
-- (void) editRecord: (CatalogRecord*)record withError:(NSError **)errorPtr ;
+//- (void) editRecord: (CatalogRecord*)record withError:(NSError **)errorPtr;
+//- (void) editRecordWhithRowIndex: (int)rowIndex
+//									 withCarNumber:(NSString*)carNumber
+//											 withError:(NSError **)errorPtr;
+- (void) editRecordWithDictData: (NSDictionary*)dictData
+										 atRowIndex: (int)rowIndex
+											withError:(NSError **)errorPtr;
+
 - (CarOwner*) findCarOwner: (NSString*)carNumber withError:(NSError **)errorPtr;
-- (void) printSortedCatalog:(NSError **)errorPtr;
+- (NSArray*) getSortedCatalog:(NSError **)errorPtr;
 
 @end
 

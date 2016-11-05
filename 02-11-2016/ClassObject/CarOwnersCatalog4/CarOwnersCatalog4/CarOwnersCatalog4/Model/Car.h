@@ -16,6 +16,8 @@
 //@property(nonatomic, readwrite) NSString *number;
 
 - (id) initWithData: (NSString*)tNumber;
+- (NSString*) getCarNumber;
+- (void) setCarNumber: (NSString*)newNumber;
 
 @end
 

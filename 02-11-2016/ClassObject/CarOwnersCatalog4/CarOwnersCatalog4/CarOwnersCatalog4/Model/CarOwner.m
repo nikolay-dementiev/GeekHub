@@ -15,7 +15,15 @@
 
 		name = tName;
 		return self;
+};
 
+- (NSString*) gerOwnersName {
+
+		return name;
+};
+
+- (void) setOwnersName: (NSString*)newName {
+		name = newName;
 };
 
 @end

@@ -19,8 +19,8 @@
 		Car *carNew = [[Car new] initWithData:carNumber];
 		CarOwner *carOwnerNew = [[CarOwner new] initWithData:carOwnerName];
 
-		car = carNew;
-		owner = carOwnerNew;
+		_car = carNew;
+		_owner = carOwnerNew;
 
 		return self;
 }
