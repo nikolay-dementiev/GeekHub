@@ -8,56 +8,59 @@
 
 #import <Foundation/Foundation.h>
 #import "OutputInformation.h"
-#import "CatalogList.h"
-#import "CatalogRecord.h"
-
+#import "OutputInformationController.h"
 
 @implementation OutputInformation
 
 - (void) makePrintTestInformation {
 
-		//test
-		CatalogList *catalogList = [CatalogList sharedManager];
-		NSError *error = nil;
+		OutputInformationController *outtestInfo = [OutputInformationController new];
+		NSError *error;
 
-		//1.add data
-		[catalogList addRecord:([[CatalogRecord new] initWithData:@"AA102" withCarOwnerName:@"Vasja"]) withError:&error];
-
-		[catalogList addRecord:([[CatalogRecord new] initWithData:@"BB407" withCarOwnerName:@"Petja"]) withError:&error];
-
-		[catalogList addRecord:([[CatalogRecord new] initWithData:@"CC540" withCarOwnerName:@"Galja"]) withError:&error];
-
-		[catalogList addRecord:([[CatalogRecord new] initWithData:@"FF412" withCarOwnerName:@"Nadja"]) withError:&error];
+		//1. add data
+		error = nil;
+		[outtestInfo addInformationToDataBase: &error];
+		if(error) {
+				NSLog(@"Error in func.:'addInformationToDataBase': %@",error);
+		};
 
 		//2. delete data
-		[catalogList deteleRecord:5 withError:&error];
-		if(error) {
-				NSLog(@"Error findin: %@",error);
-		};
 		error = nil;
-		[catalogList deteleRecord:1 withError:&error];
+		[outtestInfo deteleRecordFromDataBase: &error];
+		if(error) {
+				NSLog(@"Error in func.:'deteleRecordFromDataBase': %@",error);
+		};
 
 		//3. edit data
-		//		[catalogList editRecordWhithRowIndex:2 withCarNumber: @"Moskwitch-409" withError:&error];
-		NSDictionary *newData = @{@"car" : @"HH567",
-															@"owner" : @"Lena"
-															};
-		[catalogList editRecordWithDictData: newData
-														 atRowIndex: 0
-															withError: &error];
+		error = nil;
+		[outtestInfo editRecordInDataBase: &error];
+		if(error) {
+				NSLog(@"Error in func.:'editRecordInDataBase': %@",error);
+		};
 
 		//4. finding record
-		NSString *searchedNumber = @"F41";
-		CarOwner *carOwnerSearched = [catalogList findCarOwner: searchedNumber withError:&error];
-		NSLog(@"Searched car owner by car number '%@' is '%@'", searchedNumber, [carOwnerSearched gerOwnersName]);
-		
-		//5. printing a sorted array
-		NSArray *arayForView = [catalogList getSortedCatalog:&error];
-		NSLog(@"\nPrinting a sorted array");
-		for (CatalogRecord *object in arayForView) {
-				NSLog(@"\n  owner = '%@', car number = '%@'", [object.owner gerOwnersName], [object.car getCarNumber]);
-		}
+		error = nil;
+		NSDictionary *recordFinded = [outtestInfo findRecordInDataBase: &error];
+		if(error) {
+				NSLog(@"Error in func.:'findRecordInDataBase': %@",error);
+		} else {
+				if (recordFinded) {
+						NSLog(@"Searched car owner of car number '%@' is '%@'", recordFinded[@"car"], recordFinded[@"owner"]);
+				} else {
+						NSLog(@"There were some problems to find data with car owner '%@' and car number '%@'"
+									, recordFinded[@"owner"]
+									, recordFinded[@"car"]);
+				};
+		};
 
-}
+		//5. print sorted array
+		error = nil;
+		NSString *logForPrint = [outtestInfo printSortedDataFromDataBase: &error];
+		if(error) {
+				NSLog(@"Error in func.:'printSortedDataFromDataBase': %@",error);
+		} else {
+				NSLog(@"%@",logForPrint);
+		};		
+};
 
 @end

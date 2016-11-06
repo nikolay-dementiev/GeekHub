@@ -1,5 +1,5 @@
 //
-//  Catalog.m
+//  CatalogController.m
 //  CarOwnersCatalog4
 //
 //  Created by Nikolay Dementiev on 04.11.16.
@@ -7,12 +7,24 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CatalogListController.h"
 #import "CatalogList.h"
 #import "CatalogRecord.h"
 #import "Car.h"
 #import "CarOwner.h"
 
-@implementation CatalogList
+
+@implementation CatalogListController
+
+- (id) init {
+
+		catalogListModel = [CatalogList new];
+		savedObjects = catalogListModel.savedObjects;
+
+		return self;
+};
+
+//@synthesize savedObjects;
 
 - (void) addRecord: (CatalogRecord*)record withError:(NSError **)errorPtr {
 
@@ -20,10 +32,20 @@
 
 };
 
+- (void) addRecordWithDictData: (NSDictionary*)dictData withError:(NSError **)errorPtr {
+
+		CatalogRecord *newCatalogRecord = [[CatalogRecord new] initWithData:dictData[@"car"]
+																											 withCarOwnerName:dictData[@"owner"]];
+
+		[self addRecord: newCatalogRecord withError:errorPtr];
+};
+
+
 - (void) deteleRecord: (int)rowIndex withError:(NSError **)errorPtr {
 
 		if (rowIndex >= [savedObjects count]) {
-				NSString *domain = @"com.test.CarOwnersCatalog4.ErrorDomain";//[[NSBundle mainBundle] bundleIdentifier];
+				NSString *domain = @"com.test.CarOwnersCatalog4.ErrorDomain";
+				//[[NSBundle mainBundle] bundleIdentifier];
 				NSString *desc = [NSString stringWithFormat: @"Try to delete row at index '%d' which is not exist", rowIndex];
 				NSDictionary *userInfo = [[NSDictionary alloc]
 																	initWithObjectsAndKeys:desc,
@@ -33,7 +55,6 @@
 																		userInfo:userInfo];
 
 				return;
-
 		};
 
 		NSArray *tAarray = [savedObjects allObjects];
@@ -41,42 +62,6 @@
 		[savedObjects removeObject: record];
 
 };
-
-//- (void) editRecord: (CatalogRecord*)record withError:(NSError **)errorPtr {
-//
-//		NSPredicate *predicate = [NSPredicate
-//															predicateWithFormat:@"car.number == %@ & owner.name == %@"
-//															, record.car
-//															, record.owner];
-//
-//		[savedObjects filterUsingPredicate:predicate];
-////
-////		if ([savedObjects count] > 0 ) {
-////
-////		};
-//
-//};
-
-//- (void) editRecordWhithRowIndex: (int)rowIndex
-//									 withCarNumber:(NSString*)carNumber
-//											 withError:(NSError **)errorPtr {
-//
-//		if (rowIndex < [savedObjects count]) {
-//				NSArray *tAarray = [savedObjects allObjects];
-//				CatalogRecord *record = tAarray [rowIndex];
-//
-//				[self editRecord: record withError:errorPtr];
-//
-//		}
-//};
-//
-//- (void) editRecordWithDictData: (NSDictionary*)dictData
-//											withError:(NSError **)errorPtr {
-////		for (<#initialization#>; <#condition#>; <#increment#>) {
-////    <#statements#>
-////		}
-//
-//}
 
 - (void) editRecordWithDictData: (NSDictionary*)dictData
 										 atRowIndex: (int)rowIndex
@@ -86,7 +71,6 @@
 				NSArray *tAarray = [savedObjects allObjects];
 				CatalogRecord *record = tAarray [rowIndex];
 
-				//[self editRecord: record withError:errorPtr];
 				NSPredicate *predicate = [NSPredicate
 																	predicateWithFormat:@"car.number == %@ && owner.name == %@"
 																	,[record.car getCarNumber]
@@ -135,18 +119,18 @@
 		return sortedArray;
 };
 
+//MARK:- Singeltone
 
-//MARK: Singeltone
++ (id) sharedManager {
 
-+ (id)sharedManager {
-		static CatalogList *sharedMyManager = nil;
+		static CatalogListController *sharedMan = nil;
 		static dispatch_once_t onceToken;
 		dispatch_once(&onceToken, ^{
-				sharedMyManager = [self new];
-				sharedMyManager->savedObjects = [NSMutableSet set];
-				
+				sharedMan = [self new];
 		});
-		return sharedMyManager;
+
+		return sharedMan;
 };
+
 
 @end

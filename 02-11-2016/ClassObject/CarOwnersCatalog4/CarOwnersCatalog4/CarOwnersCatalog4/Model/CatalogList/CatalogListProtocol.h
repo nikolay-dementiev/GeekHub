@@ -1,37 +1,35 @@
 //
-//  Catalog.h
+//  CatalogListDelegate.h
 //  CarOwnersCatalog4
 //
-//  Created by Nikolay Dementiev on 04.11.16.
+//  Created by Nikolay Dementiev on 06.11.16.
 //  Copyright © 2016 mc373. All rights reserved.
 //
 
-#ifndef Catalog_h
-#define Catalog_h
-#import "Car.h"
-#import "CarOwner.h"
-#import "CatalogRecordHelper.h"
+#ifndef CatalogListDelegate_h
+#define CatalogListDelegate_h
 #import "CatalogRecord.h"
+#import "CarOwner.h"
 
-@interface  CatalogList : NSObject {
-		NSMutableSet <CatalogRecord*> *savedObjects;
-}
+@protocol CatalogListDelegate
+@required
 
-+ (id)sharedManager;
+//@property(retain) NSMutableSet <CatalogRecord*> *savedObjects;
 
 - (void) addRecord: (CatalogRecord*)record withError:(NSError **)errorPtr;
+- (void) addRecordWithDictData: (NSDictionary*)dictData withError:(NSError **)errorPtr;
+
 - (void) deteleRecord: (int)rowIndex withError:(NSError **)errorPtr;
-//- (void) editRecord: (CatalogRecord*)record withError:(NSError **)errorPtr;
-//- (void) editRecordWhithRowIndex: (int)rowIndex
-//									 withCarNumber:(NSString*)carNumber
-//											 withError:(NSError **)errorPtr;
+
 - (void) editRecordWithDictData: (NSDictionary*)dictData
 										 atRowIndex: (int)rowIndex
 											withError:(NSError **)errorPtr;
 
 - (CarOwner*) findCarOwner: (NSString*)carNumber withError:(NSError **)errorPtr;
 - (NSArray*) getSortedCatalog:(NSError **)errorPtr;
-
+@optional
+// list of optional methods
 @end
 
-#endif /* Catalog_h */
+
+#endif /* CatalogListDelegate_h */

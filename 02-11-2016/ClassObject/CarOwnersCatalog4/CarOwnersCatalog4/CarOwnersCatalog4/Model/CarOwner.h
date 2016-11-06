@@ -13,8 +13,6 @@
 		NSString *name;
 }
 
-//@property(nonatomic, readwrite) NSString *name;
-
 - (id) initWithData: (NSString*)tName;
 - (NSString*) gerOwnersName;
 - (void) setOwnersName: (NSString*)newName;

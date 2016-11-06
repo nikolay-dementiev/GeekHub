@@ -10,7 +10,9 @@
 #define OutputInformation_h
 
 //MARK: -
-@interface OutputInformation : NSObject
+@interface OutputInformation : NSObject {
+		id delegate;
+}
 
 - (void) makePrintTestInformation;
 
