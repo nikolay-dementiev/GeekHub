@@ -20,7 +20,10 @@
 
 - (NSString*) information {
 
-		return [NSString stringWithFormat: @"Airplane mark = '%@', model = '%@', maxSpeed = '%0.2f', maxHeight = '%0.4f'", mark, model, maxSpeed, maxHeight];
+		return [NSString stringWithFormat: @"Airplane mark = '%@', model = '%@', maxSpeed = '%0.2f', maxHeight = '%0.4f'"
+						, mark, model
+						, maxSpeed
+						, maxHeight];
 
 }
 
