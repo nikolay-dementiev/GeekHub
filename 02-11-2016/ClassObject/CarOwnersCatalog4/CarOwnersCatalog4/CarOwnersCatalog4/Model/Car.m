@@ -18,6 +18,8 @@
 		return self;
 };
 
+// якщо в змінної є гетер і сетер то роби цю змінну як проперті https://habrahabr.ru/post/265175/
+
 - (NSString*) getCarNumber {
 
 		return number;
