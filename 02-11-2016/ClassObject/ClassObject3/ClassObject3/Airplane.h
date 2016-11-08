@@ -13,23 +13,29 @@
 @required
 // list of required methods
 - (float)cost;
+
+// навіщо залишати тут цю анотацію, якщо вона не юзається
 @optional
 // list of optional methods
 @end
 
 
 @interface Airplane : NSObject <AirplaneProtocolDelegate> {
-		NSString *mark;
-		NSString *model;
-		float maxSpeed;
-		float maxHeight;
+	// ці зміні краще перенести в інтерфейс .m файлу	
+	NSString *mark;
+	NSString *model;
+	float maxSpeed;
+	float maxHeight;
 }
 
-- (NSString*) information;
-- (id) initWithData: (NSString*)tMark
-					withModel:(NSString*)tModel
-			 withMaxSpeed:(float)tMaxSpeed
-			withMaxHeight:(float)tMaxHeight;
+// краще писати так
+- (NSString *)information;
+
+// навіщо t як префікс змінної?
+- (id)initWithData:(NSString *)tMark 
+	 withModel:(NSString *)tModel
+      withMaxSpeed:(float)tMaxSpeed
+     withMaxHeight:(float)tMaxHeight;
 
 @end
 
