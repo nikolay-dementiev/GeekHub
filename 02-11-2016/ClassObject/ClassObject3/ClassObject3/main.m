@@ -23,6 +23,10 @@
 
 - (void) makeSomeWork {
 
+		// тобі тут треба було б написати 
+		// Airplane *airplane = [[Airplane alloc] initWithData:@"Mriya"];
+	
+		// мабуть в тебе ще й при коміті щось затерлося, бо цей код не повний
 		Airplane *airplane = [[Airplane new] initWithData:@"Mriya"
 																						withModel:@"An-225"
 																				 withMaxSpeed:763.2
