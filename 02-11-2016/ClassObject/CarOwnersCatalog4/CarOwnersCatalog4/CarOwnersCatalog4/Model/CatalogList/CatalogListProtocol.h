@@ -6,6 +6,8 @@
 //  Copyright © 2016 mc373. All rights reserved.
 //
 
+// старайся дотримуватися код стайлу
+
 #ifndef CatalogListDelegate_h
 #define CatalogListDelegate_h
 #import "CatalogRecord.h"
