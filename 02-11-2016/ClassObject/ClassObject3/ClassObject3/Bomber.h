@@ -12,9 +12,7 @@
 
 // дужки не треба {}
 
-@interface Bomber : Airplane {
-
-}
+@interface Bomber : Airplane
 
 - (float)cost;
 

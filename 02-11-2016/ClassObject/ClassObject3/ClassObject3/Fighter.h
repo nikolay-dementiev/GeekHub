@@ -10,9 +10,7 @@
 #define Fighter_h
 #import "Airplane.h"
 
-@interface Fighter : Airplane {
-
-}
+@interface Fighter : Airplane
 
 - (float)cost;
 

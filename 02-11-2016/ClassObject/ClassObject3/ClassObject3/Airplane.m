@@ -18,40 +18,50 @@
 //}
 
 
+@interface Airplane() {
+
+    NSString *mark;
+    NSString *model;
+    float maxSpeed;
+    float maxHeight;
+
+};
+@end
+
 @implementation Airplane
 
 // незабувай про код стайл
-- (float)cost 
+- (float)cost
 {
-		//по формуле Максимальная скорость * 1000 + Максимальная высота * 100
-		return maxSpeed * 1000 + maxHeight * 100;
+    //по формуле Максимальная скорость * 1000 + Максимальная высота * 100
+    return maxSpeed * 1000 + maxHeight * 100;
 }
 
-- (NSString *)information 
+- (NSString *)information
 {
-		return [NSString stringWithFormat: @"Airplane mark = '%@', model = '%@', maxSpeed = '%0.2f', maxHeight = '%0.4f'"
-						, mark, model
-						, maxSpeed
-						, maxHeight];
+    return [NSString stringWithFormat: @"Airplane mark = '%@', model = '%@', maxSpeed = '%0.2f', maxHeight = '%0.4f'"
+            , mark, model
+            , maxSpeed
+            , maxHeight];
 
 }
 
-- (id) init {
-
-		return self;
+- (id) init
+{
+    return self;
 }
 
 - (id)initWithData:(NSString *)tMark
-	 withModel:(NSString *)tModel
+         withModel:(NSString *)tModel
       withMaxSpeed:(float)tMaxSpeed
-     withMaxHeight:(float)tMaxHeight 
+     withMaxHeight:(float)tMaxHeight
 {
-		mark = tMark;
-		model = tModel;
-		maxSpeed = tMaxSpeed;
-		maxHeight = tMaxHeight;
+    mark = tMark;
+    model = tModel;
+    maxSpeed = tMaxSpeed;
+    maxHeight = tMaxHeight;
 
-		return self;
+    return self;
 }
 
 

@@ -14,7 +14,7 @@
 
 - (float) cost {
 
-		return ([super cost]) * 2;
+    return ([super cost]) * 2;
 }
 
 @end

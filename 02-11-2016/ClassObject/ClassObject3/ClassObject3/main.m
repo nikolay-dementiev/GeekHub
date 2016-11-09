@@ -23,35 +23,38 @@
 
 - (void) makeSomeWork {
 
-		// тобі тут треба було б написати 
-		// Airplane *airplane = [[Airplane alloc] initWithData:@"Mriya"];
-	
-		// мабуть в тебе ще й при коміті щось затерлося, бо цей код не повний
-		Airplane *airplane = [[Airplane new] initWithData:@"Mriya"
-																						withModel:@"An-225"
-																				 withMaxSpeed:763.2
-																				withMaxHeight:10750];
-		float airplaneCost = [airplane cost];
-		NSString *airplaneInformation = [airplane information];
+    // тобі тут треба було б написати
+    // Airplane *airplane = [[Airplane alloc] initWithData:@"Mriya"];
 
-		Bomber *bomber = [[Bomber new] initWithData:@"Northrop"
-																			withModel:@"B-2 Spirit"
-																	 withMaxSpeed:1010
-																	withMaxHeight:18000];
-		float bomberCost = [bomber cost];
-		NSString *bomberInformation = [bomber information];
+    // мабуть в тебе ще й при коміті щось затерлося, бо цей код не повний
+    Airplane *airplane = [[Airplane new] initWithData:@"Mriya"
+                                            withModel:@"An-225"
+                                         withMaxSpeed:763.2
+                                        withMaxHeight:10750];
 
-		Fighter *fighter = [[Fighter new] initWithData:@"Lockheed Martin"
-																				 withModel:@"F-22 Raptor"
-																			withMaxSpeed:2410
-																		 withMaxHeight:7600];
-		float fighterCost = [fighter cost];
-		NSString *fighterInformation = [fighter information];
+    float airplaneCost = [airplane cost];
+    NSString *airplaneInformation = [airplane information];
 
-		//output information
-		NSLog(@"Info: \n 1.'%@'; cost: '%0.2f'$", airplaneInformation, airplaneCost);
-		NSLog(@"Info: \n 2.'%@'; cost: '%0.2f'$", bomberInformation, bomberCost);
-		NSLog(@"Info: \n 3.'%@'; cost: '%0.2f'", fighterInformation, fighterCost);
+    Bomber *bomber = [[Bomber new] initWithData:@"Northrop"
+                                      withModel:@"B-2 Spirit"
+                                   withMaxSpeed:1010
+                                  withMaxHeight:18000];
+
+    float bomberCost = [bomber cost];
+    NSString *bomberInformation = [bomber information];
+
+    Fighter *fighter = [[Fighter new] initWithData:@"Lockheed Martin"
+                                         withModel:@"F-22 Raptor"
+                                      withMaxSpeed:2410
+                                     withMaxHeight:7600];
+
+    float fighterCost = [fighter cost];
+    NSString *fighterInformation = [fighter information];
+
+    //output information
+    NSLog(@"Info: \n 1.'%@'; cost: '%0.2f'$", airplaneInformation, airplaneCost);
+    NSLog(@"Info: \n 2.'%@'; cost: '%0.2f'$", bomberInformation, bomberCost);
+    NSLog(@"Info: \n 3.'%@'; cost: '%0.2f'$", fighterInformation, fighterCost);
 
 }
 
@@ -60,11 +63,11 @@
 
 //MARK: - main
 int main(int argc, const char * argv[]) {
-		@autoreleasepool {
+    @autoreleasepool {
 
-				InputPoint *point = [InputPoint new];
-				[point makeSomeWork];
-
-		}
-		return 0;
+        InputPoint *point = [InputPoint new];
+        [point makeSomeWork];
+        
+    }
+    return 0;
 }
