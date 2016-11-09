@@ -56,8 +56,8 @@
     NSMutableArray *command = [NSMutableArray new];
 
     while ([_players count]-1 != 0) {
-//        if ([command count] < 2) {
-         if ([command count] < 1) {
+        if ([command count] < 2) {
+//         if ([command count] < 1) {
             NSUInteger index = arc4random_uniform((int)[_players count]);
             NSString *randCountry = [_players objectAtIndex:index];
             [command addObject:[randCountry copy]];
