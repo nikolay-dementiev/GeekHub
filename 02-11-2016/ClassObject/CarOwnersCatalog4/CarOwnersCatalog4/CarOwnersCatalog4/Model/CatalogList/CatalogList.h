@@ -8,7 +8,12 @@
 
 #ifndef Catalog_h
 #define Catalog_h
+
+// якщо не потрбв класі бачити ніяких внутрощів можна просто підключити клас
+// @class "CatalogRecord.h"
 #import "CatalogRecord.h"
+
+// навіщо тобі тут цей протокол 
 #import "CatalogListProtocol.h"
 
 @interface  CatalogList : NSObject {
