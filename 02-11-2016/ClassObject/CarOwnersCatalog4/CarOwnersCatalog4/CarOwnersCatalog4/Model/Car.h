@@ -9,6 +9,8 @@
 #ifndef Car_h
 #define Car_h
 
+// 1. перенести змінну в інтерфейс .m файлу
+// 2. дотримуся код стайлу
 @interface Car : NSObject {
 		NSString *number;
 }
