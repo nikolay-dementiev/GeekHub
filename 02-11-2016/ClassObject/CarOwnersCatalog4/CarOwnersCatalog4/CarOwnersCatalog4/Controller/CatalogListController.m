@@ -16,120 +16,124 @@
 
 @implementation CatalogListController
 
-- (id) init {
+- (id)init {
 
-		catalogListModel = [CatalogList new];
-		savedObjects = catalogListModel.savedObjects;
+    catalogListModel = [CatalogList new];
+    savedObjects = catalogListModel.savedObjects;
 
-		return self;
+    return self;
 };
 
 //@synthesize savedObjects;
 
-- (void) addRecord: (CatalogRecord*)record withError:(NSError **)errorPtr {
+- (void)addRecord:(CatalogRecord *)record
+        withError:(NSError **)errorPtr {
 
-		[savedObjects addObject: record];
-
-};
-
-- (void) addRecordWithDictData: (NSDictionary*)dictData withError:(NSError **)errorPtr {
-
-		CatalogRecord *newCatalogRecord = [[CatalogRecord new] initWithData:dictData[@"car"]
-																											 withCarOwnerName:dictData[@"owner"]];
-
-		[self addRecord: newCatalogRecord withError:errorPtr];
-};
-
-
-- (void) deteleRecord: (int)rowIndex withError:(NSError **)errorPtr {
-
-		if (rowIndex >= [savedObjects count]) {
-				NSString *domain = @"com.test.CarOwnersCatalog4.ErrorDomain";
-				//[[NSBundle mainBundle] bundleIdentifier];
-				NSString *desc = [NSString stringWithFormat: @"Try to delete row at index '%d' which is not exist", rowIndex];
-				NSDictionary *userInfo = [[NSDictionary alloc]
-																	initWithObjectsAndKeys:desc,
-																	@"NSLocalizedDescriptionKey",NULL];
-				*errorPtr = [NSError errorWithDomain:domain
-																				code: 404
-																		userInfo:userInfo];
-
-				return;
-		};
-
-		NSArray *tAarray = [savedObjects allObjects];
-		CatalogRecord *record = tAarray [rowIndex];
-		[savedObjects removeObject: record];
+    [savedObjects addObject: record];
 
 };
 
-- (void) editRecordWithDictData: (NSDictionary*)dictData
-										 atRowIndex: (int)rowIndex
-											withError:(NSError **)errorPtr {
+- (void)addRecordWithDictData:(NSDictionary *)dictData
+                    withError:(NSError **)errorPtr {
 
-		if (rowIndex < [savedObjects count]) {
-				NSArray *tAarray = [savedObjects allObjects];
-				CatalogRecord *record = tAarray [rowIndex];
+    CatalogRecord *newCatalogRecord = [[CatalogRecord new] initWithData:dictData[@"car"]
+                                                       withCarOwnerName:dictData[@"owner"]];
 
-				NSPredicate *predicate = [NSPredicate
-																	predicateWithFormat:@"car.number == %@ && owner.name == %@"
-																	,[record.car getCarNumber]
-																	,[record.owner gerOwnersName]];
-
-				NSSet *requiredRecord = [NSSet setWithSet: savedObjects];
-				requiredRecord = [requiredRecord filteredSetUsingPredicate:predicate];
-
-				if ([requiredRecord count] > 0) {
-						NSArray *tAarray2 = [requiredRecord allObjects];
-						CatalogRecord *record = tAarray2 [rowIndex];
-
-						[record.car setCarNumber: dictData[@"car"]];
-						[record.owner setOwnersName: dictData[@"owner"]];
-
-				};
-		};
+    [self addRecord: newCatalogRecord withError:errorPtr];
 };
 
-- (CarOwner*) findCarOwner: (NSString*)carNumber
-								 withError:(NSError **)errorPtr {
 
-		CarOwner* valueForReturn = nil;
+- (void)deteleRecord:(int)rowIndex
+           withError:(NSError **)errorPtr {
 
-		NSPredicate *predicate = [NSPredicate
-															predicateWithFormat:@"car.number CONTAINS %@"
-															,carNumber];
+    if (rowIndex >= [savedObjects count]) {
+        NSString *domain = @"com.test.CarOwnersCatalog4.ErrorDomain";
+        //[[NSBundle mainBundle] bundleIdentifier];
+        NSString *desc = [NSString stringWithFormat: @"Try to delete row at index '%d' which is not exist", rowIndex];
+        NSDictionary *userInfo = [[NSDictionary alloc]
+                                  initWithObjectsAndKeys:desc,
+                                  @"NSLocalizedDescriptionKey",NULL];
+        *errorPtr = [NSError errorWithDomain:domain
+                                        code: 404
+                                    userInfo:userInfo];
 
-		NSSet *requiredOwner = [NSSet setWithSet: savedObjects];
-		requiredOwner = [requiredOwner filteredSetUsingPredicate:predicate];
+        return;
+    };
 
-		if ([requiredOwner count] > 0) {
-				NSArray *tAarray = [requiredOwner allObjects];
-				valueForReturn = ((CatalogRecord*)tAarray[0]).owner; // getting first value
-		};
+    NSArray *tAarray = [savedObjects allObjects];
+    CatalogRecord *record = tAarray [rowIndex];
+    [savedObjects removeObject: record];
 
-		return valueForReturn;
 };
 
-- (NSArray*) getSortedCatalog: (NSError **)errorPtr {
+- (void)editRecordWithDictData:(NSDictionary *)dictData
+                    atRowIndex:(int)rowIndex
+                     withError:(NSError **)errorPtr {
 
-		NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"car.number" ascending:YES];
+    if (rowIndex < [savedObjects count]) {
+        NSArray *tAarray = [savedObjects allObjects];
+        CatalogRecord *record = tAarray [rowIndex];
 
-		NSArray *sortedArray = [savedObjects sortedArrayUsingDescriptors:[NSArray arrayWithObject:sort]];
+        NSPredicate *predicate = [NSPredicate
+                                  predicateWithFormat:@"car.number == %@ && owner.name == %@"
 
-		return sortedArray;
+                                  ,record.car
+                                  ,record.owner];
+
+        NSSet *requiredRecord = [NSSet setWithSet: savedObjects];
+        requiredRecord = [requiredRecord filteredSetUsingPredicate:predicate];
+
+        if ([requiredRecord count] > 0) {
+            NSArray *tAarray2 = [requiredRecord allObjects];
+            CatalogRecord *record = tAarray2 [rowIndex];
+
+            record.car = dictData[@"car"];
+            record.owner = dictData[@"owner"];
+
+        };
+    };
+};
+
+- (CarOwner *)findCarOwner: (NSString *)carNumber
+                 withError:(NSError **)errorPtr {
+
+    CarOwner* valueForReturn = nil;
+
+    NSPredicate *predicate = [NSPredicate
+                              predicateWithFormat:@"car.number CONTAINS %@"
+                              ,carNumber];
+
+    NSSet *requiredOwner = [NSSet setWithSet: savedObjects];
+    requiredOwner = [requiredOwner filteredSetUsingPredicate:predicate];
+
+    if ([requiredOwner count] > 0) {
+        NSArray *tAarray = [requiredOwner allObjects];
+        valueForReturn = ((CatalogRecord*)tAarray[0]).owner; // getting first value
+    };
+
+    return valueForReturn;
+};
+
+- (NSArray *)getSortedCatalog:(NSError **)errorPtr {
+    
+    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"car.number" ascending:YES];
+    
+    NSArray *sortedArray = [savedObjects sortedArrayUsingDescriptors:[NSArray arrayWithObject:sort]];
+    
+    return sortedArray;
 };
 
 //MARK:- Singeltone
 
-+ (id) sharedManager {
-
-		static CatalogListController *sharedMan = nil;
-		static dispatch_once_t onceToken;
-		dispatch_once(&onceToken, ^{
-				sharedMan = [self new];
-		});
-
-		return sharedMan;
++ (id)sharedManager {
+    
+    static CatalogListController *sharedMan = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedMan = [self new];
+    });
+    
+    return sharedMan;
 };
 
 

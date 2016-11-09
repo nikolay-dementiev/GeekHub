@@ -13,12 +13,12 @@
 
 @interface CatalogListController : NSObject<CatalogListDelegate> {
 
-		CatalogList *catalogListModel;
-		NSMutableSet <CatalogRecord*> *savedObjects;
+    CatalogList *catalogListModel;
+    NSMutableSet <CatalogRecord*> *savedObjects;
 }
 
-+ (id) sharedManager;
-- (id) init;
++ (id)sharedManager;
+- (id)init;
 
 @end
 

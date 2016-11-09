@@ -10,8 +10,6 @@
 #define Bomber_h
 #import "Airplane.h"
 
-// дужки не треба {}
-
 @interface Bomber : Airplane
 
 - (float)cost;

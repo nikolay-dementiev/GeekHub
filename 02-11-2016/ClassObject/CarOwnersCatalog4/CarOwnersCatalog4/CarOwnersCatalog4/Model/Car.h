@@ -9,16 +9,11 @@
 #ifndef Car_h
 #define Car_h
 
-// 1. перенести змінну в інтерфейс .m файлу
-// 2. дотримуся код стайлу
-@interface Car : NSObject {
-		NSString *number;
-}
+@interface Car : NSObject
 
+@property (readwrite, strong, nonatomic) NSString *number;
 
-- (id) initWithData: (NSString*)tNumber;
-- (NSString*) getCarNumber;
-- (void)setCarNumber: (NSString*)newNumber;
+- (id)initWithData:(NSString *)tNumber;
 
 @end
 

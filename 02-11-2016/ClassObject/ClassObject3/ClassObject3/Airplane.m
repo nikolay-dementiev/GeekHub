@@ -19,12 +19,10 @@
 
 
 @interface Airplane() {
-
     NSString *mark;
     NSString *model;
     float maxSpeed;
     float maxHeight;
-
 };
 @end
 

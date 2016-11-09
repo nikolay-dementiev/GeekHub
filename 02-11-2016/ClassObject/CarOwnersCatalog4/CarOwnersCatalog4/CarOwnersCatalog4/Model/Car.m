@@ -11,22 +11,30 @@
 
 @implementation Car
 
-- (id) initWithData: (NSString*)tNumber {
+@synthesize number = _number;
 
-		number = tNumber;
+- (id)initWithData: (NSString *)tNumber {
 
-		return self;
+    _number = tNumber;
+
+    return self;
 };
 
-// якщо в змінної є гетер і сетер то роби цю змінну як проперті https://habrahabr.ru/post/265175/
+//property 'number' set/get-tter
+- (void)setNumber:(NSString *)number {
+    if (number) {
+        _number = number;
+    } else {
+        _number = @"null";
+    }
+}
 
-- (NSString*) getCarNumber {
+- (NSString *)number {
+    if (!_number) {
+        _number = @"null";
+    }
+    return _number;
+}
 
-		return number;
-};
-
-- (void) setCarNumber: (NSString*)newNumber {
-		number = newNumber;
-};
 
 @end

@@ -13,11 +13,10 @@
 
 @implementation CatalogList
 
-- (id) init {
+- (id)init {
+    _savedObjects = [NSMutableSet set];
 
-		_savedObjects = [NSMutableSet set];
-
-		return self;
+    return self;
 };
 
 @end

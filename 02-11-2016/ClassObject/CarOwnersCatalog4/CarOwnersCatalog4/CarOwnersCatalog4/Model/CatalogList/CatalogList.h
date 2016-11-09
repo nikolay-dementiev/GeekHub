@@ -10,20 +10,15 @@
 #define Catalog_h
 
 // якщо не потрбв класі бачити ніяких внутрощів можна просто підключити клас
+//- answer: еррорит - нужно чтобы показал как это сделать
 // @class "CatalogRecord.h"
 #import "CatalogRecord.h"
 
-// навіщо тобі тут цей протокол 
-#import "CatalogListProtocol.h"
-
-@interface  CatalogList : NSObject {
-
-		id<CatalogListDelegate> delegate;
-}
+@interface  CatalogList : NSObject
 
 @property(retain) NSMutableSet <CatalogRecord*> *savedObjects;
 
-- (id) init;
+- (id)init;
 
 @end
 

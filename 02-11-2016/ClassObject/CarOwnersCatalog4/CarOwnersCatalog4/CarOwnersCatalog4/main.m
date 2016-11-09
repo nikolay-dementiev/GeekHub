@@ -10,12 +10,12 @@
 #import "OutputInformation.h"
 
 
-int main(int argc, const char * argv[]) {
-	@autoreleasepool {
-
-			OutputInformation *instanseOutputTest = [OutputInformation new];
-			[instanseOutputTest makePrintTestInformation];
-
-	}
+int main(int argc, const char * argv[])
+{
+    @autoreleasepool
+    {
+        OutputInformation *instanseOutputTest = [OutputInformation new];
+        [instanseOutputTest makePrintTestInformation];
+    }
     return 0;
 }

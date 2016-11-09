@@ -11,19 +11,29 @@
 
 @implementation CarOwner
 
-- (id) initWithData: (NSString*)tName {
+@synthesize name = _name;
 
-		name = tName;
+- (id)initWithData:(NSString *)tName {
+
+		_name = tName;
 		return self;
 };
 
-- (NSString*) gerOwnersName {
+//property 'name' set/get-tter
 
-		return name;
-};
+- (void)setName:(NSString *)name {
+    if (name) {
+        _name = name;
+    } else {
+        _name = @"null";
+    }
+}
 
-- (void) setOwnersName: (NSString*)newName {
-		name = newName;
-};
+- (NSString *)name {
+    if (!_name) {
+        _name = @"null";
+    }
+    return _name;
+}
 
 @end

@@ -12,15 +12,13 @@
 #import "Car.h"
 #import "CarOwner.h"
 
-@interface CatalogRecord : NSObject {
-
-}
+@interface CatalogRecord : NSObject
 
 @property(nonatomic, readwrite) Car *car;
 @property(nonatomic, readwrite) CarOwner *owner;
 
-- (CatalogRecord*) initWithData: (NSString*)carNumber
-							 withCarOwnerName:(NSString*)carOwnerName;
+- (CatalogRecord *)initWithData:(NSString *)carNumber
+							 withCarOwnerName:(NSString *)carOwnerName;
 
 @end
 

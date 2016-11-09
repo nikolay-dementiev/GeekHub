@@ -11,20 +11,20 @@
 #import "CatalogListController.h"
 
 @interface OutputInformationController : NSObject {
-		
-		CatalogListController *catalogListController;
+
+    CatalogListController *catalogListController;
 }
 
 //controller functions
-- (void) addInformationToDataBase: (NSError **)errorPtr;
-- (void) deteleRecordFromDataBase: (NSError **)errorPtr;
-- (void) editRecordInDataBase: (NSError **)errorPtr;
-- (NSDictionary*) findRecordInDataBase: (NSError **)errorPtr;
-- (NSString*) printSortedDataFromDataBase: (NSError **)errorPtr;
+- (void)addInformationToDataBase:(NSError **)errorPtr;
+- (void)deteleRecordFromDataBase:(NSError **)errorPtr;
+- (void)editRecordInDataBase:(NSError **)errorPtr;
+- (NSDictionary *)findRecordInDataBase:(NSError **)errorPtr;
+- (NSString *)printSortedDataFromDataBase:(NSError **)errorPtr;
 
 //instanse functions
-- (id) getSharedManagerCatalogListController;
-- (id) init;
+- (id)getSharedManagerCatalogListController;
+- (id)init;
 
 @end
 

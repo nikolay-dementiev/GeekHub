@@ -12,17 +12,19 @@
 
 @implementation CatalogRecord
 
-- (CatalogRecord*) initWithData: (NSString*)carNumber
-							 withCarOwnerName:(NSString*)carOwnerName {
+- (CatalogRecord *)initWithData:(NSString *)carNumber
+               withCarOwnerName:(NSString *)carOwnerName {
 
-		//create new instanses
-		Car *carNew = [[Car new] initWithData:carNumber];
-		CarOwner *carOwnerNew = [[CarOwner new] initWithData:carOwnerName];
+    //create new instanses
+    Car *carNew = [[Car new]
+                   initWithData:carNumber];
+    CarOwner *carOwnerNew = [[CarOwner new]
+                             initWithData:carOwnerName];
 
-		_car = carNew;
-		_owner = carOwnerNew;
-
-		return self;
+    _car = carNew;
+    _owner = carOwnerNew;
+    
+    return self;
 }
 
 

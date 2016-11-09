@@ -9,13 +9,11 @@
 #ifndef CarOwner_h
 #define CarOwner_h
 
-@interface CarOwner : NSObject {
-		NSString *name;
-}
+@interface CarOwner : NSObject
 
-- (id) initWithData: (NSString*)tName;
-- (NSString*) gerOwnersName;
-- (void) setOwnersName: (NSString*)newName;
+@property (readwrite, strong, nonatomic) NSString *name;
+
+- (id)initWithData:(NSString *)tName;
 
 @end
 
