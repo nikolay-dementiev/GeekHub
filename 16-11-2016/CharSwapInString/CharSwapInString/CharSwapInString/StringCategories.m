@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "StringCategories.h"
 
-@implementation NSString(MyAdditions)
+@implementation NSString(SwapChars)
 
 - (NSString*)removeSymbolWithCount:(int)counter
 {

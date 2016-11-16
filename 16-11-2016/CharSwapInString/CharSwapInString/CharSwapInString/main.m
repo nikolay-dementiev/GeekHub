@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "StringCategories.h"
+#import "JsonWork.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -22,6 +23,16 @@ int main(int argc, const char * argv[]) {
         NSString *swappedString = [testString swapSymbolsWithCount:(3)
                                                      symbolForSwap:(@"😁")];
         NSLog(@"2.swapSymbolsWithCount \n testString: '%@',\n swappedString: '%@'",testString,swappedString);
+
+        //3 - work with JSON
+        NSMutableDictionary *stingDataForJSON = [NSMutableDictionary new];
+        [stingDataForJSON setObject:testString forKey:@"firstString"];
+        [stingDataForJSON setObject:cutedString forKey:@"secondString"];
+        NSString *jsonString1 = [JsonWork createJsonData:stingDataForJSON];
+
+        [stingDataForJSON setObject:swappedString forKey:@"secondString"];
+        NSString *jsonString2 = [JsonWork createJsonData:stingDataForJSON];
+
         
     }
     return 0;
