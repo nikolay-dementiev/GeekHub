@@ -12,6 +12,7 @@
 #import "Car.h"
 #import "CarOwner.h"
 
+
 @interface CatalogRecord : NSObject
 
 @property(nonatomic, readwrite) Car *car;
