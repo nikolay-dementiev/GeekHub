@@ -11,7 +11,7 @@
 
 @implementation NSString(SwapChars)
 
-- (NSString*)removeSymbolWithCount:(int)counter
+-(NSString *)removeSymbolWithCount:(int)counter
 {
     NSMutableString *res = [NSMutableString new];
 
@@ -26,7 +26,7 @@
     return res;
 };
 
-- (NSString*)swapSymbolsWithCount:(int)counter
+-(NSString *)swapSymbolsWithCount:(int)counter
                     symbolForSwap:(NSString*)symbolSwap
 {
     NSMutableString *res = [NSMutableString new];

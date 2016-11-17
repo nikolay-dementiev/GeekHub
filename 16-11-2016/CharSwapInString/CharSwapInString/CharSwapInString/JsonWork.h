@@ -11,13 +11,20 @@
 
 @interface JsonWork : NSObject
 
-+ (JsonWork*)classPropertyContainer;
++(JsonWork *)classPropertyContainer;
 @property (readwrite, strong, nonatomic) NSString *urlDirectoryForFiles;
+@property (readwrite, strong, nonatomic) NSString *nameOfJsonFile;
 
-+ (NSString*)createJsonData:(NSDictionary*)dataForCreation;
-+ (NSString*)getDirectoryForFiles;
-+ (NSString*)readFromFile;
-+ (NSString*)writeToFile;
++(NSString *)createJsonData:(NSDictionary*)dataForCreation;
++(NSString *)getDirectoryForFiles;
++(NSString *)readFromFile;
++(NSString *)writeToFile;
+
+//Save_in/ Load_from file
++(void)saveJsonToFile:(NSString *)jsonStr
+        overwritedata:(BOOL)overwriteFile
+            withError:(NSError **)errorP;
++(NSString *)getNameOfJsonFile;
 
 @end
 

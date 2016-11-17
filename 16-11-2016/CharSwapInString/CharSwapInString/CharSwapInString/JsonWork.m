@@ -11,7 +11,7 @@
 
 @implementation JsonWork
 
-+ (JsonWork*)classPropertyContainer
++(JsonWork *)classPropertyContainer
 {
     static JsonWork* fooDict = nil;
 
@@ -26,7 +26,7 @@
     return fooDict;
 }
 
-+ (NSDictionary *)dictionary {
++(NSDictionary *)dictionary {
     static NSDictionary *directoryForFiles = nil;
     if (directoryForFiles == nil) {
         directoryForFiles = [NSDictionary new];
@@ -34,7 +34,7 @@
     return directoryForFiles;
 }
 
-+ (NSString*)createJsonData:(NSDictionary*)dataForCreation
++(NSString *)createJsonData:(NSDictionary*)dataForCreation
 {
     //http://stackoverflow.com/questions/16057281/creating-json-format-in-objective-c
 
@@ -44,6 +44,7 @@
 
     NSMutableDictionary *sdetails = [[NSMutableDictionary alloc] init];
     [sdetails setObject:stringDetails forKey:@"strings"];
+
 
     //    NSLog(@"Required Format Data is \n%@",sdetails);
 
@@ -62,24 +63,92 @@
         newStr = [[NSString alloc] initWithData:jsondata encoding:NSUTF8StringEncoding];
     }
 
-
-    return newStr;
-
+    return [newStr stringByAppendingString:@"\r"];
 }
 
-+ (NSString*)getDirectoryForFiles
+//MARK: Save_in/ Load_from file
+
++(void)saveJsonToFile:(NSString *)jsonStr
+        overwritedata:(BOOL)overwriteFile
+            withError:(NSError **)errorP
 {
-    NSString *urlDict = [JsonWork classPropertyContainer].urlDirectoryForFiles;
+
+    NSString *fileName = [JsonWork getNameOfJsonFile];
+    NSString *fileDyrectory = [JsonWork getDirectoryForFiles:errorP];
+
+    if (!*errorP)
+    {
+        NSString *filePath = [fileDyrectory stringByAppendingPathComponent:fileName];
+
+        //chek on existin file
+        NSFileManager *fileMng = [NSFileManager defaultManager];
+        BOOL fileExist = [fileMng fileExistsAtPath:filePath];
+
+        if (overwriteFile && fileExist)
+        {
+            //rewrite file
+            NSFileHandle *fh = [NSFileHandle fileHandleForWritingAtPath:filePath];
+            [fh seekToEndOfFile];
+
+            NSData *data = [jsonStr dataUsingEncoding:NSUTF8StringEncoding];
+            [fh writeData:data];
+            [fh closeFile];
+        }
+        else
+        {
+            [jsonStr writeToFile:filePath
+                      atomically:TRUE
+                        encoding:NSUTF8StringEncoding
+                           error:errorP];
+        }
+
+
+    }
+}
+
+
++(NSString *)getDirectoryForFiles:(NSError **)errorPtr
+{
+    JsonWork *singeltoneClassObject = [JsonWork classPropertyContainer];
+    NSString *urlDict = singeltoneClassObject.urlDirectoryForFiles;
 
     if (urlDict == nil)
     {
-        NSArray *paths = NSSearchPathForDirectoriesInDomains
-        (NSDocumentDirectory, NSUserDomainMask, YES);
+        //        NSArray *paths = NSSearchPathForDirectoriesInDomains
+        //        (NSCachesDirectory, NSUserDomainMask, YES);
+        //        urlDict = [paths objectAtIndex:0];
 
-        urlDict = [paths objectAtIndex:0];
+        urlDict = [NSTemporaryDirectory() stringByAppendingPathComponent:@"com.app.charSwapInString"];
+
+        NSFileManager *fileMng = [NSFileManager defaultManager];
+        if (![fileMng fileExistsAtPath:urlDict])
+        {
+            [fileMng createDirectoryAtPath:urlDict
+               withIntermediateDirectories:NO
+                                attributes:nil
+                                     error:errorPtr];
+        }
+
+        singeltoneClassObject.urlDirectoryForFiles = urlDict;
     }
 
+
     return urlDict;
+}
+
++(NSString *)getNameOfJsonFile
+{
+    JsonWork *singeltoneClassObject = [JsonWork classPropertyContainer];
+    NSString *jsonName = singeltoneClassObject.nameOfJsonFile;
+
+    if (jsonName == nil)
+    {
+        jsonName = @"CharSwapInString-JSON.json";
+        singeltoneClassObject.nameOfJsonFile = jsonName;
+    }
+    
+    
+    return jsonName;
 }
 
 

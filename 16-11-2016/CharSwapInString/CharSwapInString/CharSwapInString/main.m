@@ -25,6 +25,7 @@ int main(int argc, const char * argv[]) {
         NSLog(@"2.swapSymbolsWithCount \n testString: '%@',\n swappedString: '%@'",testString,swappedString);
 
         //3 - work with JSON
+        //create JSON
         NSMutableDictionary *stingDataForJSON = [NSMutableDictionary new];
         [stingDataForJSON setObject:testString forKey:@"firstString"];
         [stingDataForJSON setObject:cutedString forKey:@"secondString"];
@@ -33,6 +34,24 @@ int main(int argc, const char * argv[]) {
         [stingDataForJSON setObject:swappedString forKey:@"secondString"];
         NSString *jsonString2 = [JsonWork createJsonData:stingDataForJSON];
 
+        //save JSON to file
+        NSError *error = nil;
+        [JsonWork saveJsonToFile:jsonString1
+                   overwritedata:true
+                       withError:&error];
+        if(error)
+        {
+            NSLog(@"Error saving jsonString1: %@",error);
+        }
+        error = nil;
+        [JsonWork saveJsonToFile:jsonString2
+                   overwritedata:true
+                       withError:&error];
+        if(error)
+        {
+            NSLog(@"Error saving jsonString2: %@",error);
+        }
+        
         
     }
     return 0;

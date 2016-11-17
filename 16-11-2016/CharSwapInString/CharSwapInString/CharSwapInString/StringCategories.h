@@ -12,9 +12,9 @@
 
 @interface NSString(SwapChars)
 
-- (NSString *)removeSymbolWithCount:(int)counter;
-- (NSString *)swapSymbolsWithCount:(int)counter
-                    symbolForSwap:(NSString*)symbolSwap;
+-(NSString *)removeSymbolWithCount:(int)counter;
+-(NSString *)swapSymbolsWithCount:(int)counter
+                    symbolForSwap:(NSString *)symbolSwap;
 
 
 @end
