@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "ShoppingList.h"
 #import "ShoppingListItem.h"
+#import "JsonWork.h"
+#import "Helper.h"
 
 @implementation ShoppingList
 
@@ -64,6 +66,25 @@
         ShoppingListItem *record = tAarray [rowIndex];
         record.checked = chekIt;
     }
+}
+
+- (void)saveListToJson:(BOOL)overwritedata
+             withError:(NSError **)errorP {
+    NSMutableArray *dataArray = [@[] mutableCopy];
+
+    NSArray *arrayListObjects = [self sortByDate];
+
+    for (ShoppingListItem *itemObject in arrayListObjects) {
+        NSMutableDictionary *stingDataForJSON = [NSMutableDictionary new];
+        [stingDataForJSON setObject:itemObject.name forKey:@"title"];
+        [stingDataForJSON setObject:[itemObject.date representData] forKey:@"date"];
+        [stingDataForJSON setObject:[NSNumber numberWithBool:itemObject.checked].description forKey:@"checked"];
+
+        [dataArray addObject:stingDataForJSON];
+    }
+
+    NSString *jsonData = [JsonWork createJsonData:dataArray];
+    [JsonWork saveJsonToFile:jsonData overwritedata:overwritedata withError: errorP];
 }
 
 @end

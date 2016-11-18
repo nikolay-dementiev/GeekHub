@@ -29,14 +29,14 @@
     return self;
 }
 
-- (NSString *)getCurrentDate {
+- (NSDate *)getCurrentDate {
 
     NSDate *todayDate = [NSDate date]; // get today date
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init]; // here we create NSDateFormatter object for change the Format of date..
-    [dateFormatter setDateFormat:@"dd-MM-yyyy"]; //Here we can set the format which we need
-    NSString *convertedDateString = [dateFormatter stringFromDate:todayDate];// here convert date in
 
-    return convertedDateString;
+    return todayDate;
 }
 
 @end
+
+
+

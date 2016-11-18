@@ -12,7 +12,7 @@
 @interface ShoppingListItem : NSObject
 
 @property (readwrite, strong, nonatomic) NSString *name;
-@property (readwrite, strong, nonatomic) NSString *date;
+@property (readwrite, strong, nonatomic) NSDate *date;
 @property (readwrite, nonatomic) BOOL checked;
 
 - (instancetype)init;

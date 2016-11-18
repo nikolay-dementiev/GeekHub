@@ -37,7 +37,7 @@ int main(int argc, const char * argv[]) {
         //3.1 save JSON to file
         NSError *error = nil;
         [JsonWork saveJsonToFile:jsonString1
-                   overwritedata:true
+                   overwritedata:false
                        withError:&error];
         if(error)
         {

@@ -22,6 +22,9 @@
 - (void)tickCheck:(int)rowIndex
          chekItem:(BOOL)chekIt;
 
+- (void)saveListToJson:(BOOL)overwritedata
+             withError:(NSError **)errorP;
+
 -(instancetype)init;
 + (instancetype)sharedInstance;
 

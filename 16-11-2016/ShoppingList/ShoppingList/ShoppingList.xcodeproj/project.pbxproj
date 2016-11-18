@@ -10,6 +10,8 @@
 		E713452F1DDF02D200C981B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E713452E1DDF02D200C981B3 /* main.m */; };
 		E71345381DDF034D00C981B3 /* ShoppingListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E71345371DDF034D00C981B3 /* ShoppingListItem.m */; };
 		E713453D1DDF087100C981B3 /* ShoppingList.m in Sources */ = {isa = PBXBuildFile; fileRef = E713453C1DDF087100C981B3 /* ShoppingList.m */; };
+		E71345411DDF326800C981B3 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = E71345401DDF326800C981B3 /* Helper.m */; };
+		E71345451DDF332C00C981B3 /* JsonWork.m in Sources */ = {isa = PBXBuildFile; fileRef = E71345441DDF332C00C981B3 /* JsonWork.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +33,10 @@
 		E71345371DDF034D00C981B3 /* ShoppingListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingListItem.m; sourceTree = "<group>"; };
 		E713453B1DDF063C00C981B3 /* ShoppingList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingList.h; sourceTree = "<group>"; };
 		E713453C1DDF087100C981B3 /* ShoppingList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingList.m; sourceTree = "<group>"; };
+		E713453F1DDF325700C981B3 /* Helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
+		E71345401DDF326800C981B3 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
+		E71345431DDF32FD00C981B3 /* JsonWork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JsonWork.h; sourceTree = "<group>"; };
+		E71345441DDF332C00C981B3 /* JsonWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonWork.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,9 +69,11 @@
 		E713452D1DDF02D200C981B3 /* ShoppingList */ = {
 			isa = PBXGroup;
 			children = (
+				E713452E1DDF02D200C981B3 /* main.m */,
+				E71345421DDF32D900C981B3 /* Json */,
 				E713453A1DDF063C00C981B3 /* ShoppingList */,
 				E71345351DDF032500C981B3 /* ShoppingListItem */,
-				E713452E1DDF02D200C981B3 /* main.m */,
+				E713453E1DDF324000C981B3 /* Helper */,
 			);
 			path = ShoppingList;
 			sourceTree = "<group>";
@@ -86,6 +94,24 @@
 				E713453C1DDF087100C981B3 /* ShoppingList.m */,
 			);
 			path = ShoppingList;
+			sourceTree = "<group>";
+		};
+		E713453E1DDF324000C981B3 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				E713453F1DDF325700C981B3 /* Helper.h */,
+				E71345401DDF326800C981B3 /* Helper.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		E71345421DDF32D900C981B3 /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				E71345431DDF32FD00C981B3 /* JsonWork.h */,
+				E71345441DDF332C00C981B3 /* JsonWork.m */,
+			);
+			path = Json;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,8 +172,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E71345381DDF034D00C981B3 /* ShoppingListItem.m in Sources */,
+				E71345451DDF332C00C981B3 /* JsonWork.m in Sources */,
 				E713453D1DDF087100C981B3 /* ShoppingList.m in Sources */,
 				E713452F1DDF02D200C981B3 /* main.m in Sources */,
+				E71345411DDF326800C981B3 /* Helper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
