@@ -33,7 +33,7 @@ int main(int argc, const char * argv[]) {
         NSError *error = nil;
         BOOL overwriteFile = false;//overwrite = false - its means: file will be fully new every time
         [shoppingListMain saveListToJson:overwriteFile withError:&error];
-        if(error) {
+        if (error) {
             NSLog(@"Error saving data to Json: %@",error);
         } else {
             NSLog(@"The data were successfully saved in Json!");
@@ -53,8 +53,7 @@ int main(int argc, const char * argv[]) {
 
         error = nil;
         NSString *savedJsonData = [JsonWork loadJsonFromFile:&error];
-        if(error)
-        {
+        if (error) {
             NSLog(@"Error to load Json data from file: %@",error);
         }
         NSLog(@"Print loaded from file Json data: \n%@",savedJsonData);

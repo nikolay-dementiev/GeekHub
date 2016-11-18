@@ -56,7 +56,7 @@
     NSString *newStr = @"";
 
     //http://stackoverflow.com/questions/2467844/convert-utf-8-encoded-nsdata-to-nsstring
-    if(error)
+    if (error)
     {
         NSLog(@"Error finding in createJsonData: %@",error);
         //newStr = [NSString stringWithUTF8String:[jsondata bytes]];

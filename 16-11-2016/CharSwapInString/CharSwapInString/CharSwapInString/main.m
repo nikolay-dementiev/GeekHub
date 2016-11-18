@@ -39,7 +39,7 @@ int main(int argc, const char * argv[]) {
         [JsonWork saveJsonToFile:jsonString1
                    overwritedata:false
                        withError:&error];
-        if(error)
+        if (error)
         {
             NSLog(@"Error saving jsonString1: %@",error);
         }
@@ -47,7 +47,7 @@ int main(int argc, const char * argv[]) {
         [JsonWork saveJsonToFile:jsonString2
                    overwritedata:true
                        withError:&error];
-        if(error)
+        if (error)
         {
             NSLog(@"Error saving jsonString2: %@",error);
         }
@@ -55,7 +55,7 @@ int main(int argc, const char * argv[]) {
         //3.2 read json from file
         error = nil;
         NSString *savedJsonData = [JsonWork loadJsonFromFile:&error];
-        if(error)
+        if (error)
         {
             NSLog(@"Error to load Json data from file: %@",error);
         }

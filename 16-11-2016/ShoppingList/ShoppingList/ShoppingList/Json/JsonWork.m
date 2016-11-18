@@ -11,8 +11,7 @@
 
 @implementation JsonWork
 
-+ (JsonWork *)classPropertyContainer
-{
++ (JsonWork *)classPropertyContainer {
     static JsonWork* fooDict = nil;
 
     static dispatch_once_t oncePredicate;
@@ -26,8 +25,7 @@
     return fooDict;
 }
 
-+ (NSDictionary *)dictionary
-{
++ (NSDictionary *)dictionary {
     static NSDictionary *directoryForFiles = nil;
 
     if (directoryForFiles == nil) {
@@ -37,8 +35,7 @@
     return directoryForFiles;
 }
 
-+ (NSString *)createJsonData:(NSArray*)dataForCreation
-{
++ (NSString *)createJsonData:(NSArray*)dataForCreation {
     //http://stackoverflow.com/questions/16057281/creating-json-format-in-objective-c
 
     NSMutableArray *resultArray = [[NSMutableArray alloc] init];
@@ -63,13 +60,10 @@
     NSString *newStr = @"";
 
     //http://stackoverflow.com/questions/2467844/convert-utf-8-encoded-nsdata-to-nsstring
-    if(error)
-    {
+    if (error) {
         NSLog(@"Error finding in createJsonData: %@",error);
         //newStr = [NSString stringWithUTF8String:[jsondata bytes]];
-    }
-    else
-    {
+    } else {
         newStr = [[NSString alloc] initWithData:jsondata encoding:NSUTF8StringEncoding];
     }
 
@@ -80,22 +74,19 @@
 
 + (void)saveJsonToFile:(NSString *)jsonStr
          overwritedata:(BOOL)overwriteFile
-             withError:(NSError **)errorP
-{
+             withError:(NSError **)errorP {
 
     NSString *fileName = [JsonWork getNameOfJsonFile];
     NSString *fileDyrectory = [JsonWork getDirectoryForFiles:true withError:errorP];
 
-    if (!*errorP)
-    {
+    if (!*errorP) {
         NSString *filePath = [fileDyrectory stringByAppendingPathComponent:fileName];
 
         //chek on existin file
         NSFileManager *fileMng = [NSFileManager defaultManager];
         BOOL fileExist = [fileMng fileExistsAtPath:filePath];
 
-        if (overwriteFile && fileExist)
-        {
+        if (overwriteFile && fileExist) {
             //rewrite file
             NSFileHandle *fh = [NSFileHandle fileHandleForWritingAtPath:filePath];
             [fh seekToEndOfFile];
@@ -103,9 +94,7 @@
             NSData *data = [jsonStr dataUsingEncoding:NSUTF8StringEncoding];
             [fh writeData:data];
             [fh closeFile];
-        }
-        else
-        {
+        } else {
             [jsonStr writeToFile:filePath
                       atomically:TRUE
                         encoding:NSUTF8StringEncoding
@@ -114,8 +103,7 @@
     }
 }
 
-+ (NSString *)loadJsonFromFile:(NSError **)errorP
-{
++ (NSString *)loadJsonFromFile:(NSError **)errorP {
     //http://stackoverflow.com/questions/5100994/how-to-save-load-text-files-in-objective-c-for-the-iphone-using-uitextview
 
     NSString *fileСontents;
@@ -123,8 +111,7 @@
     NSString *fileName = [JsonWork getNameOfJsonFile];
     NSString *fileDyrectory = [JsonWork getDirectoryForFiles:false withError:errorP];
 
-    if (!*errorP)
-    {
+    if (!*errorP) {
         NSString *filePath = [fileDyrectory stringByAppendingPathComponent:fileName];
         fileСontents = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:errorP];
     }
@@ -133,21 +120,18 @@
 }
 
 + (NSString *)getDirectoryForFiles:(BOOL)createDirecroryIfNotExist
-                         withError:(NSError **)errorPtr
-{
+                         withError:(NSError **)errorPtr {
     JsonWork *singeltoneClassObject = [JsonWork classPropertyContainer];
     NSString *urlDict = singeltoneClassObject.urlDirectoryForFiles;
 
-    if ((urlDict == nil) && createDirecroryIfNotExist)
-    {
+    if ((urlDict == nil) && createDirecroryIfNotExist) {
         //        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
         //        urlDict = [paths objectAtIndex:0];
 
         urlDict = [NSTemporaryDirectory() stringByAppendingPathComponent:@"com.app.ShoppingList"];
 
         NSFileManager *fileMng = [NSFileManager defaultManager];
-        if (![fileMng fileExistsAtPath:urlDict])
-        {
+        if (![fileMng fileExistsAtPath:urlDict]) {
             [fileMng createDirectoryAtPath:urlDict
                withIntermediateDirectories:NO
                                 attributes:nil
@@ -160,13 +144,11 @@
     return urlDict;
 }
 
-+ (NSString *)getNameOfJsonFile
-{
++ (NSString *)getNameOfJsonFile {
     JsonWork *singeltoneClassObject = [JsonWork classPropertyContainer];
     NSString *jsonName = singeltoneClassObject.nameOfJsonFile;
 
-    if (jsonName == nil)
-    {
+    if (jsonName == nil) {
         jsonName = @"ShoppingList-JSON.json";
         singeltoneClassObject.nameOfJsonFile = jsonName;
     }
