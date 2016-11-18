@@ -15,7 +15,7 @@ int main(int argc, const char * argv[]) {
         // insert code here...
 
         //1 - видаляє через один парні символи із строки
-        NSString *testString = @"Also, be sure the target membership is marked for your unit test target.";
+        NSString *testString = @"Also, be sure the target";
         NSString *cutedString = [testString removeSymbolWithCount:(2)];
         NSLog(@"1.removeSymbolWithCount \n testString: '%@',\n cutedString: '%@'",testString,cutedString);
 
@@ -34,7 +34,7 @@ int main(int argc, const char * argv[]) {
         [stingDataForJSON setObject:swappedString forKey:@"secondString"];
         NSString *jsonString2 = [JsonWork createJsonData:stingDataForJSON];
 
-        //save JSON to file
+        //3.1 save JSON to file
         NSError *error = nil;
         [JsonWork saveJsonToFile:jsonString1
                    overwritedata:true
@@ -51,7 +51,16 @@ int main(int argc, const char * argv[]) {
         {
             NSLog(@"Error saving jsonString2: %@",error);
         }
-        
+
+        //3.2 read json from file
+        error = nil;
+        NSString *savedJsonData = [JsonWork loadJsonFromFile:&error];
+        if(error)
+        {
+            NSLog(@"Error to load Json data from file: %@",error);
+        }
+        NSLog(@"Print loaded from file Json data: \n%@",savedJsonData);
+
         
     }
     return 0;

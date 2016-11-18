@@ -11,7 +11,7 @@
 
 @implementation JsonWork
 
-+(JsonWork *)classPropertyContainer
++ (JsonWork *)classPropertyContainer
 {
     static JsonWork* fooDict = nil;
 
@@ -26,15 +26,18 @@
     return fooDict;
 }
 
-+(NSDictionary *)dictionary {
++ (NSDictionary *)dictionary
+{
     static NSDictionary *directoryForFiles = nil;
+
     if (directoryForFiles == nil) {
         directoryForFiles = [NSDictionary new];
     }
+
     return directoryForFiles;
 }
 
-+(NSString *)createJsonData:(NSDictionary*)dataForCreation
++ (NSString *)createJsonData:(NSDictionary*)dataForCreation
 {
     //http://stackoverflow.com/questions/16057281/creating-json-format-in-objective-c
 
@@ -68,13 +71,13 @@
 
 //MARK: Save_in/ Load_from file
 
-+(void)saveJsonToFile:(NSString *)jsonStr
++ (void)saveJsonToFile:(NSString *)jsonStr
         overwritedata:(BOOL)overwriteFile
             withError:(NSError **)errorP
 {
 
     NSString *fileName = [JsonWork getNameOfJsonFile];
-    NSString *fileDyrectory = [JsonWork getDirectoryForFiles:errorP];
+    NSString *fileDyrectory = [JsonWork getDirectoryForFiles:true withError:errorP];
 
     if (!*errorP)
     {
@@ -101,21 +104,36 @@
                         encoding:NSUTF8StringEncoding
                            error:errorP];
         }
-
-
     }
 }
 
++ (NSString *)loadJsonFromFile:(NSError **)errorP
+{
+    //http://stackoverflow.com/questions/5100994/how-to-save-load-text-files-in-objective-c-for-the-iphone-using-uitextview
 
-+(NSString *)getDirectoryForFiles:(NSError **)errorPtr
+    NSString *fileСontents;
+
+    NSString *fileName = [JsonWork getNameOfJsonFile];
+    NSString *fileDyrectory = [JsonWork getDirectoryForFiles:false withError:errorP];
+
+    if (!*errorP)
+    {
+        NSString *filePath = [fileDyrectory stringByAppendingPathComponent:fileName];
+        fileСontents = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:errorP];
+    }
+
+    return fileСontents;
+}
+
++ (NSString *)getDirectoryForFiles:(BOOL)createDirecroryIfNotExist
+                        withError:(NSError **)errorPtr
 {
     JsonWork *singeltoneClassObject = [JsonWork classPropertyContainer];
     NSString *urlDict = singeltoneClassObject.urlDirectoryForFiles;
 
-    if (urlDict == nil)
+    if ((urlDict == nil) && createDirecroryIfNotExist)
     {
-        //        NSArray *paths = NSSearchPathForDirectoriesInDomains
-        //        (NSCachesDirectory, NSUserDomainMask, YES);
+        //        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
         //        urlDict = [paths objectAtIndex:0];
 
         urlDict = [NSTemporaryDirectory() stringByAppendingPathComponent:@"com.app.charSwapInString"];
@@ -132,11 +150,10 @@
         singeltoneClassObject.urlDirectoryForFiles = urlDict;
     }
 
-
     return urlDict;
 }
 
-+(NSString *)getNameOfJsonFile
++ (NSString *)getNameOfJsonFile
 {
     JsonWork *singeltoneClassObject = [JsonWork classPropertyContainer];
     NSString *jsonName = singeltoneClassObject.nameOfJsonFile;
@@ -146,7 +163,6 @@
         jsonName = @"CharSwapInString-JSON.json";
         singeltoneClassObject.nameOfJsonFile = jsonName;
     }
-    
     
     return jsonName;
 }
