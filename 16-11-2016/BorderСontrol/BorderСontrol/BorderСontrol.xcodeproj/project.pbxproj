@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E71345531DE0948F00C981B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E71345521DE0948F00C981B3 /* main.m */; };
+		E713455B1DE09F8300C981B3 /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = E713455A1DE09F8300C981B3 /* Country.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,12 @@
 /* Begin PBXFileReference section */
 		E713454F1DE0948F00C981B3 /* BorderСontrol */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "BorderСontrol"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E71345521DE0948F00C981B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E71345591DE09F3200C981B3 /* Country.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Country.h; sourceTree = "<group>"; };
+		E713455A1DE09F8300C981B3 /* Country.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
+		E713455C1DE0A24500C981B3 /* Human.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Human.h; sourceTree = "<group>"; };
+		E713455D1DE0A2F100C981B3 /* Emigrant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Emigrant.h; sourceTree = "<group>"; };
+		E713455E1DE0A38800C981B3 /* Guard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Guard.h; sourceTree = "<group>"; };
+		E713455F1DE0A3D900C981B3 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +65,12 @@
 			isa = PBXGroup;
 			children = (
 				E71345521DE0948F00C981B3 /* main.m */,
+				E71345591DE09F3200C981B3 /* Country.h */,
+				E713455A1DE09F8300C981B3 /* Country.m */,
+				E713455C1DE0A24500C981B3 /* Human.h */,
+				E713455D1DE0A2F100C981B3 /* Emigrant.h */,
+				E713455E1DE0A38800C981B3 /* Guard.h */,
+				E713455F1DE0A3D900C981B3 /* Header.h */,
 			);
 			path = "BorderСontrol";
 			sourceTree = "<group>";
@@ -119,6 +132,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E713455B1DE09F8300C981B3 /* Country.m in Sources */,
 				E71345531DE0948F00C981B3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
