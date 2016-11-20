@@ -11,11 +11,11 @@
 
 @interface Helper : NSObject
 
-typedef enum PositionСheck : NSString {
-    hasDrugs,
-    hasGuns,
+typedef enum PositionСheck {
+    drugs,
+    guns,
     forbiddenSubstances,
-    hasCriminalPast,
+    criminalPast,
     isBeingSought
 } PositionСheck;
 

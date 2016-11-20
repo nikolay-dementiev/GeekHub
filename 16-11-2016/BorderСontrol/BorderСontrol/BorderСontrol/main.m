@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ViewBorderControl.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+
+        [ViewBorderControl initiateBorderControlGame];
     }
     return 0;
 }
