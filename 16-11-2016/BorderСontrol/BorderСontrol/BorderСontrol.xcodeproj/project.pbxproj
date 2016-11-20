@@ -19,6 +19,7 @@
 		E71345971DE21E8400C981B3 /* ReceptionСenterItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E71345891DE21E8400C981B3 /* ReceptionСenterItem.m */; };
 		E71345981DE21E8400C981B3 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = E713458C1DE21E8400C981B3 /* Helper.m */; };
 		E713459B1DE21EEB00C981B3 /* ViewBorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E713459A1DE21EEB00C981B3 /* ViewBorderControl.m */; };
+		E77240C41DE22A8200550835 /* BorderControlController.m in Sources */ = {isa = PBXBuildFile; fileRef = E77240C31DE22A8200550835 /* BorderControlController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,6 +59,8 @@
 		E713458C1DE21E8400C981B3 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
 		E71345991DE21EC300C981B3 /* ViewBorderControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewBorderControl.h; sourceTree = "<group>"; };
 		E713459A1DE21EEB00C981B3 /* ViewBorderControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewBorderControl.m; sourceTree = "<group>"; };
+		E77240C21DE22A2300550835 /* BorderControlController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BorderControlController.h; sourceTree = "<group>"; };
+		E77240C31DE22A8200550835 /* BorderControlController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorderControlController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,11 +93,11 @@
 		E71345511DE0948F00C981B3 /* BorderСontrol */ = {
 			isa = PBXGroup;
 			children = (
+				E71345521DE0948F00C981B3 /* main.m */,
 				E71345771DE21E8400C981B3 /* Model */,
 				E713458D1DE21E8400C981B3 /* View */,
-				E713458A1DE21E8400C981B3 /* Helper */,
 				E713458E1DE21E8400C981B3 /* Controller */,
-				E71345521DE0948F00C981B3 /* main.m */,
+				E713458A1DE21E8400C981B3 /* Helper */,
 			);
 			path = "BorderСontrol";
 			sourceTree = "<group>";
@@ -145,6 +148,8 @@
 		E713458E1DE21E8400C981B3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E77240C21DE22A2300550835 /* BorderControlController.h */,
+				E77240C31DE22A8200550835 /* BorderControlController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -209,6 +214,7 @@
 				E71345931DE21E8400C981B3 /* Emigrant.m in Sources */,
 				E71345911DE21E8400C981B3 /* BoundaryStorageItem.m in Sources */,
 				E713458F1DE21E8400C981B3 /* BorderControlItem.m in Sources */,
+				E77240C41DE22A8200550835 /* BorderControlController.m in Sources */,
 				E71345951DE21E8400C981B3 /* Human.m in Sources */,
 				E713459B1DE21EEB00C981B3 /* ViewBorderControl.m in Sources */,
 				E71345531DE0948F00C981B3 /* main.m in Sources */,
@@ -344,6 +350,7 @@
 				E71345581DE0948F00C981B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

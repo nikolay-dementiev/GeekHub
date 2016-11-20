@@ -15,10 +15,14 @@
 
 @interface Country : NSObject
 
+@property (readwrite, strong, nonatomic) NSString *name;
+
 @property (readwrite, nonatomic) int numberOfResidents;
 @property (readwrite, strong, nonatomic) NSMutableSet <PrisonItem*> *prison;
 @property (readwrite, strong, nonatomic) NSMutableSet <BorderControlItem*> *borderControl;
 @property (readwrite, strong, nonatomic) NSMutableSet <ReceptionСenterItem*> *receptionСenter;
+
+- (instancetype)initWithName:(NSString *)nameOfCountry;
 
 @end
 

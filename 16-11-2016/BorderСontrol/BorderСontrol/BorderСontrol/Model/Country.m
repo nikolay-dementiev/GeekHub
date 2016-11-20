@@ -11,6 +11,11 @@
 
 @implementation Country
 
+- (instancetype)initWithName:(NSString *)nameOfCountry {
 
+    _name = nameOfCountry;
+    
+    return self;
+}
 
 @end
