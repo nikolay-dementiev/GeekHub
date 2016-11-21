@@ -10,26 +10,30 @@
 #define Country_h
 @class Emigrant;
 @class PrisonItem;
-@class BorderControlItem;
-@class ReceptionСenterItem;
-@class ResidentItem;
-@class BoundaryStorageItem;
+//@class BorderControlItem;
+//@class ReceptionCenterItem;
+//@class ResidentItem;
+//@class BoundaryStorageItem;
+@class BoundaryStorageSet;
+#import "BoundaryStorageSet.h"
+#import "PrisonStorageSet.h"
 
 @interface Country : NSObject
 
 @property (readwrite, strong, nonatomic) NSString *name;
 @property (readwrite, nonatomic) int numberOfResidents;
 
-@property (readwrite, strong, nonatomic) NSMutableSet <ResidentItem*> *resident;
-@property (readwrite, strong, nonatomic) NSMutableSet <PrisonItem*> *prison;
-@property (readwrite, strong, nonatomic) NSMutableSet <BorderControlItem*> *borderControl;
-@property (readwrite, strong, nonatomic) NSMutableSet <ReceptionСenterItem*> *receptionСenter;
+@property (readwrite, strong, nonatomic) BoundaryStorageSet *residentSet;//NSMutableSet <ResidentItem*> *resident;
+@property (readwrite, strong, nonatomic) PrisonStorageSet *prisonSet;//NSMutableSet <PrisonItem*> *prison;
+@property (readwrite, strong, nonatomic) BoundaryStorageSet *borderControlSet;//NSMutableSet <BorderControlItem*> *borderControl;
+@property (readwrite, strong, nonatomic) BoundaryStorageSet *receptionСenterSet;//NSMutableSet <ReceptionCenterItem*> *receptionСenter;
 
 - (instancetype)initWithName:(NSString *)nameOfCountry;
 - (instancetype)init;
 
-- (void)moveEmigrantFrom:(NSMutableSet<BoundaryStorageItem*>*)fromPlace
-           moveItToPlace:(NSMutableSet<BoundaryStorageItem*>*)toPlace;
+//- (void)initiateResidents;
+//- (void)moveEmigrantFrom:(NSMutableSet<BoundaryStorageItem*>*)fromPlace
+//           moveItToPlace:(NSMutableSet<BoundaryStorageItem*>*)toPlace;
 
 @end
 

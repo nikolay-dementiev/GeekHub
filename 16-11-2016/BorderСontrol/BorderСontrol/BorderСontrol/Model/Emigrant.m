@@ -34,16 +34,16 @@
 
 -(NSArray *)createRandomHistoryForEmigrant {
 
-    NSMutableArray *arrayOfListHistory;
+    NSMutableArray *arrayOfListHistory = [[NSMutableArray alloc] init];
 
     NSArray *arrayList = [Helper getArrayPositionForCheking];
 
-    int doomInt = 5;//20% chance to have every banned item in his history
+    int doomInt = 10;//10% chance to have every banned item in his history
     for (int i = 0; i<[arrayList count]; i++) {
-        int riscVal = [Helper getRandomInt:doomInt min:0];
+        int riscVal = [Helper getRandomInt:doomInt+1 min:0];
 
         if (riscVal == doomInt) {
-            PositionForCheking itemType = [arrayList[0] intValue];
+            PositionForCheking itemType = [arrayList[i] intValue];
             [arrayOfListHistory addObject:@(itemType)];
         }
     }

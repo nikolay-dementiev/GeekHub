@@ -8,11 +8,10 @@
 
 #ifndef Reception_enterItem_h
 #define Reception_enterItem_h
-
 #import "BoundaryStorageItem.h"
 @class Guard;
 
-@interface ReceptionСenterItem : BoundaryStorageItem
+@interface ReceptionCenterItem : BoundaryStorageItem
 
 
 @end

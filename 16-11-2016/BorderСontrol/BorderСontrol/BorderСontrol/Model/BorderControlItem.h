@@ -9,6 +9,7 @@
 #ifndef BorderControlItem_h
 #define BorderControlItem_h
 #import "BoundaryStorageItem.h"
+
 @class Guard;
 
 @interface BorderControlItem : BoundaryStorageItem

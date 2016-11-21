@@ -1,5 +1,5 @@
 //
-//  BorderController.m
+//  ReceptionСenterItem.m
 //  BorderСontrol
 //
 //  Created by Nikolay Dementiev on 20.11.16.
@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BorderController.h"
+#import "ReceptionCenterItem.h"
 
-@implementation BorderController
+@implementation ReceptionCenterItem
 
 
 @end

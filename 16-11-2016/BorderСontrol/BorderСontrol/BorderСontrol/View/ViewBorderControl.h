@@ -11,7 +11,7 @@
 
 @interface ViewBorderControl : NSObject
 
-+(void) initiateBorderControlGame;
++ (void)initiateBorderControlGame;
 
 @end
 

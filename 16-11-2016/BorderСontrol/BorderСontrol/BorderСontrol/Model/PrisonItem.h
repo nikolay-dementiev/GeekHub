@@ -9,6 +9,7 @@
 #ifndef Prison_h
 #define Prison_h
 #import "BoundaryStorageItem.h"
+
 @class Guard;
 
 @interface PrisonItem : BoundaryStorageItem
