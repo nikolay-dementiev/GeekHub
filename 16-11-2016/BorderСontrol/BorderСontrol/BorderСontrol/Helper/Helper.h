@@ -11,13 +11,19 @@
 
 @interface Helper : NSObject
 
-typedef enum PositionСheck {
+typedef enum PositionForCheking {
     drugs,
     guns,
     forbiddenSubstances,
     criminalPast,
     isBeingSought
-} PositionСheck;
+} PositionForCheking;
++ (NSArray *)getArrayPositionForCheking;
+
++ (int)getRandomInt:(int)maxValue
+                min:(int)minValue;
++ (NSString *)randomStringWithLength:(int)len;
++ (NSString *)getRandomHumanName:(int)nameLenth;
 
 @end
 

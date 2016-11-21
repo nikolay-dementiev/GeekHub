@@ -11,6 +11,12 @@
 
 @interface Human : NSObject
 
+@property (readwrite, strong, nonatomic) NSString *name;
+@property (readwrite, strong, nonatomic) NSString *classPrefix;
+
+- (instancetype)init;
+- (instancetype)initWithRandomParameters;
+
 @end
 
 #endif /* Human_h */

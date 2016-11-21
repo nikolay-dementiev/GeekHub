@@ -24,10 +24,11 @@
     for (int i = 0; i<2; i++) {
         Country *processCountry = countryArray[i];
         num = 0;
-        NSLog(@"1.%d Please, Enter number of residents in: '%@' country",
+        NSLog(@"1.%d Please, Enter number of residents in '%@' country:",
               i,
               processCountry.name);
-        scanf("%f",&num);
+        //!!!!! scanf("%f",&num);
+        num = 30; // for test only!!!!
 
         processCountry.numberOfResidents = num;
     }

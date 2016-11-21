@@ -11,5 +11,13 @@
 
 @implementation BoundaryStorageItem
 
+- (instancetype)initWithEmData:(Emigrant *)emigrant {
+
+    _emigrantMan = emigrant;
+
+    return self;
+}
+
+
 
 @end

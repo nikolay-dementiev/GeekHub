@@ -8,8 +8,26 @@
 
 #import <Foundation/Foundation.h>
 #import "Human.h"
+#import "Helper.h"
 
 @implementation Human
 
+- (instancetype)initWithRandomParameters {
+
+    _name = [_classPrefix stringByAppendingString: [Helper getRandomHumanName:15]];
+
+    return self;
+}
+
+- (instancetype)init {
+
+    self = [super init];
+
+    if (self) {
+        _classPrefix = @"Hum";
+    }
+
+    return self;
+}
 
 @end

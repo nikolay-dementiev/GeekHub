@@ -14,6 +14,9 @@
 
 @property (readwrite, strong, nonatomic) NSArray *bagAndHistory;
 
+- (instancetype)init;
+- (instancetype)initWithRandomParameters;
+
 @end
 
 #endif /* Emigrant_h */

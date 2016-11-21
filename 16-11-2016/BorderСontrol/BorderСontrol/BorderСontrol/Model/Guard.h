@@ -12,6 +12,9 @@
 
 @interface Guard : Human
 
+- (instancetype)init;
+- (instancetype)initWithRandomParameters;
+
 @end
 
 #endif /* Guard_h */
