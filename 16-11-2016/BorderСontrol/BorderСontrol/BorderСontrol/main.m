@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ViewBorderControl.h"
+#import "ViewBorderControlController.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
 
-        [ViewBorderControl initiateBorderControlGame];
+        [[ViewBorderControlController sharedInstance] initiateBorderControlGame];
     }
     return 0;
 }

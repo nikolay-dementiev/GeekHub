@@ -1,15 +1,22 @@
+////
+////  BorderControlItem.m
+////  BorderСontrol
+////
+////  Created by Nikolay Dementiev on 20.11.16.
+////  Copyright © 2016 mc373. All rights reserved.
+////
 //
-//  BorderControlItem.m
-//  BorderСontrol
+//#import <Foundation/Foundation.h>
+//#import "BorderControlItem.h"
+//#import "Guard.h"
 //
-//  Created by Nikolay Dementiev on 20.11.16.
-//  Copyright © 2016 mc373. All rights reserved.
+//@implementation BorderControlItem
 //
-
-#import <Foundation/Foundation.h>
-#import "BorderControlItem.h"
-
-@implementation BorderControlItem
-
-
-@end
+//- (instancetype)initWithGuardData:(Guard *)guardMan {
+//
+//    _guardMan = guardMan;
+//
+//    return self;
+//}
+//
+//@end

@@ -32,7 +32,7 @@
 //        _receptionСenter = [NSMutableSet set];
         _prisonSet = [PrisonStorageSet new];
         _residentSet = [BoundaryStorageSet new];
-        _borderControlSet = [BoundaryStorageSet new];
+        _borderControlSet = [BorderControlSet new];
         _receptionСenterSet = [BoundaryStorageSet new];
     }
 

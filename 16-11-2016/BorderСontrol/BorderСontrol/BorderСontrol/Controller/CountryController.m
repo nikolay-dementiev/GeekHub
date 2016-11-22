@@ -11,6 +11,7 @@
 #import "Country.h"
 #import "Emigrant.h"
 #import "ResidentItem.h"
+#import "BorderControlController.h"
 //#import "Res"
 
 @implementation CountryController
@@ -20,6 +21,8 @@
 
     if (self) {
         countryModel = countryM;
+        _borderController = [[BorderControlController new] initWithModel:countryModel];
+
         _nameOfModelCountry = countryM.name;
     }
 
@@ -38,8 +41,12 @@
 //    return countryModel;
 //}
 
-- (void)setNumberOfResidents:(int)count {
-    countryModel.numberOfResidents = count;
+- (void)setNumberOfResidentsInCountry:(int)newValue {
+    countryModel.numberOfResidents = newValue;
+}
+
+- (int)numberOfResidentsInCountry {
+    return countryModel.numberOfResidents;
 }
 
 
@@ -54,11 +61,11 @@
     }
 }
 
+//MARK: borderController
+
 - (void)moveEmigrantFrom:(NSMutableSet<BoundaryStorageItem*>*)fromPlace
            moveItToPlace:(NSMutableSet<BoundaryStorageItem*>*)toPlace {
 
-
-    
 }
 
 

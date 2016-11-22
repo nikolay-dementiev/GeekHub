@@ -8,9 +8,31 @@
 
 #import <Foundation/Foundation.h>
 #import "BorderControlController.h"
+#import "Guard.h"
+#import "BorderControlSet.h"
+#import "BorderControlItem.h"
+#import "Country.h"
+#import "Emigrant.h"
 
 @implementation BorderControlController
 
+- (instancetype)initWithModel:(Country *)countryM {
+    self = [super init];
+
+    if (self) {
+        countryModel = countryM;
+    }
+
+    return self;
+}
+
+- (void)initiateGuards:(int)numberOfGuards {
+
+    for (int i = 0; i < numberOfGuards; i ++) {
+        Guard *newMan = [[Guard new] initWithRandomParameters];
+        [countryModel.borderControlSet.guardMan addObject:newMan];
+    }
+}
 
 
 @end

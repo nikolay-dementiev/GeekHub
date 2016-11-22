@@ -22,6 +22,7 @@ typedef enum PositionForCheking {
 
 + (int)getRandomInt:(int)maxValue
                 min:(int)minValue;
++ (BOOL)getRandomBool;
 + (NSString *)randomStringWithLength:(int)len;
 + (NSString *)getRandomHumanName:(int)nameLenth;
 

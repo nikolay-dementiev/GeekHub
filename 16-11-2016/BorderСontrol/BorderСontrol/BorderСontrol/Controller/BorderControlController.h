@@ -8,10 +8,14 @@
 
 #ifndef BorderControlController_h
 #define BorderControlController_h
+@class Country;
 
-@interface BorderControlController : NSObject
+@interface BorderControlController : NSObject {
+    Country *countryModel;
+}
 
-
+- (instancetype)initWithModel:(Country *)countryM;
+- (void)initiateGuards:(int)numberOfGuards;
 
 @end
 

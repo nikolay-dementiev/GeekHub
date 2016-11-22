@@ -12,6 +12,8 @@
 
 @interface Guard : Human
 
+@property (readwrite, nonatomic) int rateFindOffense;
+
 - (instancetype)init;
 - (instancetype)initWithRandomParameters;
 

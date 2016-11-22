@@ -8,10 +8,12 @@
 
 #ifndef ViewBorderControl_h
 #define ViewBorderControl_h
+@class Country;
 
 @interface ViewBorderControl : NSObject
 
-+ (void)initiateBorderControlGame;
+//+ (void)initiateBorderControlGame;
+- (int)setNumberOfResident:(NSString *)processCountryName;
 
 @end
 

@@ -17,6 +17,7 @@
 @class BoundaryStorageSet;
 #import "BoundaryStorageSet.h"
 #import "PrisonStorageSet.h"
+#import "BorderControlSet.h"
 
 @interface Country : NSObject
 
@@ -25,7 +26,7 @@
 
 @property (readwrite, strong, nonatomic) BoundaryStorageSet *residentSet;//NSMutableSet <ResidentItem*> *resident;
 @property (readwrite, strong, nonatomic) PrisonStorageSet *prisonSet;//NSMutableSet <PrisonItem*> *prison;
-@property (readwrite, strong, nonatomic) BoundaryStorageSet *borderControlSet;//NSMutableSet <BorderControlItem*> *borderControl;
+@property (readwrite, strong, nonatomic) BorderControlSet *borderControlSet;//NSMutableSet <BorderControlItem*> *borderControl;
 @property (readwrite, strong, nonatomic) BoundaryStorageSet *receptionСenterSet;//NSMutableSet <ReceptionCenterItem*> *receptionСenter;
 
 - (instancetype)initWithName:(NSString *)nameOfCountry;

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E7000E8B1DE329130011AB63 /* CountryController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7000E8A1DE329130011AB63 /* CountryController.m */; };
+		E7000E8E1DE444DD0011AB63 /* BorderControlSet.m in Sources */ = {isa = PBXBuildFile; fileRef = E7000E8D1DE444DD0011AB63 /* BorderControlSet.m */; };
+		E7000E911DE456930011AB63 /* ViewBorderControlController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7000E901DE456930011AB63 /* ViewBorderControlController.m */; };
 		E71345531DE0948F00C981B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E71345521DE0948F00C981B3 /* main.m */; };
 		E713458F1DE21E8400C981B3 /* BorderControlItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E71345791DE21E8400C981B3 /* BorderControlItem.m */; };
 		E71345911DE21E8400C981B3 /* BoundaryStorageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E713457D1DE21E8400C981B3 /* BoundaryStorageItem.m */; };
@@ -40,6 +42,10 @@
 /* Begin PBXFileReference section */
 		E7000E891DE328FC0011AB63 /* CountryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountryController.h; sourceTree = "<group>"; };
 		E7000E8A1DE329130011AB63 /* CountryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryController.m; sourceTree = "<group>"; };
+		E7000E8C1DE444800011AB63 /* BorderControlSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BorderControlSet.h; sourceTree = "<group>"; };
+		E7000E8D1DE444DD0011AB63 /* BorderControlSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorderControlSet.m; sourceTree = "<group>"; };
+		E7000E8F1DE456820011AB63 /* ViewBorderControlController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewBorderControlController.h; sourceTree = "<group>"; };
+		E7000E901DE456930011AB63 /* ViewBorderControlController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewBorderControlController.m; sourceTree = "<group>"; };
 		E713454F1DE0948F00C981B3 /* BorderСontrol */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "BorderСontrol"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E71345521DE0948F00C981B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E71345781DE21E8400C981B3 /* BorderControlItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BorderControlItem.h; sourceTree = "<group>"; };
@@ -136,6 +142,8 @@
 				E77240C91DE30E3F00550835 /* BoundaryStorageSet.m */,
 				E77240CB1DE3180500550835 /* PrisonStorageSet.h */,
 				E77240CC1DE318C100550835 /* PrisonStorageSet.m */,
+				E7000E8C1DE444800011AB63 /* BorderControlSet.h */,
+				E7000E8D1DE444DD0011AB63 /* BorderControlSet.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -165,6 +173,8 @@
 				E77240C31DE22A8200550835 /* BorderControlController.m */,
 				E7000E891DE328FC0011AB63 /* CountryController.h */,
 				E7000E8A1DE329130011AB63 /* CountryController.m */,
+				E7000E8F1DE456820011AB63 /* ViewBorderControlController.h */,
+				E7000E901DE456930011AB63 /* ViewBorderControlController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -230,6 +240,7 @@
 				E71345931DE21E8400C981B3 /* Emigrant.m in Sources */,
 				E71345911DE21E8400C981B3 /* BoundaryStorageItem.m in Sources */,
 				E713458F1DE21E8400C981B3 /* BorderControlItem.m in Sources */,
+				E7000E8E1DE444DD0011AB63 /* BorderControlSet.m in Sources */,
 				E77240C41DE22A8200550835 /* BorderControlController.m in Sources */,
 				E71345951DE21E8400C981B3 /* Human.m in Sources */,
 				E7000E8B1DE329130011AB63 /* CountryController.m in Sources */,
@@ -241,6 +252,7 @@
 				E71345971DE21E8400C981B3 /* ReceptionCenterItem.m in Sources */,
 				E71345981DE21E8400C981B3 /* Helper.m in Sources */,
 				E71345921DE21E8400C981B3 /* Country.m in Sources */,
+				E7000E911DE456930011AB63 /* ViewBorderControlController.m in Sources */,
 				E71345941DE21E8400C981B3 /* Guard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

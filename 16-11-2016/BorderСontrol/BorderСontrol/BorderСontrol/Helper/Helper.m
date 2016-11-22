@@ -28,10 +28,24 @@
                 min:(int)minValue {
     int lowerBound = minValue;
     int upperBound = maxValue;
-    int rndValue = lowerBound + arc4random() % (upperBound - lowerBound);
+
+    int rndValue;
+    if (lowerBound == upperBound) {
+        rndValue = lowerBound;
+    } else {
+        rndValue = lowerBound + arc4random() % (upperBound - lowerBound);
+    }
 
     return rndValue;
 };
+
++ (BOOL)getRandomBool
+{
+    int tmp = (arc4random() % 30)+1;
+    if(tmp % 5 == 0)
+        return YES;
+    return NO;
+}
 
 NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 

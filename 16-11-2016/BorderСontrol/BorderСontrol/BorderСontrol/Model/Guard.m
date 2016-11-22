@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Guard.h"
+#import "Helper.h"
 
 @implementation Guard
 
@@ -25,6 +26,7 @@
 - (instancetype)initWithRandomParameters {
 
     self = [super initWithRandomParameters];
+    _rateFindOffense = [Helper getRandomInt:80 min:10];
 
     return self;
 }
