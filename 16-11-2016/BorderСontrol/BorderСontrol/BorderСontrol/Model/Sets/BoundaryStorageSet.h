@@ -23,6 +23,7 @@
 
 - (void)addRecord:(BoundaryStorageItem *)record;
 - (void)deleteRecord:(BoundaryStorageItem *)record;
+- (int)count;
 
 - (instancetype)init;
 

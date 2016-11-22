@@ -30,6 +30,11 @@
 
 }
 
+- (int)count {
+    
+    return (int)[setOfObjects count];
+}
+
 - (instancetype)init {
     self = [super init];
 

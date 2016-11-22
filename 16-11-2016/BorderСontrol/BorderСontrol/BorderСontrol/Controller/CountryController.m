@@ -13,7 +13,6 @@
 #import "ResidentItem.h"
 #import "BorderControlController.h"
 #import "Helper.h"
-//#import "Res"
 
 @implementation CountryController
 
@@ -38,9 +37,9 @@
     return self;
 }
 
-//-(Country *)getModelInstanse {
-//    return countryModel;
-//}
+- (Country *)getModelInstanse {
+    return countryModel;
+}
 
 - (void)setNumberOfResidentsInCountry:(int)newValue {
     countryModel.numberOfResidents = newValue;
@@ -50,7 +49,9 @@
     return countryModel.numberOfResidents;
 }
 
-
+- (int)numberOfResidentsInResidentSet {
+    return [countryModel.residentSet count];
+}
 
 - (void)initiateResidents {
 
@@ -67,24 +68,17 @@
 - (void)moveAcrossBorderAnyOfResydent {
 
     // get random resident
-    int randomTickResident = [Helper getRandomInt: self.numberOfResidentsInCountry min:0];
+    int randomTickResident = [Helper getRandomInt: [self numberOfResidentsInResidentSet] min:0];
     ResidentItem *randomResident = countryModel.residentSet.descriptionInArray [randomTickResident];
 
-    //1. move him residentSet -> borderControlSet
+    //1. move him -> from residentSet to: borderControlSet
 
     [self moveEmigrantFrom:randomResident
                moveHimFrom:countryModel.residentSet
             moveHimToPlace:countryModel.borderControlSet];
 
-
-//                          :randomResident
-//               moveHimFrom: countryModel.residentSet
-//             moveItToPlace:countryModel.borderControlSet];
-
     [self moveResidentThroughBorder:randomResident];
 
-
-    //    [selectedCountryController ]descriptionInArray
 }
 
 - (void)moveResidentThroughBorder:(ResidentItem *)potentialViolator {
@@ -95,28 +89,46 @@
     if ([_borderController residentHasForbiddenItem:potentialViolator
                                            guardMan:currentGuardMab]) {
         //yes - he has
-        //move him in jail: prisonSet
-        [self moveEmigrantFrom:potentialViolator
-                   moveHimFrom:countryModel.borderControlSet
-                 moveHimToPlace:countryModel.prisonSet];
+        //move him -> in jail: prisonSet
+
+        //there we need some analytics - thant's why transform item type
+        PrisonItem *thiefInPrison = [[[PrisonItem new]
+                                      initWithEmData:potentialViolator.emigrantMan]
+                                     initWithGuard:currentGuardMab];
+
+        [self moveEmigrantFrom: [NSArray arrayWithObjects: potentialViolator, nil]
+                 recordsForAdd: [NSArray arrayWithObjects: thiefInPrison, nil]
+                   moveHimFrom: countryModel.borderControlSet
+                moveHimToPlace:countryModel.prisonSet];
+
+        //collect some analitic
+        _residentWereInJail++;
 
     } else {
         //no - he is clean
-        //move him in at will: receptionCenterSet
-
-
-//        PrisonItem *newItem = [[[PrisonItem new]
-//                                initWithEmData:potentialViolator.emigrantMan]
-//                               initWithGuard:currentGuardMab];
-
+        //move him -> in at will: receptionCenterSet
 
         [self moveEmigrantFrom:potentialViolator
                    moveHimFrom:countryModel.borderControlSet
                  moveHimToPlace:countryModel.receptionCenterSet];
-
     }
+}
 
+- (void)moveAllPeopleToAnotherCountryArea:(Country *)destinationCountry {
 
+    NSArray *arryOfSetItems = countryModel.receptionCenterSet.descriptionInArray;
+
+    for (BoundaryStorageItem *itemInStorage in arryOfSetItems) {
+        [self moveEmigrantFrom:itemInStorage
+                   moveHimFrom:countryModel.receptionCenterSet
+                moveHimToPlace:destinationCountry.emigrantSet];
+
+        //collect some analitic
+        _successfullyCrossedTheBorder++;
+        if ([itemInStorage.emigrantMan.bagAndHistory count] > 0) {
+            _residentsWithOffenseManagedToCrossTheBorder++;
+        }
+    }
 }
 
 - (void)moveEmigrantFrom:(BoundaryStorageItem *)movableRecord
@@ -128,5 +140,29 @@
     
 }
 
+- (void)moveEmigrantFrom:(NSArray *)recordsForRemove
+           recordsForAdd:(NSArray *)recordsForAdd
+             moveHimFrom:(BoundaryStorageSet*)fromPlace
+          moveHimToPlace:(BoundaryStorageSet*)toPlace {
+
+    for (BoundaryStorageItem *movableRecord in recordsForRemove) {
+        [fromPlace deleteRecord: movableRecord];
+    }
+
+    for (BoundaryStorageItem *movableRecord in recordsForAdd) {
+        [toPlace addRecord: movableRecord];
+    }
+}
+
+- (float)calculateValueInPrecentOfOvelAll:(int)inputValue {
+    float valueToReturn = 0;
+
+    int allValue = [self numberOfResidentsInCountry];
+    if (allValue > 0) {
+        valueToReturn = (100 * inputValue)/allValue;
+    }
+
+    return valueToReturn;
+}
 
 @end

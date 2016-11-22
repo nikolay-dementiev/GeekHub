@@ -21,7 +21,13 @@
 @property (readwrite, retain, nonatomic) BorderControlController *borderController;
 @property (readwrite, retain, nonatomic) NSString *nameOfModelCountry;
 
+//analitic
+@property (readwrite, nonatomic) int successfullyCrossedTheBorder;
+@property (readwrite, nonatomic) int residentsWithOffenseManagedToCrossTheBorder;
+@property (readwrite, nonatomic) int residentWereInJail;
+
 @property (nonatomic) int numberOfResidentsInCountry;
+@property (nonatomic) int numberOfResidentsInResidentSet;
 
 - (instancetype)initWithModelName:(NSString *)countryModelName;
 - (instancetype)initWithModel:(Country *)countryM;
@@ -29,9 +35,11 @@
 - (void)moveEmigrantFrom:(BoundaryStorageItem *)movableRecord
              moveHimFrom:(BoundaryStorageSet*)fromPlace
           moveHimToPlace:(BoundaryStorageSet*)toPlace;
-//-(Country *)getModelInstanse;
+- (Country *)getModelInstanse;
 
 - (void)moveAcrossBorderAnyOfResydent;
+- (void)moveAllPeopleToAnotherCountryArea:(Country *)destinationCountry;
+- (float)calculateValueInPrecentOfOvelAll:(int)inputValue;
 
 @end
 

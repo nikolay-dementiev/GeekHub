@@ -8,23 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		E7000E8B1DE329130011AB63 /* CountryController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7000E8A1DE329130011AB63 /* CountryController.m */; };
-		E7000E8E1DE444DD0011AB63 /* BorderControlSet.m in Sources */ = {isa = PBXBuildFile; fileRef = E7000E8D1DE444DD0011AB63 /* BorderControlSet.m */; };
 		E7000E911DE456930011AB63 /* ViewBorderControlController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7000E901DE456930011AB63 /* ViewBorderControlController.m */; };
+		E7000E941DE4B82E0011AB63 /* BorderControlItemMovable.m in Sources */ = {isa = PBXBuildFile; fileRef = E7000E921DE4B82E0011AB63 /* BorderControlItemMovable.m */; };
+		E7000E981DE4D0620011AB63 /* JsonWork.m in Sources */ = {isa = PBXBuildFile; fileRef = E7000E971DE4D0620011AB63 /* JsonWork.m */; };
+		E7000EB21DE4ED640011AB63 /* BorderControlSet.m in Sources */ = {isa = PBXBuildFile; fileRef = E7000E9B1DE4ED640011AB63 /* BorderControlSet.m */; };
+		E7000EB31DE4ED640011AB63 /* BoundaryStorageSet.m in Sources */ = {isa = PBXBuildFile; fileRef = E7000E9D1DE4ED640011AB63 /* BoundaryStorageSet.m */; };
+		E7000EB41DE4ED640011AB63 /* PrisonStorageSet.m in Sources */ = {isa = PBXBuildFile; fileRef = E7000E9F1DE4ED640011AB63 /* PrisonStorageSet.m */; };
+		E7000EB51DE4ED640011AB63 /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = E7000EA21DE4ED640011AB63 /* Country.m */; };
+		E7000EB61DE4ED640011AB63 /* Emigrant.m in Sources */ = {isa = PBXBuildFile; fileRef = E7000EA41DE4ED640011AB63 /* Emigrant.m */; };
+		E7000EB71DE4ED640011AB63 /* Guard.m in Sources */ = {isa = PBXBuildFile; fileRef = E7000EA61DE4ED640011AB63 /* Guard.m */; };
+		E7000EB81DE4ED640011AB63 /* Human.m in Sources */ = {isa = PBXBuildFile; fileRef = E7000EA81DE4ED640011AB63 /* Human.m */; };
+		E7000EB91DE4ED640011AB63 /* BoundaryStorageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E7000EAB1DE4ED640011AB63 /* BoundaryStorageItem.m */; };
+		E7000EBA1DE4ED640011AB63 /* PrisonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E7000EAD1DE4ED640011AB63 /* PrisonItem.m */; };
+		E7000EBC1DE4ED640011AB63 /* ResidentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E7000EB11DE4ED640011AB63 /* ResidentItem.m */; };
 		E71345531DE0948F00C981B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E71345521DE0948F00C981B3 /* main.m */; };
-		E713458F1DE21E8400C981B3 /* BorderControlItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E71345791DE21E8400C981B3 /* BorderControlItem.m */; };
-		E71345911DE21E8400C981B3 /* BoundaryStorageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E713457D1DE21E8400C981B3 /* BoundaryStorageItem.m */; };
-		E71345921DE21E8400C981B3 /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = E713457F1DE21E8400C981B3 /* Country.m */; };
-		E71345931DE21E8400C981B3 /* Emigrant.m in Sources */ = {isa = PBXBuildFile; fileRef = E71345811DE21E8400C981B3 /* Emigrant.m */; };
-		E71345941DE21E8400C981B3 /* Guard.m in Sources */ = {isa = PBXBuildFile; fileRef = E71345831DE21E8400C981B3 /* Guard.m */; };
-		E71345951DE21E8400C981B3 /* Human.m in Sources */ = {isa = PBXBuildFile; fileRef = E71345851DE21E8400C981B3 /* Human.m */; };
-		E71345961DE21E8400C981B3 /* PrisonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E71345871DE21E8400C981B3 /* PrisonItem.m */; };
-		E71345971DE21E8400C981B3 /* ReceptionCenterItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E71345891DE21E8400C981B3 /* ReceptionCenterItem.m */; };
 		E71345981DE21E8400C981B3 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = E713458C1DE21E8400C981B3 /* Helper.m */; };
 		E713459B1DE21EEB00C981B3 /* ViewBorderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E713459A1DE21EEB00C981B3 /* ViewBorderControl.m */; };
 		E77240C41DE22A8200550835 /* BorderControlController.m in Sources */ = {isa = PBXBuildFile; fileRef = E77240C31DE22A8200550835 /* BorderControlController.m */; };
-		E77240C71DE3027D00550835 /* ResidentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E77240C61DE3027D00550835 /* ResidentItem.m */; };
-		E77240CA1DE30E3F00550835 /* BoundaryStorageSet.m in Sources */ = {isa = PBXBuildFile; fileRef = E77240C91DE30E3F00550835 /* BoundaryStorageSet.m */; };
-		E77240CD1DE318C100550835 /* PrisonStorageSet.m in Sources */ = {isa = PBXBuildFile; fileRef = E77240CC1DE318C100550835 /* PrisonStorageSet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,40 +42,40 @@
 /* Begin PBXFileReference section */
 		E7000E891DE328FC0011AB63 /* CountryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountryController.h; sourceTree = "<group>"; };
 		E7000E8A1DE329130011AB63 /* CountryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryController.m; sourceTree = "<group>"; };
-		E7000E8C1DE444800011AB63 /* BorderControlSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BorderControlSet.h; sourceTree = "<group>"; };
-		E7000E8D1DE444DD0011AB63 /* BorderControlSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorderControlSet.m; sourceTree = "<group>"; };
 		E7000E8F1DE456820011AB63 /* ViewBorderControlController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewBorderControlController.h; sourceTree = "<group>"; };
 		E7000E901DE456930011AB63 /* ViewBorderControlController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewBorderControlController.m; sourceTree = "<group>"; };
+		E7000E921DE4B82E0011AB63 /* BorderControlItemMovable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorderControlItemMovable.m; sourceTree = "<group>"; };
+		E7000E931DE4B82E0011AB63 /* BorderControlItemMovable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BorderControlItemMovable.h; sourceTree = "<group>"; };
+		E7000E961DE4D0620011AB63 /* JsonWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonWork.h; sourceTree = "<group>"; };
+		E7000E971DE4D0620011AB63 /* JsonWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonWork.m; sourceTree = "<group>"; };
+		E7000E9A1DE4ED640011AB63 /* BorderControlSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BorderControlSet.h; sourceTree = "<group>"; };
+		E7000E9B1DE4ED640011AB63 /* BorderControlSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorderControlSet.m; sourceTree = "<group>"; };
+		E7000E9C1DE4ED640011AB63 /* BoundaryStorageSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoundaryStorageSet.h; sourceTree = "<group>"; };
+		E7000E9D1DE4ED640011AB63 /* BoundaryStorageSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoundaryStorageSet.m; sourceTree = "<group>"; };
+		E7000E9E1DE4ED640011AB63 /* PrisonStorageSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrisonStorageSet.h; sourceTree = "<group>"; };
+		E7000E9F1DE4ED640011AB63 /* PrisonStorageSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrisonStorageSet.m; sourceTree = "<group>"; };
+		E7000EA11DE4ED640011AB63 /* Country.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Country.h; sourceTree = "<group>"; };
+		E7000EA21DE4ED640011AB63 /* Country.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
+		E7000EA31DE4ED640011AB63 /* Emigrant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Emigrant.h; sourceTree = "<group>"; };
+		E7000EA41DE4ED640011AB63 /* Emigrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Emigrant.m; sourceTree = "<group>"; };
+		E7000EA51DE4ED640011AB63 /* Guard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Guard.h; sourceTree = "<group>"; };
+		E7000EA61DE4ED640011AB63 /* Guard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Guard.m; sourceTree = "<group>"; };
+		E7000EA71DE4ED640011AB63 /* Human.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Human.h; sourceTree = "<group>"; };
+		E7000EA81DE4ED640011AB63 /* Human.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Human.m; sourceTree = "<group>"; };
+		E7000EAA1DE4ED640011AB63 /* BoundaryStorageItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoundaryStorageItem.h; sourceTree = "<group>"; };
+		E7000EAB1DE4ED640011AB63 /* BoundaryStorageItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoundaryStorageItem.m; sourceTree = "<group>"; };
+		E7000EAC1DE4ED640011AB63 /* PrisonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrisonItem.h; sourceTree = "<group>"; };
+		E7000EAD1DE4ED640011AB63 /* PrisonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrisonItem.m; sourceTree = "<group>"; };
+		E7000EB01DE4ED640011AB63 /* ResidentItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResidentItem.h; sourceTree = "<group>"; };
+		E7000EB11DE4ED640011AB63 /* ResidentItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResidentItem.m; sourceTree = "<group>"; };
 		E713454F1DE0948F00C981B3 /* BorderСontrol */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "BorderСontrol"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E71345521DE0948F00C981B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E71345781DE21E8400C981B3 /* BorderControlItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BorderControlItem.h; sourceTree = "<group>"; };
-		E71345791DE21E8400C981B3 /* BorderControlItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorderControlItem.m; sourceTree = "<group>"; };
-		E713457C1DE21E8400C981B3 /* BoundaryStorageItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoundaryStorageItem.h; sourceTree = "<group>"; };
-		E713457D1DE21E8400C981B3 /* BoundaryStorageItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoundaryStorageItem.m; sourceTree = "<group>"; };
-		E713457E1DE21E8400C981B3 /* Country.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Country.h; sourceTree = "<group>"; };
-		E713457F1DE21E8400C981B3 /* Country.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
-		E71345801DE21E8400C981B3 /* Emigrant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Emigrant.h; sourceTree = "<group>"; };
-		E71345811DE21E8400C981B3 /* Emigrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Emigrant.m; sourceTree = "<group>"; };
-		E71345821DE21E8400C981B3 /* Guard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Guard.h; sourceTree = "<group>"; };
-		E71345831DE21E8400C981B3 /* Guard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Guard.m; sourceTree = "<group>"; };
-		E71345841DE21E8400C981B3 /* Human.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Human.h; sourceTree = "<group>"; };
-		E71345851DE21E8400C981B3 /* Human.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Human.m; sourceTree = "<group>"; };
-		E71345861DE21E8400C981B3 /* PrisonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrisonItem.h; sourceTree = "<group>"; };
-		E71345871DE21E8400C981B3 /* PrisonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrisonItem.m; sourceTree = "<group>"; };
-		E71345881DE21E8400C981B3 /* ReceptionCenterItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceptionCenterItem.h; sourceTree = "<group>"; };
-		E71345891DE21E8400C981B3 /* ReceptionCenterItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceptionCenterItem.m; sourceTree = "<group>"; };
 		E713458B1DE21E8400C981B3 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
 		E713458C1DE21E8400C981B3 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
 		E71345991DE21EC300C981B3 /* ViewBorderControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewBorderControl.h; sourceTree = "<group>"; };
 		E713459A1DE21EEB00C981B3 /* ViewBorderControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewBorderControl.m; sourceTree = "<group>"; };
 		E77240C21DE22A2300550835 /* BorderControlController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BorderControlController.h; sourceTree = "<group>"; };
 		E77240C31DE22A8200550835 /* BorderControlController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorderControlController.m; sourceTree = "<group>"; };
-		E77240C51DE3022100550835 /* ResidentItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResidentItem.h; sourceTree = "<group>"; };
-		E77240C61DE3027D00550835 /* ResidentItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResidentItem.m; sourceTree = "<group>"; };
-		E77240C81DE30DDE00550835 /* BoundaryStorageSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoundaryStorageSet.h; sourceTree = "<group>"; };
-		E77240C91DE30E3F00550835 /* BoundaryStorageSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoundaryStorageSet.m; sourceTree = "<group>"; };
-		E77240CB1DE3180500550835 /* PrisonStorageSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrisonStorageSet.h; sourceTree = "<group>"; };
-		E77240CC1DE318C100550835 /* PrisonStorageSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrisonStorageSet.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +89,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E7000E951DE4D0620011AB63 /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				E7000E961DE4D0620011AB63 /* JsonWork.h */,
+				E7000E971DE4D0620011AB63 /* JsonWork.m */,
+			);
+			path = Json;
+			sourceTree = "<group>";
+		};
+		E7000E991DE4ED640011AB63 /* Sets */ = {
+			isa = PBXGroup;
+			children = (
+				E7000E9A1DE4ED640011AB63 /* BorderControlSet.h */,
+				E7000E9B1DE4ED640011AB63 /* BorderControlSet.m */,
+				E7000E9C1DE4ED640011AB63 /* BoundaryStorageSet.h */,
+				E7000E9D1DE4ED640011AB63 /* BoundaryStorageSet.m */,
+				E7000E9E1DE4ED640011AB63 /* PrisonStorageSet.h */,
+				E7000E9F1DE4ED640011AB63 /* PrisonStorageSet.m */,
+			);
+			path = Sets;
+			sourceTree = "<group>";
+		};
+		E7000EA01DE4ED640011AB63 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E7000EA11DE4ED640011AB63 /* Country.h */,
+				E7000EA21DE4ED640011AB63 /* Country.m */,
+				E7000EA31DE4ED640011AB63 /* Emigrant.h */,
+				E7000EA41DE4ED640011AB63 /* Emigrant.m */,
+				E7000EA51DE4ED640011AB63 /* Guard.h */,
+				E7000EA61DE4ED640011AB63 /* Guard.m */,
+				E7000EA71DE4ED640011AB63 /* Human.h */,
+				E7000EA81DE4ED640011AB63 /* Human.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		E7000EA91DE4ED640011AB63 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				E7000EAA1DE4ED640011AB63 /* BoundaryStorageItem.h */,
+				E7000EAB1DE4ED640011AB63 /* BoundaryStorageItem.m */,
+				E7000EAC1DE4ED640011AB63 /* PrisonItem.h */,
+				E7000EAD1DE4ED640011AB63 /* PrisonItem.m */,
+				E7000EB01DE4ED640011AB63 /* ResidentItem.h */,
+				E7000EB11DE4ED640011AB63 /* ResidentItem.m */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
 		E71345461DE0948F00C981B3 = {
 			isa = PBXGroup;
 			children = (
@@ -120,30 +170,9 @@
 		E71345771DE21E8400C981B3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E713457E1DE21E8400C981B3 /* Country.h */,
-				E713457F1DE21E8400C981B3 /* Country.m */,
-				E71345801DE21E8400C981B3 /* Emigrant.h */,
-				E71345811DE21E8400C981B3 /* Emigrant.m */,
-				E71345821DE21E8400C981B3 /* Guard.h */,
-				E71345831DE21E8400C981B3 /* Guard.m */,
-				E71345841DE21E8400C981B3 /* Human.h */,
-				E71345851DE21E8400C981B3 /* Human.m */,
-				E71345861DE21E8400C981B3 /* PrisonItem.h */,
-				E71345871DE21E8400C981B3 /* PrisonItem.m */,
-				E71345881DE21E8400C981B3 /* ReceptionCenterItem.h */,
-				E71345891DE21E8400C981B3 /* ReceptionCenterItem.m */,
-				E71345781DE21E8400C981B3 /* BorderControlItem.h */,
-				E71345791DE21E8400C981B3 /* BorderControlItem.m */,
-				E77240C51DE3022100550835 /* ResidentItem.h */,
-				E77240C61DE3027D00550835 /* ResidentItem.m */,
-				E713457C1DE21E8400C981B3 /* BoundaryStorageItem.h */,
-				E713457D1DE21E8400C981B3 /* BoundaryStorageItem.m */,
-				E77240C81DE30DDE00550835 /* BoundaryStorageSet.h */,
-				E77240C91DE30E3F00550835 /* BoundaryStorageSet.m */,
-				E77240CB1DE3180500550835 /* PrisonStorageSet.h */,
-				E77240CC1DE318C100550835 /* PrisonStorageSet.m */,
-				E7000E8C1DE444800011AB63 /* BorderControlSet.h */,
-				E7000E8D1DE444DD0011AB63 /* BorderControlSet.m */,
+				E7000EA01DE4ED640011AB63 /* Core */,
+				E7000EA91DE4ED640011AB63 /* Items */,
+				E7000E991DE4ED640011AB63 /* Sets */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -151,6 +180,7 @@
 		E713458A1DE21E8400C981B3 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				E7000E951DE4D0620011AB63 /* Json */,
 				E713458B1DE21E8400C981B3 /* Helper.h */,
 				E713458C1DE21E8400C981B3 /* Helper.m */,
 			);
@@ -169,6 +199,8 @@
 		E713458E1DE21E8400C981B3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E7000E931DE4B82E0011AB63 /* BorderControlItemMovable.h */,
+				E7000E921DE4B82E0011AB63 /* BorderControlItemMovable.m */,
 				E77240C21DE22A2300550835 /* BorderControlController.h */,
 				E77240C31DE22A8200550835 /* BorderControlController.m */,
 				E7000E891DE328FC0011AB63 /* CountryController.h */,
@@ -236,24 +268,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E77240C71DE3027D00550835 /* ResidentItem.m in Sources */,
-				E71345931DE21E8400C981B3 /* Emigrant.m in Sources */,
-				E71345911DE21E8400C981B3 /* BoundaryStorageItem.m in Sources */,
-				E713458F1DE21E8400C981B3 /* BorderControlItem.m in Sources */,
-				E7000E8E1DE444DD0011AB63 /* BorderControlSet.m in Sources */,
+				E7000EB61DE4ED640011AB63 /* Emigrant.m in Sources */,
 				E77240C41DE22A8200550835 /* BorderControlController.m in Sources */,
-				E71345951DE21E8400C981B3 /* Human.m in Sources */,
+				E7000EB21DE4ED640011AB63 /* BorderControlSet.m in Sources */,
+				E7000EB41DE4ED640011AB63 /* PrisonStorageSet.m in Sources */,
+				E7000EB31DE4ED640011AB63 /* BoundaryStorageSet.m in Sources */,
+				E7000EBC1DE4ED640011AB63 /* ResidentItem.m in Sources */,
+				E7000EB51DE4ED640011AB63 /* Country.m in Sources */,
 				E7000E8B1DE329130011AB63 /* CountryController.m in Sources */,
-				E77240CA1DE30E3F00550835 /* BoundaryStorageSet.m in Sources */,
 				E713459B1DE21EEB00C981B3 /* ViewBorderControl.m in Sources */,
+				E7000EB91DE4ED640011AB63 /* BoundaryStorageItem.m in Sources */,
 				E71345531DE0948F00C981B3 /* main.m in Sources */,
-				E77240CD1DE318C100550835 /* PrisonStorageSet.m in Sources */,
-				E71345961DE21E8400C981B3 /* PrisonItem.m in Sources */,
-				E71345971DE21E8400C981B3 /* ReceptionCenterItem.m in Sources */,
+				E7000E941DE4B82E0011AB63 /* BorderControlItemMovable.m in Sources */,
 				E71345981DE21E8400C981B3 /* Helper.m in Sources */,
-				E71345921DE21E8400C981B3 /* Country.m in Sources */,
 				E7000E911DE456930011AB63 /* ViewBorderControlController.m in Sources */,
-				E71345941DE21E8400C981B3 /* Guard.m in Sources */,
+				E7000EB81DE4ED640011AB63 /* Human.m in Sources */,
+				E7000EBA1DE4ED640011AB63 /* PrisonItem.m in Sources */,
+				E7000E981DE4D0620011AB63 /* JsonWork.m in Sources */,
+				E7000EB71DE4ED640011AB63 /* Guard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

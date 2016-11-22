@@ -62,7 +62,7 @@ NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ012345
 
 + (NSString *)getRandomHumanName:(int)maxNameLenth {
 
-    return [Helper randomStringWithLength: [Helper getRandomInt:maxNameLenth min:3]];
+    return [Helper randomStringWithLength: [Helper getRandomInt:maxNameLenth min:9]];
 }
 
 @end

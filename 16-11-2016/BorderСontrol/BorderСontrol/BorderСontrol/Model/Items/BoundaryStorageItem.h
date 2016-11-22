@@ -12,11 +12,9 @@
 
 @interface BoundaryStorageItem : NSObject
 
-//@property (readwrite, strong, nonatomic) NSMutableSet <Emigrant*> *prison;
 @property (readwrite, strong, nonatomic) Emigrant *emigrantMan;
 
 - (instancetype)initWithEmData:(Emigrant *)emigrant;
-
 
 @end
 

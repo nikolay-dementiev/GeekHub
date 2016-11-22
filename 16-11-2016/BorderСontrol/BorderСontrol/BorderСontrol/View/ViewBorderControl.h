@@ -12,8 +12,8 @@
 
 @interface ViewBorderControl : NSObject
 
-//+ (void)initiateBorderControlGame;
 - (int)setNumberOfResident:(NSString *)processCountryName;
+- (void)showLogOfProgramWork:(NSString *)stringLog;
 
 @end
 

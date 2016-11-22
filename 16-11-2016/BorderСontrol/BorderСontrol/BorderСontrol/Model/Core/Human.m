@@ -14,7 +14,7 @@
 
 - (instancetype)initWithRandomParameters {
 
-    _name = [_classPrefix stringByAppendingString: [Helper getRandomHumanName:15]];
+    _name = [_classPrefix stringByAppendingString: [Helper getRandomHumanName:20]];
 
     return self;
 }

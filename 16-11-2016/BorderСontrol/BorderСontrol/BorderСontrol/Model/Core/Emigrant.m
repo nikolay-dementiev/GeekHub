@@ -38,11 +38,11 @@
 
     NSArray *arrayList = [Helper getArrayPositionForCheking];
 
-    int doomInt = 10;//10% chance to have every banned item in his history
+    int reductionFactor = 4;//Мешканець країни має 4% шанс отримати кожен заборонений критерій.
     for (int i = 0; i<[arrayList count]; i++) {
-        int riscVal = [Helper getRandomInt:doomInt+1 min:0];
+        int riscVal = [Helper getRandomInt:100 min:1];
 
-        if (riscVal == doomInt) {
+        if (reductionFactor >= riscVal) {
             PositionForCheking itemType = [arrayList[i] intValue];
             [arrayOfListHistory addObject:@(itemType)];
         }

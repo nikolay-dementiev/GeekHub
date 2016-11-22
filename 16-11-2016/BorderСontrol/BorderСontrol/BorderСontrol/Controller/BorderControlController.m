@@ -12,7 +12,6 @@
 #import "Guard.h"
 #import "Emigrant.h"
 #import "BorderControlSet.h"
-#import "BorderControlItem.h"
 #import "BoundaryStorageItem.h"
 #import "ResidentItem.h"
 #import "Helper.h"
@@ -67,10 +66,9 @@
                 break;
             }
 
-            int reductionFactor = 4;//Мешканець країни має 4% шанс отримати кожен заборонений критерій.
-            int randomTickOfLucky = [Helper getRandomInt:100-reductionFactor min:0];
+            int randomTickOfLucky = [Helper getRandomInt:100 min:1];
             if (randomTickOfLucky <= [guardMan rateFindOffense]) {
-                //don't lucky
+                //was unlucky this time
                 emigrantHasSomeItem = true;
             } else {
                 //lucky guy!

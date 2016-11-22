@@ -9,7 +9,6 @@
 #ifndef BorderControlController_h
 #define BorderControlController_h
 @class Country;
-#import "BorderControlItem.h"
 #import "Guard.h"
 #import "ResidentItem.h"
 
