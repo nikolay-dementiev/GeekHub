@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "BorderControlSet.h"
 
+
 @implementation BorderControlSet
 
 - (instancetype)init {
@@ -17,9 +18,10 @@
     if (self) {
         _guardMan = [[NSMutableArray alloc] init];
     }
-    
+
     return self;
 }
+
 
 @end
 

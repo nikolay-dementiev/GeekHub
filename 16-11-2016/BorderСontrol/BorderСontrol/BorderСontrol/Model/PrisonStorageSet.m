@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "PrisonStorageSet.h"
+#import "PrisonItem.h"
 
 @implementation PrisonStorageSet
 
@@ -21,5 +22,16 @@
 
     return self;
 }
+
+//- (void)addRecord:(BoundaryStorageItem *)record {
+//
+//    if (![record isKindOfClass:[PrisonItem class]]) {
+//        PrisonItem *newItem = [[[PrisonItem new] initWithEmData:record.emigrantMan] initWithGuard:(Guard *)];
+//    }
+//
+//    [setOfObjects addObject: record];
+//    
+//};
+
 
 @end

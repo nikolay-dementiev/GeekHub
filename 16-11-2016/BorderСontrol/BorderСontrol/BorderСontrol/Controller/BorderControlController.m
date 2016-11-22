@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "BorderControlController.h"
+#import "Country.h"
 #import "Guard.h"
+#import "Emigrant.h"
 #import "BorderControlSet.h"
 #import "BorderControlItem.h"
-#import "Country.h"
-#import "Emigrant.h"
+#import "BoundaryStorageItem.h"
+#import "ResidentItem.h"
+#import "Helper.h"
 
 @implementation BorderControlController
 
@@ -32,6 +35,52 @@
         Guard *newMan = [[Guard new] initWithRandomParameters];
         [countryModel.borderControlSet.guardMan addObject:newMan];
     }
+}
+
+- (Guard *)getAnyGuardMan {
+    BorderControlSet *borderModelSet = countryModel.borderControlSet;
+
+    int conutnOfGuardMan = (int)[borderModelSet.guardMan count];
+
+    if (conutnOfGuardMan > 0) {
+        int randomTick = [Helper getRandomInt:conutnOfGuardMan min:0];
+
+        return borderModelSet.guardMan[randomTick];
+    } else {
+
+        return nil;
+    }
+}
+
+- (BOOL)residentHasForbiddenItem:(ResidentItem *)resident
+                        guardMan:(Guard *)guardMan {
+
+    Emigrant *emigrantCurrent = resident.emigrantMan;
+    BOOL emigrantHasSomeItem = false; //presumption of innocence
+
+    if ([emigrantCurrent.bagAndHistory count] > 0) {
+        NSArray *possitionForChek = [Helper getArrayPositionForCheking];
+
+        for (int i = 0; i<[possitionForChek count]; i++) {
+
+            if (emigrantHasSomeItem) {
+                break;
+            }
+
+            int reductionFactor = 4;//Мешканець країни має 4% шанс отримати кожен заборонений критерій.
+            int randomTickOfLucky = [Helper getRandomInt:100-reductionFactor min:0];
+            if (randomTickOfLucky <= [guardMan rateFindOffense]) {
+                //don't lucky
+                emigrantHasSomeItem = true;
+            } else {
+                //lucky guy!
+            }
+            //these details are not necessary
+            //PositionForCheking itemType = [possitionForChek[i] intValue];
+        }
+    }
+
+    return  emigrantHasSomeItem;
 }
 
 

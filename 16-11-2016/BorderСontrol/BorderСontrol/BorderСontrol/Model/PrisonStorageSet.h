@@ -15,6 +15,7 @@
 
 //@property (readwrite, strong, nonatomic) NSMutableSet <PrisonItem*> *setOfObjects;
 - (instancetype)init;
+//- (void)addRecord:(PrisonItem *)record;
 
 @end
 

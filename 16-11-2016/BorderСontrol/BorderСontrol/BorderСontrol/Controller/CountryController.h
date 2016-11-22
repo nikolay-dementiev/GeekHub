@@ -10,6 +10,8 @@
 #define CountryController_h
 @class Country;
 @class BoundaryStorageItem;
+@class BoundaryStorageSet;
+
 #import "BorderControlController.h"
 
 @interface CountryController : NSObject {
@@ -24,11 +26,12 @@
 - (instancetype)initWithModelName:(NSString *)countryModelName;
 - (instancetype)initWithModel:(Country *)countryM;
 - (void)initiateResidents;
-- (void)moveEmigrantFrom:(NSMutableSet<BoundaryStorageItem*>*)fromPlace
-           moveItToPlace:(NSMutableSet<BoundaryStorageItem*>*)toPlace;
+- (void)moveEmigrantFrom:(BoundaryStorageItem *)movableRecord
+             moveHimFrom:(BoundaryStorageSet*)fromPlace
+          moveHimToPlace:(BoundaryStorageSet*)toPlace;
 //-(Country *)getModelInstanse;
 
-//- (void)setNumberOfResidents:(int)count;
+- (void)moveAcrossBorderAnyOfResydent;
 
 @end
 

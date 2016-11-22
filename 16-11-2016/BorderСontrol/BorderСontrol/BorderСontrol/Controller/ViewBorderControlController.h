@@ -19,6 +19,8 @@
 - (void)initiateBorderControlGame;
 - (instancetype)init;
 
+
+
 @end
 
 #endif /* ViewBorderControlController_h */

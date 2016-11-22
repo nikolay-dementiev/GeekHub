@@ -33,7 +33,7 @@
         _prisonSet = [PrisonStorageSet new];
         _residentSet = [BoundaryStorageSet new];
         _borderControlSet = [BorderControlSet new];
-        _receptionСenterSet = [BoundaryStorageSet new];
+        _receptionCenterSet = [BoundaryStorageSet new];
     }
 
     return self;

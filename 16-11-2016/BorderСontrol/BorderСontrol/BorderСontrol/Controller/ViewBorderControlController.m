@@ -10,6 +10,7 @@
 #import "ViewBorderControlController.h"
 #import "ViewBorderControl.h"
 #import "CountryController.h"
+#import "Helper.h"
 
 @implementation ViewBorderControlController
 
@@ -52,24 +53,28 @@ typedef NSArray <CountryController *> typeOfControllersArray;
     //2. Create Residents for country
     [self createCountryResidents:countryControllerArray];
 
-//    //3.
-//    BOOL flagF = true;
-//
-//    while (flagF) {
-//        //1. chose country
-//        int randomTickCountry = [Helper getRandomInt:(int)[countryControllerArray count] min:0];
-//        CountryController *selectedCountryController = countryControllerArray [randomTickCountry];
-//        //2. chose resident
+    //3.
+    BOOL flagF = true;
+
+    
+
+    while (flagF) {
+        //1. chose country
+        int randomTickCountry = [Helper getRandomInt:(int)[countryControllerArray count] min:0];
+        CountryController *selectedCountryController = countryControllerArray [randomTickCountry];
+        //2. chose resident
 //        int randomTickResident = [Helper getRandomInt:selectedCountryController.numberOfResidentsInCountry min:0];
-//        //        CountryController *selectedCountry = countryControllerArray [randomTickResident];
-//        
-//        
-//        
-//    }
+////        Emigrant *selectedEmigrant = countryControllerArray [randomTickResident];
+//        [selectedCountryController ]descriptionInArray
+        [selectedCountryController moveAcrossBorderAnyOfResydent];
+        
+        
+        
+    }
 }
 
 //MARK: class functions
-- (void) createCountryResidents:(typeOfControllersArray*)countryControllerArray {
+- (void) createCountryResidents:(typeOfControllersArray *)countryControllerArray {
     for (CountryController *controller in countryControllerArray) {
         [controller initiateResidents];
 

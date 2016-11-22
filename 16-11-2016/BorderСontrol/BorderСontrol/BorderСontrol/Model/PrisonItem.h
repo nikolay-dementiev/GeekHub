@@ -16,6 +16,7 @@
 
 @property (readwrite, strong, nonatomic) Guard *guardMan;
 
+- (instancetype)initWithGuard:(Guard *)guardMan;
 
 @end
 

@@ -27,7 +27,7 @@
 @property (readwrite, strong, nonatomic) BoundaryStorageSet *residentSet;//NSMutableSet <ResidentItem*> *resident;
 @property (readwrite, strong, nonatomic) PrisonStorageSet *prisonSet;//NSMutableSet <PrisonItem*> *prison;
 @property (readwrite, strong, nonatomic) BorderControlSet *borderControlSet;//NSMutableSet <BorderControlItem*> *borderControl;
-@property (readwrite, strong, nonatomic) BoundaryStorageSet *receptionСenterSet;//NSMutableSet <ReceptionCenterItem*> *receptionСenter;
+@property (readwrite, strong, nonatomic) BoundaryStorageSet *receptionCenterSet;//NSMutableSet <ReceptionCenterItem*> *receptionСenter;
 
 - (instancetype)initWithName:(NSString *)nameOfCountry;
 - (instancetype)init;

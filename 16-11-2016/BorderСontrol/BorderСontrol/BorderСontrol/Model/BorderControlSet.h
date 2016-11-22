@@ -9,14 +9,15 @@
 #ifndef BorderControlSet_h
 #define BorderControlSet_h
 #import "BoundaryStorageSet.h"
-#import "BorderControlItem.h"
-#import "Guard.h"
+@class Guard;
+
 
 @interface BorderControlSet : BoundaryStorageSet
 
 @property (readwrite, strong, nonatomic) NSMutableArray <Guard *> *guardMan;
 
 - (instancetype)init;
+
 
 @end
 

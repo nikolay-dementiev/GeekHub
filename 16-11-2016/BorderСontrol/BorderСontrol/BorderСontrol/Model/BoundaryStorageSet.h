@@ -19,9 +19,13 @@
 
 //@property (readwrite, strong, nonatomic) NSMutableSet <BoundaryStorageItem*> *setOfObjects;
 
+@property (readonly) NSArray *descriptionInArray;
+
 - (void)addRecord:(BoundaryStorageItem *)record;
+- (void)deleteRecord:(BoundaryStorageItem *)record;
 
 - (instancetype)init;
+
 
 @end
 
