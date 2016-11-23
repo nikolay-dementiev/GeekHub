@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "WeatherAPI.h"
+#import "CurrentWeatherInfo.h"
 
 @implementation WeatherAPI
 
@@ -34,10 +35,11 @@
     return results;
 }
 
-+ (NSString *)showCurrentINfoFromJSON:(NSDictionary *)jsonDictData {
++ (NSString *)showCurrentInfoFromJSON:(NSDictionary *)jsonDictData {
 
-    
-    return @"";
+    CurrentWeatherInfo *newInfoItem = [[CurrentWeatherInfo new] initWithData:jsonDictData];
+
+    return [newInfoItem showObjectDescription];
 }
 
 

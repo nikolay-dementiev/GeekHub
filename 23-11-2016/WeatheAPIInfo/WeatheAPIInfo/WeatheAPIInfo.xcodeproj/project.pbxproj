@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E76D8ADF1DE60BB600340697 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E76D8ADE1DE60BB600340697 /* main.m */; };
 		E76D8AE71DE60BFF00340697 /* WeatherAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = E76D8AE61DE60BFF00340697 /* WeatherAPI.m */; };
+		E76D8AEA1DE6199500340697 /* CurrentWeatherInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E76D8AE91DE6199500340697 /* CurrentWeatherInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		E76D8ADE1DE60BB600340697 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E76D8AE51DE60BD700340697 /* WeatherAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherAPI.h; sourceTree = "<group>"; };
 		E76D8AE61DE60BFF00340697 /* WeatherAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherAPI.m; sourceTree = "<group>"; };
+		E76D8AE81DE6198A00340697 /* CurrentWeatherInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentWeatherInfo.h; sourceTree = "<group>"; };
+		E76D8AE91DE6199500340697 /* CurrentWeatherInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentWeatherInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 				E76D8ADE1DE60BB600340697 /* main.m */,
 				E76D8AE51DE60BD700340697 /* WeatherAPI.h */,
 				E76D8AE61DE60BFF00340697 /* WeatherAPI.m */,
+				E76D8AE81DE6198A00340697 /* CurrentWeatherInfo.h */,
+				E76D8AE91DE6199500340697 /* CurrentWeatherInfo.m */,
 			);
 			path = WeatheAPIInfo;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E76D8ADF1DE60BB600340697 /* main.m in Sources */,
+				E76D8AEA1DE6199500340697 /* CurrentWeatherInfo.m in Sources */,
 				E76D8AE71DE60BFF00340697 /* WeatherAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
