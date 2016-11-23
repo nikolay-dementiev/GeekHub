@@ -36,11 +36,11 @@
     [descriptions appendFormat: @"City ID: '%@'\n", _cityId];
     [descriptions appendFormat: @"City geo location, longitude: '%@'\n", _coordLon];
     [descriptions appendFormat: @"City geo location, latitude: '%@'\n", _coordLat];
-    [descriptions appendFormat: @"Temperature. Metric: Celsius: '%@'\n", _mainTemp];
+    [descriptions appendFormat: @"Temperature. Metric: Celsius: '%.1f'\n", [_mainTemp doubleValue]];
     [descriptions appendFormat: @"Atmospheric pressure, hPa : '%@'\n", _mainPressure];
     [descriptions appendFormat: @"Humidity, %%: '%@'\n", _mainHumidity];
-    [descriptions appendFormat: @"Maximum temperature at the moment. Metric: Celsius: '%@'\n", _mainTemp_max];
-    [descriptions appendFormat: @"Minimum temperature at the moment. Metric: Celsius: '%@'\n", _mainTemp_min];
+    [descriptions appendFormat: @"Maximum temperature at the moment. Metric: Celsius: '%.1f'\n", [_mainTemp_max doubleValue]];
+    [descriptions appendFormat: @"Minimum temperature at the moment. Metric: Celsius: '%.1f'\n", [_mainTemp_min doubleValue]];
     [descriptions appendFormat: @"Wind speed. (meter/sec): '%@'\n", _windSpeed];
 
     return descriptions;
