@@ -7,11 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WeatherAPI.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
-        NSLog(@"Hello, World!");
+
+//        char cstring[40];
+//        scanf("%s", cstring);
+//        NSString *cityName = [NSString stringWithUTF8String:cstring];
+
+       NSDictionary *dictDataFromURL =  [WeatherAPI getWeatherData:@"Kiev"];
     }
     return 0;
 }

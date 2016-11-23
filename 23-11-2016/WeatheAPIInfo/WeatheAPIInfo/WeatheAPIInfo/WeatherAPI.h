@@ -11,6 +11,9 @@
 
 @interface WeatherAPI : NSObject
 
++ (NSDictionary *)getWeatherData:(NSString *)countryName;
++ (NSString *)showCurrentINfoFromJSON:(NSDictionary *)jsonDictData;
+
 @end
 
 #endif /* WeatherAPI_h */
