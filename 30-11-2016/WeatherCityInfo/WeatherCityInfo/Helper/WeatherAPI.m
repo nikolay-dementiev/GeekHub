@@ -35,6 +35,17 @@
     return results;
 }
 
++ (NSData *)getImageDataForWeatheIco:(NSString *)weatherIcoId {
+
+    //http://openweathermap.org/weather-conditions
+
+    NSData *imageData = [[NSData alloc] initWithContentsOfURL:
+                         [NSURL URLWithString:
+                         [NSString stringWithFormat:@"http://openweathermap.org/img/w/%@.png", weatherIcoId]
+                          ]];
+    return imageData;
+}
+
 + (NSString *)showCurrentInfoFromJSON:(NSDictionary *)jsonDictData {
 
     CurrentWeatherInfo *newInfoItem = [[CurrentWeatherInfo new] initWithData:jsonDictData];

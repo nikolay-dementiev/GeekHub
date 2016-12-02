@@ -13,6 +13,7 @@
 
 + (NSDictionary *)getWeatherData:(NSString *)countryName;
 + (NSString *)showCurrentInfoFromJSON:(NSDictionary *)jsonDictData;
++ (NSData *)getImageDataForWeatheIco:(NSString *)weatherIcoId;
 
 @end
 

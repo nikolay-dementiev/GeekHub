@@ -12,7 +12,6 @@
 
 @interface WeatherViewController () {
     DetailViewController *nextViewController;
-//    CurrentWeatherInfo *newInfoItem;
 }
 
 @property (weak, nonatomic) IBOutlet UITextField *textField;
@@ -28,20 +27,15 @@
     // Do any additional setup after loading the view, typically from a nib.
 
     nextViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
-//    newInfoItem = [CurrentWeatherInfo new];
 
 }
 
 
 - (IBAction)submitAction {
 
-   
-//    [newInfoItem showObjectDescription];
-
-//    CurrentWeatherInfo
     [nextViewController updateWeatherInfo:_textField.text];
     [self.navigationController pushViewController:nextViewController animated:YES];
-
+    
 }
 
 

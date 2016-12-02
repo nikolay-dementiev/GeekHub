@@ -22,9 +22,12 @@
 @property (readwrite, strong, nonatomic) NSString *cityName;
 @property (readwrite, strong, nonatomic) NSString *cityId;
 @property (readwrite, strong, nonatomic) NSString *sysCountry;
+@property (readwrite, strong, nonatomic) NSString *weatherIcon;
+
 
 - (instancetype)initWithData:(NSDictionary *)dictData;
 - (NSString *)showObjectDescription;
+- (void)refillObject:(NSDictionary *)dictData;
 
 @end
 

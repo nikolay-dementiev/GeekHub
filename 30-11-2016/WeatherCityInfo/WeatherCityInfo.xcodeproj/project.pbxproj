@@ -16,6 +16,7 @@
 		E790B2D31DEF46180067CB21 /* CurrentWeatherInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E790B2D11DEF46180067CB21 /* CurrentWeatherInfo.m */; };
 		E790B2D61DEF4B6B0067CB21 /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E790B2D51DEF4B6B0067CB21 /* WeatherViewController.m */; };
 		E790B2D91DF19F010067CB21 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E790B2D81DF19F010067CB21 /* DetailViewController.m */; };
+		E790B2DB1DF1CF7E0067CB21 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E790B2DA1DF1CF7E0067CB21 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		E790B2D51DEF4B6B0067CB21 /* WeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
 		E790B2D71DF19F010067CB21 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		E790B2D81DF19F010067CB21 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		E790B2DA1DF1CF7E0067CB21 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		E790B2A61DEF41450067CB21 = {
 			isa = PBXGroup;
 			children = (
+				E790B2DA1DF1CF7E0067CB21 /* Default-568h@2x.png */,
 				E790B2B11DEF41450067CB21 /* WeatherCityInfo */,
 				E790B2B01DEF41450067CB21 /* Products */,
 			);
@@ -169,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E790B2C21DEF41450067CB21 /* LaunchScreen.storyboard in Resources */,
+				E790B2DB1DF1CF7E0067CB21 /* Default-568h@2x.png in Resources */,
 				E790B2BF1DEF41450067CB21 /* Assets.xcassets in Resources */,
 				E790B2BD1DEF41450067CB21 /* Main.storyboard in Resources */,
 			);

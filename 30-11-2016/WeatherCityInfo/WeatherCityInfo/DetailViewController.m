@@ -15,6 +15,7 @@
     CurrentWeatherInfo *currentInfo;
     __weak IBOutlet UIActivityIndicatorView *activIndicator;
     dispatch_queue_t loadWeatherQueue;
+    UIImage *defaultImage;
 }
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewData;
@@ -30,6 +31,7 @@
     currentInfo = [CurrentWeatherInfo new];
 
     activIndicator.hidesWhenStopped = true;
+    defaultImage = [self getDefaultImage];
 }
 
 
@@ -46,31 +48,55 @@
 
     //http://jeffreysambells.com/2013/03/01/asynchronous-operations-in-ios-with-grand-central-dispatch
 
-    [self eraseTemporaryInfo];
+    self.title = ([currentCity length] > 0) ? currentCity : @"no city was entered";
+    [self setdefaultTemporaryInfo];
 
     loadWeatherQueue = dispatch_queue_create("Weather Queue",NULL);
     dispatch_async(loadWeatherQueue, ^{
         [activIndicator startAnimating];
-        
+
         // Perform long running process
+
         NSDictionary *dictDataFromURL = [WeatherAPI getWeatherData:currentCity];
-        currentInfo = [currentInfo initWithData:dictDataFromURL];
+        NSMutableDictionary *dictOfRepresentData = [NSMutableDictionary new];
+
+        if (dictDataFromURL != nil) {
+
+            [currentInfo refillObject:dictDataFromURL];
+
+            NSString *currentInfoT = [currentInfo showObjectDescription];
+
+            UIImage *weatherImageT = [UIImage imageWithData:
+                                      [WeatherAPI getImageDataForWeatheIco:currentInfo.weatherIcon]
+                                      ];
+
+            [dictOfRepresentData setValue:currentInfoT forKey:@"currentInfoT"];
+            [dictOfRepresentData setValue:weatherImageT forKey:@"weatherImageT"];
+        } else {
+
+            [dictOfRepresentData setValue:@"<no data found>" forKey:@"currentInfoT"];
+            [dictOfRepresentData setValue:defaultImage forKey:@"weatherImageT"];
+        }
 
         dispatch_async(dispatch_get_main_queue(), ^{
             // Update the UI
 
-            if (currentInfo != nil) {
-                 _textFieldData.text = [currentInfo showObjectDescription];
+            _textFieldData.text = dictOfRepresentData[@"currentInfoT"];
+            _imageViewData.image = dictOfRepresentData[@"weatherImageT"];
 
-                [activIndicator stopAnimating];
-            }
+            [activIndicator stopAnimating];
         });
     });
 }
 
-- (void)eraseTemporaryInfo {
-    _textFieldData.text = @"";
+- (void)setdefaultTemporaryInfo {
+
+    _textFieldData.text = @"<receiving data..>";
+    _imageViewData.image = defaultImage;
 }
 
+- (UIImage *)getDefaultImage {
+    return [UIImage imageNamed:@"unknownWeatherStatus"];
+}
 
 @end
