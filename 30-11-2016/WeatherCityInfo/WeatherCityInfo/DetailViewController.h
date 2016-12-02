@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+//#import "CurrentWeatherInfo.h"
 
-@interface DetailViewController : UITableViewController
+@interface DetailViewController : UIViewController
 
+- (void)updateWeatherInfo:(NSString*)currentCity;
 
 @end

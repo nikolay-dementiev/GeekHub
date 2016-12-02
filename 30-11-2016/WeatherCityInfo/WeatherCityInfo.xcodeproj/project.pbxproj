@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		E790B2B41DEF41450067CB21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E790B2B31DEF41450067CB21 /* main.m */; };
 		E790B2B71DEF41450067CB21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E790B2B61DEF41450067CB21 /* AppDelegate.m */; };
-		E790B2BA1DEF41450067CB21 /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E790B2B91DEF41450067CB21 /* WeatherViewController.m */; };
 		E790B2BD1DEF41450067CB21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E790B2BB1DEF41450067CB21 /* Main.storyboard */; };
 		E790B2BF1DEF41450067CB21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E790B2BE1DEF41450067CB21 /* Assets.xcassets */; };
 		E790B2C21DEF41450067CB21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E790B2C01DEF41450067CB21 /* LaunchScreen.storyboard */; };
-		E790B2CB1DEF435E0067CB21 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E790B2CA1DEF435E0067CB21 /* DetailViewController.m */; };
 		E790B2D21DEF46180067CB21 /* WeatherAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = E790B2CE1DEF46180067CB21 /* WeatherAPI.m */; };
 		E790B2D31DEF46180067CB21 /* CurrentWeatherInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E790B2D11DEF46180067CB21 /* CurrentWeatherInfo.m */; };
+		E790B2D61DEF4B6B0067CB21 /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E790B2D51DEF4B6B0067CB21 /* WeatherViewController.m */; };
+		E790B2D91DF19F010067CB21 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E790B2D81DF19F010067CB21 /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,18 +23,18 @@
 		E790B2B31DEF41450067CB21 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E790B2B51DEF41450067CB21 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E790B2B61DEF41450067CB21 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E790B2B81DEF41450067CB21 /* WeatherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherViewController.h; sourceTree = "<group>"; };
-		E790B2B91DEF41450067CB21 /* WeatherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
 		E790B2BC1DEF41450067CB21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E790B2BE1DEF41450067CB21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E790B2C11DEF41450067CB21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E790B2C31DEF41450067CB21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E790B2C91DEF42EF0067CB21 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		E790B2CA1DEF435E0067CB21 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		E790B2CD1DEF46180067CB21 /* WeatherAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherAPI.h; sourceTree = "<group>"; };
 		E790B2CE1DEF46180067CB21 /* WeatherAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherAPI.m; sourceTree = "<group>"; };
 		E790B2D01DEF46180067CB21 /* CurrentWeatherInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentWeatherInfo.h; sourceTree = "<group>"; };
 		E790B2D11DEF46180067CB21 /* CurrentWeatherInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentWeatherInfo.m; sourceTree = "<group>"; };
+		E790B2D41DEF4B6B0067CB21 /* WeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherViewController.h; sourceTree = "<group>"; };
+		E790B2D51DEF4B6B0067CB21 /* WeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
+		E790B2D71DF19F010067CB21 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		E790B2D81DF19F010067CB21 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,14 +67,14 @@
 		E790B2B11DEF41450067CB21 /* WeatherCityInfo */ = {
 			isa = PBXGroup;
 			children = (
+				E790B2D71DF19F010067CB21 /* DetailViewController.h */,
+				E790B2D81DF19F010067CB21 /* DetailViewController.m */,
+				E790B2D41DEF4B6B0067CB21 /* WeatherViewController.h */,
+				E790B2D51DEF4B6B0067CB21 /* WeatherViewController.m */,
 				E790B2CC1DEF46180067CB21 /* Helper */,
 				E790B2CF1DEF46180067CB21 /* Model */,
 				E790B2B51DEF41450067CB21 /* AppDelegate.h */,
 				E790B2B61DEF41450067CB21 /* AppDelegate.m */,
-				E790B2C91DEF42EF0067CB21 /* DetailViewController.h */,
-				E790B2CA1DEF435E0067CB21 /* DetailViewController.m */,
-				E790B2B81DEF41450067CB21 /* WeatherViewController.h */,
-				E790B2B91DEF41450067CB21 /* WeatherViewController.m */,
 				E790B2BB1DEF41450067CB21 /* Main.storyboard */,
 				E790B2BE1DEF41450067CB21 /* Assets.xcassets */,
 				E790B2C01DEF41450067CB21 /* LaunchScreen.storyboard */,
@@ -182,11 +182,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E790B2D21DEF46180067CB21 /* WeatherAPI.m in Sources */,
-				E790B2BA1DEF41450067CB21 /* WeatherViewController.m in Sources */,
+				E790B2D61DEF4B6B0067CB21 /* WeatherViewController.m in Sources */,
 				E790B2B71DEF41450067CB21 /* AppDelegate.m in Sources */,
 				E790B2B41DEF41450067CB21 /* main.m in Sources */,
 				E790B2D31DEF46180067CB21 /* CurrentWeatherInfo.m in Sources */,
-				E790B2CB1DEF435E0067CB21 /* DetailViewController.m in Sources */,
+				E790B2D91DF19F010067CB21 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

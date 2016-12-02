@@ -10,6 +10,5 @@
 
 @interface WeatherViewController : UIViewController
 
-
 @end
 

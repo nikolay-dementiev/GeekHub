@@ -7,22 +7,41 @@
 //
 
 #import "WeatherViewController.h"
+#import "DetailViewController.h"
 
-@interface WeatherViewController ()
+
+@interface WeatherViewController () {
+    DetailViewController *nextViewController;
+//    CurrentWeatherInfo *newInfoItem;
+}
+
+@property (weak, nonatomic) IBOutlet UITextField *textField;
 
 @end
 
+
 @implementation WeatherViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+
+    nextViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
+//    newInfoItem = [CurrentWeatherInfo new];
+
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)submitAction {
+
+   
+//    [newInfoItem showObjectDescription];
+
+//    CurrentWeatherInfo
+    [nextViewController updateWeatherInfo:_textField.text];
+    [self.navigationController pushViewController:nextViewController animated:YES];
+
 }
 
 
