@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CalcViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UILabel *display;
 
 @end
 

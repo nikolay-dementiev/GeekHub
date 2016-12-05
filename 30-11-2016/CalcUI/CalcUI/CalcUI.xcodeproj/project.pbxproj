@@ -14,6 +14,7 @@
 		E790B2F51DF1E0270067CB21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E790B2F41DF1E0270067CB21 /* Assets.xcassets */; };
 		E790B2F81DF1E0270067CB21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E790B2F61DF1E0270067CB21 /* LaunchScreen.storyboard */; };
 		E790B3081DF4847F0067CB21 /* UIView+UIViewCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = E790B3071DF4847F0067CB21 /* UIView+UIViewCategory.m */; };
+		E790B30B1DF5C7280067CB21 /* CalculatorBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = E790B30A1DF5C7280067CB21 /* CalculatorBrain.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		E790B2F91DF1E0270067CB21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E790B3061DF4847F0067CB21 /* UIView+UIViewCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIViewCategory.h"; sourceTree = "<group>"; };
 		E790B3071DF4847F0067CB21 /* UIView+UIViewCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIViewCategory.m"; sourceTree = "<group>"; };
+		E790B3091DF5C6F60067CB21 /* CalculatorBrain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalculatorBrain.h; sourceTree = "<group>"; };
+		E790B30A1DF5C7280067CB21 /* CalculatorBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorBrain.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,9 +64,9 @@
 		E790B2E71DF1E0270067CB21 /* CalcUI */ = {
 			isa = PBXGroup;
 			children = (
-				E790B2FF1DF47CCB0067CB21 /* Helper */,
 				E790B2EB1DF1E0270067CB21 /* AppDelegate.h */,
 				E790B2EC1DF1E0270067CB21 /* AppDelegate.m */,
+				E790B2FF1DF47CCB0067CB21 /* Helper */,
 				E790B2EE1DF1E0270067CB21 /* CalcViewController.h */,
 				E790B2EF1DF1E0270067CB21 /* CalcViewController.m */,
 				E790B2F11DF1E0270067CB21 /* Main.storyboard */,
@@ -71,6 +74,8 @@
 				E790B2F61DF1E0270067CB21 /* LaunchScreen.storyboard */,
 				E790B2F91DF1E0270067CB21 /* Info.plist */,
 				E790B2E81DF1E0270067CB21 /* Supporting Files */,
+				E790B3091DF5C6F60067CB21 /* CalculatorBrain.h */,
+				E790B30A1DF5C7280067CB21 /* CalculatorBrain.m */,
 			);
 			path = CalcUI;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 				E790B2F01DF1E0270067CB21 /* CalcViewController.m in Sources */,
 				E790B2ED1DF1E0270067CB21 /* AppDelegate.m in Sources */,
 				E790B2EA1DF1E0270067CB21 /* main.m in Sources */,
+				E790B30B1DF5C7280067CB21 /* CalculatorBrain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
