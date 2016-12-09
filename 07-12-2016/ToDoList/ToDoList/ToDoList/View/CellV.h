@@ -10,4 +10,10 @@
 
 @interface CellV : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UISwitch *taskExecuted;
+- (IBAction)taskExecutePressed:(UISwitch *)sender;
+
+@property (weak, nonatomic) IBOutlet UILabel *title;
+@property (weak, nonatomic) IBOutlet UILabel *dateTime;
+
 @end

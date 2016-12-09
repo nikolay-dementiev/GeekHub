@@ -27,7 +27,7 @@
             </objects>
             <point key="canvasLocation" x="118" y="36"/>
         </scene>
-        <!--Main List TableVC-->
+        <!--ToDoList-->
         <scene sceneID="6hZ-sH-fRm">
             <objects>
                 <tableViewController id="yBu-ef-U5s" customClass="MainListTableVC" sceneMemberID="viewController">
@@ -42,7 +42,45 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ayk-X8-AHi" id="H2L-OE-Z0y">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oAL-Zt-F8s">
+                                            <rect key="frame" x="8" y="4" width="51" height="31"/>
+                                            <connections>
+                                                <action selector="taskExecutePressed:" destination="Ayk-X8-AHi" eventType="valueChanged" id="A1L-FO-Rab"/>
+                                            </connections>
+                                        </switch>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0e-7z-PlW">
+                                            <rect key="frame" x="65" y="11.5" width="194" height="21"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dateTime" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1O-dl-7RN">
+                                            <rect key="frame" x="267" y="22" width="100" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="N4z-lt-W5x"/>
+                                                <constraint firstAttribute="height" constant="21" id="oIc-Lv-8s3"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="f0e-7z-PlW" firstAttribute="leading" secondItem="oAL-Zt-F8s" secondAttribute="trailing" constant="8" id="CmW-uO-ymY"/>
+                                        <constraint firstItem="m1O-dl-7RN" firstAttribute="leading" secondItem="f0e-7z-PlW" secondAttribute="trailing" constant="8" id="XLF-3q-zlv"/>
+                                        <constraint firstItem="oAL-Zt-F8s" firstAttribute="centerY" secondItem="H2L-OE-Z0y" secondAttribute="centerY" constant="-2" id="glv-sq-xBP"/>
+                                        <constraint firstItem="oAL-Zt-F8s" firstAttribute="leading" secondItem="H2L-OE-Z0y" secondAttribute="leading" constant="8" id="laD-3H-HYa"/>
+                                        <constraint firstItem="f0e-7z-PlW" firstAttribute="centerY" secondItem="H2L-OE-Z0y" secondAttribute="centerY" id="pRD-KW-FjO"/>
+                                        <constraint firstAttribute="trailing" secondItem="m1O-dl-7RN" secondAttribute="trailing" constant="8" id="vPX-Wg-AUk"/>
+                                        <constraint firstAttribute="bottom" secondItem="m1O-dl-7RN" secondAttribute="bottom" id="zuQ-Lk-31x"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateTime" destination="m1O-dl-7RN" id="IXz-Zb-09R"/>
+                                    <outlet property="taskExecuted" destination="oAL-Zt-F8s" id="va8-y3-pl9"/>
+                                    <outlet property="title" destination="f0e-7z-PlW" id="C8O-LA-cWK"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -50,13 +88,24 @@
                             <outlet property="delegate" destination="yBu-ef-U5s" id="sKS-TF-PZH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="V19-RJ-6kq"/>
+                    <navigationItem key="navigationItem" title="ToDoList" id="V19-RJ-6kq">
+                        <barButtonItem key="leftBarButtonItem" systemItem="organize" id="tvw-yB-Ceu">
+                            <connections>
+                                <action selector="sortMenu:" destination="yBu-ef-U5s" id="1YT-U4-SOD"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vuO-Wl-oCT">
+                            <connections>
+                                <segue destination="89g-sf-zLh" kind="show" id="2eg-Zk-R4x"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MHp-JD-3KU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="903" y="36"/>
+            <point key="canvasLocation" x="901.60000000000002" y="35.532233883058474"/>
         </scene>
-        <!--DetailVC-->
+        <!--Detail-->
         <scene sceneID="lnd-7E-8Da">
             <objects>
                 <viewController id="89g-sf-zLh" customClass="DetailVC" sceneMemberID="viewController">
@@ -69,10 +118,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Detail" id="eIv-uj-0UF">
+                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="save" id="rIP-rO-Pkd"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kF5-cU-IH1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1647" y="36"/>
+            <point key="canvasLocation" x="1686" y="36"/>
         </scene>
     </scenes>
 </document>

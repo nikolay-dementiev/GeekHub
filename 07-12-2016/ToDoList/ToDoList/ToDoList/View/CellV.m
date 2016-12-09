@@ -8,6 +8,11 @@
 
 #import "CellV.h"
 
+@interface CellV()
+
+
+@end
+
 @implementation CellV
 
 - (void)awakeFromNib {
@@ -19,6 +24,9 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (IBAction)taskExecutePressed:(UISwitch *)sender {
 }
 
 @end

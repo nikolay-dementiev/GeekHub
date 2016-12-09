@@ -8,10 +8,16 @@
 
 #import "MainListTableVC.h"
 #import "CellV.h"
+#import "DetailVC.h"
+#import "TaskModel.h"
+#import "AlertMenuC.h"
 
 @interface MainListTableVC ()
 
-@property (nonatomic, strong, readwrite) NSMutableArray *tasklist;
+@property (nonatomic, strong, readwrite) NSMutableArray<TaskModel *> *tasklist;
+
+- (IBAction)sortMenu:(UIBarButtonItem *)sender;
+
 
 @end
 
@@ -51,23 +57,27 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CellV *cell = [tableView dequeueReusableCellWithIdentifier:listCellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
 
-    
+    TaskModel *itemInArayOfItems = [_tasklist objectAtIndex:indexPath.row];
+
+    // Configure the cell...
+    [cell.taskExecuted setOn:itemInArayOfItems.executed animated:NO];
+    cell.title.text = itemInArayOfItems.title;
+    cell.dateTime.text = [itemInArayOfItems.dateCreation description];
+
     return cell;
 }
 
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
+
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -77,7 +87,7 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
@@ -93,14 +103,21 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-}
-*/
 
+//    UINavigationController *nav = segue.destinationViewController;
+//    DetailVC *triv = [[DetailVC alloc]init];
+//    triv = nav.viewControllers[0];
+//    triv.location = self.location;
+}
+
+
+- (IBAction)sortMenu:(UIBarButtonItem *)sender {
+}
 @end

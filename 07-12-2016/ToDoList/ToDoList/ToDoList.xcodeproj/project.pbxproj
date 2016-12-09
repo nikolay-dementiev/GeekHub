@@ -17,6 +17,7 @@
 		E75416A51DFAA3BF000833EC /* MainListTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E75416A21DFAA3BF000833EC /* MainListTableVC.m */; };
 		E75416A91DFAA4C2000833EC /* TaskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E75416A81DFAA4C2000833EC /* TaskModel.m */; };
 		E75416AD1DFAAA76000833EC /* CellV.m in Sources */ = {isa = PBXBuildFile; fileRef = E75416AC1DFAAA76000833EC /* CellV.m */; };
+		E75416B41DFABB7B000833EC /* AlertMenuC.m in Sources */ = {isa = PBXBuildFile; fileRef = E75416B31DFABB7B000833EC /* AlertMenuC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		E75416A81DFAA4C2000833EC /* TaskModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskModel.m; sourceTree = "<group>"; };
 		E75416AB1DFAAA76000833EC /* CellV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellV.h; sourceTree = "<group>"; };
 		E75416AC1DFAAA76000833EC /* CellV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellV.m; sourceTree = "<group>"; };
+		E75416B21DFABB7B000833EC /* AlertMenuC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertMenuC.h; sourceTree = "<group>"; };
+		E75416B31DFABB7B000833EC /* AlertMenuC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertMenuC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +93,7 @@
 		E75416721DFA9F46000833EC /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				E75416AE1DFABA86000833EC /* Helper */,
 				E75416AA1DFAAA66000833EC /* View */,
 				E754169E1DFAA3BF000833EC /* Controller */,
 				E75416A31DFAA3BF000833EC /* Model */,
@@ -156,6 +160,15 @@
 				E75416AC1DFAAA76000833EC /* CellV.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E75416AE1DFABA86000833EC /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				E75416B21DFABB7B000833EC /* AlertMenuC.h */,
+				E75416B31DFABB7B000833EC /* AlertMenuC.m */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +276,7 @@
 				E75416AD1DFAAA76000833EC /* CellV.m in Sources */,
 				E75416A41DFAA3BF000833EC /* DetailVC.m in Sources */,
 				E75416781DFA9F46000833EC /* AppDelegate.m in Sources */,
+				E75416B41DFABB7B000833EC /* AlertMenuC.m in Sources */,
 				E75416A91DFAA4C2000833EC /* TaskModel.m in Sources */,
 				E75416A51DFAA3BF000833EC /* MainListTableVC.m in Sources */,
 				E75416751DFA9F46000833EC /* main.m in Sources */,
