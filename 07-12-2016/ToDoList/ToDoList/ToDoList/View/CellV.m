@@ -7,9 +7,15 @@
 //
 
 #import "CellV.h"
+#import "TaskModel.h"
 
 @interface CellV()
 
+@property (weak, nonatomic) IBOutlet UISwitch *taskExecuted;
+- (IBAction)taskExecutePressed:(UISwitch *)sender;
+
+@property (weak, nonatomic) IBOutlet UILabel *title;
+@property (weak, nonatomic) IBOutlet UILabel *dateTime;
 
 @end
 
@@ -27,6 +33,14 @@
 }
 
 - (IBAction)taskExecutePressed:(UISwitch *)sender {
+    _itemModel.executed = sender.isOn;
 }
+
+- (void) fullFillCellItem {
+    [_taskExecuted setOn:_itemModel.executed animated:NO];
+    _title.text = _itemModel.title;
+    _dateTime.text = [_itemModel.dateCreation description];
+}
+
 
 @end

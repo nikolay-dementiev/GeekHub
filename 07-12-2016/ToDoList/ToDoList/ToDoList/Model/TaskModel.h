@@ -10,7 +10,7 @@
 
 @property (nonatomic, readwrite, strong) NSDate *dateCreation;
 @property (nonatomic, readwrite, strong) NSString *title;
-@property (nonatomic, readwrite) BOOL *executed;
+@property (nonatomic, readwrite) BOOL executed;
 
 - (instancetype)initWithData:(NSString *)title;
 

@@ -7,13 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TaskModel.h"
 
 @interface CellV : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UISwitch *taskExecuted;
-- (IBAction)taskExecutePressed:(UISwitch *)sender;
+@property (readwrite, nonatomic, weak) TaskModel* itemModel;
+- (void) fullFillCellItem;
 
-@property (weak, nonatomic) IBOutlet UILabel *title;
-@property (weak, nonatomic) IBOutlet UILabel *dateTime;
 
 @end

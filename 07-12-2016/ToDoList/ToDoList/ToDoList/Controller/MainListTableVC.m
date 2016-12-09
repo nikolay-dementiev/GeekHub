@@ -35,6 +35,12 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     listCellIdentifier = @"TaskListCell";
+
+    //test!!
+    _tasklist = [[NSMutableArray alloc] init];
+    [_tasklist addObject: [[TaskModel new] initWithData:@"first"]];
+    [_tasklist addObject: [[TaskModel new] initWithData:@"second"]];
+    [_tasklist addObject: [[TaskModel new] initWithData:@"third"]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,9 +67,8 @@
     TaskModel *itemInArayOfItems = [_tasklist objectAtIndex:indexPath.row];
 
     // Configure the cell...
-    [cell.taskExecuted setOn:itemInArayOfItems.executed animated:NO];
-    cell.title.text = itemInArayOfItems.title;
-    cell.dateTime.text = [itemInArayOfItems.dateCreation description];
+    cell.itemModel = itemInArayOfItems;
+    [cell fullFillCellItem];
 
     return cell;
 }
