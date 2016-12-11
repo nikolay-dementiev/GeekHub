@@ -115,7 +115,18 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 
-    //    UINavigationController *nav = segue.destinationViewController;
+    DetailVC *destinationVC = segue.destinationViewController;
+    if([segue.identifier isEqualToString:@"ShowDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        //CellV *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+
+        destinationVC.itemModel = [_tasklist objectAtIndex:indexPath.row];
+        //[destinationVC fullFillDetailItem];
+
+    } else if([segue.identifier isEqualToString:@"AddItem"]) {
+
+    }
+
     //    DetailVC *triv = [[DetailVC alloc]init];
     //    triv = nav.viewControllers[0];
     //    triv.location = self.location;
@@ -150,7 +161,6 @@
     [_tasklist setArray:sortedList];
     
     [self.tableView reloadData];
-    
 }
 
 @end

@@ -81,6 +81,7 @@
                                     <outlet property="dateTime" destination="m1O-dl-7RN" id="IXz-Zb-09R"/>
                                     <outlet property="taskExecuted" destination="oAL-Zt-F8s" id="va8-y3-pl9"/>
                                     <outlet property="title" destination="f0e-7z-PlW" id="C8O-LA-cWK"/>
+                                    <segue destination="89g-sf-zLh" kind="show" identifier="ShowDetail" id="HFh-pz-xN3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -97,7 +98,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="vuO-Wl-oCT">
                             <connections>
-                                <segue destination="89g-sf-zLh" kind="show" id="2eg-Zk-R4x"/>
+                                <segue destination="89g-sf-zLh" kind="show" identifier="AddItem" id="2eg-Zk-R4x"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -139,7 +140,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="11S-n9-5cm">
+                            <switch opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="11S-n9-5cm">
                                 <rect key="frame" x="16" y="112" width="51" height="31"/>
                             </switch>
                         </subviews>
@@ -171,4 +172,7 @@
             <point key="canvasLocation" x="1685.5999999999999" y="35.532233883058474"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="HFh-pz-xN3"/>
+    </inferredMetricsTieBreakers>
 </document>
