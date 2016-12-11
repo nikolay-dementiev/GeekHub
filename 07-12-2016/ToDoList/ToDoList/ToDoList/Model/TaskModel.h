@@ -14,6 +14,9 @@
 
 - (instancetype)initWithData:(NSString *)title;
 
+//https://www.pmg.com/blog/3-different-ways-to-sort-a-uitableview/
+- (NSComparisonResult)compareTitle:(TaskModel *)otherObject;
+
 @end
 
 //#ifndef TaskModel_h

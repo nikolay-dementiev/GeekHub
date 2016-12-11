@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@class TaskModel;
 
 @interface MainListTableVC : UITableViewController
+
+@property (nonatomic, strong, readwrite) NSMutableArray<TaskModel *> *tasklist;
+- (void)sortListByTitle;
+- (void)sortListByDate;
 
 @end

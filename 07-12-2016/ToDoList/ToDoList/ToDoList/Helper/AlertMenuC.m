@@ -7,60 +7,68 @@
 //
 
 #import "AlertMenuC.h"
+#import "MainListTableVC.h"
 
 @interface AlertMenuC ()
 
 @end
 
-@implementation AlertMenuC
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+@implementation AlertMenuC {
+    UIViewController *viewControllerToPresent;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+- (instancetype)initWithOwnerVC:(UIViewController *)viewController {
+    self = [super init];
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if (self) {
+        viewControllerToPresent = viewController;
+    }
+    return  self;
 }
-*/
 
 - (void)initAlertControllerForList {
+
+    //type cast to my controller
+    MainListTableVC *VC = ((MainListTableVC *)viewControllerToPresent);
+
     UIAlertController * alert=   [UIAlertController
-                                  alertControllerWithTitle:@"Info"
-                                  message:@"You are using UIAlertController"
-                                  preferredStyle:UIAlertControllerStyleAlert];
+                                  alertControllerWithTitle:@"Sort list by"
+                                  message:nil//@"You are using UIAlertController"
+                                  preferredStyle:UIAlertControllerStyleActionSheet];
 
-    UIAlertAction* ok = [UIAlertAction
-                         actionWithTitle:@"OK"
-                         style:UIAlertActionStyleDefault
-                         handler:^(UIAlertAction * action)
-                         {
-                             [alert dismissViewControllerAnimated:YES completion:nil];
+    UIAlertAction* first = [UIAlertAction
+                            actionWithTitle:@"date creation"
+                            style:UIAlertActionStyleDefault
+                            handler:^(UIAlertAction * action)
+                            {
+                                [VC sortListByDate];
+                                [alert dismissViewControllerAnimated:YES completion:nil]; //^(void){[VC sortListByDate];}
+                            }];
+    UIAlertAction* second = [UIAlertAction
+                             actionWithTitle:@"ABC (title)"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 [VC sortListByTitle];
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
 
-                         }];
+                             }];
     UIAlertAction* cancel = [UIAlertAction
                              actionWithTitle:@"Cancel"
-                             style:UIAlertActionStyleDefault
+                             style:UIAlertActionStyleCancel
                              handler:^(UIAlertAction * action)
                              {
                                  [alert dismissViewControllerAnimated:YES completion:nil];
 
                              }];
 
-    [alert addAction:ok];
+
+    [alert addAction:first];
+    [alert addAction:second];
     [alert addAction:cancel];
 
-    [self presentViewController:alert animated:YES completion:nil];
+
+    [viewControllerToPresent presentViewController:alert animated:YES completion:nil];
 }
 
 @end

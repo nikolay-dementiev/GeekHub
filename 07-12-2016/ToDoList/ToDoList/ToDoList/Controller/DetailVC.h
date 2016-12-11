@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class TaskModel;
 
 @interface DetailVC : UIViewController
+
+@property (readwrite, nonatomic, weak) TaskModel* itemModel;
+- (void) fullFillDetailItem;
 
 @end

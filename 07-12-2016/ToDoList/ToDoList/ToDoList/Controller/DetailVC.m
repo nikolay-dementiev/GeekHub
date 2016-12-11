@@ -7,8 +7,13 @@
 //
 
 #import "DetailVC.h"
+#import "TaskModel.h"
 
 @interface DetailVC ()
+
+@property (weak, nonatomic) IBOutlet UISwitch *taskExecuted;
+@property (weak, nonatomic) IBOutlet UITextField *titleDetail;
+@property (weak, nonatomic) IBOutlet UILabel *dateTime;
 
 @end
 
@@ -22,6 +27,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) fullFillDetailItem {
+    [_taskExecuted setOn:_itemModel.executed animated:NO];
+    _titleDetail.text = _itemModel.title;
+    _dateTime.text = [_itemModel.dateCreation description];
 }
 
 /*

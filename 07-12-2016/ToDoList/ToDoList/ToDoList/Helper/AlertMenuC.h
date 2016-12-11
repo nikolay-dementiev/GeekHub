@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AlertMenuC : UIAlertController
+@interface AlertMenuC : NSObject
 
 - (void)initAlertControllerForList;
+- (instancetype)initWithOwnerVC:(UIViewController *)viewController;
 
 @end

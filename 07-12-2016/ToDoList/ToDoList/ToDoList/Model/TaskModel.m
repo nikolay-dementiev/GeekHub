@@ -28,4 +28,8 @@
     return self;
 }
 
+- (NSComparisonResult)compareTitle:(TaskModel *)otherObject {
+    return [self.title compare:otherObject.title];
+}
+
 @end
