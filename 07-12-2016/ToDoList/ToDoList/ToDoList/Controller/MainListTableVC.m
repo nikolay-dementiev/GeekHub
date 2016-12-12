@@ -15,7 +15,7 @@
 @interface MainListTableVC ()
 
 - (IBAction)sortMenu:(UIBarButtonItem *)sender;
-
+- (IBAction)unwindToList:(UIStoryboardSegue* )sender;
 
 @end
 
@@ -86,7 +86,11 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+
+        [_tasklist removeObjectAtIndex:indexPath.row];
+
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }
@@ -118,20 +122,89 @@
     DetailVC *destinationVC = segue.destinationViewController;
     if([segue.identifier isEqualToString:@"ShowDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        //CellV *cell = [self.tableView cellForRowAtIndexPath:indexPath];
 
         destinationVC.itemModel = [_tasklist objectAtIndex:indexPath.row];
-        //[destinationVC fullFillDetailItem];
 
     } else if([segue.identifier isEqualToString:@"AddItem"]) {
 
     }
 
-    //    DetailVC *triv = [[DetailVC alloc]init];
-    //    triv = nav.viewControllers[0];
-    //    triv.location = self.location;
 }
 
+//-(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {
+////    if ([segue.identifier isEqualToString:@"unwindToViewController1"]) {
+////        ThreeViewController *threeVC = (ThreeViewController *)segue.sourceViewController;
+////        NSLog(@"Violets are %@", threeVC.violetsAreColor);
+////    }
+//}
+
+- (IBAction)unwindToList:(UIStoryboardSegue* )segue {
+
+//    if ([segue.identifier isEqualToString:@"unwindToListVCWithNewObj"]) {
+//
+//        //http://stackoverflow.com/questions/22482323/uitableview-insertrowsatindexpathswithrowanimation-without-freeze-ui
+//        //        https://developer.apple.com/library/content/referencelibrary/GettingStarted/DevelopiOSAppsSwift/Lesson9.html#//apple_ref/doc/uid/TP40015214-CH9-SW1
+//
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [self.tableView beginUpdates];
+//
+//            DetailVC *detailVC = (DetailVC *)segue.sourceViewController;
+//            int index = (int)[NSIndexPath indexPathForRow: [_tasklist count] inSection:0].row;
+//            TaskModel *obj = detailVC.itemModel;
+//
+//            [self.tasklist insertObject:obj atIndex:index];
+//
+//            [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]]
+//                                  withRowAnimation:UITableViewRowAnimationRight];
+//
+//            [self.tableView endUpdates];
+//        });
+//    } else if ([segue.identifier isEqualToString:@"unwindToListVCWithCurrentObj"]) {
+//        // Update an existing item.
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [self.tableView beginUpdates];
+//
+//            NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+//            DetailVC *detailVC = (DetailVC *)segue.sourceViewController;
+//            TaskModel *obj = detailVC.itemModel;
+//            self.tasklist[indexPath.row] = obj;
+//
+//            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:indexPath.row inSection:0]]
+//                                  withRowAnimation:UITableViewRowAnimationNone];
+//
+//            [self.tableView endUpdates];
+//        });
+//
+//    }
+
+    if ([segue.identifier isEqualToString:@"unwindToListVC"]) {
+        DetailVC *detailVC = (DetailVC *)segue.sourceViewController;
+        //    _operationCode
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView beginUpdates];
+            TaskModel *obj = detailVC.itemModel;
+
+            if ([detailVC.operationCode isEqualToString:@"unwindToListVCWithNewObj"]) {
+                int index = (int)[NSIndexPath indexPathForRow: [_tasklist count] inSection:0].row;
+                [self.tasklist insertObject:obj atIndex:index];
+
+                [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]]
+                                      withRowAnimation:UITableViewRowAnimationRight];
+
+            } else if ([detailVC.operationCode isEqualToString:@"unwindToListVCWithCurrentObj"]) {
+                int index = (int)[self.tableView indexPathForSelectedRow].row;
+                /*in our case - this is unnecessary - because we have a reference to an object
+                self.tasklist[index] = obj;
+                 */
+                [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]]
+                                      withRowAnimation:UITableViewRowAnimationNone];
+            }
+
+            [self.tableView endUpdates];
+        });
+
+    }
+}
 
 - (IBAction)sortMenu:(UIBarButtonItem *)sender {
 
@@ -146,8 +219,6 @@
 
     [self.tableView reloadData];
 }
-
-
 
 - (void)sortListByDate {
     // for detail see sorce: https://www.pmg.com/blog/3-different-ways-to-sort-a-uitableview/

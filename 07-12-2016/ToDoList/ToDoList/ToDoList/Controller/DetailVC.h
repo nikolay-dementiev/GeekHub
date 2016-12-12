@@ -11,7 +11,8 @@
 
 @interface DetailVC : UIViewController
 
-@property (readwrite, nonatomic, weak) TaskModel* itemModel;
+@property (readwrite, nonatomic, retain) TaskModel* itemModel;
+@property (readwrite, nonatomic, weak) NSString* operationCode;
 - (void) fullFillDetailItem;
 
 @end

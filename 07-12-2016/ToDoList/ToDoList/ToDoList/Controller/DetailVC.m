@@ -8,12 +8,14 @@
 
 #import "DetailVC.h"
 #import "TaskModel.h"
+#import "TaskModel.h"
 
 @interface DetailVC ()
 
 @property (weak, nonatomic) IBOutlet UISwitch *taskExecuted;
 @property (weak, nonatomic) IBOutlet UITextField *titleDetail;
 @property (weak, nonatomic) IBOutlet UILabel *dateTime;
+- (IBAction)saveButtokPressed:(UIBarButtonItem *)sender;
 
 @end
 
@@ -22,6 +24,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+    //    if (_itemModel) {
+    [self fullFillDetailItem];
+    //    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,15 +41,42 @@
     _dateTime.text = [_itemModel.dateCreation description];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+ #pragma mark - Navigation
+
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+     if (_itemModel) {
+         //update current one
+         _itemModel.title = _titleDetail.text;
+         //[self performSegueWithIdentifier:@"unwindToListVCWithCurrentObj" sender:self];
+         _operationCode = @"unwindToListVCWithCurrentObj";
+     } else {
+         //create new one
+         _itemModel = [[TaskModel new] initWithData:_titleDetail.text];
+         //[self performSegueWithIdentifier:@"unwindToListVCWithNewObj" sender:self];
+         _operationCode = @"unwindToListVCWithNewObj";
+     }
+ }
+
+
+
+- (IBAction)saveButtokPressed:(UIBarButtonItem *)sender {
+
+//    if (_itemModel) {
+//        //update current one
+//        _itemModel.title = _titleDetail.text;
+//        //[self performSegueWithIdentifier:@"unwindToListVCWithCurrentObj" sender:self];
+//        _operationCode = @"unwindToListVCWithCurrentObj";
+//    } else {
+//        //create new one
+//        _itemModel = [[TaskModel new] initWithData:_titleDetail.text];
+//        //[self performSegueWithIdentifier:@"unwindToListVCWithNewObj" sender:self];
+//        _operationCode = @"unwindToListVCWithNewObj";
+//    }
+//    [self performSegueWithIdentifier:@"unwindToList" sender:self];
+//
+//    [self dismissViewControllerAnimated:true completion:nil];
 }
-*/
-
 
 @end

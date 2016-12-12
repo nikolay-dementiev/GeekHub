@@ -159,7 +159,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="eIv-uj-0UF">
-                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="save" id="rIP-rO-Pkd"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="save" id="rIP-rO-Pkd">
+                            <connections>
+                                <action selector="saveButtokPressed:" destination="89g-sf-zLh" id="RYf-Yb-4fP"/>
+                                <segue destination="gYX-8r-G9C" kind="unwind" identifier="unwindToListVC" unwindAction="unwindToList:" id="7pM-Yd-ivk"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="dateTime" destination="xOD-Dj-WhH" id="TDA-3I-HlA"/>
@@ -168,6 +173,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kF5-cU-IH1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="gYX-8r-G9C" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1685.5999999999999" y="35.532233883058474"/>
         </scene>
