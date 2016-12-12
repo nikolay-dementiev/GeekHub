@@ -63,20 +63,6 @@
 
 - (IBAction)saveButtokPressed:(UIBarButtonItem *)sender {
 
-//    if (_itemModel) {
-//        //update current one
-//        _itemModel.title = _titleDetail.text;
-//        //[self performSegueWithIdentifier:@"unwindToListVCWithCurrentObj" sender:self];
-//        _operationCode = @"unwindToListVCWithCurrentObj";
-//    } else {
-//        //create new one
-//        _itemModel = [[TaskModel new] initWithData:_titleDetail.text];
-//        //[self performSegueWithIdentifier:@"unwindToListVCWithNewObj" sender:self];
-//        _operationCode = @"unwindToListVCWithNewObj";
-//    }
-//    [self performSegueWithIdentifier:@"unwindToList" sender:self];
-//
-//    [self dismissViewControllerAnimated:true completion:nil];
 }
 
 @end

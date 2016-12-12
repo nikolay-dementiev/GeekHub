@@ -60,7 +60,6 @@
     return [_tasklist count];
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CellV *cell = [tableView dequeueReusableCellWithIdentifier:listCellIdentifier forIndexPath:indexPath];
 
@@ -73,14 +72,11 @@
     return cell;
 }
 
-
-
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -95,7 +91,6 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }
 }
-
 
 /*
  // Override to support rearranging the table view.
@@ -131,51 +126,12 @@
 
 }
 
-//-(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {
-////    if ([segue.identifier isEqualToString:@"unwindToViewController1"]) {
-////        ThreeViewController *threeVC = (ThreeViewController *)segue.sourceViewController;
-////        NSLog(@"Violets are %@", threeVC.violetsAreColor);
-////    }
-//}
-
 - (IBAction)unwindToList:(UIStoryboardSegue* )segue {
 
-//    if ([segue.identifier isEqualToString:@"unwindToListVCWithNewObj"]) {
-//
-//        //http://stackoverflow.com/questions/22482323/uitableview-insertrowsatindexpathswithrowanimation-without-freeze-ui
-//        //        https://developer.apple.com/library/content/referencelibrary/GettingStarted/DevelopiOSAppsSwift/Lesson9.html#//apple_ref/doc/uid/TP40015214-CH9-SW1
-//
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            [self.tableView beginUpdates];
-//
-//            DetailVC *detailVC = (DetailVC *)segue.sourceViewController;
-//            int index = (int)[NSIndexPath indexPathForRow: [_tasklist count] inSection:0].row;
-//            TaskModel *obj = detailVC.itemModel;
-//
-//            [self.tasklist insertObject:obj atIndex:index];
-//
-//            [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]]
-//                                  withRowAnimation:UITableViewRowAnimationRight];
-//
-//            [self.tableView endUpdates];
-//        });
-//    } else if ([segue.identifier isEqualToString:@"unwindToListVCWithCurrentObj"]) {
-//        // Update an existing item.
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            [self.tableView beginUpdates];
-//
-//            NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//            DetailVC *detailVC = (DetailVC *)segue.sourceViewController;
-//            TaskModel *obj = detailVC.itemModel;
-//            self.tasklist[indexPath.row] = obj;
-//
-//            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:indexPath.row inSection:0]]
-//                                  withRowAnimation:UITableViewRowAnimationNone];
-//
-//            [self.tableView endUpdates];
-//        });
-//
-//    }
+    //  http://stackoverflow.com/questions/22482323/uitableview-insertrowsatindexpathswithrowanimation-without-freeze-ui
+    //        https://developer.apple.com/library/content/referencelibrary/GettingStarted/DevelopiOSAppsSwift/Lesson9.html#//apple_ref/doc/uid/TP40015214-CH9-SW1
+    //  https://spin.atomicobject.com/2014/12/01/program-ios-unwind-segue/
+
 
     if ([segue.identifier isEqualToString:@"unwindToListVC"]) {
         DetailVC *detailVC = (DetailVC *)segue.sourceViewController;
@@ -193,8 +149,8 @@
 
             } else if ([detailVC.operationCode isEqualToString:@"unwindToListVCWithCurrentObj"]) {
                 int index = (int)[self.tableView indexPathForSelectedRow].row;
-                /*in our case - this is unnecessary - because we have a reference to an object
-                self.tasklist[index] = obj;
+                /*in our case - this is unnecessary - because we have a reference to an Model object
+                 self.tasklist[index] = obj;
                  */
                 [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]]
                                       withRowAnimation:UITableViewRowAnimationNone];
@@ -205,6 +161,8 @@
 
     }
 }
+
+#pragma mark - Sort List
 
 - (IBAction)sortMenu:(UIBarButtonItem *)sender {
 
