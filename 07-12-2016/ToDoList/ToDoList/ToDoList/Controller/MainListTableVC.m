@@ -41,7 +41,10 @@
     [_tasklist addObject: [[TaskModel new] initWithData:@"4first"]];
     [_tasklist addObject: [[TaskModel new] initWithData:@"3second"]];
     [_tasklist addObject: [[TaskModel new] initWithData:@"1third"]];
-}
+
+//    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // Place table view Edit button in toolbar, after existing buttons.
+   }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

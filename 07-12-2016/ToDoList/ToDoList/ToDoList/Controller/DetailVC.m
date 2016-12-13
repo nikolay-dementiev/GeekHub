@@ -25,9 +25,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    //    if (_itemModel) {
+
     [self fullFillDetailItem];
-    //    }
+    [self showTitleOfNavBar];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,6 +42,13 @@
     _dateTime.text = [_itemModel.dateCreation description];
 }
 
+- (void) showTitleOfNavBar {
+    if (!self.itemModel) {
+        self.title = @"Create new item";
+    } else {
+        self.title = [NSString stringWithFormat:@"Edit '%@'", self.itemModel.title];
+    }
+}
 
  #pragma mark - Navigation
 
