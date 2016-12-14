@@ -21,26 +21,14 @@
 
 @implementation CellV
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
 - (IBAction)taskExecutePressed:(UISwitch *)sender {
-    _itemModel.executed = sender.isOn;
+    self.itemModel.executed = sender.isOn;
 }
 
 - (void) fullFillCellItem {
-    [_taskExecuted setOn:_itemModel.executed animated:NO];
-    _title.text = _itemModel.title;
-    _dateTime.text = [_itemModel.dateCreation description];
+    [self.taskExecuted setOn:self.itemModel.executed animated:NO];
+    self.title.text = self.itemModel.title;
+    self.dateTime.text = [self.itemModel.dateCreation description];
 }
-
 
 @end
