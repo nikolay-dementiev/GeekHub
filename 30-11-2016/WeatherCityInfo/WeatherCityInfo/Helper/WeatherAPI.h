@@ -11,9 +11,11 @@
 
 @interface WeatherAPI : NSObject
 
-+ (NSDictionary *)getWeatherData:(NSString *)countryName;
++ (NSDictionary *)getWeatherData:(NSString *)countryName
+                       withError:(NSError **)errorPtr;
 + (NSString *)showCurrentInfoFromJSON:(NSDictionary *)jsonDictData;
-+ (NSData *)getImageDataForWeatheIco:(NSString *)weatherIcoId;
++ (NSData *)getImageDataForWeatheIco:(NSString *)weatherIcoId
+                           withError:(NSError **)errorPtr;
 
 @end
 

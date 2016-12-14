@@ -116,7 +116,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="activIndicator" destination="bwy-Bo-dMv" id="Z9z-Au-t4Z"/>
+                        <outlet property="activIndicator" destination="bwy-Bo-dMv" id="j2O-Y7-qZo"/>
                         <outlet property="imageViewData" destination="vSJ-LF-OSs" id="DlW-Ou-8Cp"/>
                         <outlet property="textFieldData" destination="vlH-9R-mys" id="ocP-da-7ob"/>
                     </connections>

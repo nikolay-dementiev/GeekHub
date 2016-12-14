@@ -19,35 +19,35 @@
 
 - (void)refillObject:(NSDictionary *)dictData {
 
-    _coordLon = dictData[@"coord"][@"lon"];
-    _coordLat = dictData[@"coord"][@"lat"];
-    _mainTemp = dictData[@"main"][@"temp"];
-    _mainPressure = dictData[@"main"][@"pressure"];
-    _mainHumidity = dictData[@"main"][@"humidity"];
-    _mainTemp_max = dictData[@"main"][@"temp_max"];
-    _mainTemp_min = dictData[@"main"][@"temp_min"];
-    _windSpeed = dictData[@"wind"][@"speed"];
-    _cityName = dictData[@"name"];
-    _cityId = dictData[@"id"];
-    _sysCountry = dictData[@"sys"][@"country"];
-    _weatherIcon = dictData[@"weather"][0][@"icon"];
+    self.coordLon = dictData[@"coord"][@"lon"];
+    self.coordLat = dictData[@"coord"][@"lat"];
+    self.mainTemp = dictData[@"main"][@"temp"];
+    self.mainPressure = dictData[@"main"][@"pressure"];
+    self.mainHumidity = dictData[@"main"][@"humidity"];
+    self.mainTemp_max = dictData[@"main"][@"temp_max"];
+    self.mainTemp_min = dictData[@"main"][@"temp_min"];
+    self.windSpeed = dictData[@"wind"][@"speed"];
+    self.cityName = dictData[@"name"];
+    self.cityId = dictData[@"id"];
+    self.sysCountry = dictData[@"sys"][@"country"];
+    self.weatherIcon = dictData[@"weather"][0][@"icon"];
 }
 
 - (NSString *)showObjectDescription {
     NSMutableString *descriptions =  [[NSMutableString alloc] init];
 
-    [descriptions appendFormat: @"City name: '%@'\n", _cityName];
-    [descriptions appendFormat: @"Country code: '%@'\n", _sysCountry];
-    [descriptions appendFormat: @"City ID: '%@'\n", _cityId];
-    [descriptions appendFormat: @"City geo location, longitude: '%@'\n", _coordLon];
-    [descriptions appendFormat: @"City geo location, latitude: '%@'\n", _coordLat];
-    [descriptions appendFormat: @"Temp. (Celsius): '%.1f'\n", [_mainTemp doubleValue]];
-    [descriptions appendFormat: @"Atmospheric pressure, hPa : '%@'\n", _mainPressure];
-    [descriptions appendFormat: @"Humidity, %%: '%@'\n", _mainHumidity];
-    [descriptions appendFormat: @"Max. temp. at the moment: '%.1f'\n", [_mainTemp_max doubleValue]];
-    [descriptions appendFormat: @"Min. temp. at the moment: '%.1f'\n", [_mainTemp_min doubleValue]];
-    [descriptions appendFormat: @"Wind speed. (meter/sec): '%.1f'\n", [_windSpeed doubleValue]];
-    [descriptions appendFormat: @"Weather icon id: '%@'\n", _weatherIcon];
+    [descriptions appendFormat: @"City name: '%@'\n", self.cityName];
+    [descriptions appendFormat: @"Country code: '%@'\n", self.sysCountry];
+    [descriptions appendFormat: @"City ID: '%@'\n", self.cityId];
+    [descriptions appendFormat: @"City geo location, longitude: '%@'\n", self.coordLon];
+    [descriptions appendFormat: @"City geo location, latitude: '%@'\n", self.coordLat];
+    [descriptions appendFormat: @"Temp. (Celsius): '%.1f'\n", [self.mainTemp doubleValue]];
+    [descriptions appendFormat: @"Atmospheric pressure, hPa : '%@'\n", self.mainPressure];
+    [descriptions appendFormat: @"Humidity, %%: '%@'\n", self.mainHumidity];
+    [descriptions appendFormat: @"Max. temp. at the moment: '%.1f'\n", [self.mainTemp_max doubleValue]];
+    [descriptions appendFormat: @"Min. temp. at the moment: '%.1f'\n", [self.mainTemp_min doubleValue]];
+    [descriptions appendFormat: @"Wind speed. (meter/sec): '%.1f'\n", [self.windSpeed doubleValue]];
+    [descriptions appendFormat: @"Weather icon id: '%@'\n", self.weatherIcon];
 
     return descriptions;
 }

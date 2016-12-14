@@ -16,6 +16,8 @@
 @property (readwrite, strong, nonatomic) NSString *mainTemp;
 @property (readwrite, strong, nonatomic) NSString *mainPressure;
 @property (readwrite, strong, nonatomic) NSString *mainHumidity;
+
+// повинно бути mainTempMax і mainTempMin
 @property (readwrite, strong, nonatomic) NSString *mainTemp_max;
 @property (readwrite, strong, nonatomic) NSString *mainTemp_min;
 @property (readwrite, strong, nonatomic) NSString *windSpeed;

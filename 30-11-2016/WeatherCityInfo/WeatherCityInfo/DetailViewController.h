@@ -10,6 +10,6 @@
 
 @interface DetailViewController : UIViewController
 
-- (void)updateWeatherInfo:(NSString*)currentCity;
+- (void)updateWeatherInfo:(NSString *)currentCity;
 
 @end

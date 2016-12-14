@@ -11,7 +11,7 @@
 
 
 @interface WeatherViewController () {
-    DetailViewController *nextViewController;
+//    DetailViewController *nextViewController;
 }
 
 @property (weak, nonatomic) IBOutlet UITextField *textField;
@@ -26,14 +26,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
-    nextViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
+    // навіщо ти тут створюєш контролер та ще й тримаєш лінк на нього?
+    /*ответ: переделал*/
+//    nextViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
 
 }
 
 
 - (IBAction)submitAction {
+    // я б краще писав би self.textField.text
+    /*ответ: переделал*/
+     DetailViewController *nextViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
 
-    [nextViewController updateWeatherInfo:_textField.text];
+    [nextViewController updateWeatherInfo:self.textField.text];
     [self.navigationController pushViewController:nextViewController animated:YES];
     
 }

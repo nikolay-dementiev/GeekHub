@@ -12,63 +12,78 @@
 #import "WeatherAPI.h"
 
 @interface DetailViewController () {
+    // навіщо тут ця змінна?
+    /* ответ: этот объект класса используется для перезаполнения данными -
+     т.к. я не создаю каждый раз новый - а перезаполняю существующий*/
+
     CurrentWeatherInfo *currentInfo;
-    __weak IBOutlet UIActivityIndicatorView *activIndicator;
+
+    // це поганий стайл заносити сюди аутлети
+    /*ответ: перенес ниже*/
+    //    __weak IBOutlet UIActivityIndicatorView *activIndicator;
+
     dispatch_queue_t loadWeatherQueue;
+
+    // навіщо ця змінна?
+    /* ответ: в ней хранится дефолтная картинка*/
     UIImage *defaultImage;
 }
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewData;
 @property (weak, nonatomic) IBOutlet UITextView *textFieldData;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activIndicator;
 
 @end
 
 @implementation DetailViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     currentInfo = [CurrentWeatherInfo new];
 
-    activIndicator.hidesWhenStopped = true;
+    self.activIndicator.hidesWhenStopped = true;
     defaultImage = [self getDefaultImage];
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-
-- (void)updateWeatherInfo:(NSString*)currentCity {
-
+- (void)updateWeatherInfo:(NSString*)currentCity
+{
     //http://jeffreysambells.com/2013/03/01/asynchronous-operations-in-ios-with-grand-central-dispatch
 
-    self.title = ([currentCity length] > 0) ? currentCity : @"no city was entered";
+    self.title = ([currentCity length] > 0) ? currentCity : @"city name hasn't been entered";
     [self setdefaultTemporaryInfo];
 
     loadWeatherQueue = dispatch_queue_create("Weather Queue",NULL);
     dispatch_async(loadWeatherQueue, ^{
-        [activIndicator startAnimating];
+        [self.activIndicator startAnimating];
 
         // Perform long running process
+        NSError *error = nil;
 
-        NSDictionary *dictDataFromURL = [WeatherAPI getWeatherData:currentCity];
+        NSDictionary *dictDataFromURL = [WeatherAPI getWeatherData:currentCity
+                                                         withError:&error];
+        if(error) {
+            NSLog(@"Error getting weather data occurred: %@",error);
+            return;
+        }
+
         NSMutableDictionary *dictOfRepresentData = [NSMutableDictionary new];
 
         if (dictDataFromURL != nil) {
 
-            [currentInfo refillObject:dictDataFromURL];
+            [currentInfo  refillObject:dictDataFromURL];
 
             NSString *currentInfoT = [currentInfo showObjectDescription];
 
             UIImage *weatherImageT = [UIImage imageWithData:
-                                      [WeatherAPI getImageDataForWeatheIco:currentInfo.weatherIcon]
+                                      [WeatherAPI getImageDataForWeatheIco:currentInfo.weatherIcon
+                                                                 withError:&error]
                                       ];
+            if(error) {
+                NSLog(@"Error getting weather icon occurred: %@",error);
+                weatherImageT = defaultImage;
+            }
 
             [dictOfRepresentData setValue:currentInfoT forKey:@"currentInfoT"];
             [dictOfRepresentData setValue:weatherImageT forKey:@"weatherImageT"];
@@ -81,21 +96,22 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             // Update the UI
 
-            _textFieldData.text = dictOfRepresentData[@"currentInfoT"];
-            _imageViewData.image = dictOfRepresentData[@"weatherImageT"];
+            self.textFieldData.text = dictOfRepresentData[@"currentInfoT"];
+            self.imageViewData.image = dictOfRepresentData[@"weatherImageT"];
 
-            [activIndicator stopAnimating];
+            [self.activIndicator stopAnimating];
         });
     });
 }
 
-- (void)setdefaultTemporaryInfo {
-
-    _textFieldData.text = @"<receiving data..>";
-    _imageViewData.image = defaultImage;
+- (void)setdefaultTemporaryInfo
+{
+    self.textFieldData.text = @"<receiving data..>";
+    self.imageViewData.image = defaultImage;
 }
 
-- (UIImage *)getDefaultImage {
+- (UIImage *)getDefaultImage 
+{
     return [UIImage imageNamed:@"unknownWeatherStatus"];
 }
 
