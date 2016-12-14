@@ -11,13 +11,13 @@
 
 @interface CalculatorBrain : NSObject
 
+@property (nonatomic, strong) NSMutableArray *programStack;
+@property (nonatomic, readonly) id program;
+  
 - (void)pushOperand:(double)operand;
 - (double)performOperation:(NSString *)operation;
 - (void)clearHistory;
-@property (nonatomic, strong) NSMutableArray *programStack;
-
-@property (nonatomic, readonly) id program;
-+ (double) runProgram:(id)program;
-+ (NSString *) descriptionOfProgram:(id)program;
++ (double)runProgram:(id)program;
++ (NSString *)descriptionOfProgram:(id)program;
 
 @end

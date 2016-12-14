@@ -9,24 +9,16 @@
 #import "CalcViewController.h"
 #import "CalculatorBrain.h"
 
-@interface CalcViewController ()
+@interface CalcViewController () {
+    NSString *lastOperation;
+}
 
 @property (nonatomic) BOOL isInTheMiddleOfEnteringNumber;
 @property (nonatomic, strong) CalculatorBrain *brain;
 
-- (IBAction)operationButtonSet:(UIButton *)sender;
-
-- (IBAction)numberButtonSet:(UIButton *)sender;
-
-- (IBAction)clearButtonPressed:(UIButton *)sender;
-
-- (IBAction)calculateButtonPressed:(UIButton *)sender;
-
 @end
 
-@implementation CalcViewController {
-    NSString *lastOperation;
-}
+@implementation CalcViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,18 +27,13 @@
     lastOperation = @"";
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (CalculatorBrain *)calBrain
 {
-    if(!_brain) {
-        _brain = [[CalculatorBrain alloc] init];
+    if (!self.brain) {
+        self.brain = [CalculatorBrain new];
     }
-    return _brain;
+    
+    return self.brain;
 }
 
 
@@ -58,20 +45,13 @@
     if ([digit isEqualToString:@"+/-"]) {
         if ([[self.display.text substringToIndex:1] isEqualToString:@"-"]) {
             self.display.text = [self.display.text substringFromIndex:1];
-        }
-        else
-        {
+        } else {
             self.display.text = [@"-" stringByAppendingString:self.display.text];
         }
-    }
-    else
-    {
-        if (self.isInTheMiddleOfEnteringNumber)
-        {
+    } else {
+        if (self.isInTheMiddleOfEnteringNumber) {
             self.display.text = [self.display.text stringByAppendingString:digit];
-        }
-        else
-        {
+        } else {
             self.display.text = digit;
             self.isInTheMiddleOfEnteringNumber = YES;
         }
@@ -79,26 +59,26 @@
 }
 
 
-- (IBAction)operationButtonSet:(UIButton *)sender {
+- (IBAction)operationButtonSet:(UIButton *)sender 
+{
     lastOperation = sender.currentTitle;
 
-    if (self.isInTheMiddleOfEnteringNumber)
-    {
+    if (self.isInTheMiddleOfEnteringNumber) {
         [self doSomeWorkAfterEnterPress];
     }
 }
 
-- (IBAction)clearButtonPressed:(UIButton *)sender {
+- (IBAction)clearButtonPressed:(UIButton *)sender 
+{
     [self.calBrain clearHistory];
     self.display.text = @"0";
     lastOperation = @"";
     self.isInTheMiddleOfEnteringNumber = false;
 }
 
-- (IBAction)calculateButtonPressed:(UIButton *)sender {
-
-    if ([lastOperation isEqualToString:@""])
-    {
+- (IBAction)calculateButtonPressed:(UIButton *)sender 
+{
+    if ([lastOperation isEqualToString:@""]) {
         return;
     }
 
@@ -110,7 +90,8 @@
     self.display.text = resultString;
 }
 
-- (void)doSomeWorkAfterEnterPress {
+- (void)doSomeWorkAfterEnterPress 
+{
     [self.calBrain pushOperand:[self.display.text doubleValue]];
 
     self.isInTheMiddleOfEnteringNumber = NO;
