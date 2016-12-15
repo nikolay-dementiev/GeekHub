@@ -12,19 +12,18 @@
 #import "TaskModel.h"
 #import "AlertMenuC.h"
 
-@interface MainListTableVC ()
+@interface MainListTableVC () {
+    NSString *listCellIdentifier;
+    AlertMenuC *alertMenuDelegat;
+}
 
 - (IBAction)sortMenu:(UIBarButtonItem *)sender;
 - (IBAction)unwindToList:(UIStoryboardSegue* )sender;
 
 @end
 
-@implementation MainListTableVC {
-    NSString *listCellIdentifier;
-    AlertMenuC *alertMenuDelegat;
-
-}
-
+@implementation MainListTableVC 
+    
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -37,30 +36,23 @@
     alertMenuDelegat = [[[AlertMenuC alloc] init] initWithOwnerVC:self];
 
     //test!!
-    _tasklist = [[NSMutableArray alloc] init];
-    [_tasklist addObject: [[TaskModel new] initWithData:@"4first"]];
-    [_tasklist addObject: [[TaskModel new] initWithData:@"3second"]];
-    [_tasklist addObject: [[TaskModel new] initWithData:@"1third"]];
+    self.tasklist = [NSMutableArray new];
+    [_tasklist addObject:[[TaskModel new] initWithData:@"4first"]];
+    [_tasklist addObject:[[TaskModel new] initWithData:@"3second"]];
+    [_tasklist addObject:[[TaskModel new] initWithData:@"1third"]];
 
 //    self.navigationItem.rightBarButtonItem = self.editButtonItem;
     // Place table view Edit button in toolbar, after existing buttons.
    }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    return [_tasklist count];
+    return self.tasklist.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -86,7 +78,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
 
-        [_tasklist removeObjectAtIndex:indexPath.row];
+        [self.tasklist removeObjectAtIndex:indexPath.row];
 
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
 
@@ -118,18 +110,15 @@
     // Pass the selected object to the new view controller.
 
     DetailVC *destinationVC = segue.destinationViewController;
-    if([segue.identifier isEqualToString:@"ShowDetail"]) {
+    if ([segue.identifier isEqualToString:@"ShowDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-
-        destinationVC.itemModel = [_tasklist objectAtIndex:indexPath.row];
-
+        destinationVC.itemModel = [self.tasklist objectAtIndex:indexPath.row];
     } else if([segue.identifier isEqualToString:@"AddItem"]) {
-
+ 
     }
-
 }
 
-- (IBAction)unwindToList:(UIStoryboardSegue* )segue {
+- (IBAction)unwindToList:(UIStoryboardSegue *)segue {
 
     //  http://stackoverflow.com/questions/22482323/uitableview-insertrowsatindexpathswithrowanimation-without-freeze-ui
     //        https://developer.apple.com/library/content/referencelibrary/GettingStarted/DevelopiOSAppsSwift/Lesson9.html#//apple_ref/doc/uid/TP40015214-CH9-SW1
@@ -168,15 +157,13 @@
 #pragma mark - Sort List
 
 - (IBAction)sortMenu:(UIBarButtonItem *)sender {
-
     [alertMenuDelegat  initAlertControllerForList];
-
 }
 
 - (void)sortListByTitle {
     // for detail see sorce: https://www.pmg.com/blog/3-different-ways-to-sort-a-uitableview/
-    NSArray *tAray = [((NSArray *)_tasklist) sortedArrayUsingSelector:@selector(compareTitle:)];
-    [_tasklist setArray:tAray];
+    NSArray *tAray = [((NSArray *)self.tasklist) sortedArrayUsingSelector:@selector(compareTitle:)];
+    [self.tasklist setArray:tAray];
 
     [self.tableView reloadData];
 }
@@ -186,11 +173,11 @@
     NSString *key = @"dateCreation";
 
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:key
-                                                                   ascending: TRUE];
+                                                                   ascending:YES];
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
-    NSArray *sortedList = [_tasklist sortedArrayUsingDescriptors:sortDescriptors];
+    NSArray *sortedList = [self.tasklist sortedArrayUsingDescriptors:sortDescriptors];
     
-    [_tasklist setArray:sortedList];
+    [self.tasklist setArray:sortedList];
     
     [self.tableView reloadData];
 }
