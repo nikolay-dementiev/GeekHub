@@ -1,5 +1,5 @@
 //
-//  CellV.h
+//  ToDoItemTableViewCell.h
 //  ToDoList
 //
 //  Created by Nikolay Dementiev on 09.12.16.
@@ -10,7 +10,8 @@
 #import "TaskModel.h"
 
 // краще назвати ToDoItemTableViewCell
-@interface CellV : UITableViewCell
+/*-> ok*/
+@interface ToDoItemTableViewCell : UITableViewCell
 
 @property (readwrite, nonatomic, weak) TaskModel *itemModel;
 - (void)fullFillCellItem;

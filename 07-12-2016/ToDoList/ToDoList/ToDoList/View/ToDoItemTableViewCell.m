@@ -1,15 +1,15 @@
 //
-//  CellV.m
+//  ToDoItemTableViewCell.m
 //  ToDoList
 //
 //  Created by Nikolay Dementiev on 09.12.16.
 //  Copyright © 2016 mc373. All rights reserved.
 //
 
-#import "CellV.h"
+#import "ToDoItemTableViewCell.h"
 #import "TaskModel.h"
 
-@interface CellV()
+@interface ToDoItemTableViewCell()
 
 @property (weak, nonatomic) IBOutlet UISwitch *taskExecuted;
 - (IBAction)taskExecutePressed:(UISwitch *)sender;
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation CellV
+@implementation ToDoItemTableViewCell
 
 - (IBAction)taskExecutePressed:(UISwitch *)sender {
     self.itemModel.executed = sender.isOn;

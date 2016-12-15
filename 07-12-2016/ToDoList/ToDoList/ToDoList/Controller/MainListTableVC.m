@@ -7,8 +7,8 @@
 //
 
 #import "MainListTableVC.h"
-#import "CellV.h"
-#import "DetailVC.h"
+#import "ToDoItemTableViewCell.h"
+#import "DetailViewController.h"
 #import "TaskModel.h"
 #import "AlertMenuC.h"
 
@@ -22,8 +22,8 @@
 
 @end
 
-@implementation MainListTableVC 
-    
+@implementation MainListTableVC
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -41,9 +41,10 @@
     [_tasklist addObject:[[TaskModel new] initWithData:@"3second"]];
     [_tasklist addObject:[[TaskModel new] initWithData:@"1third"]];
 
-//    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //    self.navigationItem.rightBarButtonItem = self.editButtonItem;
     // Place table view Edit button in toolbar, after existing buttons.
-   }
+
+}
 
 #pragma mark - Table view data source
 
@@ -56,7 +57,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CellV *cell = [tableView dequeueReusableCellWithIdentifier:listCellIdentifier forIndexPath:indexPath];
+    ToDoItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:listCellIdentifier forIndexPath:indexPath];
 
     TaskModel *itemInArayOfItems = [_tasklist objectAtIndex:indexPath.row];
 
@@ -109,12 +110,14 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 
-    DetailVC *destinationVC = segue.destinationViewController;
+    DetailViewController *destinationVC = segue.destinationViewController;
+    destinationVC.delegate = self;
+
     if ([segue.identifier isEqualToString:@"ShowDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         destinationVC.itemModel = [self.tasklist objectAtIndex:indexPath.row];
     } else if([segue.identifier isEqualToString:@"AddItem"]) {
- 
+
     }
 }
 
@@ -125,33 +128,33 @@
     //  https://spin.atomicobject.com/2014/12/01/program-ios-unwind-segue/
 
 
-    if ([segue.identifier isEqualToString:@"unwindToListVC"]) {
-        DetailVC *detailVC = (DetailVC *)segue.sourceViewController;
-        //    _operationCode
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView beginUpdates];
-            TaskModel *obj = detailVC.itemModel;
-
-            if ([detailVC.operationCode isEqualToString:@"unwindToListVCWithNewObj"]) {
-                int index = (int)[NSIndexPath indexPathForRow: [_tasklist count] inSection:0].row;
-                [self.tasklist insertObject:obj atIndex:index];
-
-                [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]]
-                                      withRowAnimation:UITableViewRowAnimationRight];
-
-            } else if ([detailVC.operationCode isEqualToString:@"unwindToListVCWithCurrentObj"]) {
-                int index = (int)[self.tableView indexPathForSelectedRow].row;
-                /*in our case - this is unnecessary - because we have a reference to an Model object
-                 self.tasklist[index] = obj;
-                 */
-                [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]]
-                                      withRowAnimation:UITableViewRowAnimationNone];
-            }
-
-            [self.tableView endUpdates];
-        });
-
-    }
+//    if ([segue.identifier isEqualToString:@"unwindToListVC"]) {
+//        DetailViewController *detailVC = (DetailViewController *)segue.sourceViewController;
+//        //    _operationCode
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [self.tableView beginUpdates];
+//            //            TaskModel *obj = detailVC.itemModel;
+//
+//            if ([detailVC.operationCode isEqualToString:@"unwindToListVCWithNewObj"]) {
+//                int index = (int)[NSIndexPath indexPathForRow: [_tasklist count] inSection:0].row;
+//                [self.tasklist insertObject:obj atIndex:index];
+//
+//                [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]]
+//                                      withRowAnimation:UITableViewRowAnimationRight];
+//
+//            } else if ([detailVC.operationCode isEqualToString:@"unwindToListVCWithCurrentObj"]) {
+//                int index = (int)[self.tableView indexPathForSelectedRow].row;
+//                /*in our case - this is unnecessary - because we have a reference to an Model object
+//                 self.tasklist[index] = obj;
+//                 */
+//                [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]]
+//                                      withRowAnimation:UITableViewRowAnimationNone];
+//            }
+//
+//            [self.tableView endUpdates];
+//        });
+//
+//    }
 }
 
 #pragma mark - Sort List
@@ -176,10 +179,54 @@
                                                                    ascending:YES];
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
     NSArray *sortedList = [self.tasklist sortedArrayUsingDescriptors:sortDescriptors];
-    
+
     [self.tasklist setArray:sortedList];
-    
+
     [self.tableView reloadData];
+}
+
+#pragma mark - delegate (detail view Controller)
+- (void)setNewCellValueInList:(NSString *)itemModelData {
+
+    //http://jeffreysambells.com/2013/03/01/asynchronous-operations-in-ios-with-grand-central-dispatch
+    dispatch_queue_t myQueue = dispatch_queue_create("Set new Cell Item Queue",NULL);
+
+    dispatch_async(myQueue, ^{
+        TaskModel *newItemModel = [[TaskModel new] initWithData:itemModelData];
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView beginUpdates];
+
+            int index = (int)[NSIndexPath indexPathForRow: [self.tasklist count] inSection:0].row;
+            [self.tasklist insertObject:newItemModel atIndex:index];
+
+            [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]]
+                                  withRowAnimation:UITableViewRowAnimationRight];
+
+            [self.tableView endUpdates];
+        });
+    });
+}
+
+- (void)updateCurrentCellValueInList:(TaskModel *)itemModelData {
+    //http://jeffreysambells.com/2013/03/01/asynchronous-operations-in-ios-with-grand-central-dispatch
+
+//    dispatch_queue_t myQueue = dispatch_queue_create("Update Cell Item Queue",NULL);
+//    dispatch_async(myQueue, ^{
+//        // Perform long running process
+//
+//        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView beginUpdates];
+            int index = (int)[self.tableView indexPathForSelectedRow].row;
+            /*in our case - this is unnecessary - because we have a reference to an Model object
+            self.tasklist[index] = itemModelData;
+             */
+
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]]
+                                  withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+//        });
+//    });
 }
 
 @end

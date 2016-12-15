@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DetailViewController.h"
+
 @class TaskModel;
 
-@interface MainListTableVC : UITableViewController
+@interface MainListTableVC : UITableViewController <DetailVCDelegate>
 
 @property (nonatomic, strong, readwrite) NSMutableArray<TaskModel *> *tasklist;
 - (void)sortListByTitle;
