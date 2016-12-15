@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UISwitch *taskExecuted;
 @property (weak, nonatomic) IBOutlet UITextField *titleDetail;
 @property (weak, nonatomic) IBOutlet UILabel *dateTime;
+
 - (IBAction)saveButtokPressed:(UIBarButtonItem *)sender;
 
 @end
@@ -25,25 +26,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-
     [self fullFillDetailItem];
     [self showTitleOfNavBar];
-    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)fullFillDetailItem {
+    [self.taskExecuted setOn:self.itemModel.executed animated:NO];
+    self.titleDetail.text = self.itemModel.title;
+    self.dateTime.text = [self.itemModel.dateCreation description];
 }
 
-- (void) fullFillDetailItem {
-    [_taskExecuted setOn:_itemModel.executed animated:NO];
-    _titleDetail.text = _itemModel.title;
-    _dateTime.text = [_itemModel.dateCreation description];
-}
-
-- (void) showTitleOfNavBar {
-    if (!self.itemModel) {
+- (void)showTitleOfNavBar {
+    if (nil == self.itemModel) {
         self.title = @"Create new item";
     } else {
         self.title = [NSString stringWithFormat:@"Edit '%@'", self.itemModel.title];
@@ -54,16 +48,16 @@
 
  // In a storyboard-based application, you will often want to do a little preparation before navigation
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-     if (_itemModel) {
+     if (self.itemModel) {
          //update current one
-         _itemModel.title = _titleDetail.text;
+         self.itemModel.title = self.titleDetail.text;
          //[self performSegueWithIdentifier:@"unwindToListVCWithCurrentObj" sender:self];
-         _operationCode = @"unwindToListVCWithCurrentObj";
+         self.operationCode = @"unwindToListVCWithCurrentObj";
      } else {
          //create new one
-         _itemModel = [[TaskModel new] initWithData:_titleDetail.text];
+         self.itemModel = [[TaskModel new] initWithData:self.titleDetail.text];
          //[self performSegueWithIdentifier:@"unwindToListVCWithNewObj" sender:self];
-         _operationCode = @"unwindToListVCWithNewObj";
+         self.operationCode = @"unwindToListVCWithNewObj";
      }
  }
 
