@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 @class TaskModel;
 
+// краще називати повною назвою DetailViewController
 @interface DetailVC : UIViewController
 
-@property (readwrite, nonatomic, retain) TaskModel* itemModel;
-@property (readwrite, nonatomic, weak) NSString* operationCode;
+@property (readwrite, nonatomic, retain) TaskModel *itemModel;
+@property (readwrite, nonatomic, weak) NSString *operationCode;
+
 - (void) fullFillDetailItem;
 
 @end
