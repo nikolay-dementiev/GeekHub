@@ -14,7 +14,7 @@
 		E75416831DFA9F46000833EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E75416811DFA9F46000833EC /* LaunchScreen.storyboard */; };
 		E754168E1DFA9F46000833EC /* ToDoListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E754168D1DFA9F46000833EC /* ToDoListTests.m */; };
 		E75416A41DFAA3BF000833EC /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75416A01DFAA3BF000833EC /* DetailViewController.m */; };
-		E75416A51DFAA3BF000833EC /* MainListTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E75416A21DFAA3BF000833EC /* MainListTableVC.m */; };
+		E75416A51DFAA3BF000833EC /* MainListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75416A21DFAA3BF000833EC /* MainListTableViewController.m */; };
 		E75416A91DFAA4C2000833EC /* TaskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E75416A81DFAA4C2000833EC /* TaskModel.m */; };
 		E75416AD1DFAAA76000833EC /* ToDoItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E75416AC1DFAAA76000833EC /* ToDoItemTableViewCell.m */; };
 		E75416B41DFABB7B000833EC /* AlertMenuC.m in Sources */ = {isa = PBXBuildFile; fileRef = E75416B31DFABB7B000833EC /* AlertMenuC.m */; };
@@ -44,13 +44,13 @@
 		E754168F1DFA9F46000833EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E754169F1DFAA3BF000833EC /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		E75416A01DFAA3BF000833EC /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		E75416A11DFAA3BF000833EC /* MainListTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainListTableVC.h; sourceTree = "<group>"; };
-		E75416A21DFAA3BF000833EC /* MainListTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainListTableVC.m; sourceTree = "<group>"; };
+		E75416A11DFAA3BF000833EC /* MainListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainListTableViewController.h; sourceTree = "<group>"; };
+		E75416A21DFAA3BF000833EC /* MainListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainListTableViewController.m; sourceTree = "<group>"; };
 		E75416A71DFAA42A000833EC /* TaskModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskModel.h; sourceTree = "<group>"; };
 		E75416A81DFAA4C2000833EC /* TaskModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskModel.m; sourceTree = "<group>"; };
 		E75416AB1DFAAA76000833EC /* ToDoItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoItemTableViewCell.h; sourceTree = "<group>"; };
 		E75416AC1DFAAA76000833EC /* ToDoItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoItemTableViewCell.m; sourceTree = "<group>"; };
-		E75416B21DFABB7B000833EC /* AlertMenuC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertMenuC.h; sourceTree = "<group>"; };
+		E75416B21DFABB7B000833EC /* AlertMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertMenuController.h; sourceTree = "<group>"; };
 		E75416B31DFABB7B000833EC /* AlertMenuC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertMenuC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,8 +128,8 @@
 			children = (
 				E754169F1DFAA3BF000833EC /* DetailViewController.h */,
 				E75416A01DFAA3BF000833EC /* DetailViewController.m */,
-				E75416A11DFAA3BF000833EC /* MainListTableVC.h */,
-				E75416A21DFAA3BF000833EC /* MainListTableVC.m */,
+				E75416A11DFAA3BF000833EC /* MainListTableViewController.h */,
+				E75416A21DFAA3BF000833EC /* MainListTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -165,7 +165,7 @@
 		E75416AE1DFABA86000833EC /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				E75416B21DFABB7B000833EC /* AlertMenuC.h */,
+				E75416B21DFABB7B000833EC /* AlertMenuController.h */,
 				E75416B31DFABB7B000833EC /* AlertMenuC.m */,
 			);
 			path = Helper;
@@ -215,7 +215,7 @@
 		E75416681DFA9F46000833EC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = mc373;
 				TargetAttributes = {
 					E754166F1DFA9F46000833EC = {
@@ -278,7 +278,7 @@
 				E75416781DFA9F46000833EC /* AppDelegate.m in Sources */,
 				E75416B41DFABB7B000833EC /* AlertMenuC.m in Sources */,
 				E75416A91DFAA4C2000833EC /* TaskModel.m in Sources */,
-				E75416A51DFAA3BF000833EC /* MainListTableVC.m in Sources */,
+				E75416A51DFAA3BF000833EC /* MainListTableViewController.m in Sources */,
 				E75416751DFA9F46000833EC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +339,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -387,6 +388,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

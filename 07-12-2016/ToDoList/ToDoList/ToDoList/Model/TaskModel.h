@@ -18,9 +18,3 @@
 - (NSComparisonResult)compareTitle:(TaskModel *)otherObject;
 
 @end
-
-//#ifndef TaskModel_h
-//#define TaskModel_h
-//
-//
-//#endif /* TaskModel_h */

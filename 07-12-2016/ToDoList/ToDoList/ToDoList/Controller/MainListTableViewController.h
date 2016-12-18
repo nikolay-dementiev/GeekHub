@@ -1,5 +1,5 @@
 //
-//  MainListTableVCTableViewController.h
+//  MainListTableViewController.h
 //  ToDoList
 //
 //  Created by Nikolay Dementiev on 09.12.16.
@@ -9,11 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "DetailViewController.h"
 
-@class TaskModel;
+@interface MainListTableViewController : UITableViewController <DetailViewControllerDelegate>
 
-@interface MainListTableVC : UITableViewController <DetailVCDelegate>
-
-@property (nonatomic, strong, readwrite) NSMutableArray<TaskModel *> *tasklist;
 - (void)sortListByTitle;
 - (void)sortListByDate;
 

@@ -31,7 +31,7 @@
         <!--ToDoList-->
         <scene sceneID="6hZ-sH-fRm">
             <objects>
-                <tableViewController id="yBu-ef-U5s" customClass="MainListTableVC" sceneMemberID="viewController">
+                <tableViewController id="yBu-ef-U5s" customClass="MainListTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="R6K-zQ-lx0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -159,7 +159,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="eIv-uj-0UF">
-                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="save" id="rIP-rO-Pkd">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="rIP-rO-Pkd">
                             <connections>
                                 <action selector="saveButtokPressed:" destination="89g-sf-zLh" id="RYf-Yb-4fP"/>
                             </connections>

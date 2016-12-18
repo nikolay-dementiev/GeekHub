@@ -8,8 +8,6 @@
 
 #import "DetailViewController.h"
 #import "TaskModel.h"
-//#import "MainListTableVC.h"
-
 
 @interface DetailViewController ()
 @property (weak, nonatomic) IBOutlet UISwitch *taskExecuted;
@@ -26,15 +24,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    [self fullFillDetailItem];
+    [self fullFillDetailViewControllerFromItemModel];
     [self showTitleOfNavBar];
-
 }
 
-- (void)fullFillDetailItem {
-    [self.taskExecuted setOn:self.itemModel.executed animated:NO];
-    self.titleDetail.text = self.itemModel.title;
-    self.dateTime.text = [self.itemModel.dateCreation description];
+- (void) fullFillDetailViewControllerFromItemModel {
+    if (self.itemModel) {
+        [self.taskExecuted setOn:self.itemModel.executed animated:NO];
+        self.titleDetail.text = self.itemModel.title;
+        self.dateTime.text = [self.itemModel.dateCreation description];
+    }
 }
 
 - (void)showTitleOfNavBar {
@@ -47,30 +46,18 @@
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    if (self.itemModel) {
-//        //update current one
-//        self.itemModel.title = self.titleDetail.text;
-//        //[self performSegueWithIdentifier:@"unwindToListVCWithCurrentObj" sender:self];
-//        //         self.operationCode = @"unwindToListVCWithCurrentObj";
-//    } else {
-//        //create new one
-//        [self.delegate setNewCellValueInList:self.titleDetail.text];
-//        //         self.itemModel = [[TaskModel new] initWithData:self.titleDetail.text];
-//
-//        //[self performSegueWithIdentifier:@"unwindToListVCWithNewObj" sender:self];
-//        //         self.operationCode = @"unwindToListVCWithNewObj";
-//    }
-}
-
 - (IBAction)saveButtokPressed:(UIBarButtonItem *)sender {
 
     if (self.itemModel) {
         self.itemModel.title = self.titleDetail.text;
-        [self.delegate updateCurrentCellValueInList:self.itemModel];
+
+        if (self.delegate && [self.delegate respondsToSelector:@selector(updateCurrentCellValueInTableViewList:)]) {
+            [self.delegate updateCurrentCellValueInTableViewList:self.itemModel];
+        }
     } else {
-        [self.delegate setNewCellValueInList:self.titleDetail.text];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(setNewCellValueInTableViewList:)]) {
+            [self.delegate setNewCellValueInTableViewList:self.titleDetail.text];
+        }
     }
 
     [[self navigationController] popViewControllerAnimated:YES];

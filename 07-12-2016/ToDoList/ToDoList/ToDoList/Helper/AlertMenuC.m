@@ -1,23 +1,23 @@
 //
-//  AlertMenuC.m
+//  AlertMenuController.m
 //  ToDoList
 //
 //  Created by Nikolay Dementiev on 09.12.16.
 //  Copyright © 2016 mc373. All rights reserved.
 //
 
-#import "AlertMenuC.h"
-#import "MainListTableVC.h"
+#import "AlertMenuController.h"
+#import "MainListTableViewController.h"
 
-@interface AlertMenuC () {
+@interface AlertMenuController () {
     UIViewController *viewControllerToPresent;
 }
 
 @end
 
-@implementation AlertMenuC 
+@implementation AlertMenuController 
     
-- (instancetype)initWithOwnerVC:(UIViewController *)viewController {
+- (instancetype)initWithOwnerViewController:(UIViewController *)viewController {
     self = [super init];
 
     if (self) {
@@ -29,7 +29,7 @@
 - (void)initAlertControllerForList {
 
     //type cast to my controller
-    MainListTableVC *viewController = ((MainListTableVC *)viewControllerToPresent);
+    MainListTableViewController *viewController = ((MainListTableViewController *)viewControllerToPresent);
 
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Sort list by"
                                                                    message:nil//@"You are using UIAlertController"

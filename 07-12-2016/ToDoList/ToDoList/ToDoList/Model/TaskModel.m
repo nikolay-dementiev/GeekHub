@@ -9,10 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "TaskModel.h"
 
-@interface TaskModel ()
-
-@end
-
 @implementation TaskModel
 
 - (instancetype)initWithData:(NSString *)title {
@@ -20,9 +16,9 @@
 
     if (self) {
         //initiation successfully done
-        _title = title;
-        _dateCreation = [NSDate date];
-        _executed = false;
+        self.title = title;
+        self.dateCreation = [NSDate date];
+        self.executed = false;
     }
 
     return self;

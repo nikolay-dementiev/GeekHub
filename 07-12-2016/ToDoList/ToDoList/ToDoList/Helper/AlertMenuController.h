@@ -1,5 +1,5 @@
 //
-//  AlertMenuC.h
+//  AlertMenuController.h
 //  ToDoList
 //
 //  Created by Nikolay Dementiev on 09.12.16.
@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AlertMenuC : NSObject
+@interface AlertMenuController : NSObject
 
 - (void)initAlertControllerForList;
-- (instancetype)initWithOwnerVC:(UIViewController *)viewController;
+- (instancetype)initWithOwnerViewController:(UIViewController *)viewController;
 
 @end

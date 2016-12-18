@@ -9,11 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "TaskModel.h"
 
-// краще назвати ToDoItemTableViewCell
-/*-> ok*/
 @interface ToDoItemTableViewCell : UITableViewCell
 
 @property (readwrite, nonatomic, weak) TaskModel *itemModel;
-- (void)fullFillCellItem;
 
 @end

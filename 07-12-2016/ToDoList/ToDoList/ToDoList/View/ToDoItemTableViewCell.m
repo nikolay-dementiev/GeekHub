@@ -25,7 +25,10 @@
     self.itemModel.executed = sender.isOn;
 }
 
-- (void) fullFillCellItem {
+- (void)setItemModel:(TaskModel *)itemModel
+{
+    _itemModel = itemModel;
+
     [self.taskExecuted setOn:self.itemModel.executed animated:NO];
     self.title.text = self.itemModel.title;
     self.dateTime.text = [self.itemModel.dateCreation description];
