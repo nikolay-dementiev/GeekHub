@@ -12,7 +12,7 @@
 
 @interface MenuViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) IBOutlet UIView *menuView;
+
 - (IBAction)closeMunuPressed:(UIButton *)sender;
 
 @end
@@ -30,6 +30,14 @@
 - (void)viewWillAppear:(BOOL)animated {
 
 }
+
+//- (void)setValue:(id)value forKeyPath:(NSString *)keyPath {
+//    [super setValue:value forKeyPath:keyPath];
+//}
+//
+//- (void)setValue:(id)value forKey:(NSString *)key {
+//    [super setValue:value forKeyPath:key];
+//}
 
 #pragma mark - UITableView Delegate and Datasource method implementation
 
@@ -99,40 +107,40 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 #pragma mark - menu actions
-- (void)setupMenuView {
-    [self loadViewIfNeeded];
-    //        self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
-
-
-//    self.viewForMenu = [[UIView alloc] initWithFrame:CGRectMake(-menuWidth,
+//- (void)setupMenuView {
+//    [self loadViewIfNeeded];
+//    //        self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+//
+//
+////    self.viewForMenu = [[UIView alloc] initWithFrame:CGRectMake(-menuWidth,
+////                                                                0,
+////                                                                menuWidth,
+////                                                                self.mainView.frame.size.height)];
+//
+//
+//    self.viewForMenu = [self.menuView initWithFrame:CGRectMake(-menuWidth,
 //                                                                0,
 //                                                                menuWidth,
 //                                                                self.mainView.frame.size.height)];
-
-
-    self.viewForMenu = [self.menuView initWithFrame:CGRectMake(-menuWidth,
-                                                                0,
-                                                                menuWidth,
-                                                                self.mainView.frame.size.height)];
-    self.viewForMenu = self.menuView;
-
-    self.viewForMenu.backgroundColor = [UIColor yellowColor];
-    [self.mainView addSubview:self.viewForMenu];
-
-    // Setup the table view.
-    self.viewForTable = [[UITableView alloc] initWithFrame:self.viewForMenu.bounds
-                                                     style:UITableViewStylePlain];
-    self.viewForTable.backgroundColor = [UIColor blueColor];
-    self.viewForTable.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-    self.viewForTable.scrollEnabled = NO;
-    self.viewForTable.alpha = 1.0;
-
-    self.viewForTable.delegate = self;
-    self.viewForTable.dataSource = self;
-
-    [self.viewForMenu addSubview:self.viewForTable];
-
-}
+//    self.viewForMenu = self.menuView;
+//
+//    self.viewForMenu.backgroundColor = [UIColor yellowColor];
+//    [self.mainView addSubview:self.viewForMenu];
+//
+//    // Setup the table view.
+//    self.viewForTable = [[UITableView alloc] initWithFrame:self.viewForMenu.bounds
+//                                                     style:UITableViewStylePlain];
+//    self.viewForTable.backgroundColor = [UIColor blueColor];
+//    self.viewForTable.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+//    self.viewForTable.scrollEnabled = NO;
+//    self.viewForTable.alpha = 1.0;
+//
+//    self.viewForTable.delegate = self;
+//    self.viewForTable.dataSource = self;
+//
+//    [self.viewForMenu addSubview:self.viewForTable];
+//
+//}
 
 - (void)closeMenu {
     [self.viewForTable removeFromSuperview];
