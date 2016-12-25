@@ -14,4 +14,14 @@
 - (void)sortListByTitle;
 - (void)sortListByDate;
 
+
+//@property (nonatomic,retain) NSArray *menuItems;
+//
+//@property (nonatomic, strong) UIView *viewForMenu;
+//@property (nonatomic, strong) UITableView *viewForTable;
+@property (nonatomic, strong) UIDynamicAnimator *animator;
+//
+//- (void)setupMenuView;
+//- (void)showMenu:(BOOL)yesNo;
+
 @end
