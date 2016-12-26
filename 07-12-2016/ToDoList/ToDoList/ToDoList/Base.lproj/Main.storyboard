@@ -177,7 +177,7 @@
                     <connections>
                         <outlet property="closeMenu" destination="sBc-Cs-Tk4" id="dEU-2c-dhI"/>
                         <outlet property="closeMenuButton" destination="sBc-Cs-Tk4" id="ur7-R6-nM3"/>
-                        <outlet property="tableView" destination="Nse-og-0M4" id="yOq-uc-VQj"/>
+                        <outlet property="tableView" destination="Nse-og-0M4" id="cI8-Of-hfZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D06-ek-tOR" userLabel="First Responder" sceneMemberID="firstResponder"/>

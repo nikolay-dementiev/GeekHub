@@ -71,6 +71,7 @@
 		E7DB1BF31E102B700097AB4A /* MainSlideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainSlideMenuViewController.m; sourceTree = "<group>"; };
 		E7DB1BF51E116CA80097AB4A /* UIColor+UIColorCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+UIColorCategory.h"; sourceTree = "<group>"; };
 		E7DB1BF61E116CA80097AB4A /* UIColor+UIColorCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+UIColorCategory.m"; sourceTree = "<group>"; };
+		E7DB1BF81E11A5F30097AB4A /* SlideMenuDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlideMenuDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +204,7 @@
 				E7DB1BE81E0ED8900097AB4A /* SlideMenuViewController.m */,
 				E7DB1BEF1E1003B50097AB4A /* SlideMenuView.h */,
 				E7DB1BF01E1003B50097AB4A /* SlideMenuView.m */,
+				E7DB1BF81E11A5F30097AB4A /* SlideMenuDelegate.h */,
 				E7DB1BF21E102B700097AB4A /* MainSlideMenuViewController.h */,
 				E7DB1BF31E102B700097AB4A /* MainSlideMenuViewController.m */,
 			);

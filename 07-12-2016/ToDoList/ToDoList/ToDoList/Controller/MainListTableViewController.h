@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "DetailViewController.h"
+#import "SlideMenuDelegate.h"
 
-@interface MainListTableViewController : UITableViewController <DetailViewControllerDelegate>
+@interface MainListTableViewController : UITableViewController <DetailViewControllerDelegate, slideMenuDelegate>
 
 - (void)sortListByTitle;
 - (void)sortListByDate;
@@ -23,5 +24,9 @@
 //
 //- (void)setupMenuView;
 //- (void)showMenu:(BOOL)yesNo;
+
+//@property (nonatomic, assign) id<slideMenuDelegate> slideMenuDelegate;
+
+
 
 @end

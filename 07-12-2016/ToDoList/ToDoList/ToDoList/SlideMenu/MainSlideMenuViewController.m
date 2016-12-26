@@ -8,14 +8,17 @@
 
 #import "MainSlideMenuViewController.h"
 #import "UIColor+UIColorCategory.h"
+#import "MainListTableViewController.h"
 
 @interface MainSlideMenuViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *closeMenu;
-
-@property (nonatomic, assign) BOOL slideMenuShowed;
-@property (weak, nonatomic) IBOutlet UIView *ownerView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *closeMenuButton;
+
+@property (nonatomic, assign) BOOL slideMenuShowed;
+
+@property (weak, nonatomic) UIView *ownerView;
+@property (weak, nonatomic) UIViewController *ownerViewController2;
 
 @property (strong, nonatomic) NSMutableDictionary *customColorScene;
 
@@ -37,7 +40,7 @@
                        @"Info"];
 }
 
-- (void) initColorScene {
+- (void)initColorScene {
 
     //http://colorhunt.co/c/44243
     self.customColorScene = [NSMutableDictionary new];
@@ -65,19 +68,45 @@
 
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+
+    [self eraseAllLinksFromSuperVC:FALSE];
 }
 
-- (instancetype)initWithOwner:(UIView *)owner {
+- (instancetype)initWithOwner:(UIViewController<slideMenuDelegate> *)newownerViewController2 {
     self = [super init];
 
     if (self) {
-        self.ownerView = owner;
+        //        self.ownerViewController2 = newownerViewController2;
+        //        self.delegate = newownerViewController2;
+        [self setOwnerDelegate:newownerViewController2];
     }
 
     return self;
+}
+
+- (void)setOwnerDelegate:(UIViewController<slideMenuDelegate> *)newownerViewController2 {
+    self.ownerViewController2 = newownerViewController2;
+    self.delegate = newownerViewController2;
+}
+
+- (UIView *)ownerView {
+    return self.ownerViewController2.view;
+}
+
+- (void)eraseAllLinksFromSuperVC:(BOOL)gotoParentVC {
+    [self.delegate destroySlideMenuViewController];
+
+    self.ownerViewController2 = nil;
+    self.delegate = nil;
+
+    //https://gist.github.com/tomohisa/2897676
+    if (gotoParentVC == TRUE) {
+        [self willMoveToParentViewController:nil];
+        [self.view removeFromSuperview];
+        [self removeFromParentViewController];
+    }
 }
 
 #pragma mark - UITableView Delegate and Datasource method implementation
@@ -115,19 +144,32 @@
     cell.textLabel.textColor = [self.customColorScene valueForKey:@"cellTextColor"];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
+
+    switch (indexPath.row) {
+        case 0:
+
+        case 1:
+
+        default:
+            [self hideMenu];
+            break;
+    }
+}
+
+
 #pragma mark - menu actions
 
-+ (MainSlideMenuViewController *)setupMenuView:(UIViewController *)ownerViewController {
++ (MainSlideMenuViewController *)setupMenuView:(UIViewController<slideMenuDelegate> *)ownerViewController2 {
 
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     MainSlideMenuViewController *newSlideViewController = [sb
                                                            instantiateViewControllerWithIdentifier:@"MenuViewController2"];
-
-    //    MainSlideMenuViewController *newSlideViewController = [[MainSlideMenuViewController alloc]
-    //                                                     initWithOwner:ownerViewController.view];
+    [newSlideViewController setOwnerDelegate:ownerViewController2];
 
 
-    [ownerViewController addChildViewController:newSlideViewController];
+    [ownerViewController2 addChildViewController:newSlideViewController];
 
     newSlideViewController.view.frame = CGRectMake(- newSlideViewController.ownerView.frame.size.width,
                                                    0,
@@ -136,6 +178,7 @@
 
     //    self.viewForMenu = myViewController.view;
     [newSlideViewController.ownerView addSubview:newSlideViewController.view];
+    [newSlideViewController didMoveToParentViewController:ownerViewController2];
 
     return newSlideViewController;
 }
@@ -144,7 +187,6 @@
 - (void)showOrHideMenu {
 
     if (!self.slideMenuShowed) {
-        //        [self setupMenuView];
 
         [self showMenu];
 
@@ -191,8 +233,10 @@
                      }
                      completion:^(BOOL finished) {
                          if (finished)  {
-                             [self.view removeFromSuperview];
                              self.slideMenuShowed = FALSE;
+
+                             [self eraseAllLinksFromSuperVC:TRUE];
+
                          }
                      }
      ];

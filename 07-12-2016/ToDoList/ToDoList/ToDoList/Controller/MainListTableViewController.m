@@ -11,16 +11,6 @@
 #import "DetailViewController.h"
 #import "TaskModel.h"
 #import "AlertMenuController.h"
-//#import "MenuViewController.h"
-//#import "SlideMenuViewController.h"
-
-//#import "PanelDelegate.h"
-//#import "SlideMenuViewController2.h"
-//
-//#define CORNER_RADIUS 4
-//#define SLIDE_TIMING .25
-//#define PANEL_WIDTH 60
-#import "SlideMenuView.h"
 #import "MainSlideMenuViewController.h"
 
 @interface MainListTableViewController ()<UIGestureRecognizerDelegate> {
@@ -35,13 +25,12 @@
 - (IBAction)leftMenuShow:(UIBarButtonItem *)sender;
 
 @property (nonatomic, strong, readwrite) NSMutableArray<TaskModel *> *tasklist;
+//@property (nonatomic, assign) BOOL slideMenuShowed;
 
-//@property (nonatomic, assign) BOOL showPanel;
-//@property (nonatomic, assign) BOOL panelMovedRight;
-@property (nonatomic, assign) BOOL slideMenuShowed;
-
-@property (nonatomic, nullable) UIView *viewForMenu;
+//@property (nonatomic, nullable) UIView *viewForMenu;
 //@property (nonatomic, nullable) UIViewController *mslideMenuViewController;
+
+@property (nonatomic, strong) MainSlideMenuViewController *slideMenuVC;
 
 @end
 
@@ -67,7 +56,7 @@
     //    self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
 
     //    [self setupView];
-    self.slideMenuShowed = false;
+//    self.slideMenuShowed = false;
 
 }
 
@@ -219,210 +208,137 @@
 
 }
 
-#pragma mark - menu
+#pragma mark - slide menu
 
-- (void)setupMenuView {
+//- (void)setupMenuView {
+//
+////    CGFloat menuWidth = 300.0;
+//    //    self.viewForMenu = [[SlideMenuView alloc] initWithFrame:CGRectMake(-menuWidth,
+//    //                                                                       0,
+//    //                                                                       menuWidth,
+//    //                                                                       self.view.frame.size.height)];
+//
+//
+//    //    self.viewForMenu = [[SlideMenuView alloc] init];
+//    //    self.viewForMenu = [[SlideMenuView alloc] initWithFrame:CGRectMake(-self.view.frame.size.width,
+//    //                                                                       0,
+//    //                                                                       self.view.frame.size.width,
+//    //                                                                       self.view.frame.size.height)];
+//
+//    //    self.viewForMenu.backgroundColor = [UIColor yellowColor];
+//    //    [self.view addSubview: self.viewForMenu];
+//
+//    MainSlideMenuViewController *myViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MenuViewController2"];
+//    //    [myViewController loadViewIfNeeded];
+//    [self addChildViewController:myViewController];
+//    //    self.viewForMenu = [myViewController view];
+//    myViewController.view.frame = CGRectMake(-self.view.frame.size.width,
+//                                             0,
+//                                             self.view.frame.size.width,
+//                                             self.view.frame.size.height);
+//    //    self.viewForMenu.frame = CGRectMake(-self.view.frame.size.width,
+//    //                                        0,
+//    //                                        self.view.frame.size.width,
+//    //                                        self.view.frame.size.height);
+//    self.viewForMenu = myViewController.view;
+//    [self.view addSubview:self.viewForMenu];
+//
+//
+//    //    // Setup the table view.
+//    //    self.viewForTable = [[UITableView alloc] initWithFrame:self.viewForMenu.bounds
+//    //                                                     style:UITableViewStylePlain];
+//    //    self.viewForTable.backgroundColor = [UIColor blueColor];
+//    //    self.viewForTable.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+//    //    self.viewForTable.scrollEnabled = NO;
+//    //    self.viewForTable.alpha = 1.0;
+//    //
+//    //    self.viewForTable.delegate = self;
+//    //    self.viewForTable.dataSource = self;
+//    //
+//    //    [self.viewForMenu addSubview:self.viewForTable];
+//
+//}
+//
+//-(void)showMenu{
+//
+//    //slide the content view to the right to reveal the menu
+//    [UIView animateWithDuration:.4
+//                     animations:^{
+//
+//                         [self.viewForMenu setFrame:CGRectMake(self.viewForMenu.frame.origin.x,
+//                                                               self.viewForMenu.frame.origin.y,
+//                                                               self.viewForMenu.frame.size.width + 200,
+//                                                               self.viewForMenu.frame.size.height)];
+//                         [self.view layoutIfNeeded];
+//                         //CGRectOffset( aView.frame, 10, 10 );
+//                     }
+//                     completion:^(BOOL finished) {
+//                         if (finished)  {
+//                             self.slideMenuShowed = TRUE;
+//                         }
+//                     }
+//     ];
+//
+//}
+//
+//-(void)hideMenu{
+//
+//    //slide the content view to the left to hide the menu
+//    [UIView animateWithDuration:.25
+//                     animations:^{
+//
+//                         [self.viewForMenu setFrame:CGRectMake(self.viewForMenu.frame.origin.x,
+//                                                               self.viewForMenu.frame.origin.y,
+//                                                               self.viewForMenu.frame.size.width - 200,
+//                                                               self.viewForMenu.frame.size.height)];
+//                         [self.view layoutIfNeeded];
+//                     }
+//                     completion:^(BOOL finished) {
+//                         if (finished)  {
+//                             [self.viewForMenu removeFromSuperview];
+//                             self.slideMenuShowed = FALSE;
+//                         }
+//                     }
+//     ];
+//}
 
-//    CGFloat menuWidth = 300.0;
-    //    self.viewForMenu = [[SlideMenuView alloc] initWithFrame:CGRectMake(-menuWidth,
-    //                                                                       0,
-    //                                                                       menuWidth,
-    //                                                                       self.view.frame.size.height)];
-
-
-    //    self.viewForMenu = [[SlideMenuView alloc] init];
-    //    self.viewForMenu = [[SlideMenuView alloc] initWithFrame:CGRectMake(-self.view.frame.size.width,
-    //                                                                       0,
-    //                                                                       self.view.frame.size.width,
-    //                                                                       self.view.frame.size.height)];
-
-    //    self.viewForMenu.backgroundColor = [UIColor yellowColor];
-    //    [self.view addSubview: self.viewForMenu];
-
-    MainSlideMenuViewController *myViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MenuViewController2"];
-    //    [myViewController loadViewIfNeeded];
-    [self addChildViewController:myViewController];
-    //    self.viewForMenu = [myViewController view];
-    myViewController.view.frame = CGRectMake(-self.view.frame.size.width,
-                                             0,
-                                             self.view.frame.size.width,
-                                             self.view.frame.size.height);
-    //    self.viewForMenu.frame = CGRectMake(-self.view.frame.size.width,
-    //                                        0,
-    //                                        self.view.frame.size.width,
-    //                                        self.view.frame.size.height);
-    self.viewForMenu = myViewController.view;
-    [self.view addSubview:self.viewForMenu];
-
-
-    //    // Setup the table view.
-    //    self.viewForTable = [[UITableView alloc] initWithFrame:self.viewForMenu.bounds
-    //                                                     style:UITableViewStylePlain];
-    //    self.viewForTable.backgroundColor = [UIColor blueColor];
-    //    self.viewForTable.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-    //    self.viewForTable.scrollEnabled = NO;
-    //    self.viewForTable.alpha = 1.0;
-    //
-    //    self.viewForTable.delegate = self;
-    //    self.viewForTable.dataSource = self;
-    //
-    //    [self.viewForMenu addSubview:self.viewForTable];
-
+- (void)destroySlideMenuViewController {
+    self.slideMenuVC = nil;
 }
-
--(void)showMenu{
-
-    //slide the content view to the right to reveal the menu
-    [UIView animateWithDuration:.4
-                     animations:^{
-
-                         [self.viewForMenu setFrame:CGRectMake(self.viewForMenu.frame.origin.x,
-                                                               self.viewForMenu.frame.origin.y,
-                                                               self.viewForMenu.frame.size.width + 200,
-                                                               self.viewForMenu.frame.size.height)];
-                         [self.view layoutIfNeeded];
-                         //CGRectOffset( aView.frame, 10, 10 );
-                     }
-                     completion:^(BOOL finished) {
-                         if (finished)  {
-                             self.slideMenuShowed = TRUE;
-                         }
-                     }
-     ];
-
-}
-
--(void)hideMenu{
-
-    //slide the content view to the left to hide the menu
-    [UIView animateWithDuration:.25
-                     animations:^{
-
-                         [self.viewForMenu setFrame:CGRectMake(self.viewForMenu.frame.origin.x,
-                                                               self.viewForMenu.frame.origin.y,
-                                                               self.viewForMenu.frame.size.width - 200,
-                                                               self.viewForMenu.frame.size.height)];
-                         [self.view layoutIfNeeded];
-                     }
-                     completion:^(BOOL finished) {
-                         if (finished)  {
-                             [self.viewForMenu removeFromSuperview];
-                             self.slideMenuShowed = FALSE;
-                         }
-                     }
-     ];
-}
-
-
 
 - (IBAction)leftMenuShow:(UIBarButtonItem *)sender {
-//    MainSlideMenuViewController *slideMenuVC = [MainSlideMenuViewController setupMenuView: self];
-//    [slideMenuVC showOrHideMenu];
 
-//    self.viewForMenu = slideMenuVC.view;
-//    [self showMenu];
-
-    if (!self.slideMenuShowed) {
-        [self setupMenuView];
-        [self showMenu];
-    } else {
-        [self hideMenu];
-    };
+    if (!self.slideMenuVC) {
+        self.slideMenuVC = [MainSlideMenuViewController setupMenuView: self];
+    }
+    [self.slideMenuVC showOrHideMenu];
 
 
 //    if (!self.slideMenuShowed) {
 //        [self setupMenuView];
-//
-//        menuViewController.menuItems = @[@"Close",
-//                                         @"Second View",
-//                                         @"Menu Item 3",
-//                                         @"Menu Item 4",
-//                                         @"Menu Item 5",
-//                                         @"Menu Item 6"];
-//
-//        //expandMenu
-//        //        [UIView beginAnimations:nil context:nil];
-//        //        [UIView setAnimationDuration:0.75];
-//        //        [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
-//        //        CGRect frame= self.viewForMenu.frame;
-//        //        frame.size.width+=200;
-//        //        self.viewForMenu.frame=frame;
-//        //
-//        //        [UIView commitAnimations];
 //        [self showMenu];
-//
-//        //        self.slideMenuShowed = TRUE;
-//
 //    } else {
-//        //collapseMenu
-//        //        [UIView beginAnimations:nil context:nil];
-//        //        [UIView setAnimationDuration:0.75];
-//        //        [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
-//        //        CGRect frame=self.viewForMenu.frame;
-//        //        frame.size.width-=200;
-//        //        self.viewForMenu.frame=frame;
-//        //
-//        //        [self.viewForMenu removeFromSuperview];
-//        //        [UIView commitAnimations];
-//
 //        [self hideMenu];
-//
-//
-//        //        self.slideMenuShowed = FALSE;
-//    }
+//    };
 
-
-
-
-
-    //    SlideMenuViewController *menuViewController = [[SlideMenuViewController alloc] initWithOwner: self.view];
-    //
-    //    menuViewController.view.frame = CGRectMake(self.view.frame.size.width - 200, 0, self.view.frame.size.width, self.view.frame.size.height);
-    //
-    //    [self.view addSubview:menuViewController.view];
-    //    [self addChildViewController:menuViewController];
-    //
-    //    [menuViewController didMoveToParentViewController:self];
-    //
-    ////    [self showActiveViewWithShadow:YES withOffset:-2];
-    //
-    //    [menuViewController showMenuDown];
-
-
-
-    //////    MenuViewController *menuViewController = [self.storyboard
-    //////                                              instantiateViewControllerWithIdentifier:@"menuViewController"];
-    //    MenuViewController *menuViewController = [[MenuViewController alloc] init];
-    //
-    //    menuViewController.menuItems = @[@"Close",
-    //                                     @"Second View",
-    //                                     @"Menu Item 3",
-    //                                     @"Menu Item 4",
-    //                                     @"Menu Item 5",
-    //                                     @"Menu Item 6"];
-    //
-    //    menuViewController.mainView = self.view;
-    //
-    //    self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
-    //    menuViewController.animator = self.animator;
-    //
-    //    [menuViewController setupMenuView];
-    //    [menuViewController showMenu:YES];
-    //
-    //
-    ////    menuViewController.mainView = self.view;
-    ////
-    ////    [self presentViewController:menuViewController
-    ////                       animated:YES
-    ////                     completion:^(){
-    ////                         [menuViewController showMenu:YES];
-    ////                     }];
-    //
-    ////    [menuViewController setupMenuView];
-    ////    [menuViewController showMenu:YES];
-    ////    [self setupMenuView];
-    ////    [self showMenu:YES];
-    
 }
+
+//#pragma mark: - dddd
+//- (void)setupSlideMenuViewController {
+//
+//    MainSlideMenuViewController *myViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MenuViewController2"];
+//
+//    [self addChildViewController:myViewController];
+//
+//    myViewController.view.frame = CGRectMake(-self.view.frame.size.width,
+//                                             0,
+//                                             self.view.frame.size.width,
+//                                             self.view.frame.size.height);
+//
+//    self.viewForMenu = myViewController.view;
+//    [self.view addSubview:self.viewForMenu];
+//    [myViewController didMoveToParentViewController:self];
+//
+//}
 
 @end
