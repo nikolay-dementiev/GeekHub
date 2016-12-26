@@ -39,7 +39,9 @@
 //@property (nonatomic, assign) BOOL showPanel;
 //@property (nonatomic, assign) BOOL panelMovedRight;
 @property (nonatomic, assign) BOOL slideMenuShowed;
+
 @property (nonatomic, nullable) UIView *viewForMenu;
+//@property (nonatomic, nullable) UIViewController *mslideMenuViewController;
 
 @end
 
@@ -221,7 +223,7 @@
 
 - (void)setupMenuView {
 
-    CGFloat menuWidth = 300.0;
+//    CGFloat menuWidth = 300.0;
     //    self.viewForMenu = [[SlideMenuView alloc] initWithFrame:CGRectMake(-menuWidth,
     //                                                                       0,
     //                                                                       menuWidth,
@@ -314,39 +316,60 @@
 
 
 - (IBAction)leftMenuShow:(UIBarButtonItem *)sender {
+//    MainSlideMenuViewController *slideMenuVC = [MainSlideMenuViewController setupMenuView: self];
+//    [slideMenuVC showOrHideMenu];
+
+//    self.viewForMenu = slideMenuVC.view;
+//    [self showMenu];
+
     if (!self.slideMenuShowed) {
         [self setupMenuView];
-
-        //expandMenu
-        //        [UIView beginAnimations:nil context:nil];
-        //        [UIView setAnimationDuration:0.75];
-        //        [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
-        //        CGRect frame= self.viewForMenu.frame;
-        //        frame.size.width+=200;
-        //        self.viewForMenu.frame=frame;
-        //
-        //        [UIView commitAnimations];
         [self showMenu];
-
-        //        self.slideMenuShowed = TRUE;
-
     } else {
-        //collapseMenu
-        //        [UIView beginAnimations:nil context:nil];
-        //        [UIView setAnimationDuration:0.75];
-        //        [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
-        //        CGRect frame=self.viewForMenu.frame;
-        //        frame.size.width-=200;
-        //        self.viewForMenu.frame=frame;
-        //
-        //        [self.viewForMenu removeFromSuperview];
-        //        [UIView commitAnimations];
-
         [self hideMenu];
+    };
 
 
-        //        self.slideMenuShowed = FALSE;
-    }
+//    if (!self.slideMenuShowed) {
+//        [self setupMenuView];
+//
+//        menuViewController.menuItems = @[@"Close",
+//                                         @"Second View",
+//                                         @"Menu Item 3",
+//                                         @"Menu Item 4",
+//                                         @"Menu Item 5",
+//                                         @"Menu Item 6"];
+//
+//        //expandMenu
+//        //        [UIView beginAnimations:nil context:nil];
+//        //        [UIView setAnimationDuration:0.75];
+//        //        [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+//        //        CGRect frame= self.viewForMenu.frame;
+//        //        frame.size.width+=200;
+//        //        self.viewForMenu.frame=frame;
+//        //
+//        //        [UIView commitAnimations];
+//        [self showMenu];
+//
+//        //        self.slideMenuShowed = TRUE;
+//
+//    } else {
+//        //collapseMenu
+//        //        [UIView beginAnimations:nil context:nil];
+//        //        [UIView setAnimationDuration:0.75];
+//        //        [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+//        //        CGRect frame=self.viewForMenu.frame;
+//        //        frame.size.width-=200;
+//        //        self.viewForMenu.frame=frame;
+//        //
+//        //        [self.viewForMenu removeFromSuperview];
+//        //        [UIView commitAnimations];
+//
+//        [self hideMenu];
+//
+//
+//        //        self.slideMenuShowed = FALSE;
+//    }
 
 
 

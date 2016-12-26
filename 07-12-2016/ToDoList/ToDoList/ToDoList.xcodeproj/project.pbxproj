@@ -23,6 +23,7 @@
 		E7DB1BEE1E0EE5AF0097AB4A /* SlideMenuViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DB1BED1E0EE5AF0097AB4A /* SlideMenuViewController2.m */; };
 		E7DB1BF11E1003B50097AB4A /* SlideMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DB1BF01E1003B50097AB4A /* SlideMenuView.m */; };
 		E7DB1BF41E102B700097AB4A /* MainSlideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DB1BF31E102B700097AB4A /* MainSlideMenuViewController.m */; };
+		E7DB1BF71E116CA80097AB4A /* UIColor+UIColorCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DB1BF61E116CA80097AB4A /* UIColor+UIColorCategory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		E7DB1BF01E1003B50097AB4A /* SlideMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideMenuView.m; sourceTree = "<group>"; };
 		E7DB1BF21E102B700097AB4A /* MainSlideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainSlideMenuViewController.h; sourceTree = "<group>"; };
 		E7DB1BF31E102B700097AB4A /* MainSlideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainSlideMenuViewController.m; sourceTree = "<group>"; };
+		E7DB1BF51E116CA80097AB4A /* UIColor+UIColorCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+UIColorCategory.h"; sourceTree = "<group>"; };
+		E7DB1BF61E116CA80097AB4A /* UIColor+UIColorCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+UIColorCategory.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +187,8 @@
 			children = (
 				E75416B21DFABB7B000833EC /* AlertMenuController.h */,
 				E75416B31DFABB7B000833EC /* AlertMenuC.m */,
+				E7DB1BF51E116CA80097AB4A /* UIColor+UIColorCategory.h */,
+				E7DB1BF61E116CA80097AB4A /* UIColor+UIColorCategory.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -318,6 +323,7 @@
 			files = (
 				E7DB1BE91E0ED8900097AB4A /* SlideMenuViewController.m in Sources */,
 				E75416AD1DFAAA76000833EC /* ToDoItemTableViewCell.m in Sources */,
+				E7DB1BF71E116CA80097AB4A /* UIColor+UIColorCategory.m in Sources */,
 				E7DB1BF41E102B700097AB4A /* MainSlideMenuViewController.m in Sources */,
 				E7DB1BEE1E0EE5AF0097AB4A /* SlideMenuViewController2.m in Sources */,
 				E75416A41DFAA3BF000833EC /* DetailViewController.m in Sources */,

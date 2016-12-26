@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainSlideMenuViewController : UIViewController
+@interface MainSlideMenuViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic,retain) NSArray *menuItems;
+
+- (instancetype)initWithOwner:(UIView *)owner;
+
++ (MainSlideMenuViewController *)setupMenuView:(UIViewController *)ownerViewController;
+
+//+ (void)setupMenuView;
+- (void)showOrHideMenu;
 
 @end
