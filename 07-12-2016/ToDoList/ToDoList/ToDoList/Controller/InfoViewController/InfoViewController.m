@@ -28,7 +28,7 @@
 - (IBAction)goBackButtonPressed:(UIButton *)sender {
 
     UIViewController *ToDoListViewController = [self.storyboard
-                                                           instantiateViewControllerWithIdentifier:@"ToDoListVC"];
+                                                           instantiateViewControllerWithIdentifier:@"ToDoListViewController"];
     UINavigationController *navigationController =
     [[UINavigationController alloc] initWithRootViewController:ToDoListViewController];
 

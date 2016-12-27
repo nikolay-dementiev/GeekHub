@@ -17,15 +17,11 @@
 		E75416A51DFAA3BF000833EC /* MainListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75416A21DFAA3BF000833EC /* MainListTableViewController.m */; };
 		E75416A91DFAA4C2000833EC /* TaskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E75416A81DFAA4C2000833EC /* TaskModel.m */; };
 		E75416AD1DFAAA76000833EC /* ToDoItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E75416AC1DFAAA76000833EC /* ToDoItemTableViewCell.m */; };
-		E7DB1BE61E0E6FBB0097AB4A /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DB1BE51E0E6FBB0097AB4A /* MenuViewController.m */; };
-		E7DB1BE91E0ED8900097AB4A /* SlideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DB1BE81E0ED8900097AB4A /* SlideMenuViewController.m */; };
-		E7DB1BEE1E0EE5AF0097AB4A /* SlideMenuViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DB1BED1E0EE5AF0097AB4A /* SlideMenuViewController2.m */; };
-		E7DB1BF11E1003B50097AB4A /* SlideMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DB1BF01E1003B50097AB4A /* SlideMenuView.m */; };
-		E7DB1BF41E102B700097AB4A /* MainSlideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DB1BF31E102B700097AB4A /* MainSlideMenuViewController.m */; };
 		E7DB1BF71E116CA80097AB4A /* UIColor+UIColorCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DB1BF61E116CA80097AB4A /* UIColor+UIColorCategory.m */; };
-		E7DB1BFE1E12C4910097AB4A /* AlertMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DB1BFD1E12C4910097AB4A /* AlertMenuController.m */; };
-		E7DB1C011E12C4E00097AB4A /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DB1C001E12C4E00097AB4A /* InfoViewController.m */; };
 		E7DB1C051E12D6FF0097AB4A /* MainToDoListGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DB1C041E12D6FF0097AB4A /* MainToDoListGesture.m */; };
+		E7DB1C091E12DD200097AB4A /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DB1C081E12DD200097AB4A /* InfoViewController.m */; };
+		E7DB1C131E12DD2A0097AB4A /* AlertMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DB1C0D1E12DD2A0097AB4A /* AlertMenuController.m */; };
+		E7DB1C141E12DD2A0097AB4A /* MainSlideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DB1C101E12DD2A0097AB4A /* MainSlideMenuViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,26 +54,17 @@
 		E75416A81DFAA4C2000833EC /* TaskModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskModel.m; sourceTree = "<group>"; };
 		E75416AB1DFAAA76000833EC /* ToDoItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoItemTableViewCell.h; sourceTree = "<group>"; };
 		E75416AC1DFAAA76000833EC /* ToDoItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoItemTableViewCell.m; sourceTree = "<group>"; };
-		E7DB1BE41E0E6FBB0097AB4A /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
-		E7DB1BE51E0E6FBB0097AB4A /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
-		E7DB1BE71E0ED8900097AB4A /* SlideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideMenuViewController.h; sourceTree = "<group>"; };
-		E7DB1BE81E0ED8900097AB4A /* SlideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideMenuViewController.m; sourceTree = "<group>"; };
-		E7DB1BEB1E0EE55C0097AB4A /* PanelDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelDelegate.h; sourceTree = "<group>"; };
-		E7DB1BEC1E0EE5AF0097AB4A /* SlideMenuViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideMenuViewController2.h; sourceTree = "<group>"; };
-		E7DB1BED1E0EE5AF0097AB4A /* SlideMenuViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideMenuViewController2.m; sourceTree = "<group>"; };
-		E7DB1BEF1E1003B50097AB4A /* SlideMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideMenuView.h; sourceTree = "<group>"; };
-		E7DB1BF01E1003B50097AB4A /* SlideMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideMenuView.m; sourceTree = "<group>"; };
-		E7DB1BF21E102B700097AB4A /* MainSlideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainSlideMenuViewController.h; sourceTree = "<group>"; };
-		E7DB1BF31E102B700097AB4A /* MainSlideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainSlideMenuViewController.m; sourceTree = "<group>"; };
 		E7DB1BF51E116CA80097AB4A /* UIColor+UIColorCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+UIColorCategory.h"; sourceTree = "<group>"; };
 		E7DB1BF61E116CA80097AB4A /* UIColor+UIColorCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+UIColorCategory.m"; sourceTree = "<group>"; };
-		E7DB1BF81E11A5F30097AB4A /* SlideMenuDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlideMenuDelegate.h; sourceTree = "<group>"; };
-		E7DB1BFC1E12C4910097AB4A /* AlertMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertMenuController.h; sourceTree = "<group>"; };
-		E7DB1BFD1E12C4910097AB4A /* AlertMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertMenuController.m; sourceTree = "<group>"; };
-		E7DB1BFF1E12C4E00097AB4A /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
-		E7DB1C001E12C4E00097AB4A /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		E7DB1C031E12D6FF0097AB4A /* MainToDoListGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainToDoListGesture.h; sourceTree = "<group>"; };
 		E7DB1C041E12D6FF0097AB4A /* MainToDoListGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainToDoListGesture.m; sourceTree = "<group>"; };
+		E7DB1C071E12DD200097AB4A /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		E7DB1C081E12DD200097AB4A /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		E7DB1C0C1E12DD2A0097AB4A /* AlertMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertMenuController.h; sourceTree = "<group>"; };
+		E7DB1C0D1E12DD2A0097AB4A /* AlertMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertMenuController.m; sourceTree = "<group>"; };
+		E7DB1C0F1E12DD2A0097AB4A /* MainSlideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainSlideMenuViewController.h; sourceTree = "<group>"; };
+		E7DB1C101E12DD2A0097AB4A /* MainSlideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainSlideMenuViewController.m; sourceTree = "<group>"; };
+		E7DB1C121E12DD2A0097AB4A /* SlideMenuDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideMenuDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,11 +111,9 @@
 				E75416A31DFAA3BF000833EC /* Model */,
 				E75416AA1DFAAA66000833EC /* View */,
 				E754169E1DFAA3BF000833EC /* Controller */,
+				E7DB1C0A1E12DD2A0097AB4A /* Menu */,
 				E75416AE1DFABA86000833EC /* Helper */,
 				E754167C1DFA9F46000833EC /* Main.storyboard */,
-				E7DB1BFA1E12C4720097AB4A /* AlertMenu */,
-				E7DB1BE31E0E6D140097AB4A /* SlideMenu */,
-				E7DB1BFB1E12C4720097AB4A /* InfoVC */,
 				E75416A61DFAA3D7000833EC /* Source */,
 				E75416731DFA9F46000833EC /* Supporting Files */,
 			);
@@ -155,12 +140,9 @@
 		E754169E1DFAA3BF000833EC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E754169F1DFAA3BF000833EC /* DetailViewController.h */,
-				E75416A01DFAA3BF000833EC /* DetailViewController.m */,
-				E75416A11DFAA3BF000833EC /* MainListTableViewController.h */,
-				E75416A21DFAA3BF000833EC /* MainListTableViewController.m */,
-				E7DB1C031E12D6FF0097AB4A /* MainToDoListGesture.h */,
-				E7DB1C041E12D6FF0097AB4A /* MainToDoListGesture.m */,
+				E7DB1C061E12DD200097AB4A /* InfoViewController */,
+				E7DB1C151E12DD860097AB4A /* MainToDoList */,
+				E7DB1C161E12DD9D0097AB4A /* DetailViewController */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -202,49 +184,61 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		E7DB1BE31E0E6D140097AB4A /* SlideMenu */ = {
+		E7DB1C061E12DD200097AB4A /* InfoViewController */ = {
 			isa = PBXGroup;
 			children = (
-				E7DB1BEA1E0EE53C0097AB4A /* SlideMenu2 */,
-				E7DB1BE41E0E6FBB0097AB4A /* MenuViewController.h */,
-				E7DB1BE51E0E6FBB0097AB4A /* MenuViewController.m */,
-				E7DB1BE71E0ED8900097AB4A /* SlideMenuViewController.h */,
-				E7DB1BE81E0ED8900097AB4A /* SlideMenuViewController.m */,
-				E7DB1BEF1E1003B50097AB4A /* SlideMenuView.h */,
-				E7DB1BF01E1003B50097AB4A /* SlideMenuView.m */,
-				E7DB1BF81E11A5F30097AB4A /* SlideMenuDelegate.h */,
-				E7DB1BF21E102B700097AB4A /* MainSlideMenuViewController.h */,
-				E7DB1BF31E102B700097AB4A /* MainSlideMenuViewController.m */,
+				E7DB1C071E12DD200097AB4A /* InfoViewController.h */,
+				E7DB1C081E12DD200097AB4A /* InfoViewController.m */,
 			);
-			path = SlideMenu;
+			path = InfoViewController;
 			sourceTree = "<group>";
 		};
-		E7DB1BEA1E0EE53C0097AB4A /* SlideMenu2 */ = {
+		E7DB1C0A1E12DD2A0097AB4A /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				E7DB1BEB1E0EE55C0097AB4A /* PanelDelegate.h */,
-				E7DB1BEC1E0EE5AF0097AB4A /* SlideMenuViewController2.h */,
-				E7DB1BED1E0EE5AF0097AB4A /* SlideMenuViewController2.m */,
+				E7DB1C0B1E12DD2A0097AB4A /* AlertMenu */,
+				E7DB1C0E1E12DD2A0097AB4A /* SlideMenu */,
 			);
-			path = SlideMenu2;
+			path = Menu;
 			sourceTree = "<group>";
 		};
-		E7DB1BFA1E12C4720097AB4A /* AlertMenu */ = {
+		E7DB1C0B1E12DD2A0097AB4A /* AlertMenu */ = {
 			isa = PBXGroup;
 			children = (
-				E7DB1BFC1E12C4910097AB4A /* AlertMenuController.h */,
-				E7DB1BFD1E12C4910097AB4A /* AlertMenuController.m */,
+				E7DB1C0C1E12DD2A0097AB4A /* AlertMenuController.h */,
+				E7DB1C0D1E12DD2A0097AB4A /* AlertMenuController.m */,
 			);
 			path = AlertMenu;
 			sourceTree = "<group>";
 		};
-		E7DB1BFB1E12C4720097AB4A /* InfoVC */ = {
+		E7DB1C0E1E12DD2A0097AB4A /* SlideMenu */ = {
 			isa = PBXGroup;
 			children = (
-				E7DB1BFF1E12C4E00097AB4A /* InfoViewController.h */,
-				E7DB1C001E12C4E00097AB4A /* InfoViewController.m */,
+				E7DB1C0F1E12DD2A0097AB4A /* MainSlideMenuViewController.h */,
+				E7DB1C101E12DD2A0097AB4A /* MainSlideMenuViewController.m */,
+				E7DB1C121E12DD2A0097AB4A /* SlideMenuDelegate.h */,
 			);
-			path = InfoVC;
+			path = SlideMenu;
+			sourceTree = "<group>";
+		};
+		E7DB1C151E12DD860097AB4A /* MainToDoList */ = {
+			isa = PBXGroup;
+			children = (
+				E75416A11DFAA3BF000833EC /* MainListTableViewController.h */,
+				E75416A21DFAA3BF000833EC /* MainListTableViewController.m */,
+				E7DB1C031E12D6FF0097AB4A /* MainToDoListGesture.h */,
+				E7DB1C041E12D6FF0097AB4A /* MainToDoListGesture.m */,
+			);
+			name = MainToDoList;
+			sourceTree = "<group>";
+		};
+		E7DB1C161E12DD9D0097AB4A /* DetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E754169F1DFAA3BF000833EC /* DetailViewController.h */,
+				E75416A01DFAA3BF000833EC /* DetailViewController.m */,
+			);
+			name = DetailViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,21 +343,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7DB1BE91E0ED8900097AB4A /* SlideMenuViewController.m in Sources */,
 				E75416AD1DFAAA76000833EC /* ToDoItemTableViewCell.m in Sources */,
+				E7DB1C141E12DD2A0097AB4A /* MainSlideMenuViewController.m in Sources */,
 				E7DB1BF71E116CA80097AB4A /* UIColor+UIColorCategory.m in Sources */,
-				E7DB1BF41E102B700097AB4A /* MainSlideMenuViewController.m in Sources */,
-				E7DB1BEE1E0EE5AF0097AB4A /* SlideMenuViewController2.m in Sources */,
+				E7DB1C091E12DD200097AB4A /* InfoViewController.m in Sources */,
 				E75416A41DFAA3BF000833EC /* DetailViewController.m in Sources */,
 				E75416781DFA9F46000833EC /* AppDelegate.m in Sources */,
-				E7DB1BE61E0E6FBB0097AB4A /* MenuViewController.m in Sources */,
-				E7DB1BF11E1003B50097AB4A /* SlideMenuView.m in Sources */,
+				E7DB1C131E12DD2A0097AB4A /* AlertMenuController.m in Sources */,
 				E75416A91DFAA4C2000833EC /* TaskModel.m in Sources */,
 				E75416A51DFAA3BF000833EC /* MainListTableViewController.m in Sources */,
 				E7DB1C051E12D6FF0097AB4A /* MainToDoListGesture.m in Sources */,
 				E75416751DFA9F46000833EC /* main.m in Sources */,
-				E7DB1C011E12C4E00097AB4A /* InfoViewController.m in Sources */,
-				E7DB1BFE1E12C4910097AB4A /* AlertMenuController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

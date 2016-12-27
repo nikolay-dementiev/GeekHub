@@ -18,7 +18,7 @@
 @implementation AlertMenuController 
 
 
-- (void)eraseAllLinksFromSuperVC {
+- (void)eraseAllLinksFromSuperViewController {
     viewControllerToPresent = nil;
 }
 
@@ -47,7 +47,7 @@
                                                     [alert dismissViewControllerAnimated:YES completion:nil];
 
                                                       callBack(true);
-                                                      [self eraseAllLinksFromSuperVC];
+                                                      [self eraseAllLinksFromSuperViewController];
                                                   }];
     UIAlertAction *second = [UIAlertAction actionWithTitle:@"ABC (title)"
                                                      style:UIAlertActionStyleDefault
@@ -56,7 +56,7 @@
                                                         [alert dismissViewControllerAnimated:YES completion:nil];
 
                                                        callBack(true);
-                                                       [self eraseAllLinksFromSuperVC];
+                                                       [self eraseAllLinksFromSuperViewController];
                                                    }];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel"
                                                      style:UIAlertActionStyleCancel 
@@ -64,7 +64,7 @@
                                                         [alert dismissViewControllerAnimated:YES completion:nil];
 
                                                        callBack(true);
-                                                       [self eraseAllLinksFromSuperVC];
+                                                       [self eraseAllLinksFromSuperViewController];
                                                    }];
 
 

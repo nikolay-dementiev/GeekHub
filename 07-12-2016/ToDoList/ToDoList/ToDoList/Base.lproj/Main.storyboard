@@ -32,7 +32,7 @@
         <!--ToDoList-->
         <scene sceneID="6hZ-sH-fRm">
             <objects>
-                <tableViewController storyboardIdentifier="ToDoListVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yBu-ef-U5s" customClass="MainListTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ToDoListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yBu-ef-U5s" customClass="MainListTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="R6K-zQ-lx0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -121,12 +121,12 @@
         <!--Main Slide Menu View Controller-->
         <scene sceneID="zIB-Xt-eVa">
             <objects>
-                <viewController storyboardIdentifier="MenuViewController2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XR8-Cb-c9V" customClass="MainSlideMenuViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainSMenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XR8-Cb-c9V" customClass="MainSlideMenuViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Q7z-JV-66h"/>
                         <viewControllerLayoutGuide type="bottom" id="5Cz-bj-Dxa"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="vJO-hx-73a" customClass="SlideMenuView">
+                    <view key="view" contentMode="scaleToFill" id="vJO-hx-73a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -186,7 +186,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D06-ek-tOR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="54" y="733"/>
+            <point key="canvasLocation" x="54" y="813"/>
         </scene>
         <!--Info View Controller-->
         <scene sceneID="onV-Po-B1R">

@@ -72,7 +72,7 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
 
-    [self eraseAllLinksFromSuperVC:FALSE];
+    [self eraseAllLinksFromSuperViewController:FALSE];
 }
 
 - (IBAction)closeMenuButtonPressed:(UIButton *)sender {
@@ -99,7 +99,7 @@
     return self.ownerViewController2.view;
 }
 
-- (void)eraseAllLinksFromSuperVC:(BOOL)gotoParentVC {
+- (void)eraseAllLinksFromSuperViewController:(BOOL)gotoParentViewController {
 
     if (self.delegate && [self.delegate
                           respondsToSelector:@selector(destroySlideMenuViewController)]) {
@@ -110,7 +110,7 @@
     self.delegate = nil;
 
     //https://gist.github.com/tomohisa/2897676
-    if (gotoParentVC == TRUE) {
+    if (gotoParentViewController == TRUE) {
         [self willMoveToParentViewController:nil];
         [self.view removeFromSuperview];
         [self removeFromParentViewController];
@@ -181,7 +181,7 @@
 
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     MainSlideMenuViewController *newSlideViewController = [sb
-                                                           instantiateViewControllerWithIdentifier:@"MenuViewController2"];
+                                                           instantiateViewControllerWithIdentifier:@"MainSMenuViewController"];
     [newSlideViewController setOwnerDelegate:ownerViewController2];
 
 
@@ -253,7 +253,7 @@
                          if (finished)  {
                              self.slideMenuShowed = FALSE;
 
-                             [self eraseAllLinksFromSuperVC:TRUE];
+                             [self eraseAllLinksFromSuperViewController:TRUE];
 
                          }
                      }

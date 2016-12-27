@@ -24,8 +24,8 @@
 - (IBAction)leftMenuShow:(UIBarButtonItem *)sender;
 
 @property (nonatomic, strong, readwrite) NSMutableArray<TaskModel *> *tasklist;
-@property (nonatomic, strong) MainSlideMenuViewController *slideMenuVC;
-@property (nonatomic, strong) AlertMenuController *alertMenuVC;
+@property (nonatomic, strong) MainSlideMenuViewController *slideMenuViewController;
+@property (nonatomic, strong) AlertMenuController *alertMenuViewController;
 
 @end
 
@@ -118,13 +118,13 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 
-    DetailViewController *destinationVC = segue.destinationViewController;
-    destinationVC.delegate = self;
+    DetailViewController *destinationViewController = segue.destinationViewController;
+    destinationViewController.delegate = self;
 
     if ([segue.identifier isEqualToString:@"ShowDetail"]) {
 
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        destinationVC.itemModel = [self.tasklist objectAtIndex:indexPath.row];
+        destinationViewController.itemModel = [self.tasklist objectAtIndex:indexPath.row];
     }
 }
 
@@ -132,11 +132,11 @@
 #pragma mark - Sort List
 
 - (IBAction)sortMenu:(UIBarButtonItem *)sender {
-    self.alertMenuVC = [[AlertMenuController alloc] initWithOwnerViewController:self];
+    self.alertMenuViewController = [[AlertMenuController alloc] initWithOwnerViewController:self];
 
-    [self.alertMenuVC  showAlertMenu:^(BOOL finished) {
+    [self.alertMenuViewController  showAlertMenu:^(BOOL finished) {
         if (finished) {
-            self.alertMenuVC = nil;
+            self.alertMenuViewController = nil;
         }
     }];
 }
@@ -203,7 +203,7 @@
 #pragma mark - slide menu
 
 - (void)destroySlideMenuViewController {
-    self.slideMenuVC = nil;
+    self.slideMenuViewController = nil;
 }
 
 - (IBAction)leftMenuShow:(UIBarButtonItem *)sender {
@@ -211,10 +211,10 @@
 }
 
 - (void)showOrHideSlideMenu {
-    if (!self.slideMenuVC) {
-        self.slideMenuVC = [MainSlideMenuViewController setupMenuView: self];
+    if (!self.slideMenuViewController) {
+        self.slideMenuViewController = [MainSlideMenuViewController setupMenuView: self];
     }
-    [self.slideMenuVC showOrHideMenu];
+    [self.slideMenuViewController showOrHideMenu];
 }
 
 @end
