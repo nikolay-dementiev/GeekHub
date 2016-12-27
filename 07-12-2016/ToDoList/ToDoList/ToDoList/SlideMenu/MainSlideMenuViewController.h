@@ -18,9 +18,8 @@
 
 + (MainSlideMenuViewController *)setupMenuView:(UIViewController *)ownerViewController;
 
-@property (nonatomic, weak) id <slideMenuDelegate> delegate;
+@property (nonatomic, weak) id <SlideMenuDelegate> delegate;
 
-//+ (void)setupMenuView;
 - (void)showOrHideMenu;
 
 @end

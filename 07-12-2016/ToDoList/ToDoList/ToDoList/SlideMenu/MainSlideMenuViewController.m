@@ -20,12 +20,13 @@
 
 @property (weak, nonatomic) UIView *ownerView;
 @property (weak, nonatomic) UIViewController *ownerViewController2;
-
 @property (strong, nonatomic) NSMutableDictionary *customColorScene;
 
 @end
 
-@implementation MainSlideMenuViewController
+@implementation MainSlideMenuViewController {
+    int pointsCountOfSlideMenuPosition;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,8 +37,8 @@
 
     [self initColorScene];
 
-    self.menuItems = @[@"ToDo list",
-                       @"Info"];
+    pointsCountOfSlideMenuPosition = 200;
+    self.menuItems = @[@"ToDo list",@"Info"];
 }
 
 - (void)initColorScene {
@@ -78,7 +79,7 @@
     [self hideMenu];
 }
 
-- (instancetype)initWithOwner:(UIViewController<slideMenuDelegate> *)newownerViewController2 {
+- (instancetype)initWithOwner:(UIViewController<SlideMenuDelegate> *)newownerViewController2 {
     self = [super init];
 
     if (self) {
@@ -88,7 +89,7 @@
     return self;
 }
 
-- (void)setOwnerDelegate:(UIViewController<slideMenuDelegate> *)newownerViewController2 {
+- (void)setOwnerDelegate:(UIViewController<SlideMenuDelegate> *)newownerViewController2 {
     self.ownerViewController2 = newownerViewController2;
     self.delegate = newownerViewController2;
 }
@@ -165,7 +166,8 @@
             [self hideMenu];
             break;
         case 1:
-             [self performSegueWithIdentifier:@"showInfoScreen" sender:nil];
+            [self performSegueWithIdentifier:@"showInfoScreen" sender:nil];
+            //go throw
         default:
             [self hideMenu];
             break;
@@ -175,7 +177,7 @@
 
 #pragma mark - menu actions
 
-+ (MainSlideMenuViewController *)setupMenuView:(UIViewController<slideMenuDelegate> *)ownerViewController2 {
++ (MainSlideMenuViewController *)setupMenuView:(UIViewController<SlideMenuDelegate> *)ownerViewController2 {
 
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     MainSlideMenuViewController *newSlideViewController = [sb
@@ -202,7 +204,6 @@
     if (!self.slideMenuShowed) {
 
         [self showMenu];
-
     } else {
 
         [self hideMenu];
@@ -232,7 +233,7 @@
 - (void)setMenuFrame {
     [self.view setFrame:CGRectMake(self.view.frame.origin.x,
                                    self.view.frame.origin.y,
-                                   self.view.frame.size.width + 200,
+                                   self.view.frame.size.width + pointsCountOfSlideMenuPosition,
                                    self.view.frame.size.height)];
 }
 
@@ -244,7 +245,7 @@
 
                          [self.view setFrame:CGRectMake(self.view.frame.origin.x,
                                                         self.view.frame.origin.y,
-                                                        self.view.frame.size.width - 200,
+                                                        self.view.frame.size.width - pointsCountOfSlideMenuPosition,
                                                         self.view.frame.size.height)];
                          [self.view layoutIfNeeded];
                      }

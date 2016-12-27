@@ -25,6 +25,7 @@
 		E7DB1BF71E116CA80097AB4A /* UIColor+UIColorCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DB1BF61E116CA80097AB4A /* UIColor+UIColorCategory.m */; };
 		E7DB1BFE1E12C4910097AB4A /* AlertMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DB1BFD1E12C4910097AB4A /* AlertMenuController.m */; };
 		E7DB1C011E12C4E00097AB4A /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DB1C001E12C4E00097AB4A /* InfoViewController.m */; };
+		E7DB1C051E12D6FF0097AB4A /* MainToDoListGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DB1C041E12D6FF0097AB4A /* MainToDoListGesture.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		E7DB1BFD1E12C4910097AB4A /* AlertMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertMenuController.m; sourceTree = "<group>"; };
 		E7DB1BFF1E12C4E00097AB4A /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		E7DB1C001E12C4E00097AB4A /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		E7DB1C031E12D6FF0097AB4A /* MainToDoListGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainToDoListGesture.h; sourceTree = "<group>"; };
+		E7DB1C041E12D6FF0097AB4A /* MainToDoListGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainToDoListGesture.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +159,8 @@
 				E75416A01DFAA3BF000833EC /* DetailViewController.m */,
 				E75416A11DFAA3BF000833EC /* MainListTableViewController.h */,
 				E75416A21DFAA3BF000833EC /* MainListTableViewController.m */,
+				E7DB1C031E12D6FF0097AB4A /* MainToDoListGesture.h */,
+				E7DB1C041E12D6FF0097AB4A /* MainToDoListGesture.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -355,6 +360,7 @@
 				E7DB1BF11E1003B50097AB4A /* SlideMenuView.m in Sources */,
 				E75416A91DFAA4C2000833EC /* TaskModel.m in Sources */,
 				E75416A51DFAA3BF000833EC /* MainListTableViewController.m in Sources */,
+				E7DB1C051E12D6FF0097AB4A /* MainToDoListGesture.m in Sources */,
 				E75416751DFA9F46000833EC /* main.m in Sources */,
 				E7DB1C011E12C4E00097AB4A /* InfoViewController.m in Sources */,
 				E7DB1BFE1E12C4910097AB4A /* AlertMenuController.m in Sources */,

@@ -10,23 +10,11 @@
 #import "DetailViewController.h"
 #import "SlideMenuDelegate.h"
 
-@interface MainListTableViewController : UITableViewController <DetailViewControllerDelegate, slideMenuDelegate>
+@interface MainListTableViewController : UITableViewController <DetailViewControllerDelegate, SlideMenuDelegate>
 
 - (void)sortListByTitle;
 - (void)sortListByDate;
 
-
-//@property (nonatomic,retain) NSArray *menuItems;
-//
-//@property (nonatomic, strong) UIView *viewForMenu;
-//@property (nonatomic, strong) UITableView *viewForTable;
-@property (nonatomic, strong) UIDynamicAnimator *animator;
-//
-//- (void)setupMenuView;
-//- (void)showMenu:(BOOL)yesNo;
-
-//@property (nonatomic, assign) id<slideMenuDelegate> slideMenuDelegate;
-
-
+- (void)showOrHideSlideMenu;
 
 @end
