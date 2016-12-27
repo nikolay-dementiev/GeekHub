@@ -27,12 +27,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oun-2k-apg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="118" y="36"/>
+            <point key="canvasLocation" x="54" y="36"/>
         </scene>
         <!--ToDoList-->
         <scene sceneID="6hZ-sH-fRm">
             <objects>
-                <tableViewController id="yBu-ef-U5s" customClass="MainListTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ToDoListVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yBu-ef-U5s" customClass="MainListTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="R6K-zQ-lx0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -162,6 +162,9 @@
                                 <state key="normal" title="&lt;&lt;">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="closeMenuButtonPressed:" destination="XR8-Cb-c9V" eventType="touchUpInside" id="FwU-L6-WgX"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -178,16 +181,17 @@
                         <outlet property="closeMenu" destination="sBc-Cs-Tk4" id="dEU-2c-dhI"/>
                         <outlet property="closeMenuButton" destination="sBc-Cs-Tk4" id="ur7-R6-nM3"/>
                         <outlet property="tableView" destination="Nse-og-0M4" id="cI8-Of-hfZ"/>
+                        <segue destination="uMy-kH-rwD" kind="presentation" identifier="showInfoScreen" id="faH-78-PEI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D06-ek-tOR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="901.60000000000002" y="694.90254872563719"/>
+            <point key="canvasLocation" x="54" y="733"/>
         </scene>
-        <!--View Controller-->
+        <!--Info View Controller-->
         <scene sceneID="onV-Po-B1R">
             <objects>
-                <viewController id="uMy-kH-rwD" sceneMemberID="viewController">
+                <viewController id="uMy-kH-rwD" customClass="InfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8Ct-Tw-0SK"/>
                         <viewControllerLayoutGuide type="bottom" id="L5k-Rb-a6Q"/>
@@ -202,6 +206,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Txd-KB-xZd">
+                                <rect key="frame" x="16" y="20" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="&lt;&lt;"/>
+                                <connections>
+                                    <action selector="goBackButtonPressed:" destination="uMy-kH-rwD" eventType="touchUpInside" id="0eb-M6-xPQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -212,7 +225,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fMl-hZ-7IB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1681" y="698"/>
+            <point key="canvasLocation" x="902" y="738"/>
         </scene>
         <!--Detail-->
         <scene sceneID="lnd-7E-8Da">

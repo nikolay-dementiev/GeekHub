@@ -10,7 +10,7 @@
 
 @interface AlertMenuController : NSObject
 
-- (void)initAlertControllerForList;
-- (instancetype)initWithOwnerViewController:(UIViewController *)viewController;
+- (void)showAlertMenu:(void (^ __nullable)(BOOL finished))completion;
+- (nonnull instancetype)initWithOwnerViewController:(nonnull UIViewController *)viewController;
 
 @end

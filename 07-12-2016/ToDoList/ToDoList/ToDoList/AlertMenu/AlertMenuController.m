@@ -16,7 +16,12 @@
 @end
 
 @implementation AlertMenuController 
-    
+
+
+- (void)eraseAllLinksFromSuperVC {
+    viewControllerToPresent = nil;
+}
+
 - (instancetype)initWithOwnerViewController:(UIViewController *)viewController {
     self = [super init];
 
@@ -26,7 +31,7 @@
     return  self;
 }
 
-- (void)initAlertControllerForList {
+- (void)showAlertMenu:(void (^ __nullable)(BOOL finished))callBack {
 
     //type cast to my controller
     MainListTableViewController *viewController = ((MainListTableViewController *)viewControllerToPresent);
@@ -39,18 +44,27 @@
                                                     style:UIAlertActionStyleDefault
                                                   handler:^(UIAlertAction *action) {
                                                     [viewController sortListByDate];
-                                                    [alert dismissViewControllerAnimated:YES completion:nil]; //^(void){[VC sortListByDate];}
+                                                    [alert dismissViewControllerAnimated:YES completion:nil];
+
+                                                      callBack(true);
+                                                      [self eraseAllLinksFromSuperVC];
                                                   }];
     UIAlertAction *second = [UIAlertAction actionWithTitle:@"ABC (title)"
                                                      style:UIAlertActionStyleDefault
                                                    handler:^(UIAlertAction *action) {
                                                         [viewController sortListByTitle];
                                                         [alert dismissViewControllerAnimated:YES completion:nil];
+
+                                                       callBack(true);
+                                                       [self eraseAllLinksFromSuperVC];
                                                    }];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel"
                                                      style:UIAlertActionStyleCancel 
                                                    handler:^(UIAlertAction *action) {
                                                         [alert dismissViewControllerAnimated:YES completion:nil];
+
+                                                       callBack(true);
+                                                       [self eraseAllLinksFromSuperVC];
                                                    }];
 
 

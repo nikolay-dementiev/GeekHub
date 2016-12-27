@@ -16,9 +16,9 @@
 @interface MainListTableViewController ()<UIGestureRecognizerDelegate> {
 
     NSString *listCellIdentifier;
-    AlertMenuController *alertMenuDelegat;
+//    AlertMenuController *alertMenuDelegat;
 
-    UIViewController *activeViewController;
+//    UIViewController *activeViewController;
 }
 
 - (IBAction)sortMenu:(UIBarButtonItem *)sender;
@@ -31,6 +31,7 @@
 //@property (nonatomic, nullable) UIViewController *mslideMenuViewController;
 
 @property (nonatomic, strong) MainSlideMenuViewController *slideMenuVC;
+@property (nonatomic, strong) AlertMenuController *alertMenuVC;
 
 @end
 
@@ -46,7 +47,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     listCellIdentifier = @"TaskListCell";
-    alertMenuDelegat = [[AlertMenuController alloc] initWithOwnerViewController:self];
+//    alertMenuDelegat = [[AlertMenuController alloc] initWithOwnerViewController:self];
 
 
     self.tasklist = [NSMutableArray new];
@@ -145,9 +146,14 @@
 #pragma mark - Sort List
 
 - (IBAction)sortMenu:(UIBarButtonItem *)sender {
-    [alertMenuDelegat  initAlertControllerForList];
-}
+    self.alertMenuVC = [[AlertMenuController alloc] initWithOwnerViewController:self];
 
+    [self.alertMenuVC  showAlertMenu:^(BOOL finished) {
+        if (finished) {
+            self.alertMenuVC = nil;
+        }
+    }];
+}
 
 - (void)sortListByTitle {
     // for detail see sorce: https://www.pmg.com/blog/3-different-ways-to-sort-a-uitableview/
@@ -306,6 +312,10 @@
     self.slideMenuVC = nil;
 }
 
+//- (void)destroyAlertMenuViewController {
+//    self.slideMenuVC = nil;
+//}
+
 - (IBAction)leftMenuShow:(UIBarButtonItem *)sender {
 
     if (!self.slideMenuVC) {
@@ -322,23 +332,5 @@
 //    };
 
 }
-
-//#pragma mark: - dddd
-//- (void)setupSlideMenuViewController {
-//
-//    MainSlideMenuViewController *myViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MenuViewController2"];
-//
-//    [self addChildViewController:myViewController];
-//
-//    myViewController.view.frame = CGRectMake(-self.view.frame.size.width,
-//                                             0,
-//                                             self.view.frame.size.width,
-//                                             self.view.frame.size.height);
-//
-//    self.viewForMenu = myViewController.view;
-//    [self.view addSubview:self.viewForMenu];
-//    [myViewController didMoveToParentViewController:self];
-//
-//}
 
 @end

@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *closeMenu;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *closeMenuButton;
+- (IBAction)closeMenuButtonPressed:(UIButton *)sender;
 
 @property (nonatomic, assign) BOOL slideMenuShowed;
 
@@ -35,8 +36,7 @@
 
     [self initColorScene];
 
-    self.menuItems = @[@"Close",
-                       @"ToDo list",
+    self.menuItems = @[@"ToDo list",
                        @"Info"];
 }
 
@@ -74,12 +74,14 @@
     [self eraseAllLinksFromSuperVC:FALSE];
 }
 
+- (IBAction)closeMenuButtonPressed:(UIButton *)sender {
+    [self hideMenu];
+}
+
 - (instancetype)initWithOwner:(UIViewController<slideMenuDelegate> *)newownerViewController2 {
     self = [super init];
 
     if (self) {
-        //        self.ownerViewController2 = newownerViewController2;
-        //        self.delegate = newownerViewController2;
         [self setOwnerDelegate:newownerViewController2];
     }
 
@@ -92,11 +94,16 @@
 }
 
 - (UIView *)ownerView {
+
     return self.ownerViewController2.view;
 }
 
 - (void)eraseAllLinksFromSuperVC:(BOOL)gotoParentVC {
-    [self.delegate destroySlideMenuViewController];
+
+    if (self.delegate && [self.delegate
+                          respondsToSelector:@selector(destroySlideMenuViewController)]) {
+        [self.delegate destroySlideMenuViewController];
+    }
 
     self.ownerViewController2 = nil;
     self.delegate = nil;
@@ -107,6 +114,12 @@
         [self.view removeFromSuperview];
         [self removeFromParentViewController];
     }
+}
+
+- (void)viewWillLayoutSubviews {
+
+    //    [self.view layoutIfNeeded];
+
 }
 
 #pragma mark - UITableView Delegate and Datasource method implementation
@@ -149,9 +162,10 @@
 
     switch (indexPath.row) {
         case 0:
-
+            [self hideMenu];
+            break;
         case 1:
-
+             [self performSegueWithIdentifier:@"showInfoScreen" sender:nil];
         default:
             [self hideMenu];
             break;
@@ -176,7 +190,6 @@
                                                    newSlideViewController.ownerView.frame.size.width,
                                                    newSlideViewController.ownerView.frame.size.height);
 
-    //    self.viewForMenu = myViewController.view;
     [newSlideViewController.ownerView addSubview:newSlideViewController.view];
     [newSlideViewController didMoveToParentViewController:ownerViewController2];
 
@@ -203,10 +216,7 @@
     [UIView animateWithDuration:.4
                      animations:^{
 
-                         [self.view setFrame:CGRectMake(self.view.frame.origin.x,
-                                                        self.view.frame.origin.y,
-                                                        self.view.frame.size.width + 200,
-                                                        self.view.frame.size.height)];
+                         [self setMenuFrame];
                          [self.ownerView layoutIfNeeded];
                          //CGRectOffset( aView.frame, 10, 10 );
                      }
@@ -217,6 +227,13 @@
                      }
      ];
 
+}
+
+- (void)setMenuFrame {
+    [self.view setFrame:CGRectMake(self.view.frame.origin.x,
+                                   self.view.frame.origin.y,
+                                   self.view.frame.size.width + 200,
+                                   self.view.frame.size.height)];
 }
 
 - (void)hideMenu {
@@ -260,5 +277,6 @@
 //- (void)setValue:(id)value forKey:(NSString *)key {
 //    [super setValue:value forKeyPath:key];
 //}
+
 
 @end

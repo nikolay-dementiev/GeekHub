@@ -17,13 +17,14 @@
 		E75416A51DFAA3BF000833EC /* MainListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75416A21DFAA3BF000833EC /* MainListTableViewController.m */; };
 		E75416A91DFAA4C2000833EC /* TaskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E75416A81DFAA4C2000833EC /* TaskModel.m */; };
 		E75416AD1DFAAA76000833EC /* ToDoItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E75416AC1DFAAA76000833EC /* ToDoItemTableViewCell.m */; };
-		E75416B41DFABB7B000833EC /* AlertMenuC.m in Sources */ = {isa = PBXBuildFile; fileRef = E75416B31DFABB7B000833EC /* AlertMenuC.m */; };
 		E7DB1BE61E0E6FBB0097AB4A /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DB1BE51E0E6FBB0097AB4A /* MenuViewController.m */; };
 		E7DB1BE91E0ED8900097AB4A /* SlideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DB1BE81E0ED8900097AB4A /* SlideMenuViewController.m */; };
 		E7DB1BEE1E0EE5AF0097AB4A /* SlideMenuViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DB1BED1E0EE5AF0097AB4A /* SlideMenuViewController2.m */; };
 		E7DB1BF11E1003B50097AB4A /* SlideMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DB1BF01E1003B50097AB4A /* SlideMenuView.m */; };
 		E7DB1BF41E102B700097AB4A /* MainSlideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DB1BF31E102B700097AB4A /* MainSlideMenuViewController.m */; };
 		E7DB1BF71E116CA80097AB4A /* UIColor+UIColorCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DB1BF61E116CA80097AB4A /* UIColor+UIColorCategory.m */; };
+		E7DB1BFE1E12C4910097AB4A /* AlertMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DB1BFD1E12C4910097AB4A /* AlertMenuController.m */; };
+		E7DB1C011E12C4E00097AB4A /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DB1C001E12C4E00097AB4A /* InfoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,8 +57,6 @@
 		E75416A81DFAA4C2000833EC /* TaskModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskModel.m; sourceTree = "<group>"; };
 		E75416AB1DFAAA76000833EC /* ToDoItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoItemTableViewCell.h; sourceTree = "<group>"; };
 		E75416AC1DFAAA76000833EC /* ToDoItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoItemTableViewCell.m; sourceTree = "<group>"; };
-		E75416B21DFABB7B000833EC /* AlertMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertMenuController.h; sourceTree = "<group>"; };
-		E75416B31DFABB7B000833EC /* AlertMenuC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertMenuC.m; sourceTree = "<group>"; };
 		E7DB1BE41E0E6FBB0097AB4A /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		E7DB1BE51E0E6FBB0097AB4A /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		E7DB1BE71E0ED8900097AB4A /* SlideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideMenuViewController.h; sourceTree = "<group>"; };
@@ -72,6 +71,10 @@
 		E7DB1BF51E116CA80097AB4A /* UIColor+UIColorCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+UIColorCategory.h"; sourceTree = "<group>"; };
 		E7DB1BF61E116CA80097AB4A /* UIColor+UIColorCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+UIColorCategory.m"; sourceTree = "<group>"; };
 		E7DB1BF81E11A5F30097AB4A /* SlideMenuDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlideMenuDelegate.h; sourceTree = "<group>"; };
+		E7DB1BFC1E12C4910097AB4A /* AlertMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertMenuController.h; sourceTree = "<group>"; };
+		E7DB1BFD1E12C4910097AB4A /* AlertMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertMenuController.m; sourceTree = "<group>"; };
+		E7DB1BFF1E12C4E00097AB4A /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		E7DB1C001E12C4E00097AB4A /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +123,9 @@
 				E754169E1DFAA3BF000833EC /* Controller */,
 				E75416AE1DFABA86000833EC /* Helper */,
 				E754167C1DFA9F46000833EC /* Main.storyboard */,
+				E7DB1BFA1E12C4720097AB4A /* AlertMenu */,
 				E7DB1BE31E0E6D140097AB4A /* SlideMenu */,
+				E7DB1BFB1E12C4720097AB4A /* InfoVC */,
 				E75416A61DFAA3D7000833EC /* Source */,
 				E75416731DFA9F46000833EC /* Supporting Files */,
 			);
@@ -186,8 +191,6 @@
 		E75416AE1DFABA86000833EC /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				E75416B21DFABB7B000833EC /* AlertMenuController.h */,
-				E75416B31DFABB7B000833EC /* AlertMenuC.m */,
 				E7DB1BF51E116CA80097AB4A /* UIColor+UIColorCategory.h */,
 				E7DB1BF61E116CA80097AB4A /* UIColor+UIColorCategory.m */,
 			);
@@ -219,6 +222,24 @@
 				E7DB1BED1E0EE5AF0097AB4A /* SlideMenuViewController2.m */,
 			);
 			path = SlideMenu2;
+			sourceTree = "<group>";
+		};
+		E7DB1BFA1E12C4720097AB4A /* AlertMenu */ = {
+			isa = PBXGroup;
+			children = (
+				E7DB1BFC1E12C4910097AB4A /* AlertMenuController.h */,
+				E7DB1BFD1E12C4910097AB4A /* AlertMenuController.m */,
+			);
+			path = AlertMenu;
+			sourceTree = "<group>";
+		};
+		E7DB1BFB1E12C4720097AB4A /* InfoVC */ = {
+			isa = PBXGroup;
+			children = (
+				E7DB1BFF1E12C4E00097AB4A /* InfoViewController.h */,
+				E7DB1C001E12C4E00097AB4A /* InfoViewController.m */,
+			);
+			path = InfoVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,10 +353,11 @@
 				E75416781DFA9F46000833EC /* AppDelegate.m in Sources */,
 				E7DB1BE61E0E6FBB0097AB4A /* MenuViewController.m in Sources */,
 				E7DB1BF11E1003B50097AB4A /* SlideMenuView.m in Sources */,
-				E75416B41DFABB7B000833EC /* AlertMenuC.m in Sources */,
 				E75416A91DFAA4C2000833EC /* TaskModel.m in Sources */,
 				E75416A51DFAA3BF000833EC /* MainListTableViewController.m in Sources */,
 				E75416751DFA9F46000833EC /* main.m in Sources */,
+				E7DB1C011E12C4E00097AB4A /* InfoViewController.m in Sources */,
+				E7DB1BFE1E12C4910097AB4A /* AlertMenuController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

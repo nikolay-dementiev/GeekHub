@@ -10,7 +10,6 @@
 @required
 
 - (void)destroySlideMenuViewController;
-//- (void)setupSlideMenuViewController;
 
 @end
 
