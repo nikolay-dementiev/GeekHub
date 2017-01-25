@@ -7,6 +7,7 @@
 //
 
 #import "Node.h"
+#import "NSMutableArray_Additions.h"
 
 @implementation Node
 
@@ -14,36 +15,75 @@
 {
     self = [super init];
     if (self) {
-         self.data = value;
+        self.data = value;
+        self.nodesArray = [NSMutableArray new];
     }
     return self;
 }
 
 - (void)insertNode:(Node *)node
 {
-    if (node.data < self.data) {
-        [self insertNodeOnLeftSide:node];
-    } else {
-        [self insertNodeOnRightSide:node];
-    }
+    [self.nodesArray addObject:node];
 }
 
-- (void)insertNodeOnLeftSide:(Node *)node
+- (NSString *)printTreev1
 {
-    if (self.left == nil) {
-        self.left = node;
-    } else {
-        [self.left insertNode:node];
-    }
+    return [self printTreeNode:self indent:1];
 }
 
-- (void)insertNodeOnRightSide:(Node *)node
+- (NSString *)printTreeNode:(Node *)node
+                     indent:(int)indent
 {
-    if (self.right == nil) {
-        self.right = node;
-    } else {
-        [self.right insertNode:node];
+    // Build indent
+    NSMutableString *padding = [NSMutableString new];
+    for (int i = 0; i < indent; ++i) {
+        [padding appendString:@"\t"];
     }
+
+    // Build string
+    NSMutableString *string = [[NSString stringWithFormat:@"%i", node.data] mutableCopy];
+    for (Node *nodeLeaf in node.nodesArray) {
+        [string appendString:[NSString stringWithFormat:@"\n%@%@",
+                              padding, [self printTreeNode:nodeLeaf indent:indent + 1]]];
+    }
+
+    return string;
 }
+
+//http://www.svetliy.com/coding-question-print-binary-tree-by-level-in-objective-c/
+- (NSString *)printTreev2
+{
+
+    Node *node = self;
+
+    NSMutableString *result = [NSMutableString new];
+    NSMutableArray *queue   = [NSMutableArray new];
+    [queue enqueue:node];
+    [queue enqueue:[NSNull null]];
+
+    while (true){
+        Node *curObject = [queue dequeue];
+        if ([curObject isEqual:[NSNull null]]) {
+            [result appendString:@"\n"];
+
+            if ([queue count] == 0) {
+                break;
+            }
+            [queue addObject:[NSNull null]];
+            continue;
+        }
+
+        [result appendString: [NSString stringWithFormat:@" (%i)", curObject.data]];
+
+        for (int i = 0; i < [curObject.nodesArray count]; i++) {
+            Node *nodeItem = [curObject.nodesArray objectAtIndex: i];
+
+            [queue enqueue:nodeItem];
+        }
+    }
+    
+    return result;
+}
+
 
 @end

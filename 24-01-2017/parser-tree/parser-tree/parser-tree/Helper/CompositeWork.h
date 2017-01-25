@@ -1,16 +1,17 @@
 //
-//  Tree.h
+//  CompositeWork.h
 //  parser-tree
 //
 //  Created by Nikolay Dementiev on 24.01.17.
 //  Copyright © 2017 mc373. All rights reserved.
 //
-//http://stackoverflow.com/questions/12066057/binary-tree-in-objective-c
 
 #import <Foundation/Foundation.h>
 
-@interface Tree : NSObject 
+@class Node;
 
-- (void)insertValue:(int)value;
+@interface CompositeWork : NSObject
+
++ (Node *)createCompositeTree: (NSDictionary *)jsonDictionary;
 
 @end

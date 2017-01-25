@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "JsonWorkHelper.h"
+#import "CompositeWork.h"
+#import "Node.h"
 
 @interface ViewController ()
 - (IBAction)startButtonPressed:(UIButton *)sender;
@@ -16,28 +18,22 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
 - (IBAction)startButtonPressed:(UIButton *)sender
 {
 
+    NSError *error = nil;
+    NSDictionary *dictDataFromURL = [JsonWorkHelper getTreeData:&error];
+    if(error) {
+        NSLog(@"Error getting tree data occurred: %@",error);
+        return;
+    }
 
+    Node *nodeTree = [CompositeWork createCompositeTree: dictDataFromURL];
+    NSString *printedNodeDatav2 = [nodeTree printTreev2];
 
+    NSLog(@"Node tree looks like this:\n%@",printedNodeDatav2);
 
-    
-    
 }
+
 
 @end

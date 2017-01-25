@@ -14,10 +14,11 @@
 		E768C18C1E37A7A2006D2068 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E768C18B1E37A7A2006D2068 /* Assets.xcassets */; };
 		E768C18F1E37A7A2006D2068 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E768C18D1E37A7A2006D2068 /* LaunchScreen.storyboard */; };
 		E768C19A1E37A7A2006D2068 /* parser_treeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E768C1991E37A7A2006D2068 /* parser_treeTests.m */; };
-		E768C1B81E37B769006D2068 /* Composite.m in Sources */ = {isa = PBXBuildFile; fileRef = E768C1B21E37B769006D2068 /* Composite.m */; };
 		E768C1B91E37B769006D2068 /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = E768C1B51E37B769006D2068 /* Node.m */; };
-		E768C1BA1E37B769006D2068 /* Tree.m in Sources */ = {isa = PBXBuildFile; fileRef = E768C1B71E37B769006D2068 /* Tree.m */; };
 		E768C1C01E37BB0D006D2068 /* JsonWorkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E768C1BF1E37BB0D006D2068 /* JsonWorkHelper.m */; };
+		E768C1C31E37C65F006D2068 /* ImportFiles in Resources */ = {isa = PBXBuildFile; fileRef = E768C1C21E37C65F006D2068 /* ImportFiles */; };
+		E768C1C91E37CC03006D2068 /* CompositeWork.m in Sources */ = {isa = PBXBuildFile; fileRef = E768C1C81E37CC03006D2068 /* CompositeWork.m */; };
+		E768C1CC1E38F388006D2068 /* NSMutableArray_Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = E768C1CB1E38F388006D2068 /* NSMutableArray_Additions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,16 +45,15 @@
 		E768C1951E37A7A2006D2068 /* parser-treeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "parser-treeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E768C1991E37A7A2006D2068 /* parser_treeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = parser_treeTests.m; sourceTree = "<group>"; };
 		E768C19B1E37A7A2006D2068 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E768C1B11E37B769006D2068 /* Composite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Composite.h; sourceTree = "<group>"; };
-		E768C1B21E37B769006D2068 /* Composite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Composite.m; sourceTree = "<group>"; };
-		E768C1B31E37B769006D2068 /* CompositeInerface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompositeInerface.h; sourceTree = "<group>"; };
 		E768C1B41E37B769006D2068 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
 		E768C1B51E37B769006D2068 /* Node.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Node.m; sourceTree = "<group>"; };
-		E768C1B61E37B769006D2068 /* Tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tree.h; sourceTree = "<group>"; };
-		E768C1B71E37B769006D2068 /* Tree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tree.m; sourceTree = "<group>"; };
-		E768C1BB1E37B8F4006D2068 /* sampleFile.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sampleFile.json; sourceTree = "<group>"; };
 		E768C1BE1E37BAEA006D2068 /* JsonWorkHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JsonWorkHelper.h; sourceTree = "<group>"; };
 		E768C1BF1E37BB0D006D2068 /* JsonWorkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonWorkHelper.m; sourceTree = "<group>"; };
+		E768C1C21E37C65F006D2068 /* ImportFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ImportFiles; sourceTree = "<group>"; };
+		E768C1C71E37CBDA006D2068 /* CompositeWork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CompositeWork.h; sourceTree = "<group>"; };
+		E768C1C81E37CC03006D2068 /* CompositeWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompositeWork.m; sourceTree = "<group>"; };
+		E768C1CA1E38F34F006D2068 /* NSMutableArray_Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSMutableArray_Additions.h; sourceTree = "<group>"; };
+		E768C1CB1E38F388006D2068 /* NSMutableArray_Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMutableArray_Additions.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,14 +95,14 @@
 		E768C17E1E37A7A2006D2068 /* parser-tree */ = {
 			isa = PBXGroup;
 			children = (
-				E768C1BD1E37BACD006D2068 /* JsonWork */,
 				E768C1821E37A7A2006D2068 /* AppDelegate.h */,
 				E768C1831E37A7A2006D2068 /* AppDelegate.m */,
+				E768C1BD1E37BACD006D2068 /* JsonWork */,
 				E768C1B01E37B769006D2068 /* Composite */,
-				E768C1AF1E37B747006D2068 /* ImportFiles */,
 				E768C1851E37A7A2006D2068 /* ViewController.h */,
 				E768C1861E37A7A2006D2068 /* ViewController.m */,
 				E768C1881E37A7A2006D2068 /* Main.storyboard */,
+				E768C1C61E37CBB3006D2068 /* Helper */,
 				E768C1BC1E37B9F5006D2068 /* Source */,
 				E768C17F1E37A7A2006D2068 /* Supporting Files */,
 			);
@@ -126,24 +126,11 @@
 			path = "parser-treeTests";
 			sourceTree = "<group>";
 		};
-		E768C1AF1E37B747006D2068 /* ImportFiles */ = {
-			isa = PBXGroup;
-			children = (
-				E768C1BB1E37B8F4006D2068 /* sampleFile.json */,
-			);
-			path = ImportFiles;
-			sourceTree = "<group>";
-		};
 		E768C1B01E37B769006D2068 /* Composite */ = {
 			isa = PBXGroup;
 			children = (
-				E768C1B11E37B769006D2068 /* Composite.h */,
-				E768C1B21E37B769006D2068 /* Composite.m */,
-				E768C1B31E37B769006D2068 /* CompositeInerface.h */,
 				E768C1B41E37B769006D2068 /* Node.h */,
 				E768C1B51E37B769006D2068 /* Node.m */,
-				E768C1B61E37B769006D2068 /* Tree.h */,
-				E768C1B71E37B769006D2068 /* Tree.m */,
 			);
 			path = Composite;
 			sourceTree = "<group>";
@@ -151,6 +138,7 @@
 		E768C1BC1E37B9F5006D2068 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				E768C1C21E37C65F006D2068 /* ImportFiles */,
 				E768C18B1E37A7A2006D2068 /* Assets.xcassets */,
 				E768C18D1E37A7A2006D2068 /* LaunchScreen.storyboard */,
 				E768C1901E37A7A2006D2068 /* Info.plist */,
@@ -165,6 +153,17 @@
 				E768C1BF1E37BB0D006D2068 /* JsonWorkHelper.m */,
 			);
 			path = JsonWork;
+			sourceTree = "<group>";
+		};
+		E768C1C61E37CBB3006D2068 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				E768C1C71E37CBDA006D2068 /* CompositeWork.h */,
+				E768C1C81E37CC03006D2068 /* CompositeWork.m */,
+				E768C1CA1E38F34F006D2068 /* NSMutableArray_Additions.h */,
+				E768C1CB1E38F388006D2068 /* NSMutableArray_Additions.m */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E768C18F1E37A7A2006D2068 /* LaunchScreen.storyboard in Resources */,
+				E768C1C31E37C65F006D2068 /* ImportFiles in Resources */,
 				E768C18C1E37A7A2006D2068 /* Assets.xcassets in Resources */,
 				E768C18A1E37A7A2006D2068 /* Main.storyboard in Resources */,
 			);
@@ -269,10 +269,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E768C1CC1E38F388006D2068 /* NSMutableArray_Additions.m in Sources */,
+				E768C1C91E37CC03006D2068 /* CompositeWork.m in Sources */,
 				E768C1B91E37B769006D2068 /* Node.m in Sources */,
 				E768C1871E37A7A2006D2068 /* ViewController.m in Sources */,
-				E768C1B81E37B769006D2068 /* Composite.m in Sources */,
-				E768C1BA1E37B769006D2068 /* Tree.m in Sources */,
 				E768C1841E37A7A2006D2068 /* AppDelegate.m in Sources */,
 				E768C1C01E37BB0D006D2068 /* JsonWorkHelper.m in Sources */,
 				E768C1811E37A7A2006D2068 /* main.m in Sources */,

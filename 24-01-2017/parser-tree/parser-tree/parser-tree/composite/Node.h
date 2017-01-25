@@ -13,10 +13,13 @@
 @interface Node : NSObject 
 
 @property (readwrite, nonatomic) int data;
-@property (readwrite, strong, nonatomic) Node *left;
-@property (readwrite, strong, nonatomic) Node *right;
+@property (readwrite, strong, nonatomic) NSMutableArray<Node *> *nodesArray;
+
 
 - (void)insertNode:(Node *)node;
 - (instancetype)initWithData:(int)value;
+
+//- (NSString *)printTreev1;
+- (NSString *)printTreev2;
 
 @end

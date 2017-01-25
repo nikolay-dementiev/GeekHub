@@ -12,8 +12,15 @@
 
 + (NSDictionary *)getTreeData:(NSError **)errorPtr
 {
-    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-    NSString *filepath = [bundle pathForResource:@"sampleFile" ofType:@"json"];
+
+    NSString *filepath = [[NSBundle mainBundle] pathForResource:@"sampleFile"
+                                                         ofType:@"json"
+                                                    inDirectory:@"ImportFiles"];
+
+    if (!filepath) {
+        NSLog(@"Couldn't find file!");
+        return nil;
+    }
 
     NSData *jsonData = [[NSString stringWithContentsOfFile: filepath
                                                   encoding:NSUTF8StringEncoding
@@ -24,6 +31,8 @@
                                         JSONObjectWithData:jsonData
                                         options:0
                                         error:errorPtr] : nil;
+
+    return results;
 }
 
 @end

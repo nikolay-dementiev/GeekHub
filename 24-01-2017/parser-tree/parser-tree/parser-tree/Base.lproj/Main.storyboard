@@ -22,8 +22,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32Q-zJ-lF3">
-                                <rect key="frame" x="170" y="318" width="34" height="30"/>
-                                <state key="normal" title="Start"/>
+                                <rect key="frame" x="162" y="318" width="51" height="30"/>
+                                <state key="normal" title="Tap me"/>
                                 <connections>
                                     <action selector="startButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z39-Sn-Exp"/>
                                 </connections>
