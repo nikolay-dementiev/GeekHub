@@ -10,8 +10,11 @@
 #import "JsonWorkHelper.h"
 #import "CompositeWork.h"
 #import "Node.h"
+#import "DetailViewController.h"
 
-@interface ViewController ()
+@interface ViewController () {
+    Node *tempNode;
+}
 - (IBAction)startButtonPressed:(UIButton *)sender;
 
 @end
@@ -28,11 +31,21 @@
         return;
     }
 
-    Node *nodeTree = [CompositeWork createCompositeTree: dictDataFromURL];
-    NSString *printedNodeDatav2 = [nodeTree printTreev2];
+    tempNode = [CompositeWork createCompositeTree: dictDataFromURL];
+    NSString *printedNodeDatav2 = [tempNode printTreev2];
 
     NSLog(@"Node tree looks like this:\n%@",printedNodeDatav2);
 
+    [self performSegueWithIdentifier:@"showDetailScreen" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue
+                 sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showDetailScreen"]) {
+        DetailViewController *destinationVC = (DetailViewController *)[segue destinationViewController];
+
+        destinationVC.nodes = tempNode;
+    }
 }
 
 
