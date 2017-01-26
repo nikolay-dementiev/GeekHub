@@ -23,6 +23,7 @@
 		E768C1DC1E390BD5006D2068 /* NodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E768C1DB1E390BD5006D2068 /* NodeView.xib */; };
 		E768C1E21E392A23006D2068 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E768C1E11E392A23006D2068 /* DetailViewController.m */; };
 		E768C1E51E392DC4006D2068 /* NSObject+LoadFromNib.m in Sources */ = {isa = PBXBuildFile; fileRef = E768C1E41E392DC4006D2068 /* NSObject+LoadFromNib.m */; };
+		E768C1E91E3A2B17006D2068 /* NodeDecorator.m in Sources */ = {isa = PBXBuildFile; fileRef = E768C1E81E3A2B17006D2068 /* NodeDecorator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		E768C1E11E392A23006D2068 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		E768C1E31E392DC4006D2068 /* NSObject+LoadFromNib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LoadFromNib.h"; sourceTree = "<group>"; };
 		E768C1E41E392DC4006D2068 /* NSObject+LoadFromNib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LoadFromNib.m"; sourceTree = "<group>"; };
+		E768C1E71E3A2AC9006D2068 /* NodeDecorator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NodeDecorator.h; sourceTree = "<group>"; };
+		E768C1E81E3A2B17006D2068 /* NodeDecorator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeDecorator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +186,7 @@
 		E768C1D31E390B6B006D2068 /* DetaiViewController */ = {
 			isa = PBXGroup;
 			children = (
+				E768C1E61E3A2AB1006D2068 /* Helper */,
 				E768C1E01E392A23006D2068 /* DetailViewController.h */,
 				E768C1E11E392A23006D2068 /* DetailViewController.m */,
 				E768C1D41E390B6B006D2068 /* NodeView */,
@@ -198,6 +202,15 @@
 				E768C1DB1E390BD5006D2068 /* NodeView.xib */,
 			);
 			path = NodeView;
+			sourceTree = "<group>";
+		};
+		E768C1E61E3A2AB1006D2068 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				E768C1E71E3A2AC9006D2068 /* NodeDecorator.h */,
+				E768C1E81E3A2B17006D2068 /* NodeDecorator.m */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +324,7 @@
 				E768C1871E37A7A2006D2068 /* ViewController.m in Sources */,
 				E768C1841E37A7A2006D2068 /* AppDelegate.m in Sources */,
 				E768C1C01E37BB0D006D2068 /* JsonWorkHelper.m in Sources */,
+				E768C1E91E3A2B17006D2068 /* NodeDecorator.m in Sources */,
 				E768C1E51E392DC4006D2068 /* NSObject+LoadFromNib.m in Sources */,
 				E768C1DA1E390BB9006D2068 /* NodeView.m in Sources */,
 				E768C1811E37A7A2006D2068 /* main.m in Sources */,
