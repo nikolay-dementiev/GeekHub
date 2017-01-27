@@ -13,38 +13,32 @@
 
 + (Node *)createCompositeTree: (NSDictionary *)jsonDictionary
 {
-
     Node *newNodeTree = [CompositeWork fullFillTree:jsonDictionary rootNode:nil];
 
     return newNodeTree;
 }
 
 - (Node *)createNewNode:(NSDictionary *)dict
-                    key:(id)key{
-    int aValue = [[dict valueForKey:key] intValue];
+                    key:(id)key
+{
+    NSInterger aValue = [[dict valueForKey:key] intValue];
     Node *newNode = [[Node alloc] initWithData:aValue];
 
     return newNode;
 }
 
-+ (Node *) fullFillTree:
-(NSDictionary *)dict
-               rootNode:(Node *)node
++ (Node *)fullFillTree:(NSDictionary *)dict
+              rootNode:(Node *)node
 {
     for (id key in dict) {
         id value = dict[key];
-        if([value isKindOfClass:[NSDictionary class]]) {
+        if ([value isKindOfClass:[NSDictionary class]]) {
             [CompositeWork fullFillTree:value rootNode:node];
-
         } else if([value isKindOfClass:[NSArray class]]) {
-
-            for (int i = 0; i < [value count]; i++) {
-                NSDictionary *arrayValue = (NSDictionary *)[value objectAtIndex: i];
-
+           for (NSDictionary *arrayValue in value) {
                 [CompositeWork fullFillTree:arrayValue rootNode:node];
             }
         } else {
-
             int aValue = [[dict valueForKey:key] intValue];
             node = [CompositeWork insertNodeValue:aValue root:node];
         }
@@ -53,7 +47,7 @@
     return node;
 }
 
-+ (Node *)insertNodeValue:(int)value
++ (Node *)insertNodeValue:(NSInteger)value
                      root:(Node *)root
 {
     Node *node = [[Node alloc] initWithData:value];
