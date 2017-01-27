@@ -12,8 +12,9 @@
 
 @interface Node : NSObject 
 
-@property (readwrite, nonatomic) int data;
-@property (readwrite, strong, nonatomic) NSMutableArray<Node *> *nodesArray;
+@property (nonatomic) NSInteger data;
+// навіщо тут мутейбл масив?
+@property (nonatomic, strong) NSMutableArray<Node *> *nodesArray;
 
 
 - (void)insertNode:(Node *)node;
