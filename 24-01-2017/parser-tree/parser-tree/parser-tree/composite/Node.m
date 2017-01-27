@@ -32,7 +32,7 @@
 }
 
 - (NSString *)printTreeNode:(Node *)node
-                     indent:(int)indent
+                     indent:(NSInteger)indent
 {
     // Build indent
     NSMutableString *padding = [NSMutableString new];
@@ -53,15 +53,14 @@
 //http://www.svetliy.com/coding-question-print-binary-tree-by-level-in-objective-c/
 - (NSString *)printTreev2
 {
-
     Node *node = self;
 
     NSMutableString *result = [NSMutableString new];
-    NSMutableArray *queue   = [NSMutableArray new];
+    NSMutableArray *queue = [NSMutableArray new];
     [queue enqueue:node];
     [queue enqueue:[NSNull null]];
 
-    while (true){
+    while (true) {
         Node *curObject = [queue dequeue];
         if ([curObject isEqual:[NSNull null]]) {
             [result appendString:@"\n"];
@@ -75,9 +74,7 @@
 
         [result appendString: [NSString stringWithFormat:@" (%i)", curObject.data]];
 
-        for (int i = 0; i < [curObject.nodesArray count]; i++) {
-            Node *nodeItem = [curObject.nodesArray objectAtIndex: i];
-
+        for (Node *nodeItem in curObject.nodesArray) {
             [queue enqueue:nodeItem];
         }
     }
