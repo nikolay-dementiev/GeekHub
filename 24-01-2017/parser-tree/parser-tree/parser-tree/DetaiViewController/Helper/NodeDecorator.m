@@ -20,6 +20,7 @@
 @implementation NodeDecorator
 
 - (instancetype)initWithNode:(Node *)decorNode
+               rootDecorator:(NodeDecorator *)rootNodeDecorator
                      xOffset:(int)xOffset
                      yOffset:(int)yOffset  {
 
@@ -30,6 +31,8 @@
 
         self.xOffset = xOffset;
         self.yOffset = yOffset;
+
+        self.rootNodeDecorator = rootNodeDecorator;
     }
 
     return self;

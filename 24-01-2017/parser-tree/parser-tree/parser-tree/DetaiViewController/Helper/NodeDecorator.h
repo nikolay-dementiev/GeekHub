@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 @class Node;
+@class NodeView;
 
 @interface NodeDecorator : NSObject
 
@@ -16,7 +17,13 @@
 @property (readwrite, nonatomic) int data;
 @property (readwrite, strong, nonatomic) NSMutableArray<Node *> *nodesArray;
 
+@property (readwrite, strong, nonatomic) NodeDecorator *rootNodeDecorator;
+@property (readwrite, strong, nonatomic) NodeView *nodeView;
+
+@property (readwrite, nonatomic) int curOffsetToRight;
+
 - (instancetype)initWithNode:(Node *)decorNode
+               rootDecorator:(NodeDecorator *)rootNodeDecorator
                      xOffset:(int)xOffset
                      yOffset:(int)yOffset;
 
