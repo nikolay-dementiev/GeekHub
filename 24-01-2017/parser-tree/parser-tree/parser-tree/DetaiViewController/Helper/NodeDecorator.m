@@ -21,8 +21,9 @@
 
 - (instancetype)initWithNode:(Node *)decorNode
                rootDecorator:(NodeDecorator *)rootNodeDecorator
-                     xOffset:(int)xOffset
-                     yOffset:(int)yOffset  {
+                     xOffset:(NSInteger)xOffset
+                     yOffset:(NSInteger)yOffset
+                currentDepth:(NSInteger)embeddingDepth {
 
     self = [super init];
 
@@ -33,12 +34,13 @@
         self.yOffset = yOffset;
 
         self.rootNodeDecorator = rootNodeDecorator;
+        self.embeddingDepth = embeddingDepth;
     }
 
     return self;
 }
 
-- (int)data {
+- (NSInteger)data {
     return self.decoratedNode.data;
 }
 

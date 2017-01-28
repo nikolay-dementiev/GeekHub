@@ -11,7 +11,7 @@
 
 @implementation Node
 
-- (instancetype)initWithData:(int)value
+- (instancetype)initWithData:(NSInteger)value
 {
     self = [super init];
     if (self) {
@@ -41,7 +41,7 @@
     }
 
     // Build string
-    NSMutableString *string = [[NSString stringWithFormat:@"%i", node.data] mutableCopy];
+    NSMutableString *string = [[NSString stringWithFormat:@"%i", (int)node.data] mutableCopy];
     for (Node *nodeLeaf in node.nodesArray) {
         [string appendString:[NSString stringWithFormat:@"\n%@%@",
                               padding, [self printTreeNode:nodeLeaf indent:indent + 1]]];
@@ -72,7 +72,7 @@
             continue;
         }
 
-        [result appendString: [NSString stringWithFormat:@" (%i)", curObject.data]];
+        [result appendString: [NSString stringWithFormat:@" (%i)", (int)curObject.data]];
 
         for (Node *nodeItem in curObject.nodesArray) {
             [queue enqueue:nodeItem];

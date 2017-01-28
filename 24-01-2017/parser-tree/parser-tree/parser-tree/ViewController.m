@@ -31,7 +31,7 @@
     }
 
     self.tempNode = [CompositeWork createCompositeTree: dictDataFromURL];
-    NSString *printedNodeDatav2 = [tempNode printTreev2];
+    NSString *printedNodeDatav2 = [self.tempNode printTreev2];
 
     NSLog(@"Node tree looks like this:\n%@",printedNodeDatav2);
 

@@ -21,7 +21,7 @@
 - (Node *)createNewNode:(NSDictionary *)dict
                     key:(id)key
 {
-    NSInterger aValue = [[dict valueForKey:key] intValue];
+    NSInteger aValue = [[dict valueForKey:key] intValue];
     Node *newNode = [[Node alloc] initWithData:aValue];
 
     return newNode;

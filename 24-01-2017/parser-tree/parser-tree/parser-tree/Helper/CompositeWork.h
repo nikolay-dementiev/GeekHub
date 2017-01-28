@@ -6,6 +6,8 @@
 //  Copyright © 2017 mc373. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 @class Node;
 
 @interface CompositeWork : NSObject

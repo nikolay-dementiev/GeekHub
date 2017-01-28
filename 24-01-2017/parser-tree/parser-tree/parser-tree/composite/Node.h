@@ -18,7 +18,7 @@
 
 
 - (void)insertNode:(Node *)node;
-- (instancetype)initWithData:(int)value;
+- (instancetype)initWithData:(NSInteger)value;
 
 //- (NSString *)printTreev1;
 - (NSString *)printTreev2;

@@ -61,16 +61,20 @@
 
     NSMutableArray *queue   = [NSMutableArray new];
 
-    int widthHeigth = [self widthHeigthOfNodeView];
-    int localYOffset = widthHeigth;
+    NSInteger depth = 0;
+    NSInteger widthHeigth = [self widthHeigthOfNodeView];
+    NSInteger localYOffset = widthHeigth;
+
     NodeDecorator *rootNodeDecorator = [[NodeDecorator alloc]initWithNode:node
                                                             rootDecorator:nil
                                                                   xOffset:0
-                                                                  yOffset:localYOffset];
+                                                                  yOffset:localYOffset
+                                                             currentDepth:depth];
     [queue enqueue:rootNodeDecorator];
     [queue enqueue:[NSNull null]];
 
-    int depth = 1;
+    depth++;
+
 
     while (true){
         NodeDecorator *curObject = [queue dequeue];
@@ -96,14 +100,15 @@
         [self drawArrrowConnectTheViews:curObject.rootNodeDecorator.nodeView
                                viewLeaf:leafNode];
 
-        //Calculate LEAFS
-        int countInarray = (int)[curObject.nodesArray count];
-        int curOffsetToRight = curObject.curOffsetToRight; // get from root
+        //Calculate LEAFs
+        NSInteger countInarray = [curObject.nodesArray count];
+        NSInteger curOffsetToRight = curObject.curOffsetToRight; // get from root
 
         //int *ip = &curOffsetToRight;
         for (int i = 0; i < countInarray; i++) {
             Node *nodeItem = [curObject.nodesArray objectAtIndex: i];
-            int xOffset = [self calculateXOffset:i
+
+            NSInteger xOffset = [self calculateXOffset:i
                                  countsOfIterate:(countInarray-1)
                                      rootXOffset:curObject.xOffset
                                  curOffsetToRight:&curOffsetToRight];
@@ -111,33 +116,35 @@
             NodeDecorator *leafNodeDecorator = [[NodeDecorator alloc]initWithNode:nodeItem
                                                                     rootDecorator:curObject
                                                                           xOffset:xOffset
-                                                                          yOffset:localYOffset];
+                                                                          yOffset:localYOffset
+                                                                     currentDepth:depth];
             [queue enqueue:leafNodeDecorator];
         }
         curObject.curOffsetToRight = curOffsetToRight;
     }
 }
 
-- (int)calculateXOffset:(int)currentIterator
-        countsOfIterate:(int)countsOfIterate
-            rootXOffset:(int)rootXOffset
+- (NSInteger)calculateXOffset:(int)currentIterator
+        countsOfIterate:(NSInteger)countsOfIterate
+            rootXOffset:(NSInteger)rootXOffset
         //curOffsetToLeft:(int)curIteratorOffsetToLeft
-        curOffsetToRight:(int *)curOffsetToRight {
+        curOffsetToRight:(NSInteger *)curOffsetToRight
+{
 
-    int valueForReturn = 0;
+    NSInteger valueForReturn = 0;
 
-    int widthHeigth = [self widthHeigthOfNodeView];
+    NSInteger widthHeigth = [self widthHeigthOfNodeView];
 //    int rootXPos = abs(rootXOffset);
 //    int curIterator = currentIterator > 0 ? currentIterator : 1;
 
-    int pointer = countsOfIterate/2;
+    NSInteger pointer = countsOfIterate/2;
 
     if (countsOfIterate/2 == currentIterator) { //center, nonbinary number of elements
-        int centerOffsetAngle = rootXOffset;
+        NSInteger centerOffsetAngle = rootXOffset;
         valueForReturn = centerOffsetAngle + *curOffsetToRight;
     } else if (currentIterator < pointer) {
         //move left
-        int leftOffsetAngle = (widthHeigth * -1 + rootXOffset);
+        NSInteger leftOffsetAngle = (widthHeigth * -1 + rootXOffset);
         valueForReturn =  leftOffsetAngle + *curOffsetToRight;
 
     } else if (currentIterator >= pointer) {
@@ -149,16 +156,18 @@
     return valueForReturn;
 }
 
-- (int)widthHeigthOfNodeView {
+- (NSInteger)widthHeigthOfNodeView
+{
     return 70;
 }
 
-- (NodeView *)drawNode:(int)nodeData
-         xOffset:(int)xOffsetFromCenter
-         yOffset:(int)yOffsetFromCenter{
+- (NodeView *)drawNode:(NSInteger)nodeData
+         xOffset:(NSInteger)xOffsetFromCenter
+         yOffset:(NSInteger)yOffsetFromCenter
+{
     NodeView *newNodeView = [NodeView loadFromNib:@"NodeView" classToLoad: [NodeView class]];
 
-    newNodeView.nodeDataLabel.text = [NSString stringWithFormat:@"%i", nodeData];
+    newNodeView.nodeDataLabel.text = [NSString stringWithFormat:@"%i", (int)nodeData];
 
     newNodeView.center = CGPointMake(CGRectGetMidX(self.view.bounds), newNodeView.center.y);
     newNodeView.frame = CGRectOffset(newNodeView.frame, xOffsetFromCenter, yOffsetFromCenter);

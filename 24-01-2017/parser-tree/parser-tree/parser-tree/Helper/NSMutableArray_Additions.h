@@ -7,6 +7,8 @@
 //
 //http://www.svetliy.com/coding-question-print-binary-tree-by-level-in-objective-c/
 
+#import <Foundation/Foundation.h>
+
 @interface  NSMutableArray (QueueAdditions)
 - (id)dequeue;
 - (void)enqueue:(id)obj;

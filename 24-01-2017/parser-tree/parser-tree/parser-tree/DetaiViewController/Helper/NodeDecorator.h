@@ -7,24 +7,26 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NodeView.h"
 @class Node;
-@class NodeView;
 
 @interface NodeDecorator : NSObject
 
-@property (readwrite, nonatomic) int xOffset;
-@property (readwrite, nonatomic) int yOffset;
-@property (readwrite, nonatomic) int data;
-@property (readwrite, strong, nonatomic) NSMutableArray<Node *> *nodesArray;
+@property (nonatomic) NSInteger xOffset;
+@property (nonatomic) NSInteger yOffset;
+@property (nonatomic) NSInteger data;
+@property (strong, nonatomic) NSMutableArray<Node *> *nodesArray;
 
-@property (readwrite, strong, nonatomic) NodeDecorator *rootNodeDecorator;
-@property (readwrite, strong, nonatomic) NodeView *nodeView;
+@property (strong, nonatomic) NodeDecorator *rootNodeDecorator;
+@property (strong, nonatomic) NodeView *nodeView;
 
-@property (readwrite, nonatomic) int curOffsetToRight;
+@property (nonatomic) NSInteger curOffsetToRight;
+@property (nonatomic) NSInteger embeddingDepth;
 
 - (instancetype)initWithNode:(Node *)decorNode
                rootDecorator:(NodeDecorator *)rootNodeDecorator
-                     xOffset:(int)xOffset
-                     yOffset:(int)yOffset;
+                     xOffset:(NSInteger)xOffset
+                     yOffset:(NSInteger)yOffset
+                currentDepth:(NSInteger)embeddingDepth;
 
 @end
