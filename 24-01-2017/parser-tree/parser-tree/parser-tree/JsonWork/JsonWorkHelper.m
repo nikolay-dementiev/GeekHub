@@ -17,15 +17,15 @@
                                                          ofType:@"json"
                                                     inDirectory:@"ImportFiles"];
 
-    if (!filepath) {
+    if (nil == filepath) {
         NSLog(@"Couldn't find file!");
         return nil;
     }
 
-    NSData *jsonData = [[NSString stringWithContentsOfFile: filepath
+    NSData *jsonData = [[NSString stringWithContentsOfFile:filepath
                                                   encoding:NSUTF8StringEncoding
                                                      error:nil]
-                        dataUsingEncoding:NSUTF8StringEncoding];
+                                         dataUsingEncoding:NSUTF8StringEncoding];
 
     NSDictionary *results = jsonData ? [NSJSONSerialization
                                         JSONObjectWithData:jsonData
