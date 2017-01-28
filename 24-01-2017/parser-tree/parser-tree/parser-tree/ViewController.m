@@ -12,9 +12,9 @@
 #import "Node.h"
 #import "DetailViewController.h"
 
-@interface ViewController () {
-    Node *tempNode;
-}
+@interface ViewController () 
+// я б проперті зараз так описував    
+@property (nonatomic, nullable) Node *tempNode; 
 - (IBAction)startButtonPressed:(UIButton *)sender;
 
 @end
@@ -23,7 +23,6 @@
 
 - (IBAction)startButtonPressed:(UIButton *)sender
 {
-
     NSError *error = nil;
     NSDictionary *dictDataFromURL = [JsonWorkHelper getTreeData:&error];
     if(error) {
@@ -31,7 +30,7 @@
         return;
     }
 
-    tempNode = [CompositeWork createCompositeTree: dictDataFromURL];
+    self.tempNode = [CompositeWork createCompositeTree: dictDataFromURL];
     NSString *printedNodeDatav2 = [tempNode printTreev2];
 
     NSLog(@"Node tree looks like this:\n%@",printedNodeDatav2);
@@ -44,7 +43,7 @@
     if ([segue.identifier isEqualToString:@"showDetailScreen"]) {
         DetailViewController *destinationVC = (DetailViewController *)[segue destinationViewController];
 
-        destinationVC.nodes = tempNode;
+        destinationVC.nodes = self.tempNode;
     }
 }
 
