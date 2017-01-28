@@ -19,8 +19,6 @@
 
 @property (strong, nonatomic) NodeDecorator *rootNodeDecorator;
 @property (strong, nonatomic) NodeView *nodeView;
-
-@property (nonatomic) NSInteger curOffsetToRight;
 @property (nonatomic) NSInteger embeddingDepth;
 
 - (instancetype)initWithNode:(Node *)decorNode

@@ -15,24 +15,23 @@
 #import "NodeDecorator.h"
 #import "LineView.h"
 
-@interface DetailViewController ()
-@property (strong, nonatomic) UIScrollView *scrollView;
-//@property (strong, nonatomic) LineView *lineView;
+@interface DetailViewController()
 
+@property (strong, nonatomic) UIScrollView *scrollView;
 @end
 
 @implementation DetailViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 
-//    [self drawNode:10 xOffset:0 yOffset:70];
-//    [self drawNode:2 xOffset:-40 yOffset:70*2];
-//    [self drawNode:5 xOffset:+40 yOffset:70*2];
-//    [self drawNode:40 xOffset:-80 yOffset:70*3];
+    [self initScrollView];
+    [self showNodeTreev3: self.nodes];
+}
 
-
+- (void)initScrollView
+{
     self.scrollView = [[UIScrollView alloc] initWithFrame:
                        CGRectMake(0, 0,
                                   self.view.frame.size.width,
@@ -40,28 +39,19 @@
     self.scrollView.pagingEnabled = YES;
     self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width*1.1,
                                              self.view.frame.size.height);
-
-//    self.lineView = [[LineView alloc] initWithFrame:self.scrollView.bounds];
-
-    //[self testConnectViews];
-    [self showNodeTreev3: self.nodes];
-
-
     [self.view addSubview:self.scrollView];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 - (void)showNodeTreev3:(Node *)node
 {
 
-    NSMutableArray *queue   = [NSMutableArray new];
+    NSMutableArray *queue = [NSMutableArray new];
+    NSMutableDictionary *queueDepth = [NSMutableDictionary new];
 
     NSInteger depth = 0;
+    [queueDepth setObject:[NSNumber numberWithInteger:0]
+                   forKey:[NSNumber numberWithInteger:depth]];
+
     NSInteger widthHeigth = [self widthHeigthOfNodeView];
     NSInteger localYOffset = widthHeigth;
 
@@ -74,14 +64,16 @@
     [queue enqueue:[NSNull null]];
 
     depth++;
+    [queueDepth setObject:[NSNumber numberWithInteger:0]
+                   forKey:[NSNumber numberWithInteger:depth]];
 
-
-    while (true){
+    while (true) {
         NodeDecorator *curObject = [queue dequeue];
         if ([curObject isEqual:[NSNull null]]) {
-            //[result appendString:@"\n"];
 
             depth++;
+            [queueDepth setObject:[NSNumber numberWithInteger:0]
+                           forKey:[NSNumber numberWithInteger:depth]];
 
             if ([queue count] == 0) {
                 break;
@@ -102,16 +94,17 @@
 
         //Calculate LEAFs
         NSInteger countInarray = [curObject.nodesArray count];
-        NSInteger curOffsetToRight = curObject.curOffsetToRight; // get from root
+        NSInteger curOffsetToRight = [[queueDepth objectForKey:
+                                       [NSNumber numberWithInteger:depth]]
+                                      integerValue];
 
-        //int *ip = &curOffsetToRight;
         for (int i = 0; i < countInarray; i++) {
             Node *nodeItem = [curObject.nodesArray objectAtIndex: i];
 
             NSInteger xOffset = [self calculateXOffset:i
-                                 countsOfIterate:(countInarray-1)
-                                     rootXOffset:curObject.xOffset
-                                 curOffsetToRight:&curOffsetToRight];
+                                       countsOfIterate:(countInarray-1)
+                                           rootXOffset:curObject.xOffset
+                                      curOffsetToRight:&curOffsetToRight];
 
             NodeDecorator *leafNodeDecorator = [[NodeDecorator alloc]initWithNode:nodeItem
                                                                     rootDecorator:curObject
@@ -120,23 +113,19 @@
                                                                      currentDepth:depth];
             [queue enqueue:leafNodeDecorator];
         }
-        curObject.curOffsetToRight = curOffsetToRight;
+        [queueDepth setObject:[NSNumber numberWithInteger:curOffsetToRight]
+                       forKey:[NSNumber numberWithInteger:depth]];
     }
 }
 
 - (NSInteger)calculateXOffset:(int)currentIterator
-        countsOfIterate:(NSInteger)countsOfIterate
-            rootXOffset:(NSInteger)rootXOffset
-        //curOffsetToLeft:(int)curIteratorOffsetToLeft
-        curOffsetToRight:(NSInteger *)curOffsetToRight
+              countsOfIterate:(NSInteger)countsOfIterate
+                  rootXOffset:(NSInteger)rootXOffset
+             curOffsetToRight:(NSInteger *)curOffsetToRight
 {
 
     NSInteger valueForReturn = 0;
-
     NSInteger widthHeigth = [self widthHeigthOfNodeView];
-//    int rootXPos = abs(rootXOffset);
-//    int curIterator = currentIterator > 0 ? currentIterator : 1;
-
     NSInteger pointer = countsOfIterate/2;
 
     if (countsOfIterate/2 == currentIterator) { //center, nonbinary number of elements
@@ -149,8 +138,8 @@
 
     } else if (currentIterator >= pointer) {
         //move right
-        valueForReturn = widthHeigth + rootXOffset + *curOffsetToRight; //* curIteratorOffsetToRight
-        *curOffsetToRight = *curOffsetToRight + valueForReturn;
+        valueForReturn = widthHeigth + rootXOffset + *curOffsetToRight;
+        *curOffsetToRight = *curOffsetToRight + ABS(valueForReturn);
     }
 
     return valueForReturn;
@@ -162,8 +151,8 @@
 }
 
 - (NodeView *)drawNode:(NSInteger)nodeData
-         xOffset:(NSInteger)xOffsetFromCenter
-         yOffset:(NSInteger)yOffsetFromCenter
+               xOffset:(NSInteger)xOffsetFromCenter
+               yOffset:(NSInteger)yOffsetFromCenter
 {
     NodeView *newNodeView = [NodeView loadFromNib:@"NodeView" classToLoad: [NodeView class]];
 
@@ -177,18 +166,8 @@
     return newNodeView;
 }
 
-//- (void)testConnectViews {
-//
-//    NodeView *view1 = [self drawNode:10 xOffset:0 yOffset:70];
-//    NodeView *view2 = [self drawNode:2 xOffset:-40 yOffset:70*2];
-//
-//
-//    [self drawArrrowConnectTheViews:view1 viewLeaf:view2];
-//
-//}
-
 - (void)drawArrrowConnectTheViews:(UIView *)viewA
-               viewLeaf:(UIView *)viewB
+                         viewLeaf:(UIView *)viewB
 {
 
     if (!viewA || !viewB) {
@@ -201,9 +180,9 @@
     p1 = CGPointMake(CGRectGetMidX(frame), CGRectGetMaxY(frame));
     frame = [viewB frame];
     p2 = CGPointMake(CGRectGetMidX(frame), CGRectGetMinY(frame));
-//    // Convert them to coordinate system of the scrollview
-//    p1 = [self.scrollView convertPoint:p1 fromView:viewA];
-//    p2 = [self.scrollView convertPoint:p2 fromView:viewB];
+    //    // Convert them to coordinate system of the scrollview
+    //    p1 = [self.scrollView convertPoint:p1 fromView:viewA];
+    //    p2 = [self.scrollView convertPoint:p2 fromView:viewB];
 
     LineView *lineView = [[LineView alloc] initWithFrame:CGRectMake(0,
                                                                     0,
@@ -211,17 +190,17 @@
                                                                     self.scrollView.contentSize.height)];//CGRectMake(0,0,400,400)//self.scrollView.bounds
 
 
-//    // And now into coordinate system of target view.
-//    p1 = [self.scrollView convertPoint:p1 toView:lineView];
-//    p2 = [self.scrollView convertPoint:p2 toView:lineView];
+    //    // And now into coordinate system of target view.
+    //    p1 = [self.scrollView convertPoint:p1 toView:lineView];
+    //    p2 = [self.scrollView convertPoint:p2 toView:lineView];
 
     // Set the points.
     [lineView setPoint:p1 pointTo:p2];
-
+    
     [self.scrollView addSubview: lineView];
     [lineView setNeedsDisplay]; // If the properties don't set it already
-
-
+    
+    
 }
 
 @end
