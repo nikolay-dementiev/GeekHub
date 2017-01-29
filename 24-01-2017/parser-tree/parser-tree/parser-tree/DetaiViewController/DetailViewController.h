@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GraphWorkDelegate.h"
 @class Node;
 
 @interface DetailViewController : UIViewController
 
-@property (readwrite, strong, nonatomic) Node *nodes;
+@property (strong, nonatomic, nonnull) Node *nodes;
+@property (nonatomic, strong, nullable) id <GraphWorkDelegate> graphDelegate;
 
 @end

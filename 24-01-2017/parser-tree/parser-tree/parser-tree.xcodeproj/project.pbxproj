@@ -19,13 +19,14 @@
 		E768C1C31E37C65F006D2068 /* ImportFiles in Resources */ = {isa = PBXBuildFile; fileRef = E768C1C21E37C65F006D2068 /* ImportFiles */; };
 		E768C1C91E37CC03006D2068 /* CompositeWork.m in Sources */ = {isa = PBXBuildFile; fileRef = E768C1C81E37CC03006D2068 /* CompositeWork.m */; };
 		E768C1CC1E38F388006D2068 /* NSMutableArray_Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = E768C1CB1E38F388006D2068 /* NSMutableArray_Additions.m */; };
-		E768C1DA1E390BB9006D2068 /* NodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E768C1D91E390BB9006D2068 /* NodeView.m */; };
-		E768C1DC1E390BD5006D2068 /* NodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E768C1DB1E390BD5006D2068 /* NodeView.xib */; };
 		E768C1E21E392A23006D2068 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E768C1E11E392A23006D2068 /* DetailViewController.m */; };
 		E768C1E51E392DC4006D2068 /* NSObject+LoadFromNib.m in Sources */ = {isa = PBXBuildFile; fileRef = E768C1E41E392DC4006D2068 /* NSObject+LoadFromNib.m */; };
-		E768C1E91E3A2B17006D2068 /* NodeDecorator.m in Sources */ = {isa = PBXBuildFile; fileRef = E768C1E81E3A2B17006D2068 /* NodeDecorator.m */; };
-		E768C1EE1E3B67F3006D2068 /* LineView.m in Sources */ = {isa = PBXBuildFile; fileRef = E768C1ED1E3B67F3006D2068 /* LineView.m */; };
-		E768C1F11E3B818B006D2068 /* UIBezierPath+dqd_arrowhead.m in Sources */ = {isa = PBXBuildFile; fileRef = E768C1F01E3B818B006D2068 /* UIBezierPath+dqd_arrowhead.m */; };
+		E768C1FF1E3E006D006D2068 /* NodeDecorator.m in Sources */ = {isa = PBXBuildFile; fileRef = E768C1F51E3E006D006D2068 /* NodeDecorator.m */; };
+		E768C2001E3E006D006D2068 /* UIBezierPath+dqd_arrowhead.m in Sources */ = {isa = PBXBuildFile; fileRef = E768C1F71E3E006D006D2068 /* UIBezierPath+dqd_arrowhead.m */; };
+		E768C2011E3E006D006D2068 /* LineView.m in Sources */ = {isa = PBXBuildFile; fileRef = E768C1FA1E3E006D006D2068 /* LineView.m */; };
+		E768C2021E3E006D006D2068 /* NodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E768C1FD1E3E006D006D2068 /* NodeView.m */; };
+		E768C2031E3E006D006D2068 /* NodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E768C1FE1E3E006D006D2068 /* NodeView.xib */; };
+		E768C2081E3E0304006D2068 /* GraphWork.m in Sources */ = {isa = PBXBuildFile; fileRef = E768C2071E3E0304006D2068 /* GraphWork.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,19 +62,22 @@
 		E768C1C81E37CC03006D2068 /* CompositeWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompositeWork.m; sourceTree = "<group>"; };
 		E768C1CA1E38F34F006D2068 /* NSMutableArray_Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSMutableArray_Additions.h; sourceTree = "<group>"; };
 		E768C1CB1E38F388006D2068 /* NSMutableArray_Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMutableArray_Additions.m; sourceTree = "<group>"; };
-		E768C1D81E390BB9006D2068 /* NodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeView.h; sourceTree = "<group>"; };
-		E768C1D91E390BB9006D2068 /* NodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeView.m; sourceTree = "<group>"; };
-		E768C1DB1E390BD5006D2068 /* NodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NodeView.xib; sourceTree = "<group>"; };
 		E768C1E01E392A23006D2068 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		E768C1E11E392A23006D2068 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		E768C1E31E392DC4006D2068 /* NSObject+LoadFromNib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LoadFromNib.h"; sourceTree = "<group>"; };
 		E768C1E41E392DC4006D2068 /* NSObject+LoadFromNib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LoadFromNib.m"; sourceTree = "<group>"; };
-		E768C1E71E3A2AC9006D2068 /* NodeDecorator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NodeDecorator.h; sourceTree = "<group>"; };
-		E768C1E81E3A2B17006D2068 /* NodeDecorator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeDecorator.m; sourceTree = "<group>"; };
-		E768C1EC1E3B67C3006D2068 /* LineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LineView.h; sourceTree = "<group>"; };
-		E768C1ED1E3B67F3006D2068 /* LineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineView.m; sourceTree = "<group>"; };
-		E768C1EF1E3B815A006D2068 /* UIBezierPath+dqd_arrowhead.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+dqd_arrowhead.h"; sourceTree = "<group>"; };
-		E768C1F01E3B818B006D2068 /* UIBezierPath+dqd_arrowhead.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+dqd_arrowhead.m"; sourceTree = "<group>"; };
+		E768C1F41E3E006D006D2068 /* NodeDecorator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeDecorator.h; sourceTree = "<group>"; };
+		E768C1F51E3E006D006D2068 /* NodeDecorator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeDecorator.m; sourceTree = "<group>"; };
+		E768C1F61E3E006D006D2068 /* UIBezierPath+dqd_arrowhead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+dqd_arrowhead.h"; sourceTree = "<group>"; };
+		E768C1F71E3E006D006D2068 /* UIBezierPath+dqd_arrowhead.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+dqd_arrowhead.m"; sourceTree = "<group>"; };
+		E768C1F91E3E006D006D2068 /* LineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineView.h; sourceTree = "<group>"; };
+		E768C1FA1E3E006D006D2068 /* LineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineView.m; sourceTree = "<group>"; };
+		E768C1FC1E3E006D006D2068 /* NodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeView.h; sourceTree = "<group>"; };
+		E768C1FD1E3E006D006D2068 /* NodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeView.m; sourceTree = "<group>"; };
+		E768C1FE1E3E006D006D2068 /* NodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NodeView.xib; sourceTree = "<group>"; };
+		E768C2041E3E0262006D2068 /* GraphWorkDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphWorkDelegate.h; sourceTree = "<group>"; };
+		E768C2061E3E02D8006D2068 /* GraphWork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphWork.h; sourceTree = "<group>"; };
+		E768C2071E3E0304006D2068 /* GraphWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphWork.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,9 +119,10 @@
 		E768C17E1E37A7A2006D2068 /* parser-tree */ = {
 			isa = PBXGroup;
 			children = (
-				E768C1D31E390B6B006D2068 /* DetaiViewController */,
 				E768C1821E37A7A2006D2068 /* AppDelegate.h */,
 				E768C1831E37A7A2006D2068 /* AppDelegate.m */,
+				E768C1D31E390B6B006D2068 /* DetaiViewController */,
+				E768C1F21E3E006D006D2068 /* GraphWork */,
 				E768C1BD1E37BACD006D2068 /* JsonWork */,
 				E768C1B01E37B769006D2068 /* Composite */,
 				E768C1851E37A7A2006D2068 /* ViewController.h */,
@@ -192,43 +197,53 @@
 		E768C1D31E390B6B006D2068 /* DetaiViewController */ = {
 			isa = PBXGroup;
 			children = (
-				E768C1E61E3A2AB1006D2068 /* Helper */,
 				E768C1E01E392A23006D2068 /* DetailViewController.h */,
 				E768C1E11E392A23006D2068 /* DetailViewController.m */,
-				E768C1EB1E3B67AE006D2068 /* LineView */,
-				E768C1D41E390B6B006D2068 /* NodeView */,
 			);
 			path = DetaiViewController;
 			sourceTree = "<group>";
 		};
-		E768C1D41E390B6B006D2068 /* NodeView */ = {
+		E768C1F21E3E006D006D2068 /* GraphWork */ = {
 			isa = PBXGroup;
 			children = (
-				E768C1D81E390BB9006D2068 /* NodeView.h */,
-				E768C1D91E390BB9006D2068 /* NodeView.m */,
-				E768C1DB1E390BD5006D2068 /* NodeView.xib */,
+				E768C1F81E3E006D006D2068 /* LineView */,
+				E768C1FB1E3E006D006D2068 /* NodeView */,
+				E768C1F31E3E006D006D2068 /* Helper */,
+				E768C2041E3E0262006D2068 /* GraphWorkDelegate.h */,
+				E768C2061E3E02D8006D2068 /* GraphWork.h */,
+				E768C2071E3E0304006D2068 /* GraphWork.m */,
 			);
-			path = NodeView;
+			path = GraphWork;
 			sourceTree = "<group>";
 		};
-		E768C1E61E3A2AB1006D2068 /* Helper */ = {
+		E768C1F31E3E006D006D2068 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				E768C1E71E3A2AC9006D2068 /* NodeDecorator.h */,
-				E768C1E81E3A2B17006D2068 /* NodeDecorator.m */,
-				E768C1EF1E3B815A006D2068 /* UIBezierPath+dqd_arrowhead.h */,
-				E768C1F01E3B818B006D2068 /* UIBezierPath+dqd_arrowhead.m */,
+				E768C1F41E3E006D006D2068 /* NodeDecorator.h */,
+				E768C1F51E3E006D006D2068 /* NodeDecorator.m */,
+				E768C1F61E3E006D006D2068 /* UIBezierPath+dqd_arrowhead.h */,
+				E768C1F71E3E006D006D2068 /* UIBezierPath+dqd_arrowhead.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		E768C1EB1E3B67AE006D2068 /* LineView */ = {
+		E768C1F81E3E006D006D2068 /* LineView */ = {
 			isa = PBXGroup;
 			children = (
-				E768C1EC1E3B67C3006D2068 /* LineView.h */,
-				E768C1ED1E3B67F3006D2068 /* LineView.m */,
+				E768C1F91E3E006D006D2068 /* LineView.h */,
+				E768C1FA1E3E006D006D2068 /* LineView.m */,
 			);
 			path = LineView;
+			sourceTree = "<group>";
+		};
+		E768C1FB1E3E006D006D2068 /* NodeView */ = {
+			isa = PBXGroup;
+			children = (
+				E768C1FC1E3E006D006D2068 /* NodeView.h */,
+				E768C1FD1E3E006D006D2068 /* NodeView.m */,
+				E768C1FE1E3E006D006D2068 /* NodeView.xib */,
+			);
+			path = NodeView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,8 +328,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E768C2031E3E006D006D2068 /* NodeView.xib in Resources */,
 				E768C18F1E37A7A2006D2068 /* LaunchScreen.storyboard in Resources */,
-				E768C1DC1E390BD5006D2068 /* NodeView.xib in Resources */,
 				E768C1C31E37C65F006D2068 /* ImportFiles in Resources */,
 				E768C18C1E37A7A2006D2068 /* Assets.xcassets in Resources */,
 				E768C18A1E37A7A2006D2068 /* Main.storyboard in Resources */,
@@ -337,17 +352,18 @@
 			files = (
 				E768C1CC1E38F388006D2068 /* NSMutableArray_Additions.m in Sources */,
 				E768C1C91E37CC03006D2068 /* CompositeWork.m in Sources */,
+				E768C2021E3E006D006D2068 /* NodeView.m in Sources */,
+				E768C2001E3E006D006D2068 /* UIBezierPath+dqd_arrowhead.m in Sources */,
 				E768C1E21E392A23006D2068 /* DetailViewController.m in Sources */,
+				E768C2081E3E0304006D2068 /* GraphWork.m in Sources */,
 				E768C1B91E37B769006D2068 /* Node.m in Sources */,
 				E768C1871E37A7A2006D2068 /* ViewController.m in Sources */,
 				E768C1841E37A7A2006D2068 /* AppDelegate.m in Sources */,
 				E768C1C01E37BB0D006D2068 /* JsonWorkHelper.m in Sources */,
-				E768C1E91E3A2B17006D2068 /* NodeDecorator.m in Sources */,
-				E768C1F11E3B818B006D2068 /* UIBezierPath+dqd_arrowhead.m in Sources */,
-				E768C1EE1E3B67F3006D2068 /* LineView.m in Sources */,
+				E768C2011E3E006D006D2068 /* LineView.m in Sources */,
 				E768C1E51E392DC4006D2068 /* NSObject+LoadFromNib.m in Sources */,
-				E768C1DA1E390BB9006D2068 /* NodeView.m in Sources */,
 				E768C1811E37A7A2006D2068 /* main.m in Sources */,
+				E768C1FF1E3E006D006D2068 /* NodeDecorator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
