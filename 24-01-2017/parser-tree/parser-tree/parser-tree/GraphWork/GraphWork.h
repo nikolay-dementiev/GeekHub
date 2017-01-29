@@ -13,7 +13,6 @@
 
 @interface GraphWork : NSObject<GraphWorkDelegate>
 
-//- (void)showNodeTreev3:(nonnull Node *)node;
 - (void)showNodeTreev3:(nonnull Node *)node
             completion:(void (^ __nullable)(BOOL finished))callBack;
 - (null_unspecified instancetype)initWithData:(nonnull UIScrollView *)rootView;

@@ -16,14 +16,14 @@
 @property (readwrite, strong, nonatomic) Node *decoratedNode;
 @end
 
-
 @implementation NodeDecorator
 
 - (instancetype)initWithNode:(Node *)decorNode
                rootDecorator:(NodeDecorator *)rootNodeDecorator
                      xOffset:(NSInteger)xOffset
                      yOffset:(NSInteger)yOffset
-                currentDepth:(NSInteger)embeddingDepth {
+                currentDepth:(NSInteger)embeddingDepth
+{
 
     self = [super init];
 
@@ -40,11 +40,13 @@
     return self;
 }
 
-- (NSInteger)data {
+- (NSInteger)data
+{
     return self.decoratedNode.data;
 }
 
-- (NSMutableArray *)nodesArray {
+- (NSMutableArray *)nodesArray
+{
     return self.decoratedNode.nodesArray;
 }
 

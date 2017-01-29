@@ -5,6 +5,7 @@
 //  Created by Nikolay Dementiev on 29.01.17.
 //  Copyright © 2017 mc373. All rights reserved.
 //
+//http://stackoverflow.com/a/3191405/6643923
 
 #import "GraphWork.h"
 #import "NSObject+LoadFromNib.h"
@@ -13,6 +14,8 @@
 #import "NSMutableArray_Additions.h"
 #import "NodeDecorator.h"
 #import "LineView.h"
+
+const NSInteger widthHeigthOfNodeView = 75;
 
 @interface GraphWork()
 
@@ -62,7 +65,7 @@
     [queueDepth setObject:[NSNumber numberWithInteger:0]
                    forKey:[NSNumber numberWithInteger:depth]];
 
-    NSInteger widthHeigth = [self widthHeigthOfNodeView];
+    NSInteger widthHeigth = widthHeigthOfNodeView;
     NSInteger localYOffset = widthHeigth;
 
     NodeDecorator *rootNodeDecorator = [[NodeDecorator alloc]initWithNode:node
@@ -135,10 +138,11 @@
 {
 
     NSInteger valueForReturn = 0;
-    NSInteger widthHeigth = [self widthHeigthOfNodeView];
+    NSInteger widthHeigth = widthHeigthOfNodeView;
     NSInteger pointer = countsOfIterate/2;
 
-    if (countsOfIterate/2 == currentIterator) { //center, nonbinary number of elements
+    if (countsOfIterate/2 == currentIterator) {
+        //center, nonbinary number of elements
         NSInteger centerOffsetAngle = rootXOffset;
         valueForReturn = centerOffsetAngle + *curOffsetToRight;
     } else if (currentIterator < pointer) {
@@ -153,11 +157,6 @@
     }
 
     return valueForReturn;
-}
-
-- (NSInteger)widthHeigthOfNodeView
-{
-    return 70;
 }
 
 - (NodeView *)drawNode:(NSInteger)nodeData
@@ -183,33 +182,41 @@
     if (nil == viewA || nil ==viewB) {
         return;
     }
+    BOOL needConvertTocoordinateSV = false; //not needed yet
+
+    NSInteger widthHeigth = widthHeigthOfNodeView;
 
     CGPoint p1, p2;
-    CGRect frame;
-    frame = [viewA frame];
-    p1 = CGPointMake(CGRectGetMidX(frame), CGRectGetMaxY(frame));
-    frame = [viewB frame];
-    p2 = CGPointMake(CGRectGetMidX(frame), CGRectGetMinY(frame));
-    //    // Convert them to coordinate system of the scrollview
-    //    p1 = [self.scrollView convertPoint:p1 fromView:viewA];
-    //    p2 = [self.scrollView convertPoint:p2 fromView:viewB];
+    CGRect frame1, frame2;
+    frame1 = [viewA frame];
+    p1 = CGPointMake(CGRectGetMidX(frame1), CGRectGetMaxY(frame1));
+    frame2 = [viewB frame];
+    p2 = CGPointMake(CGRectGetMidX(frame2), CGRectGetMinY(frame2));
 
-    LineView *lineView = [[LineView alloc] initWithFrame:CGRectMake(0,
-                                                                    0,
-                                                                    self.scrollView.contentSize.width,
-                                                                    self.scrollView.contentSize.height)];//CGRectMake(0,0,400,400)//self.scrollView.bounds
+    if (needConvertTocoordinateSV) {
+        // Convert them to coordinate system of the scrollview
+        p1 = [self.scrollView convertPoint:p1 fromView:viewA];
+        p2 = [self.scrollView convertPoint:p2 fromView:viewB];
+    }
 
+    //http://stackoverflow.com/a/17266689/6643923
+    CGFloat distance = hypotf(p1.x, p2.y);
 
-    //    // And now into coordinate system of target view.
-    //    p1 = [self.scrollView convertPoint:p1 toView:lineView];
-    //    p2 = [self.scrollView convertPoint:p2 toView:lineView];
+    LineView *lineView = [[LineView alloc] initWithFrame:CGRectMake(p1.x,
+                                                                    p1.y,
+                                                                    distance,
+                                                                    widthHeigth/2)];
+    lineView.frame = CGRectOffset(lineView.frame, -1 * lineView.bounds.size.width/2, 0);
+
+    // And now into coordinate system of target view.
+    p1 = [self.scrollView convertPoint:p1 toView:lineView];
+    p2 = [self.scrollView convertPoint:p2 toView:lineView];
 
     // Set the points.
     [lineView setPoint:p1 pointTo:p2];
     
     [self.scrollView addSubview: lineView];
     [lineView setNeedsDisplay]; // If the properties don't set it already
-    
 }
 
 @end
