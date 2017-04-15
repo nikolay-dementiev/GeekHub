@@ -15,6 +15,8 @@
 		E73CC4FC1EA2479E00BB50F0 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73CC4FB1EA2479E00BB50F0 /* GraphView.swift */; };
 		E73CC4FF1EA24F3300BB50F0 /* dateTab.xib in Resources */ = {isa = PBXBuildFile; fileRef = E73CC4FE1EA24F3300BB50F0 /* dateTab.xib */; };
 		E73CC5011EA2510900BB50F0 /* dateTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73CC5001EA2510900BB50F0 /* dateTabView.swift */; };
+		E73CC5041EA25FCB00BB50F0 /* generalP.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73CC5031EA25FCB00BB50F0 /* generalP.swift */; };
+		E73CC5061EA2649A00BB50F0 /* ToolTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73CC5051EA2649A00BB50F0 /* ToolTip.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		E73CC4FB1EA2479E00BB50F0 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		E73CC4FE1EA24F3300BB50F0 /* dateTab.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dateTab.xib; sourceTree = "<group>"; };
 		E73CC5001EA2510900BB50F0 /* dateTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dateTabView.swift; sourceTree = "<group>"; };
+		E73CC5031EA25FCB00BB50F0 /* generalP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = generalP.swift; sourceTree = "<group>"; };
+		E73CC5051EA2649A00BB50F0 /* ToolTip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolTip.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 		E73CC4E81EA244D700BB50F0 /* test-geekhub */ = {
 			isa = PBXGroup;
 			children = (
+				E73CC5021EA25FB200BB50F0 /* Helper */,
 				E73CC4FD1EA24E8A00BB50F0 /* dateTab */,
 				E73CC4FB1EA2479E00BB50F0 /* GraphView.swift */,
 				E73CC4E91EA244D700BB50F0 /* AppDelegate.swift */,
@@ -79,6 +84,15 @@
 				E73CC5001EA2510900BB50F0 /* dateTabView.swift */,
 			);
 			path = dateTab;
+			sourceTree = "<group>";
+		};
+		E73CC5021EA25FB200BB50F0 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				E73CC5031EA25FCB00BB50F0 /* generalP.swift */,
+				E73CC5051EA2649A00BB50F0 /* ToolTip.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,8 +168,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E73CC5041EA25FCB00BB50F0 /* generalP.swift in Sources */,
 				E73CC5011EA2510900BB50F0 /* dateTabView.swift in Sources */,
 				E73CC4EC1EA244D700BB50F0 /* ViewController.swift in Sources */,
+				E73CC5061EA2649A00BB50F0 /* ToolTip.swift in Sources */,
 				E73CC4EA1EA244D700BB50F0 /* AppDelegate.swift in Sources */,
 				E73CC4FC1EA2479E00BB50F0 /* GraphView.swift in Sources */,
 			);

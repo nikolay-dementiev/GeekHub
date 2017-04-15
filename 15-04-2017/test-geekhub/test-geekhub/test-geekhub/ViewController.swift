@@ -10,18 +10,38 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var graphView: GraphView!
+//    @IBOutlet weak var graphView: GraphView!
+    @IBOutlet weak var topSpace1: UIView!
+    @IBOutlet weak var topSpace1Height: NSLayoutConstraint!
+    @IBOutlet weak var date1Bar: dateTabView!
+    @IBOutlet weak var date1Label: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
 //        setupGraphDisplay()
+        setupViewS()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    func setupViewS() {
+
+
+        self.view.layoutIfNeeded()
+
+        UIView.animate(withDuration: 4, animations: { _ in
+            // change your constraints here
+            self.topSpace1Height.constant = CGFloat(self.date1Bar.currentHeight)
+            self.date1Label.text = "Mon"
+
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+
     }
 
 //    func setupGraphDisplay() {

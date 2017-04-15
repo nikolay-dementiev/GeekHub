@@ -38,6 +38,7 @@
                                             <view contentMode="scaleToFill" restorationIdentifier="date1" translatesAutoresizingMaskIntoConstraints="NO" id="Qex-dw-kaB" customClass="dateTabView" customModule="test_geekhub" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="1" width="50" height="314"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <gestureRecognizers/>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJw-58-20R">
                                                 <rect key="frame" x="0.0" y="315" width="50" height="20"/>
@@ -220,6 +221,12 @@
                             <constraint firstItem="5tF-b0-7lp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="qWl-Zl-pxz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="date1Bar" destination="Qex-dw-kaB" id="fVC-hZ-32B"/>
+                        <outlet property="date1Label" destination="xJw-58-20R" id="whh-iT-i3Q"/>
+                        <outlet property="topSpace1" destination="QbT-Ac-Zwf" id="m02-fQ-Tg5"/>
+                        <outlet property="topSpace1Height" destination="QNt-Rv-cjV" id="sip-Yo-dOT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
